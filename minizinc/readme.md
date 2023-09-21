@@ -1,6 +1,6 @@
 ## Prerequisite
 
-Install [minizinc](https://www.minizinc.org)
+Install [minizinc](https://www.minizinc.org)  
 Run `npm i`
 
 ## Usage
