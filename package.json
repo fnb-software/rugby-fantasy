@@ -5,14 +5,16 @@
   "main": "",
   "scripts": {
     "naive": "node -r @swc-node/register ./naive/main.ts",
-    "mz:generate": "node -r @swc-node/register ./minizinc/generate.js",
-    "mz:result": "node -r @swc-node/register ./minizinc/result.js",
+    "mz:write": "node -r @swc-node/register ./minizinc/writeDzn.js",
+    "mz:read": "node -r @swc-node/register ./minizinc/readResult.js",
+    "mz:solve": "node -r @swc-node/register ./minizinc/solve.js",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "author": "",
   "license": "ISC",
   "dependencies": {
     "lodash": "^4.17.21",
+    "minizinc": "^4.1.1",
     "typescript": "^5.2.2"
   },
   "devDependencies": {

@@ -1,11 +1,7 @@
-import players from '../data/players';
 import squads from '../data/squads';
-import result from './fantasy-result';
 import { ROUND } from './params';
 
-const main = async () => {
-  const team = result.ids.map((id) => players.find((p) => p.id === id));
-  const captain = players.find((p) => p.id === result.captain);
+const parseResult = async ({ team, captain }) => {
   team.sort((p1, p2) => positionToInt(p1) - positionToInt(p2));
   team.splice(2, 0, team.splice(1, 1)[0]);
   team.splice(11, 0, team.splice(14, 1)[0]);
@@ -49,4 +45,4 @@ const positionToInt = (p) => {
   }
 };
 
-main();
+export default parseResult;

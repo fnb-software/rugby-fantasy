@@ -1,5 +1,4 @@
 % Fantasy for the RWC (with data file)
-include "fantasy-data.mzn";
 include "alldifferent.mzn";
 include "distribute.mzn";
 
