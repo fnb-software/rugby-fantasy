@@ -13,13 +13,13 @@ const parseResult = ({ teamIds, captainId }) => {
     console.log(
       `${i + 1}. ${p === captain ? '(c)' : ''} ${p.lastName} ${p.firstName} (${
         squads.find((s) => p.squadId === s.id)?.abbreviation
-      } - ${p.cost / 1000000}) - ${p.stats.scores[ROUND]} `
+      } - ${p.cost / 1000000}) - ${p.stats.scores[ROUND] || 'N/A'} `
     );
   });
   console.log(
     'Points : ',
     team.reduce(
-      (total, p) => total + p.stats.scores[ROUND],
+      (total, p) => total + (p.stats.scores[ROUND] || 0),
       captain.stats.scores[ROUND]
     ),
     ' - Cost: ',
