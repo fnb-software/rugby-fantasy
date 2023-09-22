@@ -36,8 +36,11 @@ const main = async () => {
       process.exit(0);
       return;
     }
-    console.log(result.solution.output.json);
-    parseResult(result.solution.output.json);
+    const resultData = result.solution.output.json;
+    console.log(resultData);
+    const teamIds = resultData.team.map(({ e }) => Number(e));
+    const captainId = Number(resultData.captain.e);
+    parseResult({ teamIds, captainId });
     process.exit(0);
   } catch (e) {
     console.error(e);

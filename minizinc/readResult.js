@@ -1,10 +1,10 @@
-import players from '../data/players';
 import result from './fantasy-result';
+import parseResult from './parseResult';
 
 const main = async () => {
-  const team = result.ids.map((id) => players.find((p) => p.id === id));
-  const captain = players.find((p) => p.id === result.captain);
-  result({ team, captain });
+  const teamIds = result.ids;
+  const captainId = result.captain;
+  parseResult({ teamIds, captainId });
 };
 
 main();

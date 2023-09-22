@@ -1,7 +1,10 @@
+import players from '../data/players';
 import squads from '../data/squads';
 import { ROUND } from './params';
 
-const parseResult = async ({ team, captain }) => {
+const parseResult = ({ teamIds, captainId }) => {
+  const team = teamIds.map((id) => players.find((p) => p.id === id));
+  const captain = players.find((p) => p.id === captainId);
   team.sort((p1, p2) => positionToInt(p1) - positionToInt(p2));
   team.splice(2, 0, team.splice(1, 1)[0]);
   team.splice(11, 0, team.splice(14, 1)[0]);
