@@ -57,3 +57,43 @@ Points : 934 - Cost: 82.5
 15. Niniashvili Davit (GEO - 7) - 84
 
 Points : 1064 - Cost: 90.5
+
+## After game 5
+
+1.  Gallo Thomas (ARG - 4.5) - 41
+2.  Dan Theo (ENG - 7) - 71
+3.  Gigashvili Beka (GEO - 4.5) - 24
+4.  Madeira Jose (POR - 3) - 30
+5.  Martins Nicolas (POR - 3) - 39
+6.  Jalagonia Tornike (GEO - 5.5) - 33
+7.  Ardao Manuel (URU - 2.5) - 52
+8.  Cannone Lorenzo (ITA - 5) - 45
+9.  Dupont Antoine (FRA - 11) - 106
+10. Portela Jeronimo (POR - 5.5) - 58
+11. (c) Penaud Damian (FRA - 10) - 166
+12. Fickou Gael (FRA - 10) - 52
+13. Lawrence Ollie (ENG - 7) - 41
+14. Arundell Henry (ENG - 7) - 128
+15. Niniashvili Davit (GEO - 7) - 84
+
+Points : 1136 - Cost: 92.5
+
+## After game 6
+
+1.  Gallo Thomas (ARG - 4.5) - 41
+2.  Montoya Julian (ARG - 7.5) - 56
+3.  Malherbe Frans (RSA - 6) - 34
+4.  Madeira Jose (POR - 3) - 30
+5.  Martins Nicolas (POR - 3) - 39
+6.  Willis Jack (ENG - 5.5) - 58
+7.  Ardao Manuel (URU - 2.5) - 52
+8.  Cannone Lorenzo (ITA - 5) - 45
+9.  Dupont Antoine (FRA - 11) - 106
+10. Garbisi Paolo (ITA - 8.5) - 51
+11. (c) Penaud Damian (FRA - 10) - 166
+12. Fickou Gael (FRA - 10) - 52
+13. Lawrence Ollie (ENG - 7) - 41
+14. Arundell Henry (ENG - 7) - 128
+15. Niniashvili Davit (GEO - 7) - 84
+
+Points : 1149 - Cost: 97.5
