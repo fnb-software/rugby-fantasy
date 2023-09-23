@@ -15,7 +15,8 @@
 13. Greyling JC (NAM - 3) - 22
 14. Freitas Nicolas (URU - 4) - 30
 15. Bielle-Biarrey Louis (FRA - 7) - 91
-    Points : 848 - Cost: 79.5
+
+Points : 848 - Cost: 79.5
 
 ## After game 3
 
@@ -34,4 +35,5 @@
 13. Ignacio Brex Juan (ITA - 6.5) - 37
 14. Bielle-Biarrey Louis (FRA - 7) - 91
 15. Boffelli Emiliano (ARG - 7) - 29
-    Points : 934 - Cost: 82.5
+
+Points : 934 - Cost: 82.5

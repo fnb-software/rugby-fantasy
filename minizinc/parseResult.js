@@ -16,6 +16,7 @@ const parseResult = ({ teamIds, captainId }) => {
       } - ${p.cost / 1000000}) - ${p.stats.scores?.[ROUND] || 'N/A'} `
     );
   });
+  console.log('');
   console.log(
     'Points : ',
     team.reduce(
