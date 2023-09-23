@@ -5,6 +5,7 @@ const file = './minizinc/fantasy-data.mzn';
 const MAX_PER_TEAM = 3;
 
 const getDzn = () => {
+  //const players = players1.filter((p) => p.cost <= 6500000); // No star
   const squadIds = Array.from(
     players.reduce((squads, p) => {
       squads.add(p.squadId);

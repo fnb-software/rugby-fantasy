@@ -23,6 +23,7 @@ array[1..15] of var Players: team;
 
 
 constraint sum (p in team) (cost[p]) <= 1000;
+% low cost 750
 constraint alldifferent (team);
 constraint distribute([2, 1, 2, 3, 1, 1, 3, 2], [1, 2, 4, 6, 9, 10, 11, 12], [position[p] | p in team]); 
 constraint global_cardinality([squad[p] | p in team], squadIds, lbound, ubound); 

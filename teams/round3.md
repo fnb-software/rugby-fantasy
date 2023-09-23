@@ -97,3 +97,43 @@ Points : 1136 - Cost: 92.5
 15. Niniashvili Davit (GEO - 7) - 84
 
 Points : 1149 - Cost: 97.5
+
+#### No star team (cost<7)
+
+1.  Gallo Thomas (ARG - 4.5) - 41
+2.  Mamukashvili Shalva (GEO - 5) - 36
+3.  Malherbe Frans (RSA - 6) - 34
+4.  Martins Nicolas (POR - 3) - 39
+5.  Ribbans David (ENG - 5.5) - 28
+6.  Ardao Manuel (URU - 2.5) - 52
+7.  Cannone Lorenzo (ITA - 5) - 45
+8.  Willis Jack (ENG - 5.5) - 58
+9.  Taumateine Jonathan (SAM - 5.5) - 29
+10. Portela Jeronimo (POR - 5.5) - 58
+11. (c) Storti Raffaele (POR - 3) - 77
+12. Ignacio Brex Juan (ITA - 6.5) - 37
+13. Garafulic Matias (CHI - 3.5) - 24
+14. Ioane Monty (ITA - 5) - 39
+15. Tabutsadze Aka (GEO - 6) - 48
+
+Points : 722 - Cost: 72
+
+#### Low cost team (budget 75)
+
+1.  Coetzee Aranos (NAM - 3) - 21
+2.  Dan Theo (ENG - 7) - 71
+3.  Sethie Des (NAM - 2.5) - 15
+4.  Madeira Jose (POR - 3) - 30
+5.  Martins Nicolas (POR - 3) - 39
+6.  Sigren Martin (CHI - 2) - 31
+7.  Ardao Manuel (URU - 2.5) - 52
+8.  Cannone Lorenzo (ITA - 5) - 45
+9.  Dupont Antoine (FRA - 11) - 106
+10. Smith Marcus (ENG - 10) - 99
+11. Storti Raffaele (POR - 3) - 77
+12. Manumua Tevita (ROU - 3) - N/A
+13. Greyling JC (NAM - 3) - 22
+14. Arundell Henry (ENG - 7) - 128
+15. (c) Penaud Damian (FRA - 10) - 166
+
+Points : 1068 - Cost: 75
