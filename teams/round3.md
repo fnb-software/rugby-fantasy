@@ -1,3 +1,21 @@
+1.  Malherbe Frans (RSA - 6) - 34
+2.  Dan Theo (ENG - 7) - 71
+3.  Tameifuna Ben (TGA - 4.5) - 55
+4.  Madeira Jose (POR - 3) - 31
+5.  Martins Nicolas (POR - 3) - 38
+6.  Cannone Lorenzo (ITA - 5) - 45
+7.  Ardao Manuel (URU - 2.5) - 52
+8.  Morgan Jac (WAL - 6.5) - 55
+9.  Dupont Antoine (FRA - 11) - 106
+10. Smith Marcus (ENG - 10) - 101
+11. Arundell Henry (ENG - 7) - 128
+12. Tompkins Nick (WAL - 7) - 39
+13. Fickou Gael (FRA - 10) - 52
+14. (c) Penaud Damian (FRA - 10) - 166
+15. Kinghorn Blair (SCO - 7.5) - 86
+
+Points : 1225 - Cost: 100
+
 ## After game 2
 
 1.
