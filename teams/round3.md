@@ -98,6 +98,26 @@ Points : 1136 - Cost: 92.5
 
 Points : 1188 - Cost: 99
 
+## After game 7
+
+1.  Gallo Thomas (ARG - 4.5) - 41
+2.  Dan Theo (ENG - 7) - 71
+3.  Tameifuna Ben (TGA - 4.5) - 55
+4.  Madeira Jose (POR - 3) - 31
+5.  Martins Nicolas (POR - 3) - 38
+6.  Darge Rory (SCO - 6.5) - 45
+7.  Ardao Manuel (URU - 2.5) - 52
+8.  Cannone Lorenzo (ITA - 5) - 45
+9.  Dupont Antoine (FRA - 11) - 106
+10. Smith Marcus (ENG - 10) - 101
+11. (c) Penaud Damian (FRA - 10) - 166
+12. Fickou Gael (FRA - 10) - 52
+13. Greyling JC (NAM - 3) - 22
+14. Arundell Henry (ENG - 7) - 128
+15. Van Der Merwe Duhan (SCO - 9.5) - 91
+
+Points : 1210 - Cost: 96.5
+
 #### No star team (cost<7)
 
 1.  Gallo Thomas (ARG - 4.5) - 41
