@@ -1,10 +1,12 @@
-import players from '../data/players';
+import allPlayers from '../data/players';
 import { ROUND, positionToInt } from './params';
-const file = './minizinc/fantasy-data.mzn';
 
 const MAX_PER_TEAM = 3;
 
 const getDzn = () => {
+  const players = allPlayers.filter(
+    (p) => p.stats.scores?.[ROUND] !== undefined
+  );
   //const players = players1.filter((p) => p.cost <= 6500000); // No star
   const squadIds = Array.from(
     players.reduce((squads, p) => {
