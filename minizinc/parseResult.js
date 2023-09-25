@@ -1,6 +1,6 @@
 import players from '../data/players';
 import squads from '../data/squads';
-import { ROUND } from './params';
+import { getPlayerScore } from './params';
 
 const parseResult = ({ teamIds, captainId }) => {
   const team = teamIds.map((id) => players.find((p) => p.id === id));
@@ -13,15 +13,15 @@ const parseResult = ({ teamIds, captainId }) => {
     console.log(
       `${i + 1}. ${p === captain ? '(c)' : ''} ${p.lastName} ${p.firstName} (${
         squads.find((s) => p.squadId === s.id)?.abbreviation
-      } - ${p.cost / 1000000}) - ${p.stats.scores?.[ROUND] || 'N/A'} `
+      } - ${p.cost / 1000000}) - ${getPlayerScore(p) || 'N/A'} `
     );
   });
   console.log('');
   console.log(
     'Points : ',
     team.reduce(
-      (total, p) => total + (p.stats.scores?.[ROUND] || 0),
-      captain.stats.scores[ROUND]
+      (total, p) => total + (getPlayerScore(p) || 0),
+      getPlayerScore(captain)
     ),
     ' - Cost: ',
     team.reduce((total, p) => total + p.cost, 0) / 1000000

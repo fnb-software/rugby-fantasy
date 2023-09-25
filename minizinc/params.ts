@@ -1,4 +1,4 @@
-export const ROUND = 1;
+import players from '../data/players';
 
 export const positionToInt = (p) => {
   switch (p.position[0]) {
@@ -20,3 +20,9 @@ export const positionToInt = (p) => {
       return 11;
   }
 };
+
+const ROUND = 3;
+
+export const getPlayerScore = (p: (typeof players)[number]) =>
+  //p.stats.totalPoints;
+  p.stats.scores?.[ROUND];

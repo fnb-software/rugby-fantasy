@@ -1,12 +1,10 @@
 import allPlayers from '../data/players';
-import { ROUND, positionToInt } from './params';
+import { getPlayerScore, positionToInt } from './params';
 
 const MAX_PER_TEAM = 3;
 
 const getDzn = () => {
-  const players = allPlayers.filter(
-    (p) => p.stats.scores?.[ROUND] !== undefined
-  );
+  const players = allPlayers.filter((p) => getPlayerScore(p) !== undefined);
   //const players = players1.filter((p) => p.cost <= 6500000); // No star
   const squadIds = Array.from(
     players.reduce((squads, p) => {
@@ -16,7 +14,7 @@ const getDzn = () => {
   );
   const data = `Players = {${players.map((p) => `'${p.id}'`)}};
   cost = [${players.map((p) => p.cost / 100000)}];
-  value = [${players.map((p) => p.stats.scores?.[ROUND] || 0)}];
+  value = [${players.map((p) => getPlayerScore(p) || 0)}];
   position = [${players.map(positionToInt)}];
   squad = [${players.map((p) => p.squadId)}];
   squadIds = [${squadIds}];
