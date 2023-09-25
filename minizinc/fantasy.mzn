@@ -1,6 +1,7 @@
 % Fantasy for the RWC (with data file)
 include "alldifferent.mzn";
 include "distribute.mzn";
+include "increasing.mzn";
 
 % Players available
 enum Players;
@@ -20,6 +21,7 @@ array[int] of int: ubound;
 array[int] of int: lbound; 
 
 array[1..15] of var Players: team;
+array[1..15] of var int: team_position = [position[p] | p in team];
 
 
 constraint sum (p in team) (cost[p]) <= 1000;
@@ -27,6 +29,7 @@ constraint sum (p in team) (cost[p]) <= 1000;
 constraint alldifferent (team);
 constraint distribute([2, 1, 2, 3, 1, 1, 3, 2], [1, 2, 4, 6, 9, 10, 11, 12], [position[p] | p in team]); 
 constraint global_cardinality([squad[p] | p in team], squadIds, lbound, ubound); 
+constraint increasing(team_position);
 
 var Players: captain;
 constraint captain in team;
