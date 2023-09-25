@@ -20,16 +20,24 @@ array[int] of int: squadIds;
 array[int] of int: ubound; 
 array[int] of int: lbound; 
 
+% Position identifiers
+set of int: position_identifiers = {1, 2, 4, 6, 9, 10, 11, 12};
+
 array[1..15] of var Players: team;
-array[1..15] of var int: team_position = [position[p] | p in team];
+array[1..15] of int: team_position = [1, 1, 2, 4, 4, 6, 6, 6, 9, 10, 11, 11, 11, 12, 12];
 
-
+% Connect team and team_position
+constraint forall (p in index_set(team)) (position[team[p]] = team_position[p]);
+% Maximum cost
 constraint sum (p in team) (cost[p]) <= 1000;
 % low cost 750
 constraint alldifferent (team);
-constraint distribute([2, 1, 2, 3, 1, 1, 3, 2], [1, 2, 4, 6, 9, 10, 11, 12], [position[p] | p in team]); 
 constraint global_cardinality([squad[p] | p in team], squadIds, lbound, ubound); 
-constraint increasing(team_position);
+
+% For each position, the players are ordered
+constraint forall (position_type in position_identifiers) (
+    increasing([team[p] | p in index_set(team) where team_position[p] = position_type])
+);
 
 var Players: captain;
 constraint captain in team;
