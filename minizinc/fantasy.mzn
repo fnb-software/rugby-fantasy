@@ -28,9 +28,9 @@ array[1..15] of int: team_position = [1, 1, 2, 4, 4, 6, 6, 6, 9, 10, 11, 11, 11,
 
 % Connect team and team_position
 constraint forall (p in index_set(team)) (position[team[p]] = team_position[p]);
-% Maximum cost
+% Maximum cost (for low cost use 750)
 constraint sum (p in team) (cost[p]) <= 1000;
-% low cost 750
+
 constraint alldifferent (team);
 constraint global_cardinality([squad[p] | p in team], squadIds, lbound, ubound); 
 
