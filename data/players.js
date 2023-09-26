@@ -15,17 +15,9 @@ export default [
       lastRoundPoints: 7,
       positionRank: 1,
       nextFixture: 28,
-      scores: {
-        1: 3,
-        3: 7,
-      },
+      scores: { 1: 3, 3: 7 },
     },
-    selected: {
-      1: 3.7,
-      2: 1.3,
-      3: 2.2,
-      4: 2.2,
-    },
+    selected: { 1: 3.7, 2: 1.3, 3: 2.2, 4: 2.2 },
   },
   {
     id: 2,
@@ -43,16 +35,9 @@ export default [
       lastRoundPoints: 7,
       positionRank: 38,
       nextFixture: 28,
-      scores: {
-        3: 7,
-      },
+      scores: { 3: 7 },
     },
-    selected: {
-      1: 1.3,
-      2: 0.8,
-      3: 0.7,
-      4: 0.8,
-    },
+    selected: { 1: 1.3, 2: 0.8, 3: 0.7, 4: 0.9 },
   },
   {
     id: 3,
@@ -70,17 +55,9 @@ export default [
       lastRoundPoints: 29,
       positionRank: 1,
       nextFixture: 28,
-      scores: {
-        1: 10,
-        3: 29,
-      },
+      scores: { 1: 10, 3: 29 },
     },
-    selected: {
-      1: 15.5,
-      2: 4.6,
-      3: 8.4,
-      4: 8.9,
-    },
+    selected: { 1: 15.5, 2: 4.6, 3: 8.4, 4: 9.4 },
   },
   {
     id: 4,
@@ -98,23 +75,15 @@ export default [
       lastRoundPoints: 44,
       positionRank: 2,
       nextFixture: 28,
-      scores: {
-        1: 6,
-        3: 44,
-      },
+      scores: { 1: 6, 3: 44 },
     },
-    selected: {
-      1: 3,
-      2: 1.1,
-      3: 1.9,
-      4: 2.2,
-    },
+    selected: { 1: 3, 2: 1.1, 3: 1.9, 4: 2.6 },
   },
   {
     id: 5,
     feedId: 18838,
     squadId: 10,
-    firstName: 'Mat\u00edas',
+    firstName: 'Matías',
     lastName: 'Moroni',
     position: ['outside_back'],
     cost: 6500000,
@@ -126,17 +95,9 @@ export default [
       lastRoundPoints: 10,
       positionRank: 3,
       nextFixture: 28,
-      scores: {
-        1: 4,
-        3: 10,
-      },
+      scores: { 1: 4, 3: 10 },
     },
-    selected: {
-      1: 0.3,
-      2: 0.2,
-      3: 0.5,
-      4: 0.5,
-    },
+    selected: { 1: 0.3, 2: 0.2, 3: 0.5, 4: 0.4 },
   },
   {
     id: 6,
@@ -154,17 +115,9 @@ export default [
       lastRoundPoints: 25,
       positionRank: 4,
       nextFixture: 28,
-      scores: {
-        1: 7,
-        3: 25,
-      },
+      scores: { 1: 7, 3: 25 },
     },
-    selected: {
-      1: 0.9,
-      2: 0.4,
-      3: 0.8,
-      4: 0.8,
-    },
+    selected: { 1: 0.9, 2: 0.4, 3: 0.8, 4: 0.8 },
   },
   {
     id: 7,
@@ -184,18 +137,13 @@ export default [
       nextFixture: 28,
       scores: null,
     },
-    selected: {
-      1: 0.6,
-      2: 0.4,
-      3: 0.4,
-      4: 0.4,
-    },
+    selected: { 1: 0.6, 2: 0.4, 3: 0.4, 4: 0.4 },
   },
   {
     id: 8,
     feedId: 38247,
     squadId: 10,
-    firstName: 'Mart\u00edn',
+    firstName: 'Martín',
     lastName: 'Bogado',
     position: ['outside_back'],
     cost: 6500000,
@@ -209,12 +157,7 @@ export default [
       nextFixture: 28,
       scores: null,
     },
-    selected: {
-      1: 0.1,
-      2: 0.1,
-      3: 0.1,
-      4: 0.1,
-    },
+    selected: { 1: 0.1, 2: 0.1, 3: 0.1, 4: 0.1 },
   },
   {
     id: 9,
@@ -234,12 +177,7 @@ export default [
       nextFixture: 28,
       scores: null,
     },
-    selected: {
-      1: 0.4,
-      2: 0.3,
-      3: 0.3,
-      4: 0.3,
-    },
+    selected: { 1: 0.4, 2: 0.3, 3: 0.3, 4: 0.3 },
   },
   {
     id: 10,
@@ -257,17 +195,9 @@ export default [
       lastRoundPoints: 3,
       positionRank: 1,
       nextFixture: 28,
-      scores: {
-        1: 8,
-        3: 3,
-      },
+      scores: { 1: 8, 3: 3 },
     },
-    selected: {
-      1: 1.5,
-      2: 0.5,
-      3: 0.5,
-      4: 0.6,
-    },
+    selected: { 1: 1.5, 2: 0.5, 3: 0.5, 4: 0.6 },
   },
   {
     id: 11,
@@ -285,17 +215,9 @@ export default [
       lastRoundPoints: 17,
       positionRank: 3,
       nextFixture: 28,
-      scores: {
-        1: 10,
-        3: 17,
-      },
+      scores: { 1: 10, 3: 17 },
     },
-    selected: {
-      1: 4.6,
-      2: 1.6,
-      3: 4.5,
-      4: 4.5,
-    },
+    selected: { 1: 4.6, 2: 1.6, 3: 4.5, 4: 4.4 },
   },
   {
     id: 12,
@@ -315,12 +237,7 @@ export default [
       nextFixture: 28,
       scores: null,
     },
-    selected: {
-      1: 0.7,
-      2: 0.5,
-      3: 0.4,
-      4: 0.5,
-    },
+    selected: { 1: 0.7, 2: 0.5, 3: 0.4, 4: 0.5 },
   },
   {
     id: 13,
@@ -338,23 +255,15 @@ export default [
       lastRoundPoints: 56,
       positionRank: 1,
       nextFixture: 28,
-      scores: {
-        1: 21,
-        3: 56,
-      },
+      scores: { 1: 21, 3: 56 },
     },
-    selected: {
-      1: 19.6,
-      2: 6.1,
-      3: 10,
-      4: 11.2,
-    },
+    selected: { 1: 19.6, 2: 6.1, 3: 10, 4: 12.7 },
   },
   {
     id: 14,
     feedId: 9049,
     squadId: 10,
-    firstName: 'Agust\u00edn',
+    firstName: 'Agustín',
     lastName: 'Creevy',
     position: ['hooker'],
     cost: 7000000,
@@ -366,17 +275,9 @@ export default [
       lastRoundPoints: -1,
       positionRank: 3,
       nextFixture: 28,
-      scores: {
-        1: 0,
-        3: -1,
-      },
+      scores: { 1: 0, 3: -1 },
     },
-    selected: {
-      1: 1.2,
-      2: 0.6,
-      3: 0.6,
-      4: 0.7,
-    },
+    selected: { 1: 1.2, 2: 0.6, 3: 0.6, 4: 0.7 },
   },
   {
     id: 15,
@@ -396,12 +297,7 @@ export default [
       nextFixture: 28,
       scores: null,
     },
-    selected: {
-      1: 0.2,
-      2: 0.1,
-      3: 0.1,
-      4: 0.1,
-    },
+    selected: { 1: 0.2, 2: 0.1, 3: 0.1, 4: 0.2 },
   },
   {
     id: 16,
@@ -419,16 +315,9 @@ export default [
       lastRoundPoints: null,
       positionRank: 2,
       nextFixture: 28,
-      scores: {
-        1: 6,
-      },
+      scores: { 1: 6 },
     },
-    selected: {
-      1: 4.5,
-      2: 1.5,
-      3: 1.4,
-      4: 1.5,
-    },
+    selected: { 1: 4.5, 2: 1.5, 3: 1.4, 4: 1.5 },
   },
   {
     id: 17,
@@ -446,17 +335,9 @@ export default [
       lastRoundPoints: 27,
       positionRank: 4,
       nextFixture: 28,
-      scores: {
-        1: 11,
-        3: 27,
-      },
+      scores: { 1: 11, 3: 27 },
     },
-    selected: {
-      1: 12.3,
-      2: 3.5,
-      3: 6.4,
-      4: 6.6,
-    },
+    selected: { 1: 12.3, 2: 3.5, 3: 6.4, 4: 6.8 },
   },
   {
     id: 18,
@@ -474,17 +355,9 @@ export default [
       lastRoundPoints: 2,
       positionRank: 6,
       nextFixture: 28,
-      scores: {
-        1: 4,
-        3: 2,
-      },
+      scores: { 1: 4, 3: 2 },
     },
-    selected: {
-      1: 3.1,
-      2: 0.8,
-      3: 1.6,
-      4: 1.6,
-    },
+    selected: { 1: 3.1, 2: 0.8, 3: 1.6, 4: 1.5 },
   },
   {
     id: 19,
@@ -502,17 +375,9 @@ export default [
       lastRoundPoints: 23,
       positionRank: 8,
       nextFixture: 28,
-      scores: {
-        1: 15,
-        3: 23,
-      },
+      scores: { 1: 15, 3: 23 },
     },
-    selected: {
-      1: 10.4,
-      2: 5.2,
-      3: 12.3,
-      4: 12.3,
-    },
+    selected: { 1: 10.4, 2: 5.2, 3: 12.3, 4: 12.2 },
   },
   {
     id: 20,
@@ -530,17 +395,9 @@ export default [
       lastRoundPoints: 21,
       positionRank: 1,
       nextFixture: 28,
-      scores: {
-        1: 20,
-        3: 21,
-      },
+      scores: { 1: 20, 3: 21 },
     },
-    selected: {
-      1: 4.7,
-      2: 1.6,
-      3: 3.3,
-      4: 3.4,
-    },
+    selected: { 1: 4.7, 2: 1.6, 3: 3.3, 4: 3.3 },
   },
   {
     id: 21,
@@ -560,12 +417,7 @@ export default [
       nextFixture: 28,
       scores: null,
     },
-    selected: {
-      1: 0.4,
-      2: 0.3,
-      3: 0.2,
-      4: 0.3,
-    },
+    selected: { 1: 0.4, 2: 0.3, 3: 0.2, 4: 0.3 },
   },
   {
     id: 22,
@@ -583,17 +435,9 @@ export default [
       lastRoundPoints: 24,
       positionRank: 4,
       nextFixture: 28,
-      scores: {
-        1: 22,
-        3: 24,
-      },
+      scores: { 1: 22, 3: 24 },
     },
-    selected: {
-      1: 20.6,
-      2: 6.7,
-      3: 15.2,
-      4: 15.4,
-    },
+    selected: { 1: 20.6, 2: 6.7, 3: 15.2, 4: 15.6 },
   },
   {
     id: 23,
@@ -613,12 +457,7 @@ export default [
       nextFixture: 28,
       scores: null,
     },
-    selected: {
-      1: 0.2,
-      2: 0.1,
-      3: 0.1,
-      4: 0.1,
-    },
+    selected: { 1: 0.2, 2: 0.1, 3: 0.1, 4: 0.1 },
   },
   {
     id: 24,
@@ -636,17 +475,9 @@ export default [
       lastRoundPoints: 7,
       positionRank: 9,
       nextFixture: 28,
-      scores: {
-        1: 17,
-        3: 7,
-      },
+      scores: { 1: 17, 3: 7 },
     },
-    selected: {
-      1: 0.5,
-      2: 0.4,
-      3: 0.4,
-      4: 0.5,
-    },
+    selected: { 1: 0.5, 2: 0.4, 3: 0.4, 4: 0.5 },
   },
   {
     id: 25,
@@ -664,17 +495,9 @@ export default [
       lastRoundPoints: 5,
       positionRank: 10,
       nextFixture: 28,
-      scores: {
-        1: 4,
-        3: 5,
-      },
+      scores: { 1: 4, 3: 5 },
     },
-    selected: {
-      1: 0.3,
-      2: 0.2,
-      3: 0.3,
-      4: 0.3,
-    },
+    selected: { 1: 0.3, 2: 0.2, 3: 0.3, 4: 0.3 },
   },
   {
     id: 26,
@@ -692,17 +515,9 @@ export default [
       lastRoundPoints: 41,
       positionRank: 3,
       nextFixture: 28,
-      scores: {
-        1: 27,
-        3: 41,
-      },
+      scores: { 1: 27, 3: 41 },
     },
-    selected: {
-      1: 7.5,
-      2: 2.7,
-      3: 11.5,
-      4: 13.2,
-    },
+    selected: { 1: 7.5, 2: 2.7, 3: 11.5, 4: 15.3 },
   },
   {
     id: 27,
@@ -722,19 +537,14 @@ export default [
       nextFixture: 28,
       scores: null,
     },
-    selected: {
-      1: 0.4,
-      2: 0.2,
-      3: 0.2,
-      4: 0.2,
-    },
+    selected: { 1: 0.4, 2: 0.2, 3: 0.2, 4: 0.2 },
   },
   {
     id: 28,
     feedId: 18980,
     squadId: 10,
     firstName: 'Francisco',
-    lastName: 'G\u00f3mez Kodela',
+    lastName: 'Gómez Kodela',
     position: ['prop'],
     cost: 4000000,
     status: 'uncertain',
@@ -745,17 +555,9 @@ export default [
       lastRoundPoints: 17,
       positionRank: 5,
       nextFixture: 28,
-      scores: {
-        1: 3,
-        3: 17,
-      },
+      scores: { 1: 3, 3: 17 },
     },
-    selected: {
-      1: 1.9,
-      2: 0.4,
-      3: 0.4,
-      4: 0.5,
-    },
+    selected: { 1: 1.9, 2: 0.4, 3: 0.4, 4: 0.6 },
   },
   {
     id: 29,
@@ -773,16 +575,9 @@ export default [
       lastRoundPoints: null,
       positionRank: 8,
       nextFixture: 28,
-      scores: {
-        1: 0,
-      },
+      scores: { 1: 0 },
     },
-    selected: {
-      1: 0.2,
-      2: 0.1,
-      3: 0.1,
-      4: 0.1,
-    },
+    selected: { 1: 0.2, 2: 0.1, 3: 0.1, 4: 0.2 },
   },
   {
     id: 30,
@@ -800,17 +595,9 @@ export default [
       lastRoundPoints: 10,
       positionRank: 10,
       nextFixture: 28,
-      scores: {
-        1: 1,
-        3: 10,
-      },
+      scores: { 1: 1, 3: 10 },
     },
-    selected: {
-      1: 0.1,
-      2: 0.1,
-      3: 1.7,
-      4: 1.6,
-    },
+    selected: { 1: 0.1, 2: 0.1, 3: 1.7, 4: 1.5 },
   },
   {
     id: 31,
@@ -828,17 +615,9 @@ export default [
       lastRoundPoints: 7,
       positionRank: 5,
       nextFixture: 28,
-      scores: {
-        1: 7,
-        3: 7,
-      },
+      scores: { 1: 7, 3: 7 },
     },
-    selected: {
-      1: 2.5,
-      2: 0.8,
-      3: 2.1,
-      4: 2,
-    },
+    selected: { 1: 2.5, 2: 0.8, 3: 2.1, 4: 2 },
   },
   {
     id: 32,
@@ -856,16 +635,9 @@ export default [
       lastRoundPoints: 1,
       positionRank: 50,
       nextFixture: 28,
-      scores: {
-        3: 1,
-      },
+      scores: { 3: 1 },
     },
-    selected: {
-      1: 0.3,
-      2: 0.2,
-      3: 0.2,
-      4: 0.2,
-    },
+    selected: { 1: 0.3, 2: 0.2, 3: 0.2, 4: 0.2 },
   },
   {
     id: 33,
@@ -883,16 +655,9 @@ export default [
       lastRoundPoints: null,
       positionRank: 7,
       nextFixture: 28,
-      scores: {
-        1: 12,
-      },
+      scores: { 1: 12 },
     },
-    selected: {
-      1: 0.1,
-      2: 0.1,
-      3: 0.2,
-      4: 0.2,
-    },
+    selected: { 1: 0.1, 2: 0.1, 3: 0.2, 4: 0.2 },
   },
   {
     id: 34,
@@ -910,18 +675,9 @@ export default [
       lastRoundPoints: 8,
       positionRank: 6,
       nextFixture: 31,
-      scores: {
-        1: 23,
-        2: 1,
-        3: 8,
-      },
+      scores: { 1: 23, 2: 1, 3: 8 },
     },
-    selected: {
-      1: 5.1,
-      2: 2.1,
-      3: 1.5,
-      4: 1.5,
-    },
+    selected: { 1: 5.1, 2: 2.1, 3: 1.5, 4: 1.5 },
   },
   {
     id: 35,
@@ -939,18 +695,9 @@ export default [
       lastRoundPoints: 32,
       positionRank: 7,
       nextFixture: 31,
-      scores: {
-        1: 75,
-        2: 21,
-        3: 32,
-      },
+      scores: { 1: 75, 2: 21, 3: 32 },
     },
-    selected: {
-      1: 0.6,
-      2: 5.2,
-      3: 6,
-      4: 6.3,
-    },
+    selected: { 1: 0.6, 2: 5.2, 3: 6, 4: 6.8 },
   },
   {
     id: 36,
@@ -968,16 +715,9 @@ export default [
       lastRoundPoints: 17,
       positionRank: 72,
       nextFixture: 31,
-      scores: {
-        3: 17,
-      },
+      scores: { 3: 17 },
     },
-    selected: {
-      1: 0.6,
-      2: 0.4,
-      3: 0.4,
-      4: 0.4,
-    },
+    selected: { 1: 0.6, 2: 0.4, 3: 0.4, 4: 0.5 },
   },
   {
     id: 37,
@@ -995,18 +735,9 @@ export default [
       lastRoundPoints: 11,
       positionRank: 12,
       nextFixture: 31,
-      scores: {
-        1: 27,
-        2: 6,
-        3: 11,
-      },
+      scores: { 1: 27, 2: 6, 3: 11 },
     },
-    selected: {
-      1: 13.5,
-      2: 7.3,
-      3: 5.6,
-      4: 5.6,
-    },
+    selected: { 1: 13.5, 2: 7.3, 3: 5.6, 4: 5.6 },
   },
   {
     id: 38,
@@ -1024,18 +755,9 @@ export default [
       lastRoundPoints: 17,
       positionRank: 13,
       nextFixture: 31,
-      scores: {
-        1: 57,
-        2: 35,
-        3: 17,
-      },
+      scores: { 1: 57, 2: 35, 3: 17 },
     },
-    selected: {
-      1: 5.4,
-      2: 10.5,
-      3: 10.2,
-      4: 10.7,
-    },
+    selected: { 1: 5.4, 2: 10.5, 3: 10.2, 4: 11.6 },
   },
   {
     id: 39,
@@ -1053,18 +775,9 @@ export default [
       lastRoundPoints: 5,
       positionRank: 14,
       nextFixture: 31,
-      scores: {
-        1: 33,
-        2: 14,
-        3: 5,
-      },
+      scores: { 1: 33, 2: 14, 3: 5 },
     },
-    selected: {
-      1: 2,
-      2: 3.5,
-      3: 2.8,
-      4: 2.8,
-    },
+    selected: { 1: 2, 2: 3.5, 3: 2.8, 4: 2.7 },
   },
   {
     id: 40,
@@ -1082,18 +795,9 @@ export default [
       lastRoundPoints: 5,
       positionRank: 15,
       nextFixture: 31,
-      scores: {
-        1: 14,
-        2: 25,
-        3: 5,
-      },
+      scores: { 1: 14, 2: 25, 3: 5 },
     },
-    selected: {
-      1: 0.8,
-      2: 0.6,
-      3: 0.7,
-      4: 0.7,
-    },
+    selected: { 1: 0.8, 2: 0.6, 3: 0.7, 4: 0.7 },
   },
   {
     id: 41,
@@ -1113,12 +817,7 @@ export default [
       nextFixture: 31,
       scores: null,
     },
-    selected: {
-      1: 0.7,
-      2: 0.5,
-      3: 0.5,
-      4: 0.5,
-    },
+    selected: { 1: 0.7, 2: 0.5, 3: 0.5, 4: 0.5 },
   },
   {
     id: 42,
@@ -1136,18 +835,9 @@ export default [
       lastRoundPoints: 8,
       positionRank: 7,
       nextFixture: 31,
-      scores: {
-        1: 8,
-        2: 32,
-        3: 8,
-      },
+      scores: { 1: 8, 2: 32, 3: 8 },
     },
-    selected: {
-      1: 12,
-      2: 4.1,
-      3: 5.5,
-      4: 5.6,
-    },
+    selected: { 1: 12, 2: 4.1, 3: 5.5, 4: 5.8 },
   },
   {
     id: 43,
@@ -1167,12 +857,7 @@ export default [
       nextFixture: 31,
       scores: null,
     },
-    selected: {
-      1: 0.5,
-      2: 0.3,
-      3: 0.3,
-      4: 0.3,
-    },
+    selected: { 1: 0.5, 2: 0.3, 3: 0.3, 4: 0.3 },
   },
   {
     id: 44,
@@ -1190,17 +875,9 @@ export default [
       lastRoundPoints: null,
       positionRank: 8,
       nextFixture: 31,
-      scores: {
-        1: 0,
-        2: 5,
-      },
+      scores: { 1: 0, 2: 5 },
     },
-    selected: {
-      1: 1.1,
-      2: 0.7,
-      3: 0.6,
-      4: 0.6,
-    },
+    selected: { 1: 1.1, 2: 0.7, 3: 0.6, 4: 0.7 },
   },
   {
     id: 45,
@@ -1218,18 +895,9 @@ export default [
       lastRoundPoints: 15,
       positionRank: 7,
       nextFixture: 31,
-      scores: {
-        1: 25,
-        2: 28,
-        3: 15,
-      },
+      scores: { 1: 25, 2: 28, 3: 15 },
     },
-    selected: {
-      1: 2.2,
-      2: 2.3,
-      3: 2.5,
-      4: 2.5,
-    },
+    selected: { 1: 2.2, 2: 2.3, 3: 2.5, 4: 2.5 },
   },
   {
     id: 46,
@@ -1247,16 +915,9 @@ export default [
       lastRoundPoints: null,
       positionRank: 33,
       nextFixture: 31,
-      scores: {
-        2: 2,
-      },
+      scores: { 2: 2 },
     },
-    selected: {
-      1: 0.2,
-      2: 0.2,
-      3: 0.2,
-      4: 0.2,
-    },
+    selected: { 1: 0.2, 2: 0.2, 3: 0.2, 4: 0.2 },
   },
   {
     id: 47,
@@ -1274,17 +935,9 @@ export default [
       lastRoundPoints: 9,
       positionRank: 8,
       nextFixture: 31,
-      scores: {
-        1: 15,
-        3: 9,
-      },
+      scores: { 1: 15, 3: 9 },
     },
-    selected: {
-      1: 0.4,
-      2: 0.4,
-      3: 0.3,
-      4: 0.3,
-    },
+    selected: { 1: 0.4, 2: 0.4, 3: 0.3, 4: 0.4 },
   },
   {
     id: 48,
@@ -1302,16 +955,9 @@ export default [
       lastRoundPoints: null,
       positionRank: 11,
       nextFixture: 31,
-      scores: {
-        1: 24,
-      },
+      scores: { 1: 24 },
     },
-    selected: {
-      1: 15.7,
-      2: 9.7,
-      3: 5.7,
-      4: 5.7,
-    },
+    selected: { 1: 15.7, 2: 9.7, 3: 5.7, 4: 5.7 },
   },
   {
     id: 49,
@@ -1329,17 +975,9 @@ export default [
       lastRoundPoints: 15,
       positionRank: 57,
       nextFixture: 31,
-      scores: {
-        2: 39,
-        3: 15,
-      },
+      scores: { 2: 39, 3: 15 },
     },
-    selected: {
-      1: 0.8,
-      2: 1.4,
-      3: 3.1,
-      4: 3.4,
-    },
+    selected: { 1: 0.8, 2: 1.4, 3: 3.1, 4: 3.9 },
   },
   {
     id: 50,
@@ -1357,18 +995,9 @@ export default [
       lastRoundPoints: 15,
       positionRank: 12,
       nextFixture: 31,
-      scores: {
-        1: 15,
-        2: 7,
-        3: 15,
-      },
+      scores: { 1: 15, 2: 7, 3: 15 },
     },
-    selected: {
-      1: 4.2,
-      2: 2,
-      3: 2,
-      4: 2,
-    },
+    selected: { 1: 4.2, 2: 2, 3: 2, 4: 2 },
   },
   {
     id: 51,
@@ -1386,17 +1015,9 @@ export default [
       lastRoundPoints: 4,
       positionRank: 58,
       nextFixture: 31,
-      scores: {
-        2: 2,
-        3: 4,
-      },
+      scores: { 2: 2, 3: 4 },
     },
-    selected: {
-      1: 0.3,
-      2: 0.3,
-      3: 0.2,
-      4: 0.2,
-    },
+    selected: { 1: 0.3, 2: 0.3, 3: 0.2, 4: 0.3 },
   },
   {
     id: 52,
@@ -1414,18 +1035,9 @@ export default [
       lastRoundPoints: 13,
       positionRank: 14,
       nextFixture: 31,
-      scores: {
-        1: 20,
-        2: 17,
-        3: 13,
-      },
+      scores: { 1: 20, 2: 17, 3: 13 },
     },
-    selected: {
-      1: 12.1,
-      2: 5.7,
-      3: 5.8,
-      4: 5.9,
-    },
+    selected: { 1: 12.1, 2: 5.7, 3: 5.8, 4: 6.1 },
   },
   {
     id: 53,
@@ -1443,18 +1055,9 @@ export default [
       lastRoundPoints: 12,
       positionRank: 15,
       nextFixture: 31,
-      scores: {
-        1: 23,
-        2: 18,
-        3: 12,
-      },
+      scores: { 1: 23, 2: 18, 3: 12 },
     },
-    selected: {
-      1: 3.7,
-      2: 3.2,
-      3: 1.7,
-      4: 1.9,
-    },
+    selected: { 1: 3.7, 2: 3.2, 3: 1.7, 4: 2.2 },
   },
   {
     id: 54,
@@ -1474,12 +1077,7 @@ export default [
       nextFixture: 31,
       scores: null,
     },
-    selected: {
-      1: 0.2,
-      2: 0.1,
-      3: 0.1,
-      4: 0.1,
-    },
+    selected: { 1: 0.2, 2: 0.1, 3: 0.1, 4: 0.1 },
   },
   {
     id: 55,
@@ -1497,16 +1095,9 @@ export default [
       lastRoundPoints: null,
       positionRank: 16,
       nextFixture: 31,
-      scores: {
-        1: 1,
-      },
+      scores: { 1: 1 },
     },
-    selected: {
-      1: 0.3,
-      2: 0.2,
-      3: 0.2,
-      4: 0.2,
-    },
+    selected: { 1: 0.3, 2: 0.2, 3: 0.2, 4: 0.2 },
   },
   {
     id: 56,
@@ -1524,18 +1115,9 @@ export default [
       lastRoundPoints: 13,
       positionRank: 18,
       nextFixture: 31,
-      scores: {
-        1: 19,
-        2: 14,
-        3: 13,
-      },
+      scores: { 1: 19, 2: 14, 3: 13 },
     },
-    selected: {
-      1: 7.3,
-      2: 5.2,
-      3: 5.3,
-      4: 5.2,
-    },
+    selected: { 1: 7.3, 2: 5.2, 3: 5.3, 4: 5.2 },
   },
   {
     id: 57,
@@ -1553,18 +1135,9 @@ export default [
       lastRoundPoints: 22,
       positionRank: 19,
       nextFixture: 31,
-      scores: {
-        1: 3,
-        2: 1,
-        3: 22,
-      },
+      scores: { 1: 3, 2: 1, 3: 22 },
     },
-    selected: {
-      1: 0.4,
-      2: 0.3,
-      3: 0.4,
-      4: 0.4,
-    },
+    selected: { 1: 0.4, 2: 0.3, 3: 0.4, 4: 0.4 },
   },
   {
     id: 58,
@@ -1582,16 +1155,9 @@ export default [
       lastRoundPoints: null,
       positionRank: 15,
       nextFixture: 31,
-      scores: {
-        1: 41,
-      },
+      scores: { 1: 41 },
     },
-    selected: {
-      1: 9,
-      2: 6.5,
-      3: 5.4,
-      4: 5.5,
-    },
+    selected: { 1: 9, 2: 6.5, 3: 5.4, 4: 5.8 },
   },
   {
     id: 59,
@@ -1609,17 +1175,9 @@ export default [
       lastRoundPoints: null,
       positionRank: 17,
       nextFixture: 31,
-      scores: {
-        1: 7,
-        2: 2,
-      },
+      scores: { 1: 7, 2: 2 },
     },
-    selected: {
-      1: 0.3,
-      2: 0.2,
-      3: 0.2,
-      4: 0.2,
-    },
+    selected: { 1: 0.3, 2: 0.2, 3: 0.2, 4: 0.2 },
   },
   {
     id: 60,
@@ -1637,17 +1195,9 @@ export default [
       lastRoundPoints: 7,
       positionRank: 67,
       nextFixture: 31,
-      scores: {
-        2: 10,
-        3: 7,
-      },
+      scores: { 2: 10, 3: 7 },
     },
-    selected: {
-      1: 1.5,
-      2: 1.8,
-      3: 1.3,
-      4: 1.3,
-    },
+    selected: { 1: 1.5, 2: 1.8, 3: 1.3, 4: 1.3 },
   },
   {
     id: 61,
@@ -1665,18 +1215,9 @@ export default [
       lastRoundPoints: 21,
       positionRank: 20,
       nextFixture: 31,
-      scores: {
-        1: 12,
-        2: 30,
-        3: 21,
-      },
+      scores: { 1: 12, 2: 30, 3: 21 },
     },
-    selected: {
-      1: 24,
-      2: 13.1,
-      3: 18.5,
-      4: 18.6,
-    },
+    selected: { 1: 24, 2: 13.1, 3: 18.5, 4: 19 },
   },
   {
     id: 62,
@@ -1694,16 +1235,9 @@ export default [
       lastRoundPoints: 9,
       positionRank: 93,
       nextFixture: 31,
-      scores: {
-        3: 9,
-      },
+      scores: { 3: 9 },
     },
-    selected: {
-      1: 0.3,
-      2: 0.2,
-      3: 0.2,
-      4: 0.2,
-    },
+    selected: { 1: 0.3, 2: 0.2, 3: 0.2, 4: 0.2 },
   },
   {
     id: 63,
@@ -1721,18 +1255,9 @@ export default [
       lastRoundPoints: 8,
       positionRank: 21,
       nextFixture: 31,
-      scores: {
-        1: 14,
-        2: 1,
-        3: 8,
-      },
+      scores: { 1: 14, 2: 1, 3: 8 },
     },
-    selected: {
-      1: 0.1,
-      2: 0.3,
-      3: 0.2,
-      4: 0.3,
-    },
+    selected: { 1: 0.1, 2: 0.3, 3: 0.2, 4: 0.3 },
   },
   {
     id: 64,
@@ -1750,18 +1275,9 @@ export default [
       lastRoundPoints: 7,
       positionRank: 12,
       nextFixture: 31,
-      scores: {
-        1: 2,
-        2: 10,
-        3: 7,
-      },
+      scores: { 1: 2, 2: 10, 3: 7 },
     },
-    selected: {
-      1: 1.9,
-      2: 1.7,
-      3: 1.2,
-      4: 1.2,
-    },
+    selected: { 1: 1.9, 2: 1.7, 3: 1.2, 4: 1.3 },
   },
   {
     id: 65,
@@ -1779,17 +1295,9 @@ export default [
       lastRoundPoints: 19,
       positionRank: 14,
       nextFixture: 31,
-      scores: {
-        1: 18,
-        3: 19,
-      },
+      scores: { 1: 18, 3: 19 },
     },
-    selected: {
-      1: 6.9,
-      2: 1.6,
-      3: 1.9,
-      4: 2,
-    },
+    selected: { 1: 6.9, 2: 1.6, 3: 1.9, 4: 2.2 },
   },
   {
     id: 66,
@@ -1807,16 +1315,9 @@ export default [
       lastRoundPoints: null,
       positionRank: 38,
       nextFixture: 31,
-      scores: {
-        2: 4,
-      },
+      scores: { 2: 4 },
     },
-    selected: {
-      1: 0.1,
-      2: 0.1,
-      3: 0.1,
-      4: 0.1,
-    },
+    selected: { 1: 0.1, 2: 0.1, 3: 0.1, 4: 0.1 },
   },
   {
     id: 67,
@@ -1834,18 +1335,9 @@ export default [
       lastRoundPoints: 10,
       positionRank: 9,
       nextFixture: 28,
-      scores: {
-        1: 20,
-        2: 30,
-        3: 10,
-      },
+      scores: { 1: 20, 2: 30, 3: 10 },
     },
-    selected: {
-      1: 0.8,
-      2: 1,
-      3: 0.9,
-      4: 0.9,
-    },
+    selected: { 1: 0.8, 2: 1, 3: 0.9, 4: 0.9 },
   },
   {
     id: 68,
@@ -1863,17 +1355,9 @@ export default [
       lastRoundPoints: null,
       positionRank: 20,
       nextFixture: 28,
-      scores: {
-        1: 31,
-        2: 6,
-      },
+      scores: { 1: 31, 2: 6 },
     },
-    selected: {
-      1: 0.8,
-      2: 2.4,
-      3: 0.8,
-      4: 0.8,
-    },
+    selected: { 1: 0.8, 2: 2.4, 3: 0.8, 4: 0.8 },
   },
   {
     id: 69,
@@ -1893,12 +1377,7 @@ export default [
       nextFixture: 28,
       scores: null,
     },
-    selected: {
-      1: 0.2,
-      2: 0.2,
-      3: 0.2,
-      4: 0.2,
-    },
+    selected: { 1: 0.2, 2: 0.2, 3: 0.2, 4: 0.2 },
   },
   {
     id: 70,
@@ -1916,17 +1395,9 @@ export default [
       lastRoundPoints: 13,
       positionRank: 22,
       nextFixture: 28,
-      scores: {
-        1: 10,
-        3: 13,
-      },
+      scores: { 1: 10, 3: 13 },
     },
-    selected: {
-      1: 1.4,
-      2: 0.8,
-      3: 0.9,
-      4: 0.9,
-    },
+    selected: { 1: 1.4, 2: 0.8, 3: 0.9, 4: 0.9 },
   },
   {
     id: 71,
@@ -1944,16 +1415,9 @@ export default [
       lastRoundPoints: 8,
       positionRank: 75,
       nextFixture: 28,
-      scores: {
-        3: 8,
-      },
+      scores: { 3: 8 },
     },
-    selected: {
-      1: 0.4,
-      2: 0.4,
-      3: 0.6,
-      4: 0.6,
-    },
+    selected: { 1: 0.4, 2: 0.4, 3: 0.6, 4: 0.5 },
   },
   {
     id: 72,
@@ -1971,18 +1435,9 @@ export default [
       lastRoundPoints: 6,
       positionRank: 12,
       nextFixture: 28,
-      scores: {
-        1: 35,
-        2: 32,
-        3: 6,
-      },
+      scores: { 1: 35, 2: 32, 3: 6 },
     },
-    selected: {
-      1: 0.9,
-      2: 2.4,
-      3: 1.5,
-      4: 1.5,
-    },
+    selected: { 1: 0.9, 2: 2.4, 3: 1.5, 4: 1.5 },
   },
   {
     id: 73,
@@ -2000,18 +1455,9 @@ export default [
       lastRoundPoints: 24,
       positionRank: 14,
       nextFixture: 28,
-      scores: {
-        1: 23,
-        2: 17,
-        3: 24,
-      },
+      scores: { 1: 23, 2: 17, 3: 24 },
     },
-    selected: {
-      1: 0.8,
-      2: 1.1,
-      3: 2,
-      4: 1.9,
-    },
+    selected: { 1: 0.8, 2: 1.1, 3: 2, 4: 1.8 },
   },
   {
     id: 74,
@@ -2029,16 +1475,9 @@ export default [
       lastRoundPoints: null,
       positionRank: 55,
       nextFixture: 28,
-      scores: {
-        2: 3,
-      },
+      scores: { 2: 3 },
     },
-    selected: {
-      1: 0.5,
-      2: 0.4,
-      3: 0.4,
-      4: 0.4,
-    },
+    selected: { 1: 0.5, 2: 0.4, 3: 0.4, 4: 0.4 },
   },
   {
     id: 75,
@@ -2056,17 +1495,9 @@ export default [
       lastRoundPoints: null,
       positionRank: 17,
       nextFixture: 28,
-      scores: {
-        1: 4,
-        2: 9,
-      },
+      scores: { 1: 4, 2: 9 },
     },
-    selected: {
-      1: 1.5,
-      2: 1.2,
-      3: 1,
-      4: 0.9,
-    },
+    selected: { 1: 1.5, 2: 1.2, 3: 1, 4: 0.9 },
   },
   {
     id: 76,
@@ -2084,18 +1515,9 @@ export default [
       lastRoundPoints: 14,
       positionRank: 19,
       nextFixture: 28,
-      scores: {
-        1: 16,
-        2: 15,
-        3: 14,
-      },
+      scores: { 1: 16, 2: 15, 3: 14 },
     },
-    selected: {
-      1: 1.2,
-      2: 1.2,
-      3: 1.3,
-      4: 1.3,
-    },
+    selected: { 1: 1.2, 2: 1.2, 3: 1.3, 4: 1.2 },
   },
   {
     id: 77,
@@ -2113,17 +1535,9 @@ export default [
       lastRoundPoints: 16,
       positionRank: 11,
       nextFixture: 28,
-      scores: {
-        1: 6,
-        3: 16,
-      },
+      scores: { 1: 6, 3: 16 },
     },
-    selected: {
-      1: 0.1,
-      2: 0.1,
-      3: 0.6,
-      4: 0.6,
-    },
+    selected: { 1: 0.1, 2: 0.1, 3: 0.6, 4: 0.5 },
   },
   {
     id: 78,
@@ -2141,17 +1555,9 @@ export default [
       lastRoundPoints: 3,
       positionRank: 36,
       nextFixture: 28,
-      scores: {
-        2: 15,
-        3: 3,
-      },
+      scores: { 2: 15, 3: 3 },
     },
-    selected: {
-      1: 0.1,
-      2: 3.6,
-      3: 0.6,
-      4: 0.5,
-    },
+    selected: { 1: 0.1, 2: 3.6, 3: 0.6, 4: 0.5 },
   },
   {
     id: 79,
@@ -2169,17 +1575,9 @@ export default [
       lastRoundPoints: null,
       positionRank: 14,
       nextFixture: 28,
-      scores: {
-        1: 37,
-        2: 5,
-      },
+      scores: { 1: 37, 2: 5 },
     },
-    selected: {
-      1: 2.8,
-      2: 3,
-      3: 1.9,
-      4: 1.9,
-    },
+    selected: { 1: 2.8, 2: 3, 3: 1.9, 4: 2 },
   },
   {
     id: 80,
@@ -2197,18 +1595,9 @@ export default [
       lastRoundPoints: 11,
       positionRank: 15,
       nextFixture: 28,
-      scores: {
-        1: 3,
-        2: 5,
-        3: 11,
-      },
+      scores: { 1: 3, 2: 5, 3: 11 },
     },
-    selected: {
-      1: 1.8,
-      2: 0.5,
-      3: 0.7,
-      4: 0.7,
-    },
+    selected: { 1: 1.8, 2: 0.5, 3: 0.7, 4: 0.7 },
   },
   {
     id: 81,
@@ -2226,18 +1615,9 @@ export default [
       lastRoundPoints: 3,
       positionRank: 17,
       nextFixture: 28,
-      scores: {
-        1: 5,
-        2: 6,
-        3: 3,
-      },
+      scores: { 1: 5, 2: 6, 3: 3 },
     },
-    selected: {
-      1: 0.2,
-      2: 2.1,
-      3: 0.4,
-      4: 0.4,
-    },
+    selected: { 1: 0.2, 2: 2.1, 3: 0.4, 4: 0.4 },
   },
   {
     id: 82,
@@ -2257,12 +1637,7 @@ export default [
       nextFixture: 28,
       scores: null,
     },
-    selected: {
-      1: 0.5,
-      2: 0.3,
-      3: 0.2,
-      4: 0.3,
-    },
+    selected: { 1: 0.5, 2: 0.3, 3: 0.2, 4: 0.3 },
   },
   {
     id: 83,
@@ -2280,17 +1655,9 @@ export default [
       lastRoundPoints: null,
       positionRank: 20,
       nextFixture: 28,
-      scores: {
-        1: 0,
-        2: 9,
-      },
+      scores: { 1: 0, 2: 9 },
     },
-    selected: {
-      1: 0.2,
-      2: 0.9,
-      3: 0.2,
-      4: 0.2,
-    },
+    selected: { 1: 0.2, 2: 0.9, 3: 0.2, 4: 0.2 },
   },
   {
     id: 84,
@@ -2308,18 +1675,9 @@ export default [
       lastRoundPoints: 8,
       positionRank: 21,
       nextFixture: 28,
-      scores: {
-        1: 31,
-        2: -3,
-        3: 8,
-      },
+      scores: { 1: 31, 2: -3, 3: 8 },
     },
-    selected: {
-      1: 2.3,
-      2: 2.1,
-      3: 2.5,
-      4: 2.5,
-    },
+    selected: { 1: 2.3, 2: 2.1, 3: 2.5, 4: 2.4 },
   },
   {
     id: 85,
@@ -2337,18 +1695,9 @@ export default [
       lastRoundPoints: 10,
       positionRank: 23,
       nextFixture: 28,
-      scores: {
-        1: 15,
-        2: 7,
-        3: 10,
-      },
+      scores: { 1: 15, 2: 7, 3: 10 },
     },
-    selected: {
-      1: 1.9,
-      2: 2,
-      3: 1,
-      4: 1,
-    },
+    selected: { 1: 1.9, 2: 2, 3: 1, 4: 1 },
   },
   {
     id: 86,
@@ -2366,18 +1715,9 @@ export default [
       lastRoundPoints: 19,
       positionRank: 25,
       nextFixture: 28,
-      scores: {
-        1: 29,
-        2: 14,
-        3: 19,
-      },
+      scores: { 1: 29, 2: 14, 3: 19 },
     },
-    selected: {
-      1: 1.2,
-      2: 5.1,
-      3: 6.5,
-      4: 6.3,
-    },
+    selected: { 1: 1.2, 2: 5.1, 3: 6.5, 4: 5.9 },
   },
   {
     id: 87,
@@ -2395,18 +1735,9 @@ export default [
       lastRoundPoints: 31,
       positionRank: 26,
       nextFixture: 28,
-      scores: {
-        1: 5,
-        2: 16,
-        3: 31,
-      },
+      scores: { 1: 5, 2: 16, 3: 31 },
     },
-    selected: {
-      1: 1.4,
-      2: 1.3,
-      3: 1.2,
-      4: 1.2,
-    },
+    selected: { 1: 1.4, 2: 1.3, 3: 1.2, 4: 1.2 },
   },
   {
     id: 88,
@@ -2424,18 +1755,9 @@ export default [
       lastRoundPoints: 12,
       positionRank: 28,
       nextFixture: 28,
-      scores: {
-        1: 11,
-        2: 12,
-        3: 12,
-      },
+      scores: { 1: 11, 2: 12, 3: 12 },
     },
-    selected: {
-      1: 0.8,
-      2: 0.7,
-      3: 1.1,
-      4: 1.1,
-    },
+    selected: { 1: 0.8, 2: 0.7, 3: 1.1, 4: 1 },
   },
   {
     id: 89,
@@ -2453,18 +1775,9 @@ export default [
       lastRoundPoints: 13,
       positionRank: 22,
       nextFixture: 28,
-      scores: {
-        1: 3,
-        2: 22,
-        3: 13,
-      },
+      scores: { 1: 3, 2: 22, 3: 13 },
     },
-    selected: {
-      1: 0.1,
-      2: 0.1,
-      3: 0.8,
-      4: 0.8,
-    },
+    selected: { 1: 0.1, 2: 0.1, 3: 0.8, 4: 0.7 },
   },
   {
     id: 90,
@@ -2482,18 +1795,9 @@ export default [
       lastRoundPoints: 6,
       positionRank: 23,
       nextFixture: 28,
-      scores: {
-        1: 8,
-        2: 33,
-        3: 6,
-      },
+      scores: { 1: 8, 2: 33, 3: 6 },
     },
-    selected: {
-      1: 0.6,
-      2: 1,
-      3: 6.2,
-      4: 5.8,
-    },
+    selected: { 1: 0.6, 2: 1, 3: 6.2, 4: 5.2 },
   },
   {
     id: 91,
@@ -2511,17 +1815,9 @@ export default [
       lastRoundPoints: null,
       positionRank: 25,
       nextFixture: 28,
-      scores: {
-        1: 10,
-        2: 4,
-      },
+      scores: { 1: 10, 2: 4 },
     },
-    selected: {
-      1: 1.2,
-      2: 3.3,
-      3: 0.6,
-      4: 0.6,
-    },
+    selected: { 1: 1.2, 2: 3.3, 3: 0.6, 4: 0.6 },
   },
   {
     id: 92,
@@ -2539,17 +1835,9 @@ export default [
       lastRoundPoints: 4,
       positionRank: 27,
       nextFixture: 28,
-      scores: {
-        1: 3,
-        3: 4,
-      },
+      scores: { 1: 3, 3: 4 },
     },
-    selected: {
-      1: 0.1,
-      2: 0.1,
-      3: 0.2,
-      4: 0.2,
-    },
+    selected: { 1: 0.1, 2: 0.1, 3: 0.2, 4: 0.2 },
   },
   {
     id: 93,
@@ -2567,16 +1855,9 @@ export default [
       lastRoundPoints: null,
       positionRank: 72,
       nextFixture: 28,
-      scores: {
-        2: -4,
-      },
+      scores: { 2: -4 },
     },
-    selected: {
-      1: 0.1,
-      2: 0.1,
-      3: 0.1,
-      4: 0.1,
-    },
+    selected: { 1: 0.1, 2: 0.1, 3: 0.1, 4: 0.1 },
   },
   {
     id: 94,
@@ -2594,17 +1875,9 @@ export default [
       lastRoundPoints: null,
       positionRank: 15,
       nextFixture: 28,
-      scores: {
-        1: 23,
-        2: 1,
-      },
+      scores: { 1: 23, 2: 1 },
     },
-    selected: {
-      1: 0.2,
-      2: 1.5,
-      3: 0.4,
-      4: 0.4,
-    },
+    selected: { 1: 0.2, 2: 1.5, 3: 0.4, 4: 0.4 },
   },
   {
     id: 95,
@@ -2622,17 +1895,9 @@ export default [
       lastRoundPoints: 1,
       positionRank: 17,
       nextFixture: 28,
-      scores: {
-        1: 4,
-        3: 1,
-      },
+      scores: { 1: 4, 3: 1 },
     },
-    selected: {
-      1: 0,
-      2: 0,
-      3: 0,
-      4: 0,
-    },
+    selected: { 1: 0, 2: 0, 3: 0, 4: 0 },
   },
   {
     id: 96,
@@ -2650,17 +1915,9 @@ export default [
       lastRoundPoints: 23,
       positionRank: 39,
       nextFixture: 28,
-      scores: {
-        2: 5,
-        3: 23,
-      },
+      scores: { 2: 5, 3: 23 },
     },
-    selected: {
-      1: 0.1,
-      2: 0.1,
-      3: 0.3,
-      4: 0.3,
-    },
+    selected: { 1: 0.1, 2: 0.1, 3: 0.3, 4: 0.2 },
   },
   {
     id: 97,
@@ -2678,16 +1935,9 @@ export default [
       lastRoundPoints: 58,
       positionRank: 39,
       nextFixture: 36,
-      scores: {
-        3: 58,
-      },
+      scores: { 3: 58 },
     },
-    selected: {
-      1: 0.7,
-      2: 0.5,
-      3: 10.2,
-      4: 9.1,
-    },
+    selected: { 1: 0.7, 2: 0.5, 3: 10.2, 4: 7.8 },
   },
   {
     id: 98,
@@ -2705,18 +1955,9 @@ export default [
       lastRoundPoints: 20,
       positionRank: 11,
       nextFixture: 36,
-      scores: {
-        1: 41,
-        2: 46,
-        3: 20,
-      },
+      scores: { 1: 41, 2: 46, 3: 20 },
     },
-    selected: {
-      1: 1.7,
-      2: 5.9,
-      3: 3.1,
-      4: 3.1,
-    },
+    selected: { 1: 1.7, 2: 5.9, 3: 3.1, 4: 3 },
   },
   {
     id: 99,
@@ -2734,18 +1975,9 @@ export default [
       lastRoundPoints: 101,
       positionRank: 13,
       nextFixture: 36,
-      scores: {
-        1: 2,
-        2: 17,
-        3: 101,
-      },
+      scores: { 1: 2, 2: 17, 3: 101 },
     },
-    selected: {
-      1: 1.3,
-      2: 0.9,
-      3: 8.6,
-      4: 7.7,
-    },
+    selected: { 1: 1.3, 2: 0.9, 3: 8.6, 4: 6.7 },
   },
   {
     id: 100,
@@ -2763,17 +1995,9 @@ export default [
       lastRoundPoints: null,
       positionRank: 25,
       nextFixture: 36,
-      scores: {
-        1: 4,
-        2: 43,
-      },
+      scores: { 1: 4, 2: 43 },
     },
-    selected: {
-      1: 2.6,
-      2: 2.1,
-      3: 1.7,
-      4: 1.7,
-    },
+    selected: { 1: 2.6, 2: 2.1, 3: 1.7, 4: 1.7 },
   },
   {
     id: 101,
@@ -2791,18 +2015,9 @@ export default [
       lastRoundPoints: 29,
       positionRank: 26,
       nextFixture: 36,
-      scores: {
-        1: 5,
-        2: 27,
-        3: 29,
-      },
+      scores: { 1: 5, 2: 27, 3: 29 },
     },
-    selected: {
-      1: 1.3,
-      2: 1.2,
-      3: 5.1,
-      4: 4.7,
-    },
+    selected: { 1: 1.3, 2: 1.2, 3: 5.1, 4: 4.1 },
   },
   {
     id: 102,
@@ -2820,16 +2035,9 @@ export default [
       lastRoundPoints: 128,
       positionRank: 76,
       nextFixture: 36,
-      scores: {
-        3: 128,
-      },
+      scores: { 3: 128 },
     },
-    selected: {
-      1: 0.3,
-      2: 0.2,
-      3: 7.4,
-      4: 6.8,
-    },
+    selected: { 1: 0.3, 2: 0.2, 3: 7.4, 4: 6 },
   },
   {
     id: 103,
@@ -2847,16 +2055,9 @@ export default [
       lastRoundPoints: 26,
       positionRank: 77,
       nextFixture: 36,
-      scores: {
-        3: 26,
-      },
+      scores: { 3: 26 },
     },
-    selected: {
-      1: 0.2,
-      2: 0.1,
-      3: 2.7,
-      4: 2.4,
-    },
+    selected: { 1: 0.2, 2: 0.1, 3: 2.7, 4: 2.1 },
   },
   {
     id: 104,
@@ -2874,17 +2075,9 @@ export default [
       lastRoundPoints: null,
       positionRank: 31,
       nextFixture: 36,
-      scores: {
-        1: 4,
-        2: 25,
-      },
+      scores: { 1: 4, 2: 25 },
     },
-    selected: {
-      1: 2.3,
-      2: 2,
-      3: 1.3,
-      4: 1.3,
-    },
+    selected: { 1: 2.3, 2: 2, 3: 1.3, 4: 1.2 },
   },
   {
     id: 105,
@@ -2902,17 +2095,9 @@ export default [
       lastRoundPoints: null,
       positionRank: 21,
       nextFixture: 36,
-      scores: {
-        1: 14,
-        2: 15,
-      },
+      scores: { 1: 14, 2: 15 },
     },
-    selected: {
-      1: 6.6,
-      2: 6.6,
-      3: 3.9,
-      4: 3.8,
-    },
+    selected: { 1: 6.6, 2: 6.6, 3: 3.9, 4: 3.8 },
   },
   {
     id: 106,
@@ -2930,18 +2115,9 @@ export default [
       lastRoundPoints: 38,
       positionRank: 23,
       nextFixture: 36,
-      scores: {
-        1: 2,
-        2: 12,
-        3: 38,
-      },
+      scores: { 1: 2, 2: 12, 3: 38 },
     },
-    selected: {
-      1: 1,
-      2: 0.7,
-      3: 17.8,
-      4: 15.8,
-    },
+    selected: { 1: 1, 2: 0.7, 3: 17.8, 4: 13.3 },
   },
   {
     id: 107,
@@ -2959,18 +2135,9 @@ export default [
       lastRoundPoints: 1,
       positionRank: 24,
       nextFixture: 36,
-      scores: {
-        1: 12,
-        2: 29,
-        3: 1,
-      },
+      scores: { 1: 12, 2: 29, 3: 1 },
     },
-    selected: {
-      1: 2,
-      2: 1.9,
-      3: 1.6,
-      4: 1.6,
-    },
+    selected: { 1: 2, 2: 1.9, 3: 1.6, 4: 1.5 },
   },
   {
     id: 108,
@@ -2988,17 +2155,9 @@ export default [
       lastRoundPoints: null,
       positionRank: 15,
       nextFixture: 36,
-      scores: {
-        1: 39,
-        2: 37,
-      },
+      scores: { 1: 39, 2: 37 },
     },
-    selected: {
-      1: 2,
-      2: 4.1,
-      3: 2.4,
-      4: 2.4,
-    },
+    selected: { 1: 2, 2: 4.1, 3: 2.4, 4: 2.3 },
   },
   {
     id: 109,
@@ -3016,18 +2175,9 @@ export default [
       lastRoundPoints: 71,
       positionRank: 16,
       nextFixture: 36,
-      scores: {
-        1: 3,
-        2: 5,
-        3: 71,
-      },
+      scores: { 1: 3, 2: 5, 3: 71 },
     },
-    selected: {
-      1: 0.4,
-      2: 0.3,
-      3: 3.8,
-      4: 3.5,
-    },
+    selected: { 1: 0.4, 2: 0.3, 3: 3.8, 4: 3 },
   },
   {
     id: 110,
@@ -3045,16 +2195,9 @@ export default [
       lastRoundPoints: 17,
       positionRank: 47,
       nextFixture: 36,
-      scores: {
-        3: 17,
-      },
+      scores: { 3: 17 },
     },
-    selected: {
-      1: 0.1,
-      2: 0.1,
-      3: 0.1,
-      4: 0.1,
-    },
+    selected: { 1: 0.1, 2: 0.1, 3: 0.1, 4: 0.1 },
   },
   {
     id: 111,
@@ -3072,17 +2215,9 @@ export default [
       lastRoundPoints: null,
       positionRank: 21,
       nextFixture: 36,
-      scores: {
-        1: 16,
-        2: 11,
-      },
+      scores: { 1: 16, 2: 11 },
     },
-    selected: {
-      1: 12.7,
-      2: 12.3,
-      3: 6.8,
-      4: 6.8,
-    },
+    selected: { 1: 12.7, 2: 12.3, 3: 6.8, 4: 6.6 },
   },
   {
     id: 112,
@@ -3100,18 +2235,9 @@ export default [
       lastRoundPoints: 10,
       positionRank: 22,
       nextFixture: 36,
-      scores: {
-        1: 5,
-        2: 9,
-        3: 10,
-      },
+      scores: { 1: 5, 2: 9, 3: 10 },
     },
-    selected: {
-      1: 2.3,
-      2: 2,
-      3: 1.1,
-      4: 1.1,
-    },
+    selected: { 1: 2.3, 2: 2, 3: 1.1, 4: 1 },
   },
   {
     id: 113,
@@ -3129,18 +2255,9 @@ export default [
       lastRoundPoints: 19,
       positionRank: 24,
       nextFixture: 36,
-      scores: {
-        1: 4,
-        2: 1,
-        3: 19,
-      },
+      scores: { 1: 4, 2: 1, 3: 19 },
     },
-    selected: {
-      1: 0.2,
-      2: 0.2,
-      3: 2.3,
-      4: 2.1,
-    },
+    selected: { 1: 0.2, 2: 0.2, 3: 2.3, 4: 1.8 },
   },
   {
     id: 114,
@@ -3158,16 +2275,9 @@ export default [
       lastRoundPoints: 28,
       positionRank: 78,
       nextFixture: 36,
-      scores: {
-        3: 28,
-      },
+      scores: { 3: 28 },
     },
-    selected: {
-      1: 0.3,
-      2: 0.3,
-      3: 2,
-      4: 1.8,
-    },
+    selected: { 1: 0.3, 2: 0.3, 3: 2, 4: 1.6 },
   },
   {
     id: 115,
@@ -3185,18 +2295,9 @@ export default [
       lastRoundPoints: 11,
       positionRank: 29,
       nextFixture: 36,
-      scores: {
-        1: 23,
-        2: 36,
-        3: 11,
-      },
+      scores: { 1: 23, 2: 36, 3: 11 },
     },
-    selected: {
-      1: 3.4,
-      2: 3.7,
-      3: 2.6,
-      4: 2.6,
-    },
+    selected: { 1: 3.4, 2: 3.7, 3: 2.6, 4: 2.5 },
   },
   {
     id: 116,
@@ -3214,17 +2315,9 @@ export default [
       lastRoundPoints: null,
       positionRank: 30,
       nextFixture: 36,
-      scores: {
-        1: 28,
-        2: 57,
-      },
+      scores: { 1: 28, 2: 57 },
     },
-    selected: {
-      1: 5.1,
-      2: 7.4,
-      3: 5.3,
-      4: 5.3,
-    },
+    selected: { 1: 5.1, 2: 7.4, 3: 5.3, 4: 5.1 },
   },
   {
     id: 117,
@@ -3242,17 +2335,9 @@ export default [
       lastRoundPoints: 13,
       positionRank: 74,
       nextFixture: 36,
-      scores: {
-        2: 0,
-        3: 13,
-      },
+      scores: { 2: 0, 3: 13 },
     },
-    selected: {
-      1: 0.9,
-      2: 0.8,
-      3: 5.8,
-      4: 5.2,
-    },
+    selected: { 1: 0.9, 2: 0.8, 3: 5.8, 4: 4.4 },
   },
   {
     id: 118,
@@ -3270,16 +2355,9 @@ export default [
       lastRoundPoints: null,
       positionRank: 33,
       nextFixture: 36,
-      scores: {
-        1: -9,
-      },
+      scores: { 1: -9 },
     },
-    selected: {
-      1: 7.6,
-      2: 2.1,
-      3: 1.9,
-      4: 1.9,
-    },
+    selected: { 1: 7.6, 2: 2.1, 3: 1.9, 4: 1.9 },
   },
   {
     id: 119,
@@ -3297,18 +2375,9 @@ export default [
       lastRoundPoints: 21,
       positionRank: 36,
       nextFixture: 36,
-      scores: {
-        1: 12,
-        2: 20,
-        3: 21,
-      },
+      scores: { 1: 12, 2: 20, 3: 21 },
     },
-    selected: {
-      1: 0.3,
-      2: 1.3,
-      3: 9.8,
-      4: 8.8,
-    },
+    selected: { 1: 0.3, 2: 1.3, 3: 9.8, 4: 7.4 },
   },
   {
     id: 120,
@@ -3326,16 +2395,9 @@ export default [
       lastRoundPoints: 54,
       positionRank: 93,
       nextFixture: 36,
-      scores: {
-        3: 54,
-      },
+      scores: { 3: 54 },
     },
-    selected: {
-      1: 0.9,
-      2: 0.6,
-      3: 7.8,
-      4: 7,
-    },
+    selected: { 1: 0.9, 2: 0.6, 3: 7.8, 4: 5.9 },
   },
   {
     id: 121,
@@ -3353,17 +2415,9 @@ export default [
       lastRoundPoints: null,
       positionRank: 30,
       nextFixture: 36,
-      scores: {
-        1: 24,
-        2: 14,
-      },
+      scores: { 1: 24, 2: 14 },
     },
-    selected: {
-      1: 9.6,
-      2: 5.7,
-      3: 4.8,
-      4: 4.8,
-    },
+    selected: { 1: 9.6, 2: 5.7, 3: 4.8, 4: 4.7 },
   },
   {
     id: 122,
@@ -3381,17 +2435,9 @@ export default [
       lastRoundPoints: 13,
       positionRank: 75,
       nextFixture: 36,
-      scores: {
-        2: 17,
-        3: 13,
-      },
+      scores: { 2: 17, 3: 13 },
     },
-    selected: {
-      1: 1.4,
-      2: 2.8,
-      3: 4.9,
-      4: 4.5,
-    },
+    selected: { 1: 1.4, 2: 2.8, 3: 4.9, 4: 4 },
   },
   {
     id: 123,
@@ -3409,18 +2455,9 @@ export default [
       lastRoundPoints: 9,
       positionRank: 32,
       nextFixture: 36,
-      scores: {
-        1: 8,
-        2: 29,
-        3: 9,
-      },
+      scores: { 1: 8, 2: 29, 3: 9 },
     },
-    selected: {
-      1: 1.4,
-      2: 3.2,
-      3: 1.9,
-      4: 1.8,
-    },
+    selected: { 1: 1.4, 2: 3.2, 3: 1.9, 4: 1.7 },
   },
   {
     id: 124,
@@ -3438,16 +2475,9 @@ export default [
       lastRoundPoints: null,
       positionRank: 35,
       nextFixture: 36,
-      scores: {
-        1: 23,
-      },
+      scores: { 1: 23 },
     },
-    selected: {
-      1: 2,
-      2: 1.5,
-      3: 1.1,
-      4: 1.1,
-    },
+    selected: { 1: 2, 2: 1.5, 3: 1.1, 4: 1.1 },
   },
   {
     id: 125,
@@ -3465,16 +2495,9 @@ export default [
       lastRoundPoints: 34,
       positionRank: 95,
       nextFixture: 36,
-      scores: {
-        3: 34,
-      },
+      scores: { 3: 34 },
     },
-    selected: {
-      1: 0.1,
-      2: 0.1,
-      3: 3,
-      4: 2.6,
-    },
+    selected: { 1: 0.1, 2: 0.1, 3: 3, 4: 2.2 },
   },
   {
     id: 126,
@@ -3492,18 +2515,9 @@ export default [
       lastRoundPoints: 21,
       positionRank: 40,
       nextFixture: 36,
-      scores: {
-        1: 14,
-        2: 15,
-        3: 21,
-      },
+      scores: { 1: 14, 2: 15, 3: 21 },
     },
-    selected: {
-      1: 0.5,
-      2: 0.7,
-      3: 0.7,
-      4: 0.7,
-    },
+    selected: { 1: 0.5, 2: 0.7, 3: 0.7, 4: 0.7 },
   },
   {
     id: 127,
@@ -3521,17 +2535,9 @@ export default [
       lastRoundPoints: 0,
       positionRank: 42,
       nextFixture: 36,
-      scores: {
-        2: 14,
-        3: 0,
-      },
+      scores: { 2: 14, 3: 0 },
     },
-    selected: {
-      1: 0.5,
-      2: 0.5,
-      3: 0.5,
-      4: 0.5,
-    },
+    selected: { 1: 0.5, 2: 0.5, 3: 0.5, 4: 0.5 },
   },
   {
     id: 128,
@@ -3549,17 +2555,9 @@ export default [
       lastRoundPoints: 15,
       positionRank: 20,
       nextFixture: 36,
-      scores: {
-        1: 5,
-        3: 15,
-      },
+      scores: { 1: 5, 3: 15 },
     },
-    selected: {
-      1: 0.4,
-      2: 0.3,
-      3: 4.6,
-      4: 4.2,
-    },
+    selected: { 1: 0.4, 2: 0.3, 3: 4.6, 4: 3.7 },
   },
   {
     id: 129,
@@ -3577,17 +2575,9 @@ export default [
       lastRoundPoints: null,
       positionRank: 22,
       nextFixture: 36,
-      scores: {
-        1: 18,
-        2: 3,
-      },
+      scores: { 1: 18, 2: 3 },
     },
-    selected: {
-      1: 2.2,
-      2: 2.5,
-      3: 1.1,
-      4: 1.1,
-    },
+    selected: { 1: 2.2, 2: 2.5, 3: 1.1, 4: 1.1 },
   },
   {
     id: 130,
@@ -3607,12 +2597,7 @@ export default [
       nextFixture: 29,
       scores: null,
     },
-    selected: {
-      1: 1,
-      2: 0.7,
-      3: 0.6,
-      4: 0.6,
-    },
+    selected: { 1: 1, 2: 0.7, 3: 0.6, 4: 0.6 },
   },
   {
     id: 131,
@@ -3630,17 +2615,9 @@ export default [
       lastRoundPoints: null,
       positionRank: 16,
       nextFixture: 29,
-      scores: {
-        1: 14,
-        2: 10,
-      },
+      scores: { 1: 14, 2: 10 },
     },
-    selected: {
-      1: 1.7,
-      2: 1.4,
-      3: 0.7,
-      4: 0.7,
-    },
+    selected: { 1: 1.7, 2: 1.4, 3: 0.7, 4: 0.8 },
   },
   {
     id: 132,
@@ -3658,17 +2635,9 @@ export default [
       lastRoundPoints: null,
       positionRank: 35,
       nextFixture: 29,
-      scores: {
-        1: 4,
-        2: 3,
-      },
+      scores: { 1: 4, 2: 3 },
     },
-    selected: {
-      1: 1.7,
-      2: 0.8,
-      3: 0.6,
-      4: 0.7,
-    },
+    selected: { 1: 1.7, 2: 0.8, 3: 0.6, 4: 0.7 },
   },
   {
     id: 133,
@@ -3686,16 +2655,9 @@ export default [
       lastRoundPoints: null,
       positionRank: 65,
       nextFixture: 29,
-      scores: {
-        2: 12,
-      },
+      scores: { 2: 12 },
     },
-    selected: {
-      1: 0.4,
-      2: 0.7,
-      3: 0.4,
-      4: 0.4,
-    },
+    selected: { 1: 0.4, 2: 0.7, 3: 0.4, 4: 0.4 },
   },
   {
     id: 134,
@@ -3713,16 +2675,9 @@ export default [
       lastRoundPoints: null,
       positionRank: 36,
       nextFixture: 29,
-      scores: {
-        1: 34,
-      },
+      scores: { 1: 34 },
     },
-    selected: {
-      1: 4.9,
-      2: 2.8,
-      3: 2.1,
-      4: 2.2,
-    },
+    selected: { 1: 4.9, 2: 2.8, 3: 2.1, 4: 2.3 },
   },
   {
     id: 135,
@@ -3740,17 +2695,9 @@ export default [
       lastRoundPoints: null,
       positionRank: 37,
       nextFixture: 29,
-      scores: {
-        1: 24,
-        2: 14,
-      },
+      scores: { 1: 24, 2: 14 },
     },
-    selected: {
-      1: 1.3,
-      2: 2.4,
-      3: 0.9,
-      4: 1,
-    },
+    selected: { 1: 1.3, 2: 2.4, 3: 0.9, 4: 1.2 },
   },
   {
     id: 136,
@@ -3768,17 +2715,9 @@ export default [
       lastRoundPoints: null,
       positionRank: 29,
       nextFixture: 29,
-      scores: {
-        1: 54,
-        2: 13,
-      },
+      scores: { 1: 54, 2: 13 },
     },
-    selected: {
-      1: 7.7,
-      2: 8,
-      3: 3.9,
-      4: 4.9,
-    },
+    selected: { 1: 7.7, 2: 8, 3: 3.9, 4: 6 },
   },
   {
     id: 137,
@@ -3796,17 +2735,9 @@ export default [
       lastRoundPoints: null,
       positionRank: 30,
       nextFixture: 29,
-      scores: {
-        1: 32,
-        2: 57,
-      },
+      scores: { 1: 32, 2: 57 },
     },
-    selected: {
-      1: 2.3,
-      2: 4,
-      3: 2.3,
-      4: 5.4,
-    },
+    selected: { 1: 2.3, 2: 4, 3: 2.3, 4: 9.3 },
   },
   {
     id: 138,
@@ -3826,12 +2757,7 @@ export default [
       nextFixture: 29,
       scores: null,
     },
-    selected: {
-      1: 0.3,
-      2: 0.2,
-      3: 0.2,
-      4: 0.2,
-    },
+    selected: { 1: 0.3, 2: 0.2, 3: 0.2, 4: 0.2 },
   },
   {
     id: 139,
@@ -3849,17 +2775,9 @@ export default [
       lastRoundPoints: null,
       positionRank: 32,
       nextFixture: 29,
-      scores: {
-        1: 36,
-        2: 27,
-      },
+      scores: { 1: 36, 2: 27 },
     },
-    selected: {
-      1: 8.9,
-      2: 8.3,
-      3: 3,
-      4: 3.8,
-    },
+    selected: { 1: 8.9, 2: 8.3, 3: 3, 4: 4.8 },
   },
   {
     id: 140,
@@ -3879,12 +2797,7 @@ export default [
       nextFixture: 29,
       scores: null,
     },
-    selected: {
-      1: 0.4,
-      2: 0.3,
-      3: 0.2,
-      4: 0.2,
-    },
+    selected: { 1: 0.4, 2: 0.3, 3: 0.2, 4: 0.3 },
   },
   {
     id: 141,
@@ -3902,16 +2815,9 @@ export default [
       lastRoundPoints: null,
       positionRank: 34,
       nextFixture: 29,
-      scores: {
-        1: 1,
-      },
+      scores: { 1: 1 },
     },
-    selected: {
-      1: 0.5,
-      2: 0.4,
-      3: 0.3,
-      4: 0.3,
-    },
+    selected: { 1: 0.5, 2: 0.4, 3: 0.3, 4: 0.3 },
   },
   {
     id: 142,
@@ -3929,17 +2835,9 @@ export default [
       lastRoundPoints: null,
       positionRank: 21,
       nextFixture: 29,
-      scores: {
-        1: 28,
-        2: 25,
-      },
+      scores: { 1: 28, 2: 25 },
     },
-    selected: {
-      1: 4.2,
-      2: 4.5,
-      3: 1.8,
-      4: 2,
-    },
+    selected: { 1: 4.2, 2: 4.5, 3: 1.8, 4: 2.3 },
   },
   {
     id: 143,
@@ -3957,17 +2855,9 @@ export default [
       lastRoundPoints: null,
       positionRank: 22,
       nextFixture: 29,
-      scores: {
-        1: 10,
-        2: 14,
-      },
+      scores: { 1: 10, 2: 14 },
     },
-    selected: {
-      1: 0.5,
-      2: 0.4,
-      3: 0.3,
-      4: 0.3,
-    },
+    selected: { 1: 0.5, 2: 0.4, 3: 0.3, 4: 0.4 },
   },
   {
     id: 144,
@@ -3987,12 +2877,7 @@ export default [
       nextFixture: 29,
       scores: null,
     },
-    selected: {
-      1: 0.3,
-      2: 0.2,
-      3: 0.2,
-      4: 0.2,
-    },
+    selected: { 1: 0.3, 2: 0.2, 3: 0.2, 4: 0.2 },
   },
   {
     id: 145,
@@ -4010,17 +2895,9 @@ export default [
       lastRoundPoints: null,
       positionRank: 33,
       nextFixture: 29,
-      scores: {
-        1: 2,
-        2: 3,
-      },
+      scores: { 1: 2, 2: 3 },
     },
-    selected: {
-      1: 1.2,
-      2: 0.8,
-      3: 0.6,
-      4: 0.6,
-    },
+    selected: { 1: 1.2, 2: 0.8, 3: 0.6, 4: 0.7 },
   },
   {
     id: 146,
@@ -4038,17 +2915,9 @@ export default [
       lastRoundPoints: null,
       positionRank: 34,
       nextFixture: 29,
-      scores: {
-        1: 7,
-        2: 5,
-      },
+      scores: { 1: 7, 2: 5 },
     },
-    selected: {
-      1: 2.4,
-      2: 0.8,
-      3: 0.6,
-      4: 0.6,
-    },
+    selected: { 1: 2.4, 2: 0.8, 3: 0.6, 4: 0.7 },
   },
   {
     id: 147,
@@ -4066,17 +2935,9 @@ export default [
       lastRoundPoints: null,
       positionRank: 35,
       nextFixture: 29,
-      scores: {
-        1: 6,
-        2: 12,
-      },
+      scores: { 1: 6, 2: 12 },
     },
-    selected: {
-      1: 2.4,
-      2: 1.5,
-      3: 0.7,
-      4: 0.8,
-    },
+    selected: { 1: 2.4, 2: 1.5, 3: 0.7, 4: 0.8 },
   },
   {
     id: 148,
@@ -4094,17 +2955,9 @@ export default [
       lastRoundPoints: null,
       positionRank: 36,
       nextFixture: 29,
-      scores: {
-        1: 9,
-        2: 14,
-      },
+      scores: { 1: 9, 2: 14 },
     },
-    selected: {
-      1: 0.6,
-      2: 0.9,
-      3: 0.3,
-      4: 0.4,
-    },
+    selected: { 1: 0.6, 2: 0.9, 3: 0.3, 4: 0.4 },
   },
   {
     id: 149,
@@ -4122,17 +2975,9 @@ export default [
       lastRoundPoints: null,
       positionRank: 37,
       nextFixture: 29,
-      scores: {
-        1: 25,
-        2: 19,
-      },
+      scores: { 1: 25, 2: 19 },
     },
-    selected: {
-      1: 1.2,
-      2: 8.2,
-      3: 1.6,
-      4: 2.4,
-    },
+    selected: { 1: 1.2, 2: 8.2, 3: 1.6, 4: 3.5 },
   },
   {
     id: 150,
@@ -4150,17 +2995,9 @@ export default [
       lastRoundPoints: null,
       positionRank: 41,
       nextFixture: 29,
-      scores: {
-        1: 30,
-        2: 12,
-      },
+      scores: { 1: 30, 2: 12 },
     },
-    selected: {
-      1: 4.5,
-      2: 5.8,
-      3: 2.2,
-      4: 2.6,
-    },
+    selected: { 1: 4.5, 2: 5.8, 3: 2.2, 4: 3.1 },
   },
   {
     id: 151,
@@ -4178,17 +3015,9 @@ export default [
       lastRoundPoints: null,
       positionRank: 42,
       nextFixture: 29,
-      scores: {
-        1: 5,
-        2: 33,
-      },
+      scores: { 1: 5, 2: 33 },
     },
-    selected: {
-      1: 7.3,
-      2: 6.1,
-      3: 3.8,
-      4: 4.4,
-    },
+    selected: { 1: 7.3, 2: 6.1, 3: 3.8, 4: 5.1 },
   },
   {
     id: 152,
@@ -4208,12 +3037,7 @@ export default [
       nextFixture: 29,
       scores: null,
     },
-    selected: {
-      1: 0.3,
-      2: 0.2,
-      3: 0.2,
-      4: 0.2,
-    },
+    selected: { 1: 0.3, 2: 0.2, 3: 0.2, 4: 0.2 },
   },
   {
     id: 153,
@@ -4233,12 +3057,7 @@ export default [
       nextFixture: 29,
       scores: null,
     },
-    selected: {
-      1: 0.3,
-      2: 0.2,
-      3: 0.2,
-      4: 0.2,
-    },
+    selected: { 1: 0.3, 2: 0.2, 3: 0.2, 4: 0.2 },
   },
   {
     id: 154,
@@ -4256,17 +3075,9 @@ export default [
       lastRoundPoints: null,
       positionRank: 43,
       nextFixture: 29,
-      scores: {
-        1: 15,
-        2: 25,
-      },
+      scores: { 1: 15, 2: 25 },
     },
-    selected: {
-      1: 3.2,
-      2: 3.2,
-      3: 1.3,
-      4: 1.5,
-    },
+    selected: { 1: 3.2, 2: 3.2, 3: 1.3, 4: 1.8 },
   },
   {
     id: 155,
@@ -4284,17 +3095,9 @@ export default [
       lastRoundPoints: null,
       positionRank: 44,
       nextFixture: 29,
-      scores: {
-        1: 19,
-        2: 6,
-      },
+      scores: { 1: 19, 2: 6 },
     },
-    selected: {
-      1: 0.3,
-      2: 0.5,
-      3: 0.3,
-      4: 0.3,
-    },
+    selected: { 1: 0.3, 2: 0.5, 3: 0.3, 4: 0.3 },
   },
   {
     id: 156,
@@ -4312,17 +3115,9 @@ export default [
       lastRoundPoints: null,
       positionRank: 45,
       nextFixture: 29,
-      scores: {
-        1: 7,
-        2: 8,
-      },
+      scores: { 1: 7, 2: 8 },
     },
-    selected: {
-      1: 0.2,
-      2: 0.3,
-      3: 0.2,
-      4: 0.2,
-    },
+    selected: { 1: 0.2, 2: 0.3, 3: 0.2, 4: 0.2 },
   },
   {
     id: 157,
@@ -4342,12 +3137,7 @@ export default [
       nextFixture: 29,
       scores: null,
     },
-    selected: {
-      1: 0.1,
-      2: 0.1,
-      3: 0.1,
-      4: 0.1,
-    },
+    selected: { 1: 0.1, 2: 0.1, 3: 0.1, 4: 0.1 },
   },
   {
     id: 158,
@@ -4365,17 +3155,9 @@ export default [
       lastRoundPoints: null,
       positionRank: 46,
       nextFixture: 29,
-      scores: {
-        1: 22,
-        2: 24,
-      },
+      scores: { 1: 22, 2: 24 },
     },
-    selected: {
-      1: 1.9,
-      2: 11.4,
-      3: 2.3,
-      4: 3.2,
-    },
+    selected: { 1: 1.9, 2: 11.4, 3: 2.3, 4: 4.1 },
   },
   {
     id: 159,
@@ -4395,12 +3177,7 @@ export default [
       nextFixture: 29,
       scores: null,
     },
-    selected: {
-      1: 0.1,
-      2: 0.1,
-      3: 0.1,
-      4: 0.1,
-    },
+    selected: { 1: 0.1, 2: 0.1, 3: 0.1, 4: 0.1 },
   },
   {
     id: 160,
@@ -4418,17 +3195,9 @@ export default [
       lastRoundPoints: null,
       positionRank: 25,
       nextFixture: 29,
-      scores: {
-        1: 12,
-        2: 40,
-      },
+      scores: { 1: 12, 2: 40 },
     },
-    selected: {
-      1: 0.2,
-      2: 1.1,
-      3: 0.5,
-      4: 1.4,
-    },
+    selected: { 1: 0.2, 2: 1.1, 3: 0.5, 4: 2.3 },
   },
   {
     id: 161,
@@ -4446,17 +3215,9 @@ export default [
       lastRoundPoints: null,
       positionRank: 26,
       nextFixture: 29,
-      scores: {
-        1: 10,
-        2: 3,
-      },
+      scores: { 1: 10, 2: 3 },
     },
-    selected: {
-      1: 5.6,
-      2: 1.8,
-      3: 1.4,
-      4: 1.4,
-    },
+    selected: { 1: 5.6, 2: 1.8, 3: 1.4, 4: 1.5 },
   },
   {
     id: 162,
@@ -4476,12 +3237,7 @@ export default [
       nextFixture: 29,
       scores: null,
     },
-    selected: {
-      1: 0.1,
-      2: 0.1,
-      3: 0.1,
-      4: 0.1,
-    },
+    selected: { 1: 0.1, 2: 0.1, 3: 0.1, 4: 0.1 },
   },
   {
     id: 163,
@@ -4499,17 +3255,9 @@ export default [
       lastRoundPoints: 41,
       positionRank: 17,
       nextFixture: 34,
-      scores: {
-        1: 16,
-        3: 41,
-      },
+      scores: { 1: 16, 3: 41 },
     },
-    selected: {
-      1: 1.6,
-      2: 1,
-      3: 4.5,
-      4: 4.2,
-    },
+    selected: { 1: 1.6, 2: 1, 3: 4.5, 4: 3.7 },
   },
   {
     id: 164,
@@ -4527,16 +3275,9 @@ export default [
       lastRoundPoints: null,
       positionRank: 34,
       nextFixture: 34,
-      scores: {
-        2: 41,
-      },
+      scores: { 2: 41 },
     },
-    selected: {
-      1: 0.2,
-      2: 4.1,
-      3: 0.7,
-      4: 0.7,
-    },
+    selected: { 1: 0.2, 2: 4.1, 3: 0.7, 4: 0.7 },
   },
   {
     id: 165,
@@ -4554,17 +3295,9 @@ export default [
       lastRoundPoints: 166,
       positionRank: 38,
       nextFixture: 34,
-      scores: {
-        1: 52,
-        3: 166,
-      },
+      scores: { 1: 52, 3: 166 },
     },
-    selected: {
-      1: 9.4,
-      2: 5.4,
-      3: 30.7,
-      4: 27.7,
-    },
+    selected: { 1: 9.4, 2: 5.4, 3: 30.7, 4: 24 },
   },
   {
     id: 166,
@@ -4582,18 +3315,9 @@ export default [
       lastRoundPoints: 64,
       positionRank: 39,
       nextFixture: 34,
-      scores: {
-        1: 29,
-        2: 1,
-        3: 64,
-      },
+      scores: { 1: 29, 2: 1, 3: 64 },
     },
-    selected: {
-      1: 13.6,
-      2: 5.8,
-      3: 26.1,
-      4: 23.9,
-    },
+    selected: { 1: 13.6, 2: 5.8, 3: 26.1, 4: 20.9 },
   },
   {
     id: 167,
@@ -4611,18 +3335,9 @@ export default [
       lastRoundPoints: 47,
       positionRank: 41,
       nextFixture: 34,
-      scores: {
-        1: 22,
-        2: 22,
-        3: 47,
-      },
+      scores: { 1: 22, 2: 22, 3: 47 },
     },
-    selected: {
-      1: 0.7,
-      2: 18.3,
-      3: 2.8,
-      4: 2.7,
-    },
+    selected: { 1: 0.7, 2: 18.3, 3: 2.8, 4: 2.7 },
   },
   {
     id: 168,
@@ -4640,17 +3355,9 @@ export default [
       lastRoundPoints: null,
       positionRank: 43,
       nextFixture: 34,
-      scores: {
-        1: 9,
-        2: 22,
-      },
+      scores: { 1: 9, 2: 22 },
     },
-    selected: {
-      1: 1.2,
-      2: 6.4,
-      3: 1.3,
-      4: 1.3,
-    },
+    selected: { 1: 1.2, 2: 6.4, 3: 1.3, 4: 1.2 },
   },
   {
     id: 169,
@@ -4668,17 +3375,9 @@ export default [
       lastRoundPoints: 91,
       positionRank: 69,
       nextFixture: 34,
-      scores: {
-        2: 29,
-        3: 91,
-      },
+      scores: { 2: 29, 3: 91 },
     },
-    selected: {
-      1: 0.3,
-      2: 8,
-      3: 9.9,
-      4: 9.1,
-    },
+    selected: { 1: 0.3, 2: 8, 3: 9.9, 4: 8 },
   },
   {
     id: 170,
@@ -4696,17 +3395,9 @@ export default [
       lastRoundPoints: 52,
       positionRank: 35,
       nextFixture: 34,
-      scores: {
-        1: 15,
-        3: 52,
-      },
+      scores: { 1: 15, 3: 52 },
     },
-    selected: {
-      1: 2.5,
-      2: 1.5,
-      3: 6.3,
-      4: 5.8,
-    },
+    selected: { 1: 2.5, 2: 1.5, 3: 6.3, 4: 5 },
   },
   {
     id: 171,
@@ -4724,16 +3415,9 @@ export default [
       lastRoundPoints: 41,
       positionRank: 69,
       nextFixture: 34,
-      scores: {
-        3: 41,
-      },
+      scores: { 3: 41 },
     },
-    selected: {
-      1: 0.7,
-      2: 0.5,
-      3: 9.5,
-      4: 8.5,
-    },
+    selected: { 1: 0.7, 2: 0.5, 3: 9.5, 4: 7.1 },
   },
   {
     id: 172,
@@ -4751,18 +3435,9 @@ export default [
       lastRoundPoints: 4,
       positionRank: 38,
       nextFixture: 34,
-      scores: {
-        1: 4,
-        2: 20,
-        3: 4,
-      },
+      scores: { 1: 4, 2: 20, 3: 4 },
     },
-    selected: {
-      1: 2.4,
-      2: 6,
-      3: 1.4,
-      4: 1.4,
-    },
+    selected: { 1: 2.4, 2: 6, 3: 1.4, 4: 1.4 },
   },
   {
     id: 173,
@@ -4780,17 +3455,9 @@ export default [
       lastRoundPoints: null,
       positionRank: 40,
       nextFixture: 34,
-      scores: {
-        1: 10,
-        2: 13,
-      },
+      scores: { 1: 10, 2: 13 },
     },
-    selected: {
-      1: 0.5,
-      2: 9.2,
-      3: 1.4,
-      4: 1.4,
-    },
+    selected: { 1: 0.5, 2: 9.2, 3: 1.4, 4: 1.4 },
   },
   {
     id: 174,
@@ -4808,16 +3475,9 @@ export default [
       lastRoundPoints: null,
       positionRank: 24,
       nextFixture: 34,
-      scores: {
-        1: 6,
-      },
+      scores: { 1: 6 },
     },
-    selected: {
-      1: 1.9,
-      2: 1,
-      3: 0.8,
-      4: 0.8,
-    },
+    selected: { 1: 1.9, 2: 1, 3: 0.8, 4: 0.8 },
   },
   {
     id: 175,
@@ -4835,18 +3495,9 @@ export default [
       lastRoundPoints: 50,
       positionRank: 25,
       nextFixture: 34,
-      scores: {
-        1: 49,
-        2: 30,
-        3: 50,
-      },
+      scores: { 1: 49, 2: 30, 3: 50 },
     },
-    selected: {
-      1: 0.7,
-      2: 1.8,
-      3: 11.7,
-      4: 10.5,
-    },
+    selected: { 1: 0.7, 2: 1.8, 3: 11.7, 4: 9 },
   },
   {
     id: 176,
@@ -4864,17 +3515,9 @@ export default [
       lastRoundPoints: 16,
       positionRank: 43,
       nextFixture: 34,
-      scores: {
-        2: 25,
-        3: 16,
-      },
+      scores: { 2: 25, 3: 16 },
     },
-    selected: {
-      1: 0.3,
-      2: 7.1,
-      3: 1,
-      4: 1,
-    },
+    selected: { 1: 0.3, 2: 7.1, 3: 1, 4: 1 },
   },
   {
     id: 177,
@@ -4892,18 +3535,9 @@ export default [
       lastRoundPoints: 44,
       positionRank: 39,
       nextFixture: 34,
-      scores: {
-        1: 25,
-        2: 3,
-        3: 44,
-      },
+      scores: { 1: 25, 2: 3, 3: 44 },
     },
-    selected: {
-      1: 7.7,
-      2: 3.4,
-      3: 7.5,
-      4: 7,
-    },
+    selected: { 1: 7.7, 2: 3.4, 3: 7.5, 4: 6.4 },
   },
   {
     id: 178,
@@ -4923,12 +3557,7 @@ export default [
       nextFixture: 34,
       scores: null,
     },
-    selected: {
-      1: 0.6,
-      2: 0.4,
-      3: 0.4,
-      4: 0.4,
-    },
+    selected: { 1: 0.6, 2: 0.4, 3: 0.4, 4: 0.4 },
   },
   {
     id: 179,
@@ -4946,18 +3575,9 @@ export default [
       lastRoundPoints: 11,
       positionRank: 42,
       nextFixture: 34,
-      scores: {
-        1: 5,
-        2: 10,
-        3: 11,
-      },
+      scores: { 1: 5, 2: 10, 3: 11 },
     },
-    selected: {
-      1: 3.9,
-      2: 8.4,
-      3: 4.1,
-      4: 4,
-    },
+    selected: { 1: 3.9, 2: 8.4, 3: 4.1, 4: 3.7 },
   },
   {
     id: 180,
@@ -4975,18 +3595,9 @@ export default [
       lastRoundPoints: 9,
       positionRank: 44,
       nextFixture: 34,
-      scores: {
-        1: 3,
-        2: -1,
-        3: 9,
-      },
+      scores: { 1: 3, 2: -1, 3: 9 },
     },
-    selected: {
-      1: 0.6,
-      2: 4.9,
-      3: 0.9,
-      4: 0.9,
-    },
+    selected: { 1: 0.6, 2: 4.9, 3: 0.9, 4: 0.9 },
   },
   {
     id: 181,
@@ -5004,16 +3615,9 @@ export default [
       lastRoundPoints: null,
       positionRank: 43,
       nextFixture: 34,
-      scores: {
-        1: 42,
-      },
+      scores: { 1: 42 },
     },
-    selected: {
-      1: 7.7,
-      2: 4.3,
-      3: 3.6,
-      4: 3.5,
-    },
+    selected: { 1: 7.7, 2: 4.3, 3: 3.6, 4: 3.5 },
   },
   {
     id: 182,
@@ -5031,18 +3635,9 @@ export default [
       lastRoundPoints: 18,
       positionRank: 44,
       nextFixture: 34,
-      scores: {
-        1: 9,
-        2: 6,
-        3: 18,
-      },
+      scores: { 1: 9, 2: 6, 3: 18 },
     },
-    selected: {
-      1: 1.2,
-      2: 0.8,
-      3: 1.2,
-      4: 1.1,
-    },
+    selected: { 1: 1.2, 2: 0.8, 3: 1.2, 4: 1 },
   },
   {
     id: 183,
@@ -5060,17 +3655,9 @@ export default [
       lastRoundPoints: 57,
       positionRank: 46,
       nextFixture: 34,
-      scores: {
-        1: 33,
-        3: 57,
-      },
+      scores: { 1: 33, 3: 57 },
     },
-    selected: {
-      1: 4.7,
-      2: 2.2,
-      3: 9.9,
-      4: 9.2,
-    },
+    selected: { 1: 4.7, 2: 2.2, 3: 9.9, 4: 8.1 },
   },
   {
     id: 184,
@@ -5088,18 +3675,9 @@ export default [
       lastRoundPoints: 2,
       positionRank: 48,
       nextFixture: 34,
-      scores: {
-        1: 6,
-        2: 10,
-        3: 2,
-      },
+      scores: { 1: 6, 2: 10, 3: 2 },
     },
-    selected: {
-      1: 0.2,
-      2: 2.8,
-      3: 0.6,
-      4: 0.5,
-    },
+    selected: { 1: 0.2, 2: 2.8, 3: 0.6, 4: 0.5 },
   },
   {
     id: 185,
@@ -5117,17 +3695,9 @@ export default [
       lastRoundPoints: 26,
       positionRank: 86,
       nextFixture: 34,
-      scores: {
-        2: 6,
-        3: 26,
-      },
+      scores: { 2: 6, 3: 26 },
     },
-    selected: {
-      1: 0.4,
-      2: 9.4,
-      3: 3.6,
-      4: 3.4,
-    },
+    selected: { 1: 0.4, 2: 9.4, 3: 3.6, 4: 3.1 },
   },
   {
     id: 186,
@@ -5145,16 +3715,9 @@ export default [
       lastRoundPoints: null,
       positionRank: 87,
       nextFixture: 34,
-      scores: {
-        2: 40,
-      },
+      scores: { 2: 40 },
     },
-    selected: {
-      1: 0.3,
-      2: 4.3,
-      3: 0.7,
-      4: 0.7,
-    },
+    selected: { 1: 0.3, 2: 4.3, 3: 0.7, 4: 0.7 },
   },
   {
     id: 187,
@@ -5172,16 +3735,9 @@ export default [
       lastRoundPoints: 11,
       positionRank: 98,
       nextFixture: 34,
-      scores: {
-        3: 11,
-      },
+      scores: { 3: 11 },
     },
-    selected: {
-      1: 1.7,
-      2: 1.1,
-      3: 2,
-      4: 1.9,
-    },
+    selected: { 1: 1.7, 2: 1.1, 3: 2, 4: 1.8 },
   },
   {
     id: 188,
@@ -5199,18 +3755,9 @@ export default [
       lastRoundPoints: 13,
       positionRank: 49,
       nextFixture: 34,
-      scores: {
-        1: 17,
-        2: 5,
-        3: 13,
-      },
+      scores: { 1: 17, 2: 5, 3: 13 },
     },
-    selected: {
-      1: 1.1,
-      2: 0.9,
-      3: 0.7,
-      4: 0.7,
-    },
+    selected: { 1: 1.1, 2: 0.9, 3: 0.7, 4: 0.7 },
   },
   {
     id: 189,
@@ -5228,18 +3775,9 @@ export default [
       lastRoundPoints: 11,
       positionRank: 51,
       nextFixture: 34,
-      scores: {
-        1: 2,
-        2: 11,
-        3: 11,
-      },
+      scores: { 1: 2, 2: 11, 3: 11 },
     },
-    selected: {
-      1: 0.2,
-      2: 2,
-      3: 0.4,
-      4: 0.4,
-    },
+    selected: { 1: 0.2, 2: 2, 3: 0.4, 4: 0.4 },
   },
   {
     id: 190,
@@ -5257,17 +3795,9 @@ export default [
       lastRoundPoints: 11,
       positionRank: 53,
       nextFixture: 34,
-      scores: {
-        1: 7,
-        3: 11,
-      },
+      scores: { 1: 7, 3: 11 },
     },
-    selected: {
-      1: 13.7,
-      2: 5.1,
-      3: 6.5,
-      4: 6.3,
-    },
+    selected: { 1: 13.7, 2: 5.1, 3: 6.5, 4: 6 },
   },
   {
     id: 191,
@@ -5285,16 +3815,9 @@ export default [
       lastRoundPoints: null,
       positionRank: 85,
       nextFixture: 34,
-      scores: {
-        2: 6,
-      },
+      scores: { 2: 6 },
     },
-    selected: {
-      1: 0.2,
-      2: 0.2,
-      3: 0.1,
-      4: 0.1,
-    },
+    selected: { 1: 0.2, 2: 0.2, 3: 0.1, 4: 0.1 },
   },
   {
     id: 192,
@@ -5312,17 +3835,9 @@ export default [
       lastRoundPoints: null,
       positionRank: 54,
       nextFixture: 34,
-      scores: {
-        1: 6,
-        2: 10,
-      },
+      scores: { 1: 6, 2: 10 },
     },
-    selected: {
-      1: 0.2,
-      2: 6.1,
-      3: 0.8,
-      4: 0.8,
-    },
+    selected: { 1: 0.2, 2: 6.1, 3: 0.8, 4: 0.8 },
   },
   {
     id: 193,
@@ -5340,17 +3855,9 @@ export default [
       lastRoundPoints: 106,
       positionRank: 28,
       nextFixture: 34,
-      scores: {
-        1: 28,
-        3: 106,
-      },
+      scores: { 1: 28, 3: 106 },
     },
-    selected: {
-      1: 33.8,
-      2: 16.3,
-      3: 36.7,
-      4: 33.9,
-    },
+    selected: { 1: 33.8, 2: 16.3, 3: 36.7, 4: 30.3 },
   },
   {
     id: 194,
@@ -5368,17 +3875,9 @@ export default [
       lastRoundPoints: null,
       positionRank: 30,
       nextFixture: 34,
-      scores: {
-        1: 15,
-        2: 25,
-      },
+      scores: { 1: 15, 2: 25 },
     },
-    selected: {
-      1: 0.2,
-      2: 6.1,
-      3: 1.2,
-      4: 1.1,
-    },
+    selected: { 1: 0.2, 2: 6.1, 3: 1.2, 4: 1.1 },
   },
   {
     id: 195,
@@ -5396,17 +3895,9 @@ export default [
       lastRoundPoints: 39,
       positionRank: 46,
       nextFixture: 34,
-      scores: {
-        2: 9,
-        3: 39,
-      },
+      scores: { 2: 9, 3: 39 },
     },
-    selected: {
-      1: 0.1,
-      2: 0.1,
-      3: 0.1,
-      4: 0.1,
-    },
+    selected: { 1: 0.1, 2: 0.1, 3: 0.1, 4: 0.1 },
   },
   {
     id: 196,
@@ -5424,17 +3915,9 @@ export default [
       lastRoundPoints: 8,
       positionRank: 20,
       nextFixture: 29,
-      scores: {
-        1: 49,
-        3: 8,
-      },
+      scores: { 1: 49, 3: 8 },
     },
-    selected: {
-      1: 0.4,
-      2: 0.2,
-      3: 0.4,
-      4: 0.4,
-    },
+    selected: { 1: 0.4, 2: 0.2, 3: 0.4, 4: 0.4 },
   },
   {
     id: 197,
@@ -5452,17 +3935,9 @@ export default [
       lastRoundPoints: 16,
       positionRank: 21,
       nextFixture: 29,
-      scores: {
-        1: 7,
-        3: 16,
-      },
+      scores: { 1: 7, 3: 16 },
     },
-    selected: {
-      1: 0,
-      2: 0,
-      3: 0.7,
-      4: 0.6,
-    },
+    selected: { 1: 0, 2: 0, 3: 0.7, 4: 0.6 },
   },
   {
     id: 198,
@@ -5482,12 +3957,7 @@ export default [
       nextFixture: 29,
       scores: null,
     },
-    selected: {
-      1: 0.1,
-      2: 0,
-      3: 0,
-      4: 0,
-    },
+    selected: { 1: 0.1, 2: 0, 3: 0, 4: 0 },
   },
   {
     id: 199,
@@ -5505,17 +3975,9 @@ export default [
       lastRoundPoints: 79,
       positionRank: 45,
       nextFixture: 29,
-      scores: {
-        1: 34,
-        3: 79,
-      },
+      scores: { 1: 34, 3: 79 },
     },
-    selected: {
-      1: 1.3,
-      2: 0.6,
-      3: 2.2,
-      4: 2.4,
-    },
+    selected: { 1: 1.3, 2: 0.6, 3: 2.2, 4: 2.5 },
   },
   {
     id: 200,
@@ -5533,17 +3995,9 @@ export default [
       lastRoundPoints: 41,
       positionRank: 46,
       nextFixture: 29,
-      scores: {
-        1: 33,
-        3: 41,
-      },
+      scores: { 1: 33, 3: 41 },
     },
-    selected: {
-      1: 0.4,
-      2: 0.2,
-      3: 1.3,
-      4: 1.3,
-    },
+    selected: { 1: 0.4, 2: 0.2, 3: 1.3, 4: 1.2 },
   },
   {
     id: 201,
@@ -5561,16 +4015,9 @@ export default [
       lastRoundPoints: 11,
       positionRank: 80,
       nextFixture: 29,
-      scores: {
-        3: 11,
-      },
+      scores: { 3: 11 },
     },
-    selected: {
-      1: 0.1,
-      2: 0.1,
-      3: 0.2,
-      4: 0.2,
-    },
+    selected: { 1: 0.1, 2: 0.1, 3: 0.2, 4: 0.2 },
   },
   {
     id: 202,
@@ -5588,16 +4035,9 @@ export default [
       lastRoundPoints: null,
       positionRank: 47,
       nextFixture: 29,
-      scores: {
-        1: 14,
-      },
+      scores: { 1: 14 },
     },
-    selected: {
-      1: 0.4,
-      2: 0.2,
-      3: 0.2,
-      4: 0.2,
-    },
+    selected: { 1: 0.4, 2: 0.2, 3: 0.2, 4: 0.2 },
   },
   {
     id: 203,
@@ -5615,17 +4055,9 @@ export default [
       lastRoundPoints: 14,
       positionRank: 41,
       nextFixture: 29,
-      scores: {
-        1: 14,
-        3: 14,
-      },
+      scores: { 1: 14, 3: 14 },
     },
-    selected: {
-      1: 0.7,
-      2: 0.3,
-      3: 1.4,
-      4: 1.3,
-    },
+    selected: { 1: 0.7, 2: 0.3, 3: 1.4, 4: 1.1 },
   },
   {
     id: 204,
@@ -5643,17 +4075,9 @@ export default [
       lastRoundPoints: -2,
       positionRank: 42,
       nextFixture: 29,
-      scores: {
-        1: 8,
-        3: -2,
-      },
+      scores: { 1: 8, 3: -2 },
     },
-    selected: {
-      1: 0.4,
-      2: 0.2,
-      3: 0.2,
-      4: 0.2,
-    },
+    selected: { 1: 0.4, 2: 0.2, 3: 0.2, 4: 0.2 },
   },
   {
     id: 205,
@@ -5671,17 +4095,9 @@ export default [
       lastRoundPoints: 18,
       positionRank: 43,
       nextFixture: 29,
-      scores: {
-        1: 4,
-        3: 18,
-      },
+      scores: { 1: 4, 3: 18 },
     },
-    selected: {
-      1: 0.1,
-      2: 0.1,
-      3: 0.5,
-      4: 0.5,
-    },
+    selected: { 1: 0.1, 2: 0.1, 3: 0.5, 4: 0.5 },
   },
   {
     id: 206,
@@ -5701,12 +4117,7 @@ export default [
       nextFixture: 29,
       scores: null,
     },
-    selected: {
-      1: 0.3,
-      2: 0.2,
-      3: 0.2,
-      4: 0.2,
-    },
+    selected: { 1: 0.3, 2: 0.2, 3: 0.2, 4: 0.2 },
   },
   {
     id: 207,
@@ -5726,12 +4137,7 @@ export default [
       nextFixture: 29,
       scores: null,
     },
-    selected: {
-      1: 0.6,
-      2: 0.3,
-      3: 0.3,
-      4: 0.3,
-    },
+    selected: { 1: 0.6, 2: 0.3, 3: 0.3, 4: 0.3 },
   },
   {
     id: 208,
@@ -5749,17 +4155,9 @@ export default [
       lastRoundPoints: 37,
       positionRank: 27,
       nextFixture: 29,
-      scores: {
-        1: 28,
-        3: 37,
-      },
+      scores: { 1: 28, 3: 37 },
     },
-    selected: {
-      1: 2,
-      2: 0.6,
-      3: 7.7,
-      4: 7.1,
-    },
+    selected: { 1: 2, 2: 0.6, 3: 7.7, 4: 6.4 },
   },
   {
     id: 209,
@@ -5777,17 +4175,9 @@ export default [
       lastRoundPoints: 30,
       positionRank: 28,
       nextFixture: 29,
-      scores: {
-        1: 20,
-        3: 30,
-      },
+      scores: { 1: 20, 3: 30 },
     },
-    selected: {
-      1: 0.1,
-      2: 0.1,
-      3: 0.1,
-      4: 0.1,
-    },
+    selected: { 1: 0.1, 2: 0.1, 3: 0.1, 4: 0.1 },
   },
   {
     id: 210,
@@ -5805,17 +4195,9 @@ export default [
       lastRoundPoints: 7,
       positionRank: 45,
       nextFixture: 29,
-      scores: {
-        1: 18,
-        3: 7,
-      },
+      scores: { 1: 18, 3: 7 },
     },
-    selected: {
-      1: 0.6,
-      2: 0.3,
-      3: 1.9,
-      4: 1.8,
-    },
+    selected: { 1: 0.6, 2: 0.3, 3: 1.9, 4: 1.6 },
   },
   {
     id: 211,
@@ -5833,17 +4215,9 @@ export default [
       lastRoundPoints: 9,
       positionRank: 46,
       nextFixture: 29,
-      scores: {
-        1: 14,
-        3: 9,
-      },
+      scores: { 1: 14, 3: 9 },
     },
-    selected: {
-      1: 0.7,
-      2: 0.2,
-      3: 0.3,
-      4: 0.3,
-    },
+    selected: { 1: 0.7, 2: 0.2, 3: 0.3, 4: 0.3 },
   },
   {
     id: 212,
@@ -5861,16 +4235,9 @@ export default [
       lastRoundPoints: null,
       positionRank: 47,
       nextFixture: 29,
-      scores: {
-        1: 6,
-      },
+      scores: { 1: 6 },
     },
-    selected: {
-      1: 0.1,
-      2: 0.1,
-      3: 0.1,
-      4: 0.1,
-    },
+    selected: { 1: 0.1, 2: 0.1, 3: 0.1, 4: 0.1 },
   },
   {
     id: 213,
@@ -5888,16 +4255,9 @@ export default [
       lastRoundPoints: 12,
       positionRank: 81,
       nextFixture: 29,
-      scores: {
-        3: 12,
-      },
+      scores: { 3: 12 },
     },
-    selected: {
-      1: 0.2,
-      2: 0.1,
-      3: 1.3,
-      4: 1.2,
-    },
+    selected: { 1: 0.2, 2: 0.1, 3: 1.3, 4: 1.1 },
   },
   {
     id: 214,
@@ -5915,17 +4275,9 @@ export default [
       lastRoundPoints: 30,
       positionRank: 49,
       nextFixture: 29,
-      scores: {
-        1: 22,
-        3: 30,
-      },
+      scores: { 1: 22, 3: 30 },
     },
-    selected: {
-      1: 1.1,
-      2: 0.4,
-      3: 3.6,
-      4: 3.3,
-    },
+    selected: { 1: 1.1, 2: 0.4, 3: 3.6, 4: 3 },
   },
   {
     id: 215,
@@ -5943,16 +4295,9 @@ export default [
       lastRoundPoints: null,
       positionRank: 50,
       nextFixture: 29,
-      scores: {
-        1: 38,
-      },
+      scores: { 1: 38 },
     },
-    selected: {
-      1: 0.6,
-      2: 0.5,
-      3: 0.7,
-      4: 0.7,
-    },
+    selected: { 1: 0.6, 2: 0.5, 3: 0.7, 4: 0.6 },
   },
   {
     id: 216,
@@ -5970,17 +4315,9 @@ export default [
       lastRoundPoints: 32,
       positionRank: 51,
       nextFixture: 29,
-      scores: {
-        1: 26,
-        3: 32,
-      },
+      scores: { 1: 26, 3: 32 },
     },
-    selected: {
-      1: 0.4,
-      2: 0.2,
-      3: 1.8,
-      4: 1.7,
-    },
+    selected: { 1: 0.4, 2: 0.2, 3: 1.8, 4: 1.5 },
   },
   {
     id: 217,
@@ -5998,17 +4335,9 @@ export default [
       lastRoundPoints: 2,
       positionRank: 52,
       nextFixture: 29,
-      scores: {
-        1: 3,
-        3: 2,
-      },
+      scores: { 1: 3, 3: 2 },
     },
-    selected: {
-      1: 0.1,
-      2: 0.1,
-      3: 0.1,
-      4: 0.1,
-    },
+    selected: { 1: 0.1, 2: 0.1, 3: 0.1, 4: 0.1 },
   },
   {
     id: 218,
@@ -6028,12 +4357,7 @@ export default [
       nextFixture: 29,
       scores: null,
     },
-    selected: {
-      1: 0.1,
-      2: 0,
-      3: 0,
-      4: 0.1,
-    },
+    selected: { 1: 0.1, 2: 0, 3: 0, 4: 0.1 },
   },
   {
     id: 219,
@@ -6053,12 +4377,7 @@ export default [
       nextFixture: 29,
       scores: null,
     },
-    selected: {
-      1: 0.3,
-      2: 0.2,
-      3: 0.2,
-      4: 0.2,
-    },
+    selected: { 1: 0.3, 2: 0.2, 3: 0.2, 4: 0.2 },
   },
   {
     id: 220,
@@ -6076,16 +4395,9 @@ export default [
       lastRoundPoints: 18,
       positionRank: 99,
       nextFixture: 29,
-      scores: {
-        3: 18,
-      },
+      scores: { 3: 18 },
     },
-    selected: {
-      1: 1.3,
-      2: 0.6,
-      3: 2.3,
-      4: 2.1,
-    },
+    selected: { 1: 1.3, 2: 0.6, 3: 2.3, 4: 1.9 },
   },
   {
     id: 221,
@@ -6103,17 +4415,9 @@ export default [
       lastRoundPoints: 29,
       positionRank: 55,
       nextFixture: 29,
-      scores: {
-        1: 33,
-        3: 29,
-      },
+      scores: { 1: 33, 3: 29 },
     },
-    selected: {
-      1: 1.1,
-      2: 1.6,
-      3: 16.5,
-      4: 15.5,
-    },
+    selected: { 1: 1.1, 2: 1.6, 3: 16.5, 4: 14.3 },
   },
   {
     id: 222,
@@ -6131,17 +4435,9 @@ export default [
       lastRoundPoints: 10,
       positionRank: 56,
       nextFixture: 29,
-      scores: {
-        1: 12,
-        3: 10,
-      },
+      scores: { 1: 12, 3: 10 },
     },
-    selected: {
-      1: 0.4,
-      2: 0.2,
-      3: 0.2,
-      4: 0.2,
-    },
+    selected: { 1: 0.4, 2: 0.2, 3: 0.2, 4: 0.2 },
   },
   {
     id: 223,
@@ -6159,16 +4455,9 @@ export default [
       lastRoundPoints: null,
       positionRank: 57,
       nextFixture: 29,
-      scores: {
-        1: 16,
-      },
+      scores: { 1: 16 },
     },
-    selected: {
-      1: 1.5,
-      2: 0.3,
-      3: 0.4,
-      4: 0.4,
-    },
+    selected: { 1: 1.5, 2: 0.3, 3: 0.4, 4: 0.4 },
   },
   {
     id: 224,
@@ -6186,17 +4475,9 @@ export default [
       lastRoundPoints: 8,
       positionRank: 58,
       nextFixture: 29,
-      scores: {
-        1: 15,
-        3: 8,
-      },
+      scores: { 1: 15, 3: 8 },
     },
-    selected: {
-      1: 1.4,
-      2: 0.3,
-      3: 0.4,
-      4: 0.4,
-    },
+    selected: { 1: 1.4, 2: 0.3, 3: 0.4, 4: 0.4 },
   },
   {
     id: 225,
@@ -6214,17 +4495,9 @@ export default [
       lastRoundPoints: 4,
       positionRank: 31,
       nextFixture: 29,
-      scores: {
-        1: 11,
-        3: 4,
-      },
+      scores: { 1: 11, 3: 4 },
     },
-    selected: {
-      1: 0.2,
-      2: 0.1,
-      3: 0.8,
-      4: 0.8,
-    },
+    selected: { 1: 0.2, 2: 0.1, 3: 0.8, 4: 0.7 },
   },
   {
     id: 226,
@@ -6242,17 +4515,9 @@ export default [
       lastRoundPoints: 3,
       positionRank: 32,
       nextFixture: 29,
-      scores: {
-        1: 3,
-        3: 3,
-      },
+      scores: { 1: 3, 3: 3 },
     },
-    selected: {
-      1: 0.3,
-      2: 0.1,
-      3: 0.1,
-      4: 0.1,
-    },
+    selected: { 1: 0.3, 2: 0.1, 3: 0.1, 4: 0.1 },
   },
   {
     id: 227,
@@ -6272,12 +4537,7 @@ export default [
       nextFixture: 29,
       scores: null,
     },
-    selected: {
-      1: 0,
-      2: 0,
-      3: 0,
-      4: 0,
-    },
+    selected: { 1: 0, 2: 0, 3: 0, 4: 0 },
   },
   {
     id: 228,
@@ -6295,18 +4555,9 @@ export default [
       lastRoundPoints: 21,
       positionRank: 23,
       nextFixture: 37,
-      scores: {
-        1: 55,
-        2: 34,
-        3: 21,
-      },
+      scores: { 1: 55, 2: 34, 3: 21 },
     },
-    selected: {
-      1: 13.3,
-      2: 11.8,
-      3: 9.7,
-      4: 9.3,
-    },
+    selected: { 1: 13.3, 2: 11.8, 3: 9.7, 4: 8.8 },
   },
   {
     id: 229,
@@ -6324,16 +4575,9 @@ export default [
       lastRoundPoints: null,
       positionRank: 37,
       nextFixture: 37,
-      scores: {
-        2: 28,
-      },
+      scores: { 2: 28 },
     },
-    selected: {
-      1: 0.3,
-      2: 0.2,
-      3: 0.2,
-      4: 0.2,
-    },
+    selected: { 1: 0.3, 2: 0.2, 3: 0.2, 4: 0.2 },
   },
   {
     id: 230,
@@ -6351,17 +4595,9 @@ export default [
       lastRoundPoints: 5,
       positionRank: 24,
       nextFixture: 37,
-      scores: {
-        1: 12,
-        3: 5,
-      },
+      scores: { 1: 12, 3: 5 },
     },
-    selected: {
-      1: 0.9,
-      2: 0.6,
-      3: 0.6,
-      4: 0.6,
-    },
+    selected: { 1: 0.9, 2: 0.6, 3: 0.6, 4: 0.5 },
   },
   {
     id: 231,
@@ -6379,18 +4615,9 @@ export default [
       lastRoundPoints: 36,
       positionRank: 51,
       nextFixture: 37,
-      scores: {
-        1: 44,
-        2: 32,
-        3: 36,
-      },
+      scores: { 1: 44, 2: 32, 3: 36 },
     },
-    selected: {
-      1: 17.6,
-      2: 10.3,
-      3: 6.8,
-      4: 6.6,
-    },
+    selected: { 1: 17.6, 2: 10.3, 3: 6.8, 4: 6.3 },
   },
   {
     id: 232,
@@ -6408,18 +4635,9 @@ export default [
       lastRoundPoints: 22,
       positionRank: 53,
       nextFixture: 37,
-      scores: {
-        1: 54,
-        2: 19,
-        3: 22,
-      },
+      scores: { 1: 54, 2: 19, 3: 22 },
     },
-    selected: {
-      1: 9,
-      2: 10,
-      3: 4.8,
-      4: 4.7,
-    },
+    selected: { 1: 9, 2: 10, 3: 4.8, 4: 4.5 },
   },
   {
     id: 233,
@@ -6437,18 +4655,9 @@ export default [
       lastRoundPoints: 31,
       positionRank: 54,
       nextFixture: 37,
-      scores: {
-        1: 50,
-        2: 49,
-        3: 31,
-      },
+      scores: { 1: 50, 2: 49, 3: 31 },
     },
-    selected: {
-      1: 2.7,
-      2: 6.6,
-      3: 7.4,
-      4: 7,
-    },
+    selected: { 1: 2.7, 2: 6.6, 3: 7.4, 4: 6.4 },
   },
   {
     id: 234,
@@ -6468,12 +4677,7 @@ export default [
       nextFixture: 37,
       scores: null,
     },
-    selected: {
-      1: 0.4,
-      2: 0.3,
-      3: 0.3,
-      4: 0.3,
-    },
+    selected: { 1: 0.4, 2: 0.3, 3: 0.3, 4: 0.3 },
   },
   {
     id: 235,
@@ -6491,16 +4695,9 @@ export default [
       lastRoundPoints: null,
       positionRank: 55,
       nextFixture: 37,
-      scores: {
-        1: 10,
-      },
+      scores: { 1: 10 },
     },
-    selected: {
-      1: 6.7,
-      2: 1.4,
-      3: 1.2,
-      4: 1.2,
-    },
+    selected: { 1: 6.7, 2: 1.4, 3: 1.2, 4: 1.2 },
   },
   {
     id: 236,
@@ -6518,18 +4715,9 @@ export default [
       lastRoundPoints: 36,
       positionRank: 46,
       nextFixture: 37,
-      scores: {
-        1: 113,
-        2: 82,
-        3: 36,
-      },
+      scores: { 1: 113, 2: 82, 3: 36 },
     },
-    selected: {
-      1: 4.8,
-      2: 17.7,
-      3: 23.7,
-      4: 21.4,
-    },
+    selected: { 1: 4.8, 2: 17.7, 3: 23.7, 4: 18.8 },
   },
   {
     id: 237,
@@ -6547,18 +4735,9 @@ export default [
       lastRoundPoints: 9,
       positionRank: 48,
       nextFixture: 37,
-      scores: {
-        1: 59,
-        2: 37,
-        3: 9,
-      },
+      scores: { 1: 59, 2: 37, 3: 9 },
     },
-    selected: {
-      1: 17.1,
-      2: 11,
-      3: 8.2,
-      4: 7.8,
-    },
+    selected: { 1: 17.1, 2: 11, 3: 8.2, 4: 7.3 },
   },
   {
     id: 238,
@@ -6576,17 +4755,9 @@ export default [
       lastRoundPoints: 5,
       positionRank: 67,
       nextFixture: 37,
-      scores: {
-        2: 5,
-        3: 5,
-      },
+      scores: { 2: 5, 3: 5 },
     },
-    selected: {
-      1: 1.4,
-      2: 1,
-      3: 0.9,
-      4: 0.9,
-    },
+    selected: { 1: 1.4, 2: 1, 3: 0.9, 4: 0.8 },
   },
   {
     id: 239,
@@ -6606,12 +4777,7 @@ export default [
       nextFixture: 37,
       scores: null,
     },
-    selected: {
-      1: 0.6,
-      2: 0.4,
-      3: 0.4,
-      4: 0.4,
-    },
+    selected: { 1: 0.6, 2: 0.4, 3: 0.4, 4: 0.4 },
   },
   {
     id: 240,
@@ -6629,16 +4795,9 @@ export default [
       lastRoundPoints: 10,
       positionRank: 50,
       nextFixture: 37,
-      scores: {
-        3: 10,
-      },
+      scores: { 3: 10 },
     },
-    selected: {
-      1: 2,
-      2: 1.3,
-      3: 1.2,
-      4: 1.2,
-    },
+    selected: { 1: 2, 2: 1.3, 3: 1.2, 4: 1.2 },
   },
   {
     id: 241,
@@ -6656,18 +4815,9 @@ export default [
       lastRoundPoints: 14,
       positionRank: 31,
       nextFixture: 37,
-      scores: {
-        1: 7,
-        2: 26,
-        3: 14,
-      },
+      scores: { 1: 7, 2: 26, 3: 14 },
     },
-    selected: {
-      1: 0.6,
-      2: 2.8,
-      3: 1.8,
-      4: 1.7,
-    },
+    selected: { 1: 0.6, 2: 2.8, 3: 1.8, 4: 1.6 },
   },
   {
     id: 242,
@@ -6685,17 +4835,9 @@ export default [
       lastRoundPoints: null,
       positionRank: 32,
       nextFixture: 37,
-      scores: {
-        1: 32,
-        2: 39,
-      },
+      scores: { 1: 32, 2: 39 },
     },
-    selected: {
-      1: 6.1,
-      2: 1.7,
-      3: 1.5,
-      4: 1.4,
-    },
+    selected: { 1: 6.1, 2: 1.7, 3: 1.5, 4: 1.4 },
   },
   {
     id: 243,
@@ -6713,18 +4855,9 @@ export default [
       lastRoundPoints: 15,
       positionRank: 51,
       nextFixture: 37,
-      scores: {
-        1: 19,
-        2: 9,
-        3: 15,
-      },
+      scores: { 1: 19, 2: 9, 3: 15 },
     },
-    selected: {
-      1: 2.6,
-      2: 2.8,
-      3: 2.3,
-      4: 2.2,
-    },
+    selected: { 1: 2.6, 2: 2.8, 3: 2.3, 4: 2.2 },
   },
   {
     id: 244,
@@ -6742,18 +4875,9 @@ export default [
       lastRoundPoints: 15,
       positionRank: 52,
       nextFixture: 37,
-      scores: {
-        1: 59,
-        2: 40,
-        3: 15,
-      },
+      scores: { 1: 59, 2: 40, 3: 15 },
     },
-    selected: {
-      1: 5.6,
-      2: 11.4,
-      3: 13.2,
-      4: 12.2,
-    },
+    selected: { 1: 5.6, 2: 11.4, 3: 13.2, 4: 10.9 },
   },
   {
     id: 245,
@@ -6771,18 +4895,9 @@ export default [
       lastRoundPoints: 5,
       positionRank: 53,
       nextFixture: 37,
-      scores: {
-        1: 17,
-        2: 12,
-        3: 5,
-      },
+      scores: { 1: 17, 2: 12, 3: 5 },
     },
-    selected: {
-      1: 1.2,
-      2: 1,
-      3: 1,
-      4: 1,
-    },
+    selected: { 1: 1.2, 2: 1, 3: 1, 4: 1 },
   },
   {
     id: 246,
@@ -6800,16 +4915,9 @@ export default [
       lastRoundPoints: null,
       positionRank: 54,
       nextFixture: 37,
-      scores: {
-        1: 60,
-      },
+      scores: { 1: 60 },
     },
-    selected: {
-      1: 3.6,
-      2: 2.8,
-      3: 2.4,
-      4: 2.3,
-    },
+    selected: { 1: 3.6, 2: 2.8, 3: 2.4, 4: 2.3 },
   },
   {
     id: 247,
@@ -6827,17 +4935,9 @@ export default [
       lastRoundPoints: 0,
       positionRank: 74,
       nextFixture: 37,
-      scores: {
-        2: 5,
-        3: 0,
-      },
+      scores: { 2: 5, 3: 0 },
     },
-    selected: {
-      1: 0.7,
-      2: 0.7,
-      3: 0.5,
-      4: 0.5,
-    },
+    selected: { 1: 0.7, 2: 0.7, 3: 0.5, 4: 0.5 },
   },
   {
     id: 248,
@@ -6855,18 +4955,9 @@ export default [
       lastRoundPoints: 15,
       positionRank: 56,
       nextFixture: 37,
-      scores: {
-        1: 20,
-        2: 55,
-        3: 15,
-      },
+      scores: { 1: 20, 2: 55, 3: 15 },
     },
-    selected: {
-      1: 15.1,
-      2: 7.5,
-      3: 13.8,
-      4: 12.8,
-    },
+    selected: { 1: 15.1, 2: 7.5, 3: 13.8, 4: 11.5 },
   },
   {
     id: 249,
@@ -6884,18 +4975,9 @@ export default [
       lastRoundPoints: 22,
       positionRank: 58,
       nextFixture: 37,
-      scores: {
-        1: 24,
-        2: 13,
-        3: 22,
-      },
+      scores: { 1: 24, 2: 13, 3: 22 },
     },
-    selected: {
-      1: 10.6,
-      2: 14.2,
-      3: 11.2,
-      4: 10.8,
-    },
+    selected: { 1: 10.6, 2: 14.2, 3: 11.2, 4: 10.3 },
   },
   {
     id: 250,
@@ -6915,12 +4997,7 @@ export default [
       nextFixture: 37,
       scores: null,
     },
-    selected: {
-      1: 0.7,
-      2: 0.5,
-      3: 0.5,
-      4: 0.5,
-    },
+    selected: { 1: 0.7, 2: 0.5, 3: 0.5, 4: 0.5 },
   },
   {
     id: 251,
@@ -6938,18 +5015,9 @@ export default [
       lastRoundPoints: 18,
       positionRank: 59,
       nextFixture: 37,
-      scores: {
-        1: 51,
-        2: 12,
-        3: 18,
-      },
+      scores: { 1: 51, 2: 12, 3: 18 },
     },
-    selected: {
-      1: 6.9,
-      2: 19.6,
-      3: 13.6,
-      4: 12.8,
-    },
+    selected: { 1: 6.9, 2: 19.6, 3: 13.6, 4: 11.7 },
   },
   {
     id: 252,
@@ -6967,18 +5035,9 @@ export default [
       lastRoundPoints: 11,
       positionRank: 61,
       nextFixture: 37,
-      scores: {
-        1: 17,
-        2: 11,
-        3: 11,
-      },
+      scores: { 1: 17, 2: 11, 3: 11 },
     },
-    selected: {
-      1: 21.9,
-      2: 18.1,
-      3: 14.6,
-      4: 14.2,
-    },
+    selected: { 1: 21.9, 2: 18.1, 3: 14.6, 4: 13.7 },
   },
   {
     id: 253,
@@ -6996,18 +5055,9 @@ export default [
       lastRoundPoints: 16,
       positionRank: 63,
       nextFixture: 37,
-      scores: {
-        1: 14,
-        2: 11,
-        3: 16,
-      },
+      scores: { 1: 14, 2: 11, 3: 16 },
     },
-    selected: {
-      1: 7.2,
-      2: 7.2,
-      3: 5.3,
-      4: 5.1,
-    },
+    selected: { 1: 7.2, 2: 7.2, 3: 5.3, 4: 4.9 },
   },
   {
     id: 254,
@@ -7025,17 +5075,9 @@ export default [
       lastRoundPoints: 7,
       positionRank: 89,
       nextFixture: 37,
-      scores: {
-        2: 3,
-        3: 7,
-      },
+      scores: { 2: 3, 3: 7 },
     },
-    selected: {
-      1: 0.4,
-      2: 0.4,
-      3: 0.3,
-      4: 0.3,
-    },
+    selected: { 1: 0.4, 2: 0.4, 3: 0.3, 4: 0.3 },
   },
   {
     id: 255,
@@ -7053,17 +5095,9 @@ export default [
       lastRoundPoints: 2,
       positionRank: 90,
       nextFixture: 37,
-      scores: {
-        2: 6,
-        3: 2,
-      },
+      scores: { 2: 6, 3: 2 },
     },
-    selected: {
-      1: 0.1,
-      2: 0.2,
-      3: 0.1,
-      4: 0.1,
-    },
+    selected: { 1: 0.1, 2: 0.2, 3: 0.1, 4: 0.1 },
   },
   {
     id: 256,
@@ -7081,16 +5115,9 @@ export default [
       lastRoundPoints: null,
       positionRank: 1,
       nextFixture: 37,
-      scores: {
-        1: 19,
-      },
+      scores: { 1: 19 },
     },
-    selected: {
-      1: 0.1,
-      2: 0.4,
-      3: 0.3,
-      4: 0.3,
-    },
+    selected: { 1: 0.1, 2: 0.4, 3: 0.3, 4: 0.3 },
   },
   {
     id: 257,
@@ -7108,16 +5135,9 @@ export default [
       lastRoundPoints: null,
       positionRank: 2,
       nextFixture: 37,
-      scores: {
-        1: 13,
-      },
+      scores: { 1: 13 },
     },
-    selected: {
-      1: 0.4,
-      2: 0.3,
-      3: 0.3,
-      4: 0.3,
-    },
+    selected: { 1: 0.4, 2: 0.3, 3: 0.3, 4: 0.3 },
   },
   {
     id: 258,
@@ -7135,17 +5155,9 @@ export default [
       lastRoundPoints: 3,
       positionRank: 3,
       nextFixture: 37,
-      scores: {
-        1: 32,
-        3: 3,
-      },
+      scores: { 1: 32, 3: 3 },
     },
-    selected: {
-      1: 7.3,
-      2: 2.3,
-      3: 3.9,
-      4: 3.7,
-    },
+    selected: { 1: 7.3, 2: 2.3, 3: 3.9, 4: 3.5 },
   },
   {
     id: 259,
@@ -7163,18 +5175,9 @@ export default [
       lastRoundPoints: 10,
       positionRank: 4,
       nextFixture: 37,
-      scores: {
-        1: 37,
-        2: 22,
-        3: 10,
-      },
+      scores: { 1: 37, 2: 22, 3: 10 },
     },
-    selected: {
-      1: 0.9,
-      2: 6.8,
-      3: 2,
-      4: 2,
-    },
+    selected: { 1: 0.9, 2: 6.8, 3: 2, 4: 2 },
   },
   {
     id: 260,
@@ -7192,16 +5195,9 @@ export default [
       lastRoundPoints: null,
       positionRank: 33,
       nextFixture: 37,
-      scores: {
-        2: 26,
-      },
+      scores: { 2: 26 },
     },
-    selected: {
-      1: 0.2,
-      2: 0.2,
-      3: 0.2,
-      4: 0.2,
-    },
+    selected: { 1: 0.2, 2: 0.2, 3: 0.2, 4: 0.2 },
   },
   {
     id: 261,
@@ -7219,17 +5215,9 @@ export default [
       lastRoundPoints: 51,
       positionRank: 4,
       nextFixture: 27,
-      scores: {
-        1: 54,
-        3: 51,
-      },
+      scores: { 1: 54, 3: 51 },
     },
-    selected: {
-      1: 20.9,
-      2: 5,
-      3: 10.5,
-      4: 9.9,
-    },
+    selected: { 1: 20.9, 2: 5, 3: 10.5, 4: 9.1 },
   },
   {
     id: 262,
@@ -7247,17 +5235,9 @@ export default [
       lastRoundPoints: 50,
       positionRank: 5,
       nextFixture: 27,
-      scores: {
-        1: 36,
-        3: 50,
-      },
+      scores: { 1: 36, 3: 50 },
     },
-    selected: {
-      1: 4.1,
-      2: 0.8,
-      3: 4,
-      4: 3.6,
-    },
+    selected: { 1: 4.1, 2: 0.8, 3: 4, 4: 3.2 },
   },
   {
     id: 263,
@@ -7277,12 +5257,7 @@ export default [
       nextFixture: 27,
       scores: null,
     },
-    selected: {
-      1: 0.1,
-      2: 0.1,
-      3: 0.1,
-      4: 0.1,
-    },
+    selected: { 1: 0.1, 2: 0.1, 3: 0.1, 4: 0.1 },
   },
   {
     id: 264,
@@ -7300,17 +5275,9 @@ export default [
       lastRoundPoints: 14,
       positionRank: 7,
       nextFixture: 27,
-      scores: {
-        1: 49,
-        3: 14,
-      },
+      scores: { 1: 49, 3: 14 },
     },
-    selected: {
-      1: 48.5,
-      2: 14.2,
-      3: 34.6,
-      4: 31.9,
-    },
+    selected: { 1: 48.5, 2: 14.2, 3: 34.6, 4: 28.7 },
   },
   {
     id: 265,
@@ -7328,17 +5295,9 @@ export default [
       lastRoundPoints: 39,
       positionRank: 9,
       nextFixture: 27,
-      scores: {
-        1: 43,
-        3: 39,
-      },
+      scores: { 1: 43, 3: 39 },
     },
-    selected: {
-      1: 11.7,
-      2: 3,
-      3: 7.7,
-      4: 7.2,
-    },
+    selected: { 1: 11.7, 2: 3, 3: 7.7, 4: 6.6 },
   },
   {
     id: 266,
@@ -7356,17 +5315,9 @@ export default [
       lastRoundPoints: 13,
       positionRank: 10,
       nextFixture: 27,
-      scores: {
-        1: 47,
-        3: 13,
-      },
+      scores: { 1: 47, 3: 13 },
     },
-    selected: {
-      1: 1,
-      2: 0.9,
-      3: 0.9,
-      4: 0.9,
-    },
+    selected: { 1: 1, 2: 0.9, 3: 0.9, 4: 0.9 },
   },
   {
     id: 267,
@@ -7384,16 +5335,9 @@ export default [
       lastRoundPoints: null,
       positionRank: 11,
       nextFixture: 27,
-      scores: {
-        1: 22,
-      },
+      scores: { 1: 22 },
     },
-    selected: {
-      1: 0.3,
-      2: 0.3,
-      3: 0.3,
-      4: 0.3,
-    },
+    selected: { 1: 0.3, 2: 0.3, 3: 0.3, 4: 0.3 },
   },
   {
     id: 268,
@@ -7411,16 +5355,9 @@ export default [
       lastRoundPoints: 28,
       positionRank: 71,
       nextFixture: 27,
-      scores: {
-        3: 28,
-      },
+      scores: { 3: 28 },
     },
-    selected: {
-      1: 0.2,
-      2: 0.2,
-      3: 0.5,
-      4: 0.4,
-    },
+    selected: { 1: 0.2, 2: 0.2, 3: 0.5, 4: 0.4 },
   },
   {
     id: 269,
@@ -7438,17 +5375,9 @@ export default [
       lastRoundPoints: 37,
       positionRank: 5,
       nextFixture: 27,
-      scores: {
-        1: 27,
-        3: 37,
-      },
+      scores: { 1: 27, 3: 37 },
     },
-    selected: {
-      1: 6.2,
-      2: 1.4,
-      3: 5.5,
-      4: 5.1,
-    },
+    selected: { 1: 6.2, 2: 1.4, 3: 5.5, 4: 4.6 },
   },
   {
     id: 270,
@@ -7466,16 +5395,9 @@ export default [
       lastRoundPoints: null,
       positionRank: 6,
       nextFixture: 27,
-      scores: {
-        1: 12,
-      },
+      scores: { 1: 12 },
     },
-    selected: {
-      1: 2,
-      2: 0.5,
-      3: 0.5,
-      4: 0.5,
-    },
+    selected: { 1: 2, 2: 0.5, 3: 0.5, 4: 0.5 },
   },
   {
     id: 271,
@@ -7493,17 +5415,9 @@ export default [
       lastRoundPoints: 28,
       positionRank: 5,
       nextFixture: 27,
-      scores: {
-        1: 31,
-        3: 28,
-      },
+      scores: { 1: 31, 3: 28 },
     },
-    selected: {
-      1: 6,
-      2: 1.5,
-      3: 5.3,
-      4: 4.9,
-    },
+    selected: { 1: 6, 2: 1.5, 3: 5.3, 4: 4.3 },
   },
   {
     id: 272,
@@ -7523,12 +5437,7 @@ export default [
       nextFixture: 27,
       scores: null,
     },
-    selected: {
-      1: 0.5,
-      2: 0.3,
-      3: 0.3,
-      4: 0.3,
-    },
+    selected: { 1: 0.5, 2: 0.3, 3: 0.3, 4: 0.3 },
   },
   {
     id: 273,
@@ -7546,16 +5455,9 @@ export default [
       lastRoundPoints: null,
       positionRank: 6,
       nextFixture: 27,
-      scores: {
-        1: 34,
-      },
+      scores: { 1: 34 },
     },
-    selected: {
-      1: 0.8,
-      2: 0.7,
-      3: 0.8,
-      4: 0.8,
-    },
+    selected: { 1: 0.8, 2: 0.7, 3: 0.8, 4: 0.8 },
   },
   {
     id: 274,
@@ -7573,17 +5475,9 @@ export default [
       lastRoundPoints: 27,
       positionRank: 7,
       nextFixture: 27,
-      scores: {
-        1: 19,
-        3: 27,
-      },
+      scores: { 1: 19, 3: 27 },
     },
-    selected: {
-      1: 3.2,
-      2: 0.7,
-      3: 2.5,
-      4: 2.4,
-    },
+    selected: { 1: 3.2, 2: 0.7, 3: 2.5, 4: 2.3 },
   },
   {
     id: 275,
@@ -7601,16 +5495,9 @@ export default [
       lastRoundPoints: 0,
       positionRank: 75,
       nextFixture: 27,
-      scores: {
-        3: 0,
-      },
+      scores: { 3: 0 },
     },
-    selected: {
-      1: 4.3,
-      2: 2,
-      3: 4,
-      4: 3.8,
-    },
+    selected: { 1: 4.3, 2: 2, 3: 4, 4: 3.4 },
   },
   {
     id: 276,
@@ -7628,17 +5515,9 @@ export default [
       lastRoundPoints: 2,
       positionRank: 9,
       nextFixture: 27,
-      scores: {
-        1: 38,
-        3: 2,
-      },
+      scores: { 1: 38, 3: 2 },
     },
-    selected: {
-      1: 6.2,
-      2: 1.6,
-      3: 1.7,
-      4: 1.8,
-    },
+    selected: { 1: 6.2, 2: 1.6, 3: 1.7, 4: 1.8 },
   },
   {
     id: 277,
@@ -7656,16 +5535,9 @@ export default [
       lastRoundPoints: null,
       positionRank: 10,
       nextFixture: 27,
-      scores: {
-        1: 4,
-      },
+      scores: { 1: 4 },
     },
-    selected: {
-      1: 0.3,
-      2: 0.2,
-      3: 0.2,
-      4: 0.2,
-    },
+    selected: { 1: 0.3, 2: 0.2, 3: 0.2, 4: 0.2 },
   },
   {
     id: 278,
@@ -7683,17 +5555,9 @@ export default [
       lastRoundPoints: 45,
       positionRank: 5,
       nextFixture: 27,
-      scores: {
-        1: 48,
-        3: 45,
-      },
+      scores: { 1: 48, 3: 45 },
     },
-    selected: {
-      1: 3.9,
-      2: 1.9,
-      3: 17.9,
-      4: 17.1,
-    },
+    selected: { 1: 3.9, 2: 1.9, 3: 17.9, 4: 16.3 },
   },
   {
     id: 279,
@@ -7711,17 +5575,9 @@ export default [
       lastRoundPoints: 15,
       positionRank: 7,
       nextFixture: 27,
-      scores: {
-        1: 3,
-        3: 15,
-      },
+      scores: { 1: 3, 3: 15 },
     },
-    selected: {
-      1: 7.7,
-      2: 1.8,
-      3: 2.5,
-      4: 2.4,
-    },
+    selected: { 1: 7.7, 2: 1.8, 3: 2.5, 4: 2.3 },
   },
   {
     id: 280,
@@ -7739,16 +5595,9 @@ export default [
       lastRoundPoints: 1,
       positionRank: 92,
       nextFixture: 27,
-      scores: {
-        3: 1,
-      },
+      scores: { 3: 1 },
     },
-    selected: {
-      1: 0.2,
-      2: 0.1,
-      3: 0.1,
-      4: 0.1,
-    },
+    selected: { 1: 0.2, 2: 0.1, 3: 0.1, 4: 0.1 },
   },
   {
     id: 281,
@@ -7766,17 +5615,9 @@ export default [
       lastRoundPoints: 34,
       positionRank: 11,
       nextFixture: 27,
-      scores: {
-        1: 39,
-        3: 34,
-      },
+      scores: { 1: 39, 3: 34 },
     },
-    selected: {
-      1: 9.4,
-      2: 2.8,
-      3: 8.3,
-      4: 8.1,
-    },
+    selected: { 1: 9.4, 2: 2.8, 3: 8.3, 4: 7.7 },
   },
   {
     id: 282,
@@ -7794,17 +5635,9 @@ export default [
       lastRoundPoints: 10,
       positionRank: 12,
       nextFixture: 27,
-      scores: {
-        1: 46,
-        3: 10,
-      },
+      scores: { 1: 46, 3: 10 },
     },
-    selected: {
-      1: 0.2,
-      2: 0.7,
-      3: 0.8,
-      4: 0.8,
-    },
+    selected: { 1: 0.2, 2: 0.7, 3: 0.8, 4: 0.8 },
   },
   {
     id: 283,
@@ -7824,12 +5657,7 @@ export default [
       nextFixture: 27,
       scores: null,
     },
-    selected: {
-      1: 0.5,
-      2: 0.3,
-      3: 0.3,
-      4: 0.3,
-    },
+    selected: { 1: 0.5, 2: 0.3, 3: 0.3, 4: 0.3 },
   },
   {
     id: 284,
@@ -7847,17 +5675,9 @@ export default [
       lastRoundPoints: 19,
       positionRank: 6,
       nextFixture: 27,
-      scores: {
-        1: 20,
-        3: 19,
-      },
+      scores: { 1: 20, 3: 19 },
     },
-    selected: {
-      1: 6.1,
-      2: 1.3,
-      3: 5,
-      4: 4.7,
-    },
+    selected: { 1: 6.1, 2: 1.3, 3: 5, 4: 4.3 },
   },
   {
     id: 285,
@@ -7875,16 +5695,9 @@ export default [
       lastRoundPoints: 13,
       positionRank: 91,
       nextFixture: 27,
-      scores: {
-        3: 13,
-      },
+      scores: { 3: 13 },
     },
-    selected: {
-      1: 0.2,
-      2: 0.1,
-      3: 0.1,
-      4: 0.1,
-    },
+    selected: { 1: 0.2, 2: 0.1, 3: 0.1, 4: 0.1 },
   },
   {
     id: 286,
@@ -7902,16 +5715,9 @@ export default [
       lastRoundPoints: null,
       positionRank: 11,
       nextFixture: 27,
-      scores: {
-        1: 13,
-      },
+      scores: { 1: 13 },
     },
-    selected: {
-      1: 3.9,
-      2: 0.7,
-      3: 0.7,
-      4: 0.7,
-    },
+    selected: { 1: 3.9, 2: 0.7, 3: 0.7, 4: 0.7 },
   },
   {
     id: 287,
@@ -7929,16 +5735,9 @@ export default [
       lastRoundPoints: 11,
       positionRank: 92,
       nextFixture: 27,
-      scores: {
-        3: 11,
-      },
+      scores: { 3: 11 },
     },
-    selected: {
-      1: 0.1,
-      2: 0.1,
-      3: 0.1,
-      4: 0.1,
-    },
+    selected: { 1: 0.1, 2: 0.1, 3: 0.1, 4: 0.1 },
   },
   {
     id: 288,
@@ -7956,17 +5755,9 @@ export default [
       lastRoundPoints: 14,
       positionRank: 13,
       nextFixture: 27,
-      scores: {
-        1: 14,
-        3: 14,
-      },
+      scores: { 1: 14, 3: 14 },
     },
-    selected: {
-      1: 0.2,
-      2: 0.2,
-      3: 0.2,
-      4: 0.2,
-    },
+    selected: { 1: 0.2, 2: 0.2, 3: 0.2, 4: 0.2 },
   },
   {
     id: 289,
@@ -7984,17 +5775,9 @@ export default [
       lastRoundPoints: 20,
       positionRank: 14,
       nextFixture: 27,
-      scores: {
-        1: 7,
-        3: 20,
-      },
+      scores: { 1: 7, 3: 20 },
     },
-    selected: {
-      1: 1.3,
-      2: 0.6,
-      3: 3.4,
-      4: 3,
-    },
+    selected: { 1: 1.3, 2: 0.6, 3: 3.4, 4: 2.6 },
   },
   {
     id: 290,
@@ -8012,16 +5795,9 @@ export default [
       lastRoundPoints: 21,
       positionRank: 51,
       nextFixture: 27,
-      scores: {
-        3: 21,
-      },
+      scores: { 3: 21 },
     },
-    selected: {
-      1: 0.8,
-      2: 0.4,
-      3: 2.8,
-      4: 2.5,
-    },
+    selected: { 1: 0.8, 2: 0.4, 3: 2.8, 4: 2.1 },
   },
   {
     id: 291,
@@ -8039,16 +5815,9 @@ export default [
       lastRoundPoints: 15,
       positionRank: 52,
       nextFixture: 27,
-      scores: {
-        3: 15,
-      },
+      scores: { 3: 15 },
     },
-    selected: {
-      1: 0.1,
-      2: 0,
-      3: 0,
-      4: 0,
-    },
+    selected: { 1: 0.1, 2: 0, 3: 0, 4: 0 },
   },
   {
     id: 292,
@@ -8066,16 +5835,9 @@ export default [
       lastRoundPoints: null,
       positionRank: 9,
       nextFixture: 27,
-      scores: {
-        1: 27,
-      },
+      scores: { 1: 27 },
     },
-    selected: {
-      1: 0,
-      2: 0.2,
-      3: 0.3,
-      4: 0.3,
-    },
+    selected: { 1: 0, 2: 0.2, 3: 0.3, 4: 0.3 },
   },
   {
     id: 293,
@@ -8093,16 +5855,9 @@ export default [
       lastRoundPoints: null,
       positionRank: 10,
       nextFixture: 27,
-      scores: {
-        1: 11,
-      },
+      scores: { 1: 11 },
     },
-    selected: {
-      1: 3.8,
-      2: 0.7,
-      3: 0.6,
-      4: 0.6,
-    },
+    selected: { 1: 3.8, 2: 0.7, 3: 0.6, 4: 0.6 },
   },
   {
     id: 294,
@@ -8120,17 +5875,9 @@ export default [
       lastRoundPoints: null,
       positionRank: 8,
       nextFixture: 26,
-      scores: {
-        1: 20,
-        2: 28,
-      },
+      scores: { 1: 20, 2: 28 },
     },
-    selected: {
-      1: 3.7,
-      2: 1.8,
-      3: 1.1,
-      4: 1.1,
-    },
+    selected: { 1: 3.7, 2: 1.8, 3: 1.1, 4: 1.2 },
   },
   {
     id: 295,
@@ -8150,12 +5897,7 @@ export default [
       nextFixture: 26,
       scores: null,
     },
-    selected: {
-      1: 0.1,
-      2: 0.1,
-      3: 0.1,
-      4: 0.1,
-    },
+    selected: { 1: 0.1, 2: 0.1, 3: 0.1, 4: 0.1 },
   },
   {
     id: 296,
@@ -8175,12 +5917,7 @@ export default [
       nextFixture: 26,
       scores: null,
     },
-    selected: {
-      1: 0.2,
-      2: 0.1,
-      3: 0.1,
-      4: 0.1,
-    },
+    selected: { 1: 0.2, 2: 0.1, 3: 0.1, 4: 0.1 },
   },
   {
     id: 297,
@@ -8198,17 +5935,9 @@ export default [
       lastRoundPoints: null,
       positionRank: 16,
       nextFixture: 26,
-      scores: {
-        1: 19,
-        2: 31,
-      },
+      scores: { 1: 19, 2: 31 },
     },
-    selected: {
-      1: 13.5,
-      2: 5.6,
-      3: 3.8,
-      4: 3.9,
-    },
+    selected: { 1: 13.5, 2: 5.6, 3: 3.8, 4: 3.9 },
   },
   {
     id: 298,
@@ -8226,17 +5955,9 @@ export default [
       lastRoundPoints: null,
       positionRank: 17,
       nextFixture: 26,
-      scores: {
-        1: 6,
-        2: 9,
-      },
+      scores: { 1: 6, 2: 9 },
     },
-    selected: {
-      1: 0.6,
-      2: 0.5,
-      3: 0.4,
-      4: 0.4,
-    },
+    selected: { 1: 0.6, 2: 0.5, 3: 0.4, 4: 0.4 },
   },
   {
     id: 299,
@@ -8256,12 +5977,7 @@ export default [
       nextFixture: 26,
       scores: null,
     },
-    selected: {
-      1: 0.7,
-      2: 0.5,
-      3: 0.4,
-      4: 0.4,
-    },
+    selected: { 1: 0.7, 2: 0.5, 3: 0.4, 4: 0.4 },
   },
   {
     id: 300,
@@ -8279,17 +5995,9 @@ export default [
       lastRoundPoints: null,
       positionRank: 18,
       nextFixture: 26,
-      scores: {
-        1: 23,
-        2: -1,
-      },
+      scores: { 1: 23, 2: -1 },
     },
-    selected: {
-      1: 1.9,
-      2: 1.2,
-      3: 0.6,
-      4: 0.6,
-    },
+    selected: { 1: 1.9, 2: 1.2, 3: 0.6, 4: 0.6 },
   },
   {
     id: 301,
@@ -8307,17 +6015,9 @@ export default [
       lastRoundPoints: null,
       positionRank: 19,
       nextFixture: 26,
-      scores: {
-        1: 24,
-        2: 27,
-      },
+      scores: { 1: 24, 2: 27 },
     },
-    selected: {
-      1: 1.1,
-      2: 1.6,
-      3: 0.8,
-      4: 0.8,
-    },
+    selected: { 1: 1.1, 2: 1.6, 3: 0.8, 4: 0.8 },
   },
   {
     id: 302,
@@ -8335,17 +6035,9 @@ export default [
       lastRoundPoints: null,
       positionRank: 9,
       nextFixture: 26,
-      scores: {
-        1: 39,
-        2: 6,
-      },
+      scores: { 1: 39, 2: 6 },
     },
-    selected: {
-      1: 22.2,
-      2: 10.6,
-      3: 6.5,
-      4: 6.6,
-    },
+    selected: { 1: 22.2, 2: 10.6, 3: 6.5, 4: 6.7 },
   },
   {
     id: 303,
@@ -8363,17 +6055,9 @@ export default [
       lastRoundPoints: null,
       positionRank: 10,
       nextFixture: 26,
-      scores: {
-        1: 7,
-        2: 18,
-      },
+      scores: { 1: 7, 2: 18 },
     },
-    selected: {
-      1: 0.3,
-      2: 0.5,
-      3: 0.3,
-      4: 0.3,
-    },
+    selected: { 1: 0.3, 2: 0.5, 3: 0.3, 4: 0.3 },
   },
   {
     id: 304,
@@ -8391,17 +6075,9 @@ export default [
       lastRoundPoints: null,
       positionRank: 11,
       nextFixture: 26,
-      scores: {
-        1: -1,
-        2: 16,
-      },
+      scores: { 1: -1, 2: 16 },
     },
-    selected: {
-      1: 5.8,
-      2: 1,
-      3: 0.8,
-      4: 0.8,
-    },
+    selected: { 1: 5.8, 2: 1, 3: 0.8, 4: 0.8 },
   },
   {
     id: 305,
@@ -8421,12 +6097,7 @@ export default [
       nextFixture: 26,
       scores: null,
     },
-    selected: {
-      1: 1.1,
-      2: 0.7,
-      3: 0.6,
-      4: 0.6,
-    },
+    selected: { 1: 1.1, 2: 0.7, 3: 0.6, 4: 0.6 },
   },
   {
     id: 306,
@@ -8444,17 +6115,9 @@ export default [
       lastRoundPoints: null,
       positionRank: 9,
       nextFixture: 26,
-      scores: {
-        1: 33,
-        2: 31,
-      },
+      scores: { 1: 33, 2: 31 },
     },
-    selected: {
-      1: 0.4,
-      2: 5.1,
-      3: 1.1,
-      4: 1.2,
-    },
+    selected: { 1: 0.4, 2: 5.1, 3: 1.1, 4: 1.5 },
   },
   {
     id: 307,
@@ -8472,17 +6135,9 @@ export default [
       lastRoundPoints: null,
       positionRank: 10,
       nextFixture: 26,
-      scores: {
-        1: 29,
-        2: 4,
-      },
+      scores: { 1: 29, 2: 4 },
     },
-    selected: {
-      1: 16.1,
-      2: 5.4,
-      3: 4.2,
-      4: 4.2,
-    },
+    selected: { 1: 16.1, 2: 5.4, 3: 4.2, 4: 4.2 },
   },
   {
     id: 308,
@@ -8502,12 +6157,7 @@ export default [
       nextFixture: 26,
       scores: null,
     },
-    selected: {
-      1: 0.4,
-      2: 0.3,
-      3: 0.2,
-      4: 0.2,
-    },
+    selected: { 1: 0.4, 2: 0.3, 3: 0.2, 4: 0.3 },
   },
   {
     id: 309,
@@ -8525,17 +6175,9 @@ export default [
       lastRoundPoints: null,
       positionRank: 13,
       nextFixture: 26,
-      scores: {
-        1: 37,
-        2: 26,
-      },
+      scores: { 1: 37, 2: 26 },
     },
-    selected: {
-      1: 13.8,
-      2: 15.1,
-      3: 4.1,
-      4: 5.8,
-    },
+    selected: { 1: 13.8, 2: 15.1, 3: 4.1, 4: 7.6 },
   },
   {
     id: 310,
@@ -8553,16 +6195,9 @@ export default [
       lastRoundPoints: null,
       positionRank: 62,
       nextFixture: 26,
-      scores: {
-        2: 23,
-      },
+      scores: { 2: 23 },
     },
-    selected: {
-      1: 6.4,
-      2: 1.9,
-      3: 1.2,
-      4: 1.2,
-    },
+    selected: { 1: 6.4, 2: 1.9, 3: 1.2, 4: 1.3 },
   },
   {
     id: 311,
@@ -8580,17 +6215,9 @@ export default [
       lastRoundPoints: null,
       positionRank: 17,
       nextFixture: 26,
-      scores: {
-        1: 51,
-        2: 35,
-      },
+      scores: { 1: 51, 2: 35 },
     },
-    selected: {
-      1: 12.6,
-      2: 14.3,
-      3: 5.6,
-      4: 7.7,
-    },
+    selected: { 1: 12.6, 2: 14.3, 3: 5.6, 4: 10 },
   },
   {
     id: 312,
@@ -8610,12 +6237,7 @@ export default [
       nextFixture: 26,
       scores: null,
     },
-    selected: {
-      1: 0.4,
-      2: 0.3,
-      3: 0.2,
-      4: 0.2,
-    },
+    selected: { 1: 0.4, 2: 0.3, 3: 0.2, 4: 0.2 },
   },
   {
     id: 313,
@@ -8633,16 +6255,9 @@ export default [
       lastRoundPoints: null,
       positionRank: 20,
       nextFixture: 26,
-      scores: {
-        1: 2,
-      },
+      scores: { 1: 2 },
     },
-    selected: {
-      1: 1.3,
-      2: 0.8,
-      3: 0.7,
-      4: 0.7,
-    },
+    selected: { 1: 1.3, 2: 0.8, 3: 0.7, 4: 0.7 },
   },
   {
     id: 314,
@@ -8660,17 +6275,9 @@ export default [
       lastRoundPoints: null,
       positionRank: 16,
       nextFixture: 26,
-      scores: {
-        1: 21,
-        2: 19,
-      },
+      scores: { 1: 21, 2: 19 },
     },
-    selected: {
-      1: 7.8,
-      2: 5.4,
-      3: 1.9,
-      4: 2,
-    },
+    selected: { 1: 7.8, 2: 5.4, 3: 1.9, 4: 2.1 },
   },
   {
     id: 315,
@@ -8688,17 +6295,9 @@ export default [
       lastRoundPoints: null,
       positionRank: 18,
       nextFixture: 26,
-      scores: {
-        1: 23,
-        2: 21,
-      },
+      scores: { 1: 23, 2: 21 },
     },
-    selected: {
-      1: 0.3,
-      2: 0.3,
-      3: 0.3,
-      4: 0.5,
-    },
+    selected: { 1: 0.3, 2: 0.3, 3: 0.3, 4: 0.7 },
   },
   {
     id: 316,
@@ -8716,17 +6315,9 @@ export default [
       lastRoundPoints: null,
       positionRank: 19,
       nextFixture: 26,
-      scores: {
-        1: 26,
-        2: 11,
-      },
+      scores: { 1: 26, 2: 11 },
     },
-    selected: {
-      1: 0.1,
-      2: 0.9,
-      3: 0.4,
-      4: 0.4,
-    },
+    selected: { 1: 0.1, 2: 0.9, 3: 0.4, 4: 0.4 },
   },
   {
     id: 317,
@@ -8746,12 +6337,7 @@ export default [
       nextFixture: 26,
       scores: null,
     },
-    selected: {
-      1: 0.2,
-      2: 0.1,
-      3: 0.1,
-      4: 0.1,
-    },
+    selected: { 1: 0.2, 2: 0.1, 3: 0.1, 4: 0.1 },
   },
   {
     id: 318,
@@ -8771,12 +6357,7 @@ export default [
       nextFixture: 26,
       scores: null,
     },
-    selected: {
-      1: 0.2,
-      2: 0.1,
-      3: 0.1,
-      4: 0.1,
-    },
+    selected: { 1: 0.2, 2: 0.1, 3: 0.1, 4: 0.1 },
   },
   {
     id: 319,
@@ -8794,17 +6375,9 @@ export default [
       lastRoundPoints: null,
       positionRank: 11,
       nextFixture: 26,
-      scores: {
-        1: 17,
-        2: 1,
-      },
+      scores: { 1: 17, 2: 1 },
     },
-    selected: {
-      1: 0.9,
-      2: 0.5,
-      3: 0.4,
-      4: 0.4,
-    },
+    selected: { 1: 0.9, 2: 0.5, 3: 0.4, 4: 0.4 },
   },
   {
     id: 320,
@@ -8822,17 +6395,9 @@ export default [
       lastRoundPoints: null,
       positionRank: 13,
       nextFixture: 26,
-      scores: {
-        1: 35,
-        2: 6,
-      },
+      scores: { 1: 35, 2: 6 },
     },
-    selected: {
-      1: 2.9,
-      2: 3.5,
-      3: 1.1,
-      4: 1.2,
-    },
+    selected: { 1: 2.9, 2: 3.5, 3: 1.1, 4: 1.3 },
   },
   {
     id: 321,
@@ -8852,12 +6417,7 @@ export default [
       nextFixture: 26,
       scores: null,
     },
-    selected: {
-      1: 0.1,
-      2: 0.1,
-      3: 0.1,
-      4: 0.1,
-    },
+    selected: { 1: 0.1, 2: 0.1, 3: 0.1, 4: 0.1 },
   },
   {
     id: 322,
@@ -8867,7 +6427,7 @@ export default [
     lastName: 'Loubser',
     position: ['fly_half'],
     cost: 5500000,
-    status: 'uncertain',
+    status: 'starting',
     isLocked: false,
     stats: {
       totalPoints: 23,
@@ -8875,17 +6435,9 @@ export default [
       lastRoundPoints: 8,
       positionRank: 26,
       nextFixture: 25,
-      scores: {
-        2: 15,
-        3: 8,
-      },
+      scores: { 2: 15, 3: 8 },
     },
-    selected: {
-      1: 0.2,
-      2: 0.2,
-      3: 0.3,
-      4: 0.3,
-    },
+    selected: { 1: 0.2, 2: 0.2, 3: 0.3, 4: 0.3 },
   },
   {
     id: 323,
@@ -8895,7 +6447,7 @@ export default [
     lastName: 'Plato',
     position: ['outside_back'],
     cost: 4000000,
-    status: 'uncertain',
+    status: 'not-selected',
     isLocked: false,
     stats: {
       totalPoints: null,
@@ -8905,12 +6457,7 @@ export default [
       nextFixture: 25,
       scores: null,
     },
-    selected: {
-      1: 0.3,
-      2: 0.2,
-      3: 0.2,
-      4: 0.2,
-    },
+    selected: { 1: 0.3, 2: 0.2, 3: 0.2, 4: 0.2 },
   },
   {
     id: 324,
@@ -8920,7 +6467,7 @@ export default [
     lastName: 'Swanepoel',
     position: ['outside_back'],
     cost: 3500000,
-    status: 'uncertain',
+    status: 'starting',
     isLocked: false,
     stats: {
       totalPoints: 44,
@@ -8928,17 +6475,9 @@ export default [
       lastRoundPoints: null,
       positionRank: 21,
       nextFixture: 25,
-      scores: {
-        1: 33,
-        2: 11,
-      },
+      scores: { 1: 33, 2: 11 },
     },
-    selected: {
-      1: 1,
-      2: 2.7,
-      3: 1.1,
-      4: 1.1,
-    },
+    selected: { 1: 1, 2: 2.7, 3: 1.1, 4: 1.1 },
   },
   {
     id: 325,
@@ -8948,7 +6487,7 @@ export default [
     lastName: 'Izaacs',
     position: ['outside_back'],
     cost: 3000000,
-    status: 'uncertain',
+    status: 'starting',
     isLocked: false,
     stats: {
       totalPoints: 2,
@@ -8956,16 +6495,9 @@ export default [
       lastRoundPoints: 2,
       positionRank: 73,
       nextFixture: 25,
-      scores: {
-        3: 2,
-      },
+      scores: { 3: 2 },
     },
-    selected: {
-      1: 0.5,
-      2: 0.4,
-      3: 0.4,
-      4: 0.4,
-    },
+    selected: { 1: 0.5, 2: 0.4, 3: 0.4, 4: 0.4 },
   },
   {
     id: 326,
@@ -8975,7 +6507,7 @@ export default [
     lastName: 'Rossouw',
     position: ['outside_back'],
     cost: 3000000,
-    status: 'uncertain',
+    status: 'not-selected',
     isLocked: false,
     stats: {
       totalPoints: 45,
@@ -8983,18 +6515,9 @@ export default [
       lastRoundPoints: 15,
       positionRank: 23,
       nextFixture: 25,
-      scores: {
-        1: 15,
-        2: 15,
-        3: 15,
-      },
+      scores: { 1: 15, 2: 15, 3: 15 },
     },
-    selected: {
-      1: 1.5,
-      2: 1.6,
-      3: 1.2,
-      4: 1.2,
-    },
+    selected: { 1: 1.5, 2: 1.6, 3: 1.2, 4: 1.2 },
   },
   {
     id: 327,
@@ -9004,7 +6527,7 @@ export default [
     lastName: 'Van Der Berg',
     position: ['outside_back'],
     cost: 3000000,
-    status: 'uncertain',
+    status: 'bench',
     isLocked: false,
     stats: {
       totalPoints: 19,
@@ -9012,17 +6535,9 @@ export default [
       lastRoundPoints: 16,
       positionRank: 24,
       nextFixture: 25,
-      scores: {
-        1: 3,
-        3: 16,
-      },
+      scores: { 1: 3, 3: 16 },
     },
-    selected: {
-      1: 2.2,
-      2: 1.4,
-      3: 1.8,
-      4: 1.8,
-    },
+    selected: { 1: 2.2, 2: 1.4, 3: 1.8, 4: 1.7 },
   },
   {
     id: 328,
@@ -9032,7 +6547,7 @@ export default [
     lastName: 'Deysel',
     position: ['center'],
     cost: 4000000,
-    status: 'uncertain',
+    status: 'not-selected',
     isLocked: false,
     stats: {
       totalPoints: 26,
@@ -9040,18 +6555,9 @@ export default [
       lastRoundPoints: 1,
       positionRank: 13,
       nextFixture: 25,
-      scores: {
-        1: 17,
-        2: 8,
-        3: 1,
-      },
+      scores: { 1: 17, 2: 8, 3: 1 },
     },
-    selected: {
-      1: 2,
-      2: 1.3,
-      3: 1.4,
-      4: 1.4,
-    },
+    selected: { 1: 2, 2: 1.3, 3: 1.4, 4: 1.3 },
   },
   {
     id: 329,
@@ -9069,17 +6575,9 @@ export default [
       lastRoundPoints: null,
       positionRank: 15,
       nextFixture: 25,
-      scores: {
-        1: 6,
-        2: 8,
-      },
+      scores: { 1: 6, 2: 8 },
     },
-    selected: {
-      1: 0.4,
-      2: 0.4,
-      3: 0.3,
-      4: 0.3,
-    },
+    selected: { 1: 0.4, 2: 0.4, 3: 0.3, 4: 0.3 },
   },
   {
     id: 330,
@@ -9089,7 +6587,7 @@ export default [
     lastName: 'Burger',
     position: ['center'],
     cost: 3000000,
-    status: 'uncertain',
+    status: 'starting',
     isLocked: false,
     stats: {
       totalPoints: 9,
@@ -9097,17 +6595,9 @@ export default [
       lastRoundPoints: 3,
       positionRank: 16,
       nextFixture: 25,
-      scores: {
-        1: 6,
-        3: 3,
-      },
+      scores: { 1: 6, 3: 3 },
     },
-    selected: {
-      1: 1.9,
-      2: 0.9,
-      3: 0.9,
-      4: 0.9,
-    },
+    selected: { 1: 1.9, 2: 0.9, 3: 0.9, 4: 0.9 },
   },
   {
     id: 331,
@@ -9117,7 +6607,7 @@ export default [
     lastName: 'Greyling',
     position: ['center'],
     cost: 3000000,
-    status: 'uncertain',
+    status: 'starting',
     isLocked: false,
     stats: {
       totalPoints: 35,
@@ -9125,18 +6615,9 @@ export default [
       lastRoundPoints: 22,
       positionRank: 18,
       nextFixture: 25,
-      scores: {
-        1: 2,
-        2: 11,
-        3: 22,
-      },
+      scores: { 1: 2, 2: 11, 3: 22 },
     },
-    selected: {
-      1: 0.9,
-      2: 0.6,
-      3: 0.7,
-      4: 0.7,
-    },
+    selected: { 1: 0.9, 2: 0.6, 3: 0.7, 4: 0.7 },
   },
   {
     id: 332,
@@ -9146,7 +6627,7 @@ export default [
     lastName: 'Mouton',
     position: ['center'],
     cost: 3000000,
-    status: 'uncertain',
+    status: 'starting',
     isLocked: false,
     stats: {
       totalPoints: 60,
@@ -9154,18 +6635,9 @@ export default [
       lastRoundPoints: 3,
       positionRank: 20,
       nextFixture: 25,
-      scores: {
-        1: 39,
-        2: 18,
-        3: 3,
-      },
+      scores: { 1: 39, 2: 18, 3: 3 },
     },
-    selected: {
-      1: 0.9,
-      2: 2.4,
-      3: 4.7,
-      4: 4.5,
-    },
+    selected: { 1: 0.9, 2: 2.4, 3: 4.7, 4: 4.2 },
   },
   {
     id: 333,
@@ -9175,7 +6647,7 @@ export default [
     lastName: 'Van Der Westhuizen',
     position: ['hooker'],
     cost: 4000000,
-    status: 'uncertain',
+    status: 'bench',
     isLocked: false,
     stats: {
       totalPoints: 82,
@@ -9183,18 +6655,9 @@ export default [
       lastRoundPoints: 36,
       positionRank: 12,
       nextFixture: 25,
-      scores: {
-        1: 19,
-        2: 27,
-        3: 36,
-      },
+      scores: { 1: 19, 2: 27, 3: 36 },
     },
-    selected: {
-      1: 0.3,
-      2: 0.2,
-      3: 3,
-      4: 3.2,
-    },
+    selected: { 1: 0.3, 2: 0.2, 3: 3, 4: 2.8 },
   },
   {
     id: 334,
@@ -9204,7 +6667,7 @@ export default [
     lastName: 'Van Jaarsveld',
     position: ['hooker'],
     cost: 4000000,
-    status: 'uncertain',
+    status: 'starting',
     isLocked: false,
     stats: {
       totalPoints: 11,
@@ -9212,17 +6675,9 @@ export default [
       lastRoundPoints: null,
       positionRank: 13,
       nextFixture: 25,
-      scores: {
-        1: 10,
-        2: 1,
-      },
+      scores: { 1: 10, 2: 1 },
     },
-    selected: {
-      1: 0.8,
-      2: 1.6,
-      3: 0.5,
-      4: 0.5,
-    },
+    selected: { 1: 0.8, 2: 1.6, 3: 0.5, 4: 0.5 },
   },
   {
     id: 335,
@@ -9232,7 +6687,7 @@ export default [
     lastName: 'De Klerk',
     position: ['lock'],
     cost: 3000000,
-    status: 'uncertain',
+    status: 'starting',
     isLocked: false,
     stats: {
       totalPoints: 5,
@@ -9240,16 +6695,9 @@ export default [
       lastRoundPoints: null,
       positionRank: 14,
       nextFixture: 25,
-      scores: {
-        1: 5,
-      },
+      scores: { 1: 5 },
     },
-    selected: {
-      1: 1.2,
-      2: 0.6,
-      3: 0.5,
-      4: 0.5,
-    },
+    selected: { 1: 1.2, 2: 0.6, 3: 0.5, 4: 0.5 },
   },
   {
     id: 336,
@@ -9259,7 +6707,7 @@ export default [
     lastName: 'Uanivi',
     position: ['lock'],
     cost: 3000000,
-    status: 'uncertain',
+    status: 'starting',
     isLocked: false,
     stats: {
       totalPoints: 30,
@@ -9267,17 +6715,9 @@ export default [
       lastRoundPoints: null,
       positionRank: 16,
       nextFixture: 25,
-      scores: {
-        1: 15,
-        2: 15,
-      },
+      scores: { 1: 15, 2: 15 },
     },
-    selected: {
-      1: 1.2,
-      2: 2.8,
-      3: 0.8,
-      4: 0.8,
-    },
+    selected: { 1: 1.2, 2: 2.8, 3: 0.8, 4: 0.9 },
   },
   {
     id: 337,
@@ -9287,7 +6727,7 @@ export default [
     lastName: 'Ludick',
     position: ['lock'],
     cost: 2500000,
-    status: 'uncertain',
+    status: 'starting',
     isLocked: false,
     stats: {
       totalPoints: 11,
@@ -9295,17 +6735,9 @@ export default [
       lastRoundPoints: 5,
       positionRank: 18,
       nextFixture: 25,
-      scores: {
-        1: 6,
-        3: 5,
-      },
+      scores: { 1: 6, 3: 5 },
     },
-    selected: {
-      1: 1.2,
-      2: 0.3,
-      3: 0.6,
-      4: 0.5,
-    },
+    selected: { 1: 1.2, 2: 0.3, 3: 0.6, 4: 0.5 },
   },
   {
     id: 338,
@@ -9315,7 +6747,7 @@ export default [
     lastName: 'Retief',
     position: ['lock'],
     cost: 2500000,
-    status: 'uncertain',
+    status: 'not-selected',
     isLocked: false,
     stats: {
       totalPoints: 31,
@@ -9323,18 +6755,9 @@ export default [
       lastRoundPoints: 5,
       positionRank: 19,
       nextFixture: 25,
-      scores: {
-        1: 14,
-        2: 12,
-        3: 5,
-      },
+      scores: { 1: 14, 2: 12, 3: 5 },
     },
-    selected: {
-      1: 0.8,
-      2: 2.4,
-      3: 3.3,
-      4: 3.2,
-    },
+    selected: { 1: 0.8, 2: 2.4, 3: 3.3, 4: 2.9 },
   },
   {
     id: 339,
@@ -9344,7 +6767,7 @@ export default [
     lastName: 'Tjeriko',
     position: ['lock'],
     cost: 2500000,
-    status: 'uncertain',
+    status: 'not-selected',
     isLocked: false,
     stats: {
       totalPoints: 5,
@@ -9352,16 +6775,9 @@ export default [
       lastRoundPoints: 5,
       positionRank: 77,
       nextFixture: 25,
-      scores: {
-        3: 5,
-      },
+      scores: { 3: 5 },
     },
-    selected: {
-      1: 0.2,
-      2: 0.1,
-      3: 0.4,
-      4: 0.4,
-    },
+    selected: { 1: 0.2, 2: 0.1, 3: 0.4, 4: 0.3 },
   },
   {
     id: 340,
@@ -9371,7 +6787,7 @@ export default [
     lastName: 'Conradie',
     position: ['loose_forward'],
     cost: 2500000,
-    status: 'uncertain',
+    status: 'not-selected',
     isLocked: false,
     stats: {
       totalPoints: 11,
@@ -9379,17 +6795,9 @@ export default [
       lastRoundPoints: null,
       positionRank: 22,
       nextFixture: 25,
-      scores: {
-        1: 6,
-        2: 5,
-      },
+      scores: { 1: 6, 2: 5 },
     },
-    selected: {
-      1: 0.7,
-      2: 0.6,
-      3: 0.3,
-      4: 0.3,
-    },
+    selected: { 1: 0.7, 2: 0.6, 3: 0.3, 4: 0.3 },
   },
   {
     id: 341,
@@ -9399,7 +6807,7 @@ export default [
     lastName: 'Hardwick',
     position: ['loose_forward'],
     cost: 2500000,
-    status: 'uncertain',
+    status: 'starting',
     isLocked: false,
     stats: {
       totalPoints: 58,
@@ -9407,18 +6815,9 @@ export default [
       lastRoundPoints: 13,
       positionRank: 24,
       nextFixture: 25,
-      scores: {
-        1: 30,
-        2: 15,
-        3: 13,
-      },
+      scores: { 1: 30, 2: 15, 3: 13 },
     },
-    selected: {
-      1: 2.2,
-      2: 4.7,
-      3: 2,
-      4: 2,
-    },
+    selected: { 1: 2.2, 2: 4.7, 3: 2, 4: 2.2 },
   },
   {
     id: 342,
@@ -9428,7 +6827,7 @@ export default [
     lastName: 'Booysen',
     position: ['loose_forward'],
     cost: 2000000,
-    status: 'uncertain',
+    status: 'bench',
     isLocked: false,
     stats: {
       totalPoints: 3,
@@ -9436,16 +6835,9 @@ export default [
       lastRoundPoints: null,
       positionRank: 67,
       nextFixture: 25,
-      scores: {
-        2: 3,
-      },
+      scores: { 2: 3 },
     },
-    selected: {
-      1: 0.5,
-      2: 0.4,
-      3: 0.4,
-      4: 0.4,
-    },
+    selected: { 1: 0.5, 2: 0.4, 3: 0.4, 4: 0.4 },
   },
   {
     id: 343,
@@ -9455,7 +6847,7 @@ export default [
     lastName: 'Gaoseb',
     position: ['loose_forward'],
     cost: 2000000,
-    status: 'uncertain',
+    status: 'starting',
     isLocked: false,
     stats: {
       totalPoints: 24,
@@ -9463,18 +6855,9 @@ export default [
       lastRoundPoints: 4,
       positionRank: 27,
       nextFixture: 25,
-      scores: {
-        1: 10,
-        2: 10,
-        3: 4,
-      },
+      scores: { 1: 10, 2: 10, 3: 4 },
     },
-    selected: {
-      1: 0.8,
-      2: 1,
-      3: 1.8,
-      4: 1.7,
-    },
+    selected: { 1: 0.8, 2: 1, 3: 1.8, 4: 1.6 },
   },
   {
     id: 344,
@@ -9484,7 +6867,7 @@ export default [
     lastName: 'Katjijeko',
     position: ['loose_forward'],
     cost: 2000000,
-    status: 'uncertain',
+    status: 'bench',
     isLocked: false,
     stats: {
       totalPoints: 15,
@@ -9492,17 +6875,9 @@ export default [
       lastRoundPoints: 10,
       positionRank: 70,
       nextFixture: 25,
-      scores: {
-        2: 5,
-        3: 10,
-      },
+      scores: { 2: 5, 3: 10 },
     },
-    selected: {
-      1: 1.4,
-      2: 0.9,
-      3: 1.2,
-      4: 1.2,
-    },
+    selected: { 1: 1.4, 2: 0.9, 3: 1.2, 4: 1.2 },
   },
   {
     id: 345,
@@ -9512,7 +6887,7 @@ export default [
     lastName: 'Van Lill',
     position: ['loose_forward'],
     cost: 2000000,
-    status: 'uncertain',
+    status: 'bench',
     isLocked: false,
     stats: {
       totalPoints: 2,
@@ -9520,17 +6895,9 @@ export default [
       lastRoundPoints: 0,
       positionRank: 72,
       nextFixture: 25,
-      scores: {
-        2: 2,
-        3: 0,
-      },
+      scores: { 2: 2, 3: 0 },
     },
-    selected: {
-      1: 0.5,
-      2: 0.4,
-      3: 0.4,
-      4: 0.4,
-    },
+    selected: { 1: 0.5, 2: 0.4, 3: 0.4, 4: 0.4 },
   },
   {
     id: 346,
@@ -9540,7 +6907,7 @@ export default [
     lastName: 'Coetzee',
     position: ['prop'],
     cost: 3000000,
-    status: 'uncertain',
+    status: 'starting',
     isLocked: false,
     stats: {
       totalPoints: 43,
@@ -9548,18 +6915,9 @@ export default [
       lastRoundPoints: 21,
       positionRank: 24,
       nextFixture: 25,
-      scores: {
-        1: 5,
-        2: 17,
-        3: 21,
-      },
+      scores: { 1: 5, 2: 17, 3: 21 },
     },
-    selected: {
-      1: 0.8,
-      2: 0.8,
-      3: 2.3,
-      4: 2.3,
-    },
+    selected: { 1: 0.8, 2: 0.8, 3: 2.3, 4: 2.5 },
   },
   {
     id: 347,
@@ -9569,7 +6927,7 @@ export default [
     lastName: 'Benade',
     position: ['prop'],
     cost: 2500000,
-    status: 'uncertain',
+    status: 'starting',
     isLocked: false,
     stats: {
       totalPoints: 25,
@@ -9577,18 +6935,9 @@ export default [
       lastRoundPoints: 0,
       positionRank: 26,
       nextFixture: 25,
-      scores: {
-        1: 14,
-        2: 11,
-        3: 0,
-      },
+      scores: { 1: 14, 2: 11, 3: 0 },
     },
-    selected: {
-      1: 0.2,
-      2: 2.7,
-      3: 0.8,
-      4: 0.8,
-    },
+    selected: { 1: 0.2, 2: 2.7, 3: 0.8, 4: 0.9 },
   },
   {
     id: 348,
@@ -9598,7 +6947,7 @@ export default [
     lastName: 'Sethie',
     position: ['prop'],
     cost: 2500000,
-    status: 'uncertain',
+    status: 'bench',
     isLocked: false,
     stats: {
       totalPoints: 31,
@@ -9606,18 +6955,9 @@ export default [
       lastRoundPoints: 15,
       positionRank: 28,
       nextFixture: 25,
-      scores: {
-        1: 5,
-        2: 11,
-        3: 15,
-      },
+      scores: { 1: 5, 2: 11, 3: 15 },
     },
-    selected: {
-      1: 0.8,
-      2: 0.2,
-      3: 2.2,
-      4: 2.2,
-    },
+    selected: { 1: 0.8, 2: 0.2, 3: 2.2, 4: 1.9 },
   },
   {
     id: 349,
@@ -9627,7 +6967,7 @@ export default [
     lastName: 'Viviers',
     position: ['prop'],
     cost: 2500000,
-    status: 'uncertain',
+    status: 'not-selected',
     isLocked: false,
     stats: {
       totalPoints: 14,
@@ -9635,16 +6975,9 @@ export default [
       lastRoundPoints: null,
       positionRank: 29,
       nextFixture: 25,
-      scores: {
-        1: 14,
-      },
+      scores: { 1: 14 },
     },
-    selected: {
-      1: 0.1,
-      2: 0.1,
-      3: 0.1,
-      4: 0.1,
-    },
+    selected: { 1: 0.1, 2: 0.1, 3: 0.1, 4: 0.1 },
   },
   {
     id: 350,
@@ -9654,7 +6987,7 @@ export default [
     lastName: 'Stevens',
     position: ['scrum_half'],
     cost: 4000000,
-    status: 'uncertain',
+    status: 'starting',
     isLocked: false,
     stats: {
       totalPoints: 2,
@@ -9662,17 +6995,9 @@ export default [
       lastRoundPoints: null,
       positionRank: 16,
       nextFixture: 25,
-      scores: {
-        1: 4,
-        2: -2,
-      },
+      scores: { 1: 4, 2: -2 },
     },
-    selected: {
-      1: 0.3,
-      2: 0.3,
-      3: 0.1,
-      4: 0.1,
-    },
+    selected: { 1: 0.3, 2: 0.3, 3: 0.1, 4: 0.1 },
   },
   {
     id: 351,
@@ -9682,7 +7007,7 @@ export default [
     lastName: 'Theron',
     position: ['scrum_half'],
     cost: 4000000,
-    status: 'uncertain',
+    status: 'bench',
     isLocked: false,
     stats: {
       totalPoints: 14,
@@ -9690,18 +7015,9 @@ export default [
       lastRoundPoints: 3,
       positionRank: 18,
       nextFixture: 25,
-      scores: {
-        1: 4,
-        2: 7,
-        3: 3,
-      },
+      scores: { 1: 4, 2: 7, 3: 3 },
     },
-    selected: {
-      1: 0,
-      2: 0,
-      3: 0.3,
-      4: 0.3,
-    },
+    selected: { 1: 0, 2: 0, 3: 0.3, 4: 0.3 },
   },
   {
     id: 352,
@@ -9711,7 +7027,7 @@ export default [
     lastName: 'Blaauw',
     position: ['scrum_half'],
     cost: 3500000,
-    status: 'uncertain',
+    status: 'not-selected',
     isLocked: false,
     stats: {
       totalPoints: 3,
@@ -9719,16 +7035,9 @@ export default [
       lastRoundPoints: 3,
       positionRank: 53,
       nextFixture: 25,
-      scores: {
-        3: 3,
-      },
+      scores: { 3: 3 },
     },
-    selected: {
-      1: 0.1,
-      2: 0,
-      3: 0,
-      4: 0,
-    },
+    selected: { 1: 0.1, 2: 0, 3: 0, 4: 0 },
   },
   {
     id: 353,
@@ -9746,17 +7055,9 @@ export default [
       lastRoundPoints: null,
       positionRank: 10,
       nextFixture: 27,
-      scores: {
-        1: 28,
-        2: 19,
-      },
+      scores: { 1: 28, 2: 19 },
     },
-    selected: {
-      1: 5.7,
-      2: 3,
-      3: 2.5,
-      4: 2.8,
-    },
+    selected: { 1: 5.7, 2: 3, 3: 2.5, 4: 3.1 },
   },
   {
     id: 354,
@@ -9774,17 +7075,9 @@ export default [
       lastRoundPoints: null,
       positionRank: 12,
       nextFixture: 27,
-      scores: {
-        1: 36,
-        2: 53,
-      },
+      scores: { 1: 36, 2: 53 },
     },
-    selected: {
-      1: 3.9,
-      2: 10.4,
-      3: 2.9,
-      4: 3.4,
-    },
+    selected: { 1: 3.9, 2: 10.4, 3: 2.9, 4: 4 },
   },
   {
     id: 355,
@@ -9802,16 +7095,9 @@ export default [
       lastRoundPoints: null,
       positionRank: 29,
       nextFixture: 27,
-      scores: {
-        2: 87,
-      },
+      scores: { 2: 87 },
     },
-    selected: {
-      1: 0.6,
-      2: 15.4,
-      3: 1.5,
-      4: 2.2,
-    },
+    selected: { 1: 0.6, 2: 15.4, 3: 1.5, 4: 3.1 },
   },
   {
     id: 356,
@@ -9829,16 +7115,9 @@ export default [
       lastRoundPoints: null,
       positionRank: 63,
       nextFixture: 27,
-      scores: {
-        2: 88,
-      },
+      scores: { 2: 88 },
     },
-    selected: {
-      1: 0.4,
-      2: 10.6,
-      3: 1.1,
-      4: 1.4,
-    },
+    selected: { 1: 0.4, 2: 10.6, 3: 1.1, 4: 1.7 },
   },
   {
     id: 357,
@@ -9856,16 +7135,9 @@ export default [
       lastRoundPoints: null,
       positionRank: 27,
       nextFixture: 27,
-      scores: {
-        1: 13,
-      },
+      scores: { 1: 13 },
     },
-    selected: {
-      1: 17.9,
-      2: 7.3,
-      3: 6.1,
-      4: 6.5,
-    },
+    selected: { 1: 17.9, 2: 7.3, 3: 6.1, 4: 6.9 },
   },
   {
     id: 358,
@@ -9883,17 +7155,9 @@ export default [
       lastRoundPoints: null,
       positionRank: 28,
       nextFixture: 27,
-      scores: {
-        1: 5,
-        2: 86,
-      },
+      scores: { 1: 5, 2: 86 },
     },
-    selected: {
-      1: 0.4,
-      2: 17.2,
-      3: 1.7,
-      4: 2.5,
-    },
+    selected: { 1: 0.4, 2: 17.2, 3: 1.7, 4: 3.4 },
   },
   {
     id: 359,
@@ -9913,12 +7177,7 @@ export default [
       nextFixture: 27,
       scores: null,
     },
-    selected: {
-      1: 0.1,
-      2: 0.1,
-      3: 0.1,
-      4: 0.1,
-    },
+    selected: { 1: 0.1, 2: 0.1, 3: 0.1, 4: 0.1 },
   },
   {
     id: 360,
@@ -9936,16 +7195,9 @@ export default [
       lastRoundPoints: null,
       positionRank: 32,
       nextFixture: 27,
-      scores: {
-        1: 90,
-      },
+      scores: { 1: 90 },
     },
-    selected: {
-      1: 5.7,
-      2: 5.2,
-      3: 4,
-      4: 5.7,
-    },
+    selected: { 1: 5.7, 2: 5.2, 3: 4, 4: 7.8 },
   },
   {
     id: 361,
@@ -9963,17 +7215,9 @@ export default [
       lastRoundPoints: null,
       positionRank: 22,
       nextFixture: 27,
-      scores: {
-        1: 38,
-        2: 43,
-      },
+      scores: { 1: 38, 2: 43 },
     },
-    selected: {
-      1: 5.1,
-      2: 3.2,
-      3: 2.7,
-      4: 4.4,
-    },
+    selected: { 1: 5.1, 2: 3.2, 3: 2.7, 4: 6.7 },
   },
   {
     id: 362,
@@ -9993,12 +7237,7 @@ export default [
       nextFixture: 27,
       scores: null,
     },
-    selected: {
-      1: 5.2,
-      2: 3,
-      3: 2.6,
-      4: 2.8,
-    },
+    selected: { 1: 5.2, 2: 3, 3: 2.6, 4: 3 },
   },
   {
     id: 363,
@@ -10016,17 +7255,9 @@ export default [
       lastRoundPoints: null,
       positionRank: 25,
       nextFixture: 27,
-      scores: {
-        1: 4,
-        2: 49,
-      },
+      scores: { 1: 4, 2: 49 },
     },
-    selected: {
-      1: 4.3,
-      2: 9.8,
-      3: 1.8,
-      4: 1.9,
-    },
+    selected: { 1: 4.3, 2: 9.8, 3: 1.8, 4: 2.2 },
   },
   {
     id: 364,
@@ -10044,17 +7275,9 @@ export default [
       lastRoundPoints: null,
       positionRank: 27,
       nextFixture: 27,
-      scores: {
-        1: 2,
-        2: 78,
-      },
+      scores: { 1: 2, 2: 78 },
     },
-    selected: {
-      1: 1.1,
-      2: 9.5,
-      3: 1.5,
-      4: 2.3,
-    },
+    selected: { 1: 1.1, 2: 9.5, 3: 1.5, 4: 3.3 },
   },
   {
     id: 365,
@@ -10072,16 +7295,9 @@ export default [
       lastRoundPoints: null,
       positionRank: 17,
       nextFixture: 27,
-      scores: {
-        1: 14,
-      },
+      scores: { 1: 14 },
     },
-    selected: {
-      1: 1.8,
-      2: 1,
-      3: 0.9,
-      4: 0.9,
-    },
+    selected: { 1: 1.8, 2: 1, 3: 0.9, 4: 1 },
   },
   {
     id: 366,
@@ -10099,16 +7315,9 @@ export default [
       lastRoundPoints: null,
       positionRank: 38,
       nextFixture: 27,
-      scores: {
-        2: 13,
-      },
+      scores: { 2: 13 },
     },
-    selected: {
-      1: 1.2,
-      2: 0.9,
-      3: 0.7,
-      4: 0.7,
-    },
+    selected: { 1: 1.2, 2: 0.9, 3: 0.7, 4: 0.8 },
   },
   {
     id: 367,
@@ -10126,17 +7335,9 @@ export default [
       lastRoundPoints: null,
       positionRank: 18,
       nextFixture: 27,
-      scores: {
-        1: 9,
-        2: 23,
-      },
+      scores: { 1: 9, 2: 23 },
     },
-    selected: {
-      1: 1.1,
-      2: 7.2,
-      3: 1.2,
-      4: 1.4,
-    },
+    selected: { 1: 1.1, 2: 7.2, 3: 1.2, 4: 1.5 },
   },
   {
     id: 368,
@@ -10154,17 +7355,9 @@ export default [
       lastRoundPoints: null,
       positionRank: 23,
       nextFixture: 27,
-      scores: {
-        1: 3,
-        2: 16,
-      },
+      scores: { 1: 3, 2: 16 },
     },
-    selected: {
-      1: 1.1,
-      2: 2.4,
-      3: 1.1,
-      4: 1.1,
-    },
+    selected: { 1: 1.1, 2: 2.4, 3: 1.1, 4: 1.1 },
   },
   {
     id: 369,
@@ -10182,17 +7375,9 @@ export default [
       lastRoundPoints: null,
       positionRank: 25,
       nextFixture: 27,
-      scores: {
-        1: 12,
-        2: 15,
-      },
+      scores: { 1: 12, 2: 15 },
     },
-    selected: {
-      1: 3.1,
-      2: 5.4,
-      3: 2.2,
-      4: 2.3,
-    },
+    selected: { 1: 3.1, 2: 5.4, 3: 2.2, 4: 2.4 },
   },
   {
     id: 370,
@@ -10210,17 +7395,9 @@ export default [
       lastRoundPoints: null,
       positionRank: 26,
       nextFixture: 27,
-      scores: {
-        1: 36,
-        2: 2,
-      },
+      scores: { 1: 36, 2: 2 },
     },
-    selected: {
-      1: 5.2,
-      2: 3.7,
-      3: 2.8,
-      4: 3.2,
-    },
+    selected: { 1: 5.2, 2: 3.7, 3: 2.8, 4: 3.8 },
   },
   {
     id: 371,
@@ -10238,17 +7415,9 @@ export default [
       lastRoundPoints: null,
       positionRank: 28,
       nextFixture: 27,
-      scores: {
-        1: 4,
-        2: 9,
-      },
+      scores: { 1: 4, 2: 9 },
     },
-    selected: {
-      1: 0.7,
-      2: 0.6,
-      3: 0.5,
-      4: 0.5,
-    },
+    selected: { 1: 0.7, 2: 0.6, 3: 0.5, 4: 0.5 },
   },
   {
     id: 372,
@@ -10268,12 +7437,7 @@ export default [
       nextFixture: 27,
       scores: null,
     },
-    selected: {
-      1: 2,
-      2: 1,
-      3: 0.9,
-      4: 0.9,
-    },
+    selected: { 1: 2, 2: 1, 3: 0.9, 4: 0.9 },
   },
   {
     id: 373,
@@ -10291,17 +7455,9 @@ export default [
       lastRoundPoints: null,
       positionRank: 31,
       nextFixture: 27,
-      scores: {
-        1: 24,
-        2: 41,
-      },
+      scores: { 1: 24, 2: 41 },
     },
-    selected: {
-      1: 34.2,
-      2: 41.5,
-      3: 13.9,
-      4: 16,
-    },
+    selected: { 1: 34.2, 2: 41.5, 3: 13.9, 4: 18.7 },
   },
   {
     id: 374,
@@ -10319,17 +7475,9 @@ export default [
       lastRoundPoints: null,
       positionRank: 34,
       nextFixture: 27,
-      scores: {
-        1: 20,
-        2: 48,
-      },
+      scores: { 1: 20, 2: 48 },
     },
-    selected: {
-      1: 2.3,
-      2: 6.9,
-      3: 1.7,
-      4: 2.5,
-    },
+    selected: { 1: 2.3, 2: 6.9, 3: 1.7, 4: 3.6 },
   },
   {
     id: 375,
@@ -10349,12 +7497,7 @@ export default [
       nextFixture: 27,
       scores: null,
     },
-    selected: {
-      1: 1.1,
-      2: 0.6,
-      3: 0.6,
-      4: 0.6,
-    },
+    selected: { 1: 1.1, 2: 0.6, 3: 0.6, 4: 0.7 },
   },
   {
     id: 376,
@@ -10372,17 +7515,9 @@ export default [
       lastRoundPoints: null,
       positionRank: 37,
       nextFixture: 27,
-      scores: {
-        1: 3,
-        2: 24,
-      },
+      scores: { 1: 3, 2: 24 },
     },
-    selected: {
-      1: 0.4,
-      2: 4.8,
-      3: 0.7,
-      4: 0.7,
-    },
+    selected: { 1: 0.4, 2: 4.8, 3: 0.7, 4: 0.8 },
   },
   {
     id: 377,
@@ -10400,17 +7535,9 @@ export default [
       lastRoundPoints: null,
       positionRank: 31,
       nextFixture: 27,
-      scores: {
-        1: 8,
-        2: 8,
-      },
+      scores: { 1: 8, 2: 8 },
     },
-    selected: {
-      1: 7.4,
-      2: 3.1,
-      3: 2.4,
-      4: 2.4,
-    },
+    selected: { 1: 7.4, 2: 3.1, 3: 2.4, 4: 2.5 },
   },
   {
     id: 378,
@@ -10430,12 +7557,7 @@ export default [
       nextFixture: 27,
       scores: null,
     },
-    selected: {
-      1: 0.7,
-      2: 0.4,
-      3: 0.4,
-      4: 0.4,
-    },
+    selected: { 1: 0.7, 2: 0.4, 3: 0.4, 4: 0.4 },
   },
   {
     id: 379,
@@ -10453,17 +7575,9 @@ export default [
       lastRoundPoints: null,
       positionRank: 33,
       nextFixture: 27,
-      scores: {
-        1: 8,
-        2: 9,
-      },
+      scores: { 1: 8, 2: 9 },
     },
-    selected: {
-      1: 2,
-      2: 6.3,
-      3: 1.2,
-      4: 1.2,
-    },
+    selected: { 1: 2, 2: 6.3, 3: 1.2, 4: 1.2 },
   },
   {
     id: 380,
@@ -10481,17 +7595,9 @@ export default [
       lastRoundPoints: null,
       positionRank: 36,
       nextFixture: 27,
-      scores: {
-        1: 7,
-        2: 21,
-      },
+      scores: { 1: 7, 2: 21 },
     },
-    selected: {
-      1: 0.7,
-      2: 2.5,
-      3: 0.7,
-      4: 0.9,
-    },
+    selected: { 1: 0.7, 2: 2.5, 3: 0.7, 4: 1.1 },
   },
   {
     id: 381,
@@ -10509,17 +7615,9 @@ export default [
       lastRoundPoints: null,
       positionRank: 38,
       nextFixture: 27,
-      scores: {
-        1: 9,
-        2: 7,
-      },
+      scores: { 1: 9, 2: 7 },
     },
-    selected: {
-      1: 0.2,
-      2: 0.2,
-      3: 0.2,
-      4: 0.2,
-    },
+    selected: { 1: 0.2, 2: 0.2, 3: 0.2, 4: 0.2 },
   },
   {
     id: 382,
@@ -10539,12 +7637,7 @@ export default [
       nextFixture: 27,
       scores: null,
     },
-    selected: {
-      1: 0.3,
-      2: 0.2,
-      3: 0.2,
-      4: 0.2,
-    },
+    selected: { 1: 0.3, 2: 0.2, 3: 0.2, 4: 0.2 },
   },
   {
     id: 383,
@@ -10562,17 +7655,9 @@ export default [
       lastRoundPoints: null,
       positionRank: 19,
       nextFixture: 27,
-      scores: {
-        1: 5,
-        2: 2,
-      },
+      scores: { 1: 5, 2: 2 },
     },
-    selected: {
-      1: 3.1,
-      2: 2,
-      3: 1.6,
-      4: 1.8,
-    },
+    selected: { 1: 3.1, 2: 2, 3: 1.6, 4: 2 },
   },
   {
     id: 384,
@@ -10590,16 +7675,9 @@ export default [
       lastRoundPoints: null,
       positionRank: 21,
       nextFixture: 27,
-      scores: {
-        1: 0,
-      },
+      scores: { 1: 0 },
     },
-    selected: {
-      1: 0.3,
-      2: 0.2,
-      3: 0.2,
-      4: 0.2,
-    },
+    selected: { 1: 0.3, 2: 0.2, 3: 0.2, 4: 0.2 },
   },
   {
     id: 385,
@@ -10617,16 +7695,9 @@ export default [
       lastRoundPoints: null,
       positionRank: 43,
       nextFixture: 27,
-      scores: {
-        2: 100,
-      },
+      scores: { 2: 100 },
     },
-    selected: {
-      1: 0.3,
-      2: 6.6,
-      3: 1.3,
-      4: 3.2,
-    },
+    selected: { 1: 0.3, 2: 6.6, 3: 1.3, 4: 5.6 },
   },
   {
     id: 386,
@@ -10644,17 +7715,9 @@ export default [
       lastRoundPoints: 37,
       positionRank: 31,
       nextFixture: 31,
-      scores: {
-        2: 19,
-        3: 37,
-      },
+      scores: { 2: 19, 3: 37 },
     },
-    selected: {
-      1: 0.2,
-      2: 0.2,
-      3: 0.4,
-      4: 0.4,
-    },
+    selected: { 1: 0.2, 2: 0.2, 3: 0.4, 4: 0.4 },
   },
   {
     id: 387,
@@ -10672,16 +7735,9 @@ export default [
       lastRoundPoints: null,
       positionRank: 32,
       nextFixture: 31,
-      scores: {
-        2: -1,
-      },
+      scores: { 2: -1 },
     },
-    selected: {
-      1: 0.2,
-      2: 0.1,
-      3: 0.1,
-      4: 0.1,
-    },
+    selected: { 1: 0.2, 2: 0.1, 3: 0.1, 4: 0.1 },
   },
   {
     id: 388,
@@ -10699,16 +7755,9 @@ export default [
       lastRoundPoints: 1,
       positionRank: 78,
       nextFixture: 31,
-      scores: {
-        3: 1,
-      },
+      scores: { 3: 1 },
     },
-    selected: {
-      1: 0.8,
-      2: 0.6,
-      3: 0.6,
-      4: 0.6,
-    },
+    selected: { 1: 0.8, 2: 0.6, 3: 0.6, 4: 0.6 },
   },
   {
     id: 389,
@@ -10726,17 +7775,9 @@ export default [
       lastRoundPoints: 24,
       positionRank: 66,
       nextFixture: 31,
-      scores: {
-        2: 17,
-        3: 24,
-      },
+      scores: { 2: 17, 3: 24 },
     },
-    selected: {
-      1: 0.8,
-      2: 1.1,
-      3: 1.9,
-      4: 1.8,
-    },
+    selected: { 1: 0.8, 2: 1.1, 3: 1.9, 4: 1.7 },
   },
   {
     id: 390,
@@ -10754,17 +7795,9 @@ export default [
       lastRoundPoints: 76,
       positionRank: 67,
       nextFixture: 31,
-      scores: {
-        2: 17,
-        3: 76,
-      },
+      scores: { 2: 17, 3: 76 },
     },
-    selected: {
-      1: 0.8,
-      2: 0.7,
-      3: 1.1,
-      4: 1.2,
-    },
+    selected: { 1: 0.8, 2: 0.7, 3: 1.1, 4: 1.3 },
   },
   {
     id: 391,
@@ -10782,16 +7815,9 @@ export default [
       lastRoundPoints: null,
       positionRank: 68,
       nextFixture: 31,
-      scores: {
-        2: 3,
-      },
+      scores: { 2: 3 },
     },
-    selected: {
-      1: 0.8,
-      2: 1,
-      3: 0.7,
-      4: 0.7,
-    },
+    selected: { 1: 0.8, 2: 1, 3: 0.7, 4: 0.7 },
   },
   {
     id: 392,
@@ -10811,12 +7837,7 @@ export default [
       nextFixture: 31,
       scores: null,
     },
-    selected: {
-      1: 0.9,
-      2: 0.7,
-      3: 0.6,
-      4: 0.6,
-    },
+    selected: { 1: 0.9, 2: 0.7, 3: 0.6, 4: 0.6 },
   },
   {
     id: 393,
@@ -10834,17 +7855,9 @@ export default [
       lastRoundPoints: 23,
       positionRank: 59,
       nextFixture: 31,
-      scores: {
-        2: 31,
-        3: 23,
-      },
+      scores: { 2: 31, 3: 23 },
     },
-    selected: {
-      1: 0.5,
-      2: 0.6,
-      3: 2.8,
-      4: 2.6,
-    },
+    selected: { 1: 0.5, 2: 0.6, 3: 2.8, 4: 2.3 },
   },
   {
     id: 394,
@@ -10862,17 +7875,9 @@ export default [
       lastRoundPoints: 16,
       positionRank: 60,
       nextFixture: 31,
-      scores: {
-        2: 23,
-        3: 16,
-      },
+      scores: { 2: 23, 3: 16 },
     },
-    selected: {
-      1: 0.3,
-      2: 0.3,
-      3: 0.8,
-      4: 0.8,
-    },
+    selected: { 1: 0.3, 2: 0.3, 3: 0.8, 4: 0.7 },
   },
   {
     id: 395,
@@ -10890,16 +7895,9 @@ export default [
       lastRoundPoints: null,
       positionRank: 61,
       nextFixture: 31,
-      scores: {
-        2: 12,
-      },
+      scores: { 2: 12 },
     },
-    selected: {
-      1: 0.4,
-      2: 0.4,
-      3: 0.3,
-      4: 0.3,
-    },
+    selected: { 1: 0.4, 2: 0.4, 3: 0.3, 4: 0.3 },
   },
   {
     id: 396,
@@ -10917,16 +7915,9 @@ export default [
       lastRoundPoints: 15,
       positionRank: 68,
       nextFixture: 31,
-      scores: {
-        3: 15,
-      },
+      scores: { 3: 15 },
     },
-    selected: {
-      1: 0.8,
-      2: 0.5,
-      3: 0.8,
-      4: 0.8,
-    },
+    selected: { 1: 0.8, 2: 0.5, 3: 0.8, 4: 0.8 },
   },
   {
     id: 397,
@@ -10944,17 +7935,9 @@ export default [
       lastRoundPoints: 31,
       positionRank: 40,
       nextFixture: 31,
-      scores: {
-        2: 30,
-        3: 31,
-      },
+      scores: { 2: 30, 3: 31 },
     },
-    selected: {
-      1: 0.2,
-      2: 0.7,
-      3: 3.3,
-      4: 3.1,
-    },
+    selected: { 1: 0.2, 2: 0.7, 3: 3.3, 4: 2.9 },
   },
   {
     id: 398,
@@ -10974,12 +7957,7 @@ export default [
       nextFixture: 31,
       scores: null,
     },
-    selected: {
-      1: 0.2,
-      2: 0.2,
-      3: 0.2,
-      4: 0.2,
-    },
+    selected: { 1: 0.2, 2: 0.2, 3: 0.2, 4: 0.2 },
   },
   {
     id: 399,
@@ -10997,17 +7975,9 @@ export default [
       lastRoundPoints: 9,
       positionRank: 41,
       nextFixture: 31,
-      scores: {
-        2: 5,
-        3: 9,
-      },
+      scores: { 2: 5, 3: 9 },
     },
-    selected: {
-      1: 0.2,
-      2: 0.1,
-      3: 0.2,
-      4: 0.2,
-    },
+    selected: { 1: 0.2, 2: 0.1, 3: 0.2, 4: 0.2 },
   },
   {
     id: 400,
@@ -11025,16 +7995,9 @@ export default [
       lastRoundPoints: 31,
       positionRank: 79,
       nextFixture: 31,
-      scores: {
-        3: 31,
-      },
+      scores: { 3: 31 },
     },
-    selected: {
-      1: 0.3,
-      2: 0.4,
-      3: 0.6,
-      4: 0.6,
-    },
+    selected: { 1: 0.3, 2: 0.4, 3: 0.6, 4: 0.6 },
   },
   {
     id: 401,
@@ -11052,17 +8015,9 @@ export default [
       lastRoundPoints: 38,
       positionRank: 65,
       nextFixture: 31,
-      scores: {
-        2: 65,
-        3: 38,
-      },
+      scores: { 2: 65, 3: 38 },
     },
-    selected: {
-      1: 0.2,
-      2: 0.5,
-      3: 19.2,
-      4: 19.3,
-    },
+    selected: { 1: 0.2, 2: 0.5, 3: 19.2, 4: 19.4 },
   },
   {
     id: 402,
@@ -11080,17 +8035,9 @@ export default [
       lastRoundPoints: 4,
       positionRank: 67,
       nextFixture: 31,
-      scores: {
-        2: 13,
-        3: 4,
-      },
+      scores: { 2: 13, 3: 4 },
     },
-    selected: {
-      1: 0.3,
-      2: 0.3,
-      3: 0.2,
-      4: 0.2,
-    },
+    selected: { 1: 0.3, 2: 0.3, 3: 0.2, 4: 0.2 },
   },
   {
     id: 403,
@@ -11108,17 +8055,9 @@ export default [
       lastRoundPoints: 14,
       positionRank: 68,
       nextFixture: 31,
-      scores: {
-        2: 36,
-        3: 14,
-      },
+      scores: { 2: 36, 3: 14 },
     },
-    selected: {
-      1: 0.3,
-      2: 0.4,
-      3: 4.5,
-      4: 4.3,
-    },
+    selected: { 1: 0.3, 2: 0.4, 3: 4.5, 4: 3.9 },
   },
   {
     id: 404,
@@ -11136,17 +8075,9 @@ export default [
       lastRoundPoints: 4,
       positionRank: 69,
       nextFixture: 31,
-      scores: {
-        2: 20,
-        3: 4,
-      },
+      scores: { 2: 20, 3: 4 },
     },
-    selected: {
-      1: 0.3,
-      2: 0.3,
-      3: 0.9,
-      4: 0.9,
-    },
+    selected: { 1: 0.3, 2: 0.3, 3: 0.9, 4: 0.8 },
   },
   {
     id: 405,
@@ -11164,17 +8095,9 @@ export default [
       lastRoundPoints: 6,
       positionRank: 80,
       nextFixture: 31,
-      scores: {
-        2: 4,
-        3: 6,
-      },
+      scores: { 2: 4, 3: 6 },
     },
-    selected: {
-      1: 0.5,
-      2: 0.3,
-      3: 0.3,
-      4: 0.3,
-    },
+    selected: { 1: 0.5, 2: 0.3, 3: 0.3, 4: 0.3 },
   },
   {
     id: 406,
@@ -11192,17 +8115,9 @@ export default [
       lastRoundPoints: 12,
       positionRank: 81,
       nextFixture: 31,
-      scores: {
-        2: 3,
-        3: 12,
-      },
+      scores: { 2: 3, 3: 12 },
     },
-    selected: {
-      1: 0.4,
-      2: 0.3,
-      3: 0.3,
-      4: 0.3,
-    },
+    selected: { 1: 0.4, 2: 0.3, 3: 0.3, 4: 0.3 },
   },
   {
     id: 407,
@@ -11220,17 +8135,9 @@ export default [
       lastRoundPoints: 15,
       positionRank: 82,
       nextFixture: 31,
-      scores: {
-        2: 20,
-        3: 15,
-      },
+      scores: { 2: 20, 3: 15 },
     },
-    selected: {
-      1: 0.3,
-      2: 0.5,
-      3: 1.7,
-      4: 1.6,
-    },
+    selected: { 1: 0.3, 2: 0.5, 3: 1.7, 4: 1.5 },
   },
   {
     id: 408,
@@ -11248,17 +8155,9 @@ export default [
       lastRoundPoints: 1,
       positionRank: 79,
       nextFixture: 31,
-      scores: {
-        2: 23,
-        3: 1,
-      },
+      scores: { 2: 23, 3: 1 },
     },
-    selected: {
-      1: 0.1,
-      2: 0.3,
-      3: 0.2,
-      4: 0.2,
-    },
+    selected: { 1: 0.1, 2: 0.3, 3: 0.2, 4: 0.2 },
   },
   {
     id: 409,
@@ -11276,17 +8175,9 @@ export default [
       lastRoundPoints: 22,
       positionRank: 80,
       nextFixture: 31,
-      scores: {
-        2: 6,
-        3: 22,
-      },
+      scores: { 2: 6, 3: 22 },
     },
-    selected: {
-      1: 0.1,
-      2: 0,
-      3: 0.4,
-      4: 0.4,
-    },
+    selected: { 1: 0.1, 2: 0, 3: 0.4, 4: 0.4 },
   },
   {
     id: 410,
@@ -11304,17 +8195,9 @@ export default [
       lastRoundPoints: 11,
       positionRank: 82,
       nextFixture: 31,
-      scores: {
-        2: 20,
-        3: 11,
-      },
+      scores: { 2: 20, 3: 11 },
     },
-    selected: {
-      1: 0.1,
-      2: 0.2,
-      3: 1.5,
-      4: 1.4,
-    },
+    selected: { 1: 0.1, 2: 0.2, 3: 1.5, 4: 1.3 },
   },
   {
     id: 411,
@@ -11334,12 +8217,7 @@ export default [
       nextFixture: 31,
       scores: null,
     },
-    selected: {
-      1: 0.2,
-      2: 0.1,
-      3: 0.1,
-      4: 0.1,
-    },
+    selected: { 1: 0.2, 2: 0.1, 3: 0.1, 4: 0.1 },
   },
   {
     id: 412,
@@ -11357,17 +8235,9 @@ export default [
       lastRoundPoints: 10,
       positionRank: 83,
       nextFixture: 31,
-      scores: {
-        2: 6,
-        3: 10,
-      },
+      scores: { 2: 6, 3: 10 },
     },
-    selected: {
-      1: 0.2,
-      2: 0.1,
-      3: 0.3,
-      4: 0.3,
-    },
+    selected: { 1: 0.2, 2: 0.1, 3: 0.3, 4: 0.3 },
   },
   {
     id: 413,
@@ -11387,12 +8257,7 @@ export default [
       nextFixture: 31,
       scores: null,
     },
-    selected: {
-      1: 0.1,
-      2: 0.1,
-      3: 0.1,
-      4: 0.1,
-    },
+    selected: { 1: 0.1, 2: 0.1, 3: 0.1, 4: 0.1 },
   },
   {
     id: 414,
@@ -11412,12 +8277,7 @@ export default [
       nextFixture: 31,
       scores: null,
     },
-    selected: {
-      1: 0.2,
-      2: 0.1,
-      3: 0.1,
-      4: 0.1,
-    },
+    selected: { 1: 0.2, 2: 0.1, 3: 0.1, 4: 0.1 },
   },
   {
     id: 415,
@@ -11435,17 +8295,9 @@ export default [
       lastRoundPoints: 30,
       positionRank: 44,
       nextFixture: 31,
-      scores: {
-        2: 24,
-        3: 30,
-      },
+      scores: { 2: 24, 3: 30 },
     },
-    selected: {
-      1: 0.2,
-      2: 0.4,
-      3: 2.1,
-      4: 2,
-    },
+    selected: { 1: 0.2, 2: 0.4, 3: 2.1, 4: 1.8 },
   },
   {
     id: 416,
@@ -11463,17 +8315,9 @@ export default [
       lastRoundPoints: 4,
       positionRank: 45,
       nextFixture: 31,
-      scores: {
-        2: 1,
-        3: 4,
-      },
+      scores: { 2: 1, 3: 4 },
     },
-    selected: {
-      1: 0,
-      2: 0,
-      3: 0,
-      4: 0,
-    },
+    selected: { 1: 0, 2: 0, 3: 0, 4: 0 },
   },
   {
     id: 417,
@@ -11493,12 +8337,7 @@ export default [
       nextFixture: 31,
       scores: null,
     },
-    selected: {
-      1: 0.1,
-      2: 0.1,
-      3: 0.1,
-      4: 0.1,
-    },
+    selected: { 1: 0.1, 2: 0.1, 3: 0.1, 4: 0.1 },
   },
   {
     id: 418,
@@ -11518,12 +8357,7 @@ export default [
       nextFixture: 30,
       scores: null,
     },
-    selected: {
-      1: 0,
-      2: 0,
-      3: 0,
-      4: 0,
-    },
+    selected: { 1: 0, 2: 0, 3: 0, 4: 0 },
   },
   {
     id: 419,
@@ -11541,16 +8375,9 @@ export default [
       lastRoundPoints: null,
       positionRank: 33,
       nextFixture: 30,
-      scores: {
-        2: -1,
-      },
+      scores: { 2: -1 },
     },
-    selected: {
-      1: 0.1,
-      2: 0.1,
-      3: 0.1,
-      4: 0.1,
-    },
+    selected: { 1: 0.1, 2: 0.1, 3: 0.1, 4: 0.1 },
   },
   {
     id: 420,
@@ -11568,16 +8395,9 @@ export default [
       lastRoundPoints: null,
       positionRank: 18,
       nextFixture: 30,
-      scores: {
-        1: 2,
-      },
+      scores: { 1: 2 },
     },
-    selected: {
-      1: 0.1,
-      2: 0.1,
-      3: 0.1,
-      4: 0.1,
-    },
+    selected: { 1: 0.1, 2: 0.1, 3: 0.1, 4: 0.1 },
   },
   {
     id: 421,
@@ -11595,17 +8415,9 @@ export default [
       lastRoundPoints: null,
       positionRank: 19,
       nextFixture: 30,
-      scores: {
-        1: 63,
-        2: 13,
-      },
+      scores: { 1: 63, 2: 13 },
     },
-    selected: {
-      1: 0.3,
-      2: 1,
-      3: 0.4,
-      4: 0.4,
-    },
+    selected: { 1: 0.3, 2: 1, 3: 0.4, 4: 0.4 },
   },
   {
     id: 422,
@@ -11623,17 +8435,9 @@ export default [
       lastRoundPoints: null,
       positionRank: 40,
       nextFixture: 30,
-      scores: {
-        1: 4,
-        2: 16,
-      },
+      scores: { 1: 4, 2: 16 },
     },
-    selected: {
-      1: 0.7,
-      2: 0.7,
-      3: 0.5,
-      4: 0.5,
-    },
+    selected: { 1: 0.7, 2: 0.7, 3: 0.5, 4: 0.5 },
   },
   {
     id: 423,
@@ -11651,17 +8455,9 @@ export default [
       lastRoundPoints: null,
       positionRank: 42,
       nextFixture: 30,
-      scores: {
-        1: 19,
-        2: 2,
-      },
+      scores: { 1: 19, 2: 2 },
     },
-    selected: {
-      1: 1,
-      2: 1.5,
-      3: 0.9,
-      4: 0.9,
-    },
+    selected: { 1: 1, 2: 1.5, 3: 0.9, 4: 0.9 },
   },
   {
     id: 424,
@@ -11679,16 +8475,9 @@ export default [
       lastRoundPoints: null,
       positionRank: 44,
       nextFixture: 30,
-      scores: {
-        1: 6,
-      },
+      scores: { 1: 6 },
     },
-    selected: {
-      1: 1.1,
-      2: 0.7,
-      3: 0.6,
-      4: 0.6,
-    },
+    selected: { 1: 1.1, 2: 0.7, 3: 0.6, 4: 0.6 },
   },
   {
     id: 425,
@@ -11708,12 +8497,7 @@ export default [
       nextFixture: 30,
       scores: null,
     },
-    selected: {
-      1: 0.4,
-      2: 0.3,
-      3: 0.3,
-      4: 0.3,
-    },
+    selected: { 1: 0.4, 2: 0.3, 3: 0.3, 4: 0.3 },
   },
   {
     id: 426,
@@ -11731,17 +8515,9 @@ export default [
       lastRoundPoints: null,
       positionRank: 36,
       nextFixture: 30,
-      scores: {
-        1: 12,
-        2: 23,
-      },
+      scores: { 1: 12, 2: 23 },
     },
-    selected: {
-      1: 0.3,
-      2: 0.3,
-      3: 0.3,
-      4: 0.3,
-    },
+    selected: { 1: 0.3, 2: 0.3, 3: 0.3, 4: 0.3 },
   },
   {
     id: 427,
@@ -11759,17 +8535,9 @@ export default [
       lastRoundPoints: null,
       positionRank: 37,
       nextFixture: 30,
-      scores: {
-        1: 15,
-        2: 8,
-      },
+      scores: { 1: 15, 2: 8 },
     },
-    selected: {
-      1: 0.9,
-      2: 0.6,
-      3: 0.4,
-      4: 0.4,
-    },
+    selected: { 1: 0.9, 2: 0.6, 3: 0.4, 4: 0.4 },
   },
   {
     id: 428,
@@ -11787,17 +8555,9 @@ export default [
       lastRoundPoints: null,
       positionRank: 39,
       nextFixture: 30,
-      scores: {
-        1: 9,
-        2: 4,
-      },
+      scores: { 1: 9, 2: 4 },
     },
-    selected: {
-      1: 1.3,
-      2: 0.8,
-      3: 0.6,
-      4: 0.6,
-    },
+    selected: { 1: 1.3, 2: 0.8, 3: 0.6, 4: 0.6 },
   },
   {
     id: 429,
@@ -11815,17 +8575,9 @@ export default [
       lastRoundPoints: null,
       positionRank: 23,
       nextFixture: 30,
-      scores: {
-        1: 21,
-        2: 6,
-      },
+      scores: { 1: 21, 2: 6 },
     },
-    selected: {
-      1: 0.9,
-      2: 1.4,
-      3: 0.4,
-      4: 0.4,
-    },
+    selected: { 1: 0.9, 2: 1.4, 3: 0.4, 4: 0.4 },
   },
   {
     id: 430,
@@ -11843,16 +8595,9 @@ export default [
       lastRoundPoints: null,
       positionRank: 42,
       nextFixture: 30,
-      scores: {
-        2: 6,
-      },
+      scores: { 2: 6 },
     },
-    selected: {
-      1: 0.2,
-      2: 0.2,
-      3: 0.1,
-      4: 0.1,
-    },
+    selected: { 1: 0.2, 2: 0.2, 3: 0.1, 4: 0.1 },
   },
   {
     id: 431,
@@ -11870,16 +8615,9 @@ export default [
       lastRoundPoints: null,
       positionRank: 26,
       nextFixture: 30,
-      scores: {
-        1: 9,
-      },
+      scores: { 1: 9 },
     },
-    selected: {
-      1: 0.2,
-      2: 0.2,
-      3: 0.2,
-      4: 0.2,
-    },
+    selected: { 1: 0.2, 2: 0.2, 3: 0.2, 4: 0.2 },
   },
   {
     id: 432,
@@ -11897,17 +8635,9 @@ export default [
       lastRoundPoints: null,
       positionRank: 38,
       nextFixture: 30,
-      scores: {
-        1: 26,
-        2: 17,
-      },
+      scores: { 1: 26, 2: 17 },
     },
-    selected: {
-      1: 1.5,
-      2: 3.6,
-      3: 0.9,
-      4: 0.9,
-    },
+    selected: { 1: 1.5, 2: 3.6, 3: 0.9, 4: 1 },
   },
   {
     id: 433,
@@ -11925,17 +8655,9 @@ export default [
       lastRoundPoints: null,
       positionRank: 40,
       nextFixture: 30,
-      scores: {
-        1: 4,
-        2: 4,
-      },
+      scores: { 1: 4, 2: 4 },
     },
-    selected: {
-      1: 0.5,
-      2: 0.2,
-      3: 0.2,
-      4: 0.2,
-    },
+    selected: { 1: 0.5, 2: 0.2, 3: 0.2, 4: 0.2 },
   },
   {
     id: 434,
@@ -11953,17 +8675,9 @@ export default [
       lastRoundPoints: null,
       positionRank: 41,
       nextFixture: 30,
-      scores: {
-        1: 12,
-        2: 13,
-      },
+      scores: { 1: 12, 2: 13 },
     },
-    selected: {
-      1: 0.3,
-      2: 0.9,
-      3: 0.3,
-      4: 0.3,
-    },
+    selected: { 1: 0.3, 2: 0.9, 3: 0.3, 4: 0.3 },
   },
   {
     id: 435,
@@ -11981,16 +8695,9 @@ export default [
       lastRoundPoints: null,
       positionRank: 43,
       nextFixture: 30,
-      scores: {
-        1: 10,
-      },
+      scores: { 1: 10 },
     },
-    selected: {
-      1: 1.2,
-      2: 0.4,
-      3: 0.3,
-      4: 0.3,
-    },
+    selected: { 1: 1.2, 2: 0.4, 3: 0.3, 4: 0.3 },
   },
   {
     id: 436,
@@ -12008,16 +8715,9 @@ export default [
       lastRoundPoints: null,
       positionRank: 84,
       nextFixture: 30,
-      scores: {
-        2: 8,
-      },
+      scores: { 2: 8 },
     },
-    selected: {
-      1: 0.4,
-      2: 0.4,
-      3: 0.4,
-      4: 0.4,
-    },
+    selected: { 1: 0.4, 2: 0.4, 3: 0.4, 4: 0.4 },
   },
   {
     id: 437,
@@ -12037,12 +8737,7 @@ export default [
       nextFixture: 30,
       scores: null,
     },
-    selected: {
-      1: 0.2,
-      2: 0.1,
-      3: 0.1,
-      4: 0.1,
-    },
+    selected: { 1: 0.2, 2: 0.1, 3: 0.1, 4: 0.1 },
   },
   {
     id: 438,
@@ -12060,16 +8755,9 @@ export default [
       lastRoundPoints: null,
       positionRank: 45,
       nextFixture: 30,
-      scores: {
-        1: 12,
-      },
+      scores: { 1: 12 },
     },
-    selected: {
-      1: 0.2,
-      2: 0.2,
-      3: 0.1,
-      4: 0.1,
-    },
+    selected: { 1: 0.2, 2: 0.2, 3: 0.1, 4: 0.1 },
   },
   {
     id: 439,
@@ -12087,17 +8775,9 @@ export default [
       lastRoundPoints: null,
       positionRank: 47,
       nextFixture: 30,
-      scores: {
-        1: 14,
-        2: 4,
-      },
+      scores: { 1: 14, 2: 4 },
     },
-    selected: {
-      1: 0.8,
-      2: 0.6,
-      3: 0.3,
-      4: 0.3,
-    },
+    selected: { 1: 0.8, 2: 0.6, 3: 0.3, 4: 0.3 },
   },
   {
     id: 440,
@@ -12115,16 +8795,9 @@ export default [
       lastRoundPoints: null,
       positionRank: 85,
       nextFixture: 30,
-      scores: {
-        2: 1,
-      },
+      scores: { 2: 1 },
     },
-    selected: {
-      1: 0.4,
-      2: 0.4,
-      3: 0.4,
-      4: 0.4,
-    },
+    selected: { 1: 0.4, 2: 0.4, 3: 0.4, 4: 0.4 },
   },
   {
     id: 441,
@@ -12142,16 +8815,9 @@ export default [
       lastRoundPoints: null,
       positionRank: 84,
       nextFixture: 30,
-      scores: {
-        2: 3,
-      },
+      scores: { 2: 3 },
     },
-    selected: {
-      1: 0.1,
-      2: 0,
-      3: 0,
-      4: 0,
-    },
+    selected: { 1: 0.1, 2: 0, 3: 0, 4: 0 },
   },
   {
     id: 442,
@@ -12169,17 +8835,9 @@ export default [
       lastRoundPoints: null,
       positionRank: 47,
       nextFixture: 30,
-      scores: {
-        1: 17,
-        2: 16,
-      },
+      scores: { 1: 17, 2: 16 },
     },
-    selected: {
-      1: 0.4,
-      2: 0.8,
-      3: 0.2,
-      4: 0.2,
-    },
+    selected: { 1: 0.4, 2: 0.8, 3: 0.2, 4: 0.2 },
   },
   {
     id: 443,
@@ -12197,17 +8855,9 @@ export default [
       lastRoundPoints: null,
       positionRank: 48,
       nextFixture: 30,
-      scores: {
-        1: 13,
-        2: 2,
-      },
+      scores: { 1: 13, 2: 2 },
     },
-    selected: {
-      1: 0.2,
-      2: 0.2,
-      3: 0.1,
-      4: 0.1,
-    },
+    selected: { 1: 0.2, 2: 0.2, 3: 0.1, 4: 0.1 },
   },
   {
     id: 444,
@@ -12225,16 +8875,9 @@ export default [
       lastRoundPoints: null,
       positionRank: 50,
       nextFixture: 30,
-      scores: {
-        1: 6,
-      },
+      scores: { 1: 6 },
     },
-    selected: {
-      1: 0.1,
-      2: 0.1,
-      3: 0.1,
-      4: 0.1,
-    },
+    selected: { 1: 0.1, 2: 0.1, 3: 0.1, 4: 0.1 },
   },
   {
     id: 445,
@@ -12252,17 +8895,9 @@ export default [
       lastRoundPoints: null,
       positionRank: 52,
       nextFixture: 30,
-      scores: {
-        1: 19,
-        2: 11,
-      },
+      scores: { 1: 19, 2: 11 },
     },
-    selected: {
-      1: 1,
-      2: 2.9,
-      3: 0.7,
-      4: 0.7,
-    },
+    selected: { 1: 1, 2: 2.9, 3: 0.7, 4: 0.7 },
   },
   {
     id: 446,
@@ -12282,12 +8917,7 @@ export default [
       nextFixture: 30,
       scores: null,
     },
-    selected: {
-      1: 0.1,
-      2: 0.1,
-      3: 0.1,
-      4: 0.1,
-    },
+    selected: { 1: 0.1, 2: 0.1, 3: 0.1, 4: 0.1 },
   },
   {
     id: 447,
@@ -12305,17 +8935,9 @@ export default [
       lastRoundPoints: null,
       positionRank: 27,
       nextFixture: 30,
-      scores: {
-        1: 2,
-        2: 7,
-      },
+      scores: { 1: 2, 2: 7 },
     },
-    selected: {
-      1: 0,
-      2: 0,
-      3: 0,
-      4: 0,
-    },
+    selected: { 1: 0, 2: 0, 3: 0, 4: 0 },
   },
   {
     id: 448,
@@ -12335,12 +8957,7 @@ export default [
       nextFixture: 30,
       scores: null,
     },
-    selected: {
-      1: 0.1,
-      2: 0,
-      3: 0,
-      4: 0,
-    },
+    selected: { 1: 0.1, 2: 0, 3: 0, 4: 0 },
   },
   {
     id: 449,
@@ -12358,17 +8975,9 @@ export default [
       lastRoundPoints: null,
       positionRank: 29,
       nextFixture: 30,
-      scores: {
-        1: 21,
-        2: 4,
-      },
+      scores: { 1: 21, 2: 4 },
     },
-    selected: {
-      1: 0.3,
-      2: 0.6,
-      3: 0.2,
-      4: 0.2,
-    },
+    selected: { 1: 0.3, 2: 0.6, 3: 0.2, 4: 0.2 },
   },
   {
     id: 450,
@@ -12386,16 +8995,9 @@ export default [
       lastRoundPoints: null,
       positionRank: 35,
       nextFixture: 26,
-      scores: {
-        2: 3,
-      },
+      scores: { 2: 3 },
     },
-    selected: {
-      1: 1.7,
-      2: 1.2,
-      3: 1,
-      4: 1,
-    },
+    selected: { 1: 1.7, 2: 1.2, 3: 1, 4: 1 },
   },
   {
     id: 451,
@@ -12413,17 +9015,9 @@ export default [
       lastRoundPoints: 4,
       positionRank: 36,
       nextFixture: 26,
-      scores: {
-        2: 35,
-        3: 4,
-      },
+      scores: { 2: 35, 3: 4 },
     },
-    selected: {
-      1: 0.3,
-      2: 1.7,
-      3: 1.3,
-      4: 1.3,
-    },
+    selected: { 1: 0.3, 2: 1.7, 3: 1.3, 4: 1.2 },
   },
   {
     id: 452,
@@ -12441,16 +9035,9 @@ export default [
       lastRoundPoints: 6,
       positionRank: 41,
       nextFixture: 26,
-      scores: {
-        3: 6,
-      },
+      scores: { 3: 6 },
     },
-    selected: {
-      1: 0.2,
-      2: 0.1,
-      3: 0.1,
-      4: 0.1,
-    },
+    selected: { 1: 0.2, 2: 0.1, 3: 0.1, 4: 0.1 },
   },
   {
     id: 453,
@@ -12468,16 +9055,9 @@ export default [
       lastRoundPoints: 12,
       positionRank: 79,
       nextFixture: 26,
-      scores: {
-        3: 12,
-      },
+      scores: { 3: 12 },
     },
-    selected: {
-      1: 1.6,
-      2: 1.2,
-      3: 1.9,
-      4: 1.8,
-    },
+    selected: { 1: 1.6, 2: 1.2, 3: 1.9, 4: 1.8 },
   },
   {
     id: 454,
@@ -12497,12 +9077,7 @@ export default [
       nextFixture: 26,
       scores: null,
     },
-    selected: {
-      1: 0.3,
-      2: 0.2,
-      3: 0.2,
-      4: 0.2,
-    },
+    selected: { 1: 0.3, 2: 0.2, 3: 0.2, 4: 0.2 },
   },
   {
     id: 455,
@@ -12520,16 +9095,9 @@ export default [
       lastRoundPoints: null,
       positionRank: 70,
       nextFixture: 26,
-      scores: {
-        2: 1,
-      },
+      scores: { 2: 1 },
     },
-    selected: {
-      1: 0.3,
-      2: 0.3,
-      3: 0.2,
-      4: 0.2,
-    },
+    selected: { 1: 0.3, 2: 0.3, 3: 0.2, 4: 0.2 },
   },
   {
     id: 456,
@@ -12547,17 +9115,9 @@ export default [
       lastRoundPoints: 19,
       positionRank: 62,
       nextFixture: 26,
-      scores: {
-        2: 20,
-        3: 19,
-      },
+      scores: { 2: 20, 3: 19 },
     },
-    selected: {
-      1: 0.9,
-      2: 3.1,
-      3: 1.5,
-      4: 1.5,
-    },
+    selected: { 1: 0.9, 2: 3.1, 3: 1.5, 4: 1.4 },
   },
   {
     id: 457,
@@ -12575,17 +9135,9 @@ export default [
       lastRoundPoints: -6,
       positionRank: 63,
       nextFixture: 26,
-      scores: {
-        2: 37,
-        3: -6,
-      },
+      scores: { 2: 37, 3: -6 },
     },
-    selected: {
-      1: 0.4,
-      2: 1.1,
-      3: 3.2,
-      4: 2.9,
-    },
+    selected: { 1: 0.4, 2: 1.1, 3: 3.2, 4: 2.6 },
   },
   {
     id: 458,
@@ -12603,17 +9155,9 @@ export default [
       lastRoundPoints: 3,
       positionRank: 64,
       nextFixture: 26,
-      scores: {
-        2: 28,
-        3: 3,
-      },
+      scores: { 2: 28, 3: 3 },
     },
-    selected: {
-      1: 0.2,
-      2: 1,
-      3: 1.7,
-      4: 1.6,
-    },
+    selected: { 1: 0.2, 2: 1, 3: 1.7, 4: 1.4 },
   },
   {
     id: 459,
@@ -12631,17 +9175,9 @@ export default [
       lastRoundPoints: 19,
       positionRank: 65,
       nextFixture: 26,
-      scores: {
-        2: 14,
-        3: 19,
-      },
+      scores: { 2: 14, 3: 19 },
     },
-    selected: {
-      1: 1.3,
-      2: 2.5,
-      3: 1.8,
-      4: 1.7,
-    },
+    selected: { 1: 1.3, 2: 2.5, 3: 1.8, 4: 1.7 },
   },
   {
     id: 460,
@@ -12659,17 +9195,9 @@ export default [
       lastRoundPoints: 6,
       positionRank: 66,
       nextFixture: 26,
-      scores: {
-        2: 12,
-        3: 6,
-      },
+      scores: { 2: 12, 3: 6 },
     },
-    selected: {
-      1: 0.4,
-      2: 0.9,
-      3: 0.3,
-      4: 0.3,
-    },
+    selected: { 1: 0.4, 2: 0.9, 3: 0.3, 4: 0.3 },
   },
   {
     id: 461,
@@ -12687,17 +9215,9 @@ export default [
       lastRoundPoints: 29,
       positionRank: 44,
       nextFixture: 26,
-      scores: {
-        2: 54,
-        3: 29,
-      },
+      scores: { 2: 54, 3: 29 },
     },
-    selected: {
-      1: 0.7,
-      2: 0.6,
-      3: 1,
-      4: 1.8,
-    },
+    selected: { 1: 0.7, 2: 0.6, 3: 1, 4: 3 },
   },
   {
     id: 462,
@@ -12717,12 +9237,7 @@ export default [
       nextFixture: 26,
       scores: null,
     },
-    selected: {
-      1: 0.2,
-      2: 0.1,
-      3: 0.1,
-      4: 0.1,
-    },
+    selected: { 1: 0.2, 2: 0.1, 3: 0.1, 4: 0.1 },
   },
   {
     id: 463,
@@ -12740,17 +9255,9 @@ export default [
       lastRoundPoints: 16,
       positionRank: 45,
       nextFixture: 26,
-      scores: {
-        2: 27,
-        3: 16,
-      },
+      scores: { 2: 27, 3: 16 },
     },
-    selected: {
-      1: 0.6,
-      2: 7.9,
-      3: 5.7,
-      4: 5.4,
-    },
+    selected: { 1: 0.6, 2: 7.9, 3: 5.7, 4: 5 },
   },
   {
     id: 464,
@@ -12768,17 +9275,9 @@ export default [
       lastRoundPoints: 11,
       positionRank: 71,
       nextFixture: 26,
-      scores: {
-        2: 12,
-        3: 11,
-      },
+      scores: { 2: 12, 3: 11 },
     },
-    selected: {
-      1: 0.7,
-      2: 3.4,
-      3: 1.4,
-      4: 1.4,
-    },
+    selected: { 1: 0.7, 2: 3.4, 3: 1.4, 4: 1.4 },
   },
   {
     id: 465,
@@ -12796,17 +9295,9 @@ export default [
       lastRoundPoints: 12,
       positionRank: 72,
       nextFixture: 26,
-      scores: {
-        2: 40,
-        3: 12,
-      },
+      scores: { 2: 40, 3: 12 },
     },
-    selected: {
-      1: 2.1,
-      2: 9.1,
-      3: 11.9,
-      4: 11.5,
-    },
+    selected: { 1: 2.1, 2: 9.1, 3: 11.9, 4: 11 },
   },
   {
     id: 466,
@@ -12826,12 +9317,7 @@ export default [
       nextFixture: 26,
       scores: null,
     },
-    selected: {
-      1: 0.4,
-      2: 0.3,
-      3: 0.2,
-      4: 0.2,
-    },
+    selected: { 1: 0.4, 2: 0.3, 3: 0.2, 4: 0.2 },
   },
   {
     id: 467,
@@ -12849,16 +9335,9 @@ export default [
       lastRoundPoints: null,
       positionRank: 73,
       nextFixture: 26,
-      scores: {
-        2: 7,
-      },
+      scores: { 2: 7 },
     },
-    selected: {
-      1: 0.2,
-      2: 0.2,
-      3: 0.2,
-      4: 0.2,
-    },
+    selected: { 1: 0.2, 2: 0.2, 3: 0.2, 4: 0.2 },
   },
   {
     id: 468,
@@ -12876,16 +9355,9 @@ export default [
       lastRoundPoints: 13,
       positionRank: 80,
       nextFixture: 26,
-      scores: {
-        3: 13,
-      },
+      scores: { 3: 13 },
     },
-    selected: {
-      1: 0.4,
-      2: 0.3,
-      3: 0.7,
-      4: 0.7,
-    },
+    selected: { 1: 0.4, 2: 0.3, 3: 0.7, 4: 0.6 },
   },
   {
     id: 469,
@@ -12903,17 +9375,9 @@ export default [
       lastRoundPoints: 14,
       positionRank: 88,
       nextFixture: 26,
-      scores: {
-        2: 34,
-        3: 14,
-      },
+      scores: { 2: 34, 3: 14 },
     },
-    selected: {
-      1: 0.5,
-      2: 1.4,
-      3: 3.1,
-      4: 3,
-    },
+    selected: { 1: 0.5, 2: 1.4, 3: 3.1, 4: 2.8 },
   },
   {
     id: 470,
@@ -12931,17 +9395,9 @@ export default [
       lastRoundPoints: 22,
       positionRank: 89,
       nextFixture: 26,
-      scores: {
-        2: 5,
-        3: 22,
-      },
+      scores: { 2: 5, 3: 22 },
     },
-    selected: {
-      1: 1.3,
-      2: 3.8,
-      3: 1.8,
-      4: 1.8,
-    },
+    selected: { 1: 1.3, 2: 3.8, 3: 1.8, 4: 1.8 },
   },
   {
     id: 471,
@@ -12959,17 +9415,9 @@ export default [
       lastRoundPoints: 4,
       positionRank: 90,
       nextFixture: 26,
-      scores: {
-        2: 4,
-        3: 4,
-      },
+      scores: { 2: 4, 3: 4 },
     },
-    selected: {
-      1: 0.6,
-      2: 0.4,
-      3: 0.4,
-      4: 0.4,
-    },
+    selected: { 1: 0.6, 2: 0.4, 3: 0.4, 4: 0.4 },
   },
   {
     id: 472,
@@ -12989,12 +9437,7 @@ export default [
       nextFixture: 26,
       scores: null,
     },
-    selected: {
-      1: 0.3,
-      2: 0.3,
-      3: 0.2,
-      4: 0.2,
-    },
+    selected: { 1: 0.3, 2: 0.3, 3: 0.2, 4: 0.2 },
   },
   {
     id: 473,
@@ -13014,12 +9457,7 @@ export default [
       nextFixture: 26,
       scores: null,
     },
-    selected: {
-      1: 0.2,
-      2: 0.2,
-      3: 0.2,
-      4: 0.2,
-    },
+    selected: { 1: 0.2, 2: 0.2, 3: 0.2, 4: 0.2 },
   },
   {
     id: 474,
@@ -13037,17 +9475,9 @@ export default [
       lastRoundPoints: 7,
       positionRank: 91,
       nextFixture: 26,
-      scores: {
-        2: 22,
-        3: 7,
-      },
+      scores: { 2: 22, 3: 7 },
     },
-    selected: {
-      1: 0.2,
-      2: 1.4,
-      3: 0.3,
-      4: 0.4,
-    },
+    selected: { 1: 0.2, 2: 1.4, 3: 0.3, 4: 0.4 },
   },
   {
     id: 475,
@@ -13065,17 +9495,9 @@ export default [
       lastRoundPoints: 8,
       positionRank: 86,
       nextFixture: 26,
-      scores: {
-        2: 24,
-        3: 8,
-      },
+      scores: { 2: 24, 3: 8 },
     },
-    selected: {
-      1: 2.4,
-      2: 14.2,
-      3: 2.8,
-      4: 2.9,
-    },
+    selected: { 1: 2.4, 2: 14.2, 3: 2.8, 4: 3 },
   },
   {
     id: 476,
@@ -13093,16 +9515,9 @@ export default [
       lastRoundPoints: 5,
       positionRank: 100,
       nextFixture: 26,
-      scores: {
-        3: 5,
-      },
+      scores: { 3: 5 },
     },
-    selected: {
-      1: 0.5,
-      2: 0.6,
-      3: 0.4,
-      4: 0.4,
-    },
+    selected: { 1: 0.5, 2: 0.6, 3: 0.4, 4: 0.4 },
   },
   {
     id: 477,
@@ -13120,17 +9535,9 @@ export default [
       lastRoundPoints: 16,
       positionRank: 87,
       nextFixture: 26,
-      scores: {
-        2: 11,
-        3: 16,
-      },
+      scores: { 2: 11, 3: 16 },
     },
-    selected: {
-      1: 0.2,
-      2: 0.2,
-      3: 1.3,
-      4: 1.2,
-    },
+    selected: { 1: 0.2, 2: 0.2, 3: 1.3, 4: 1.1 },
   },
   {
     id: 478,
@@ -13148,16 +9555,9 @@ export default [
       lastRoundPoints: null,
       positionRank: 88,
       nextFixture: 26,
-      scores: {
-        2: 15,
-      },
+      scores: { 2: 15 },
     },
-    selected: {
-      1: 0.1,
-      2: 0.3,
-      3: 0.1,
-      4: 0.1,
-    },
+    selected: { 1: 0.1, 2: 0.3, 3: 0.1, 4: 0.1 },
   },
   {
     id: 479,
@@ -13175,17 +9575,9 @@ export default [
       lastRoundPoints: 29,
       positionRank: 47,
       nextFixture: 26,
-      scores: {
-        2: 19,
-        3: 29,
-      },
+      scores: { 2: 19, 3: 29 },
     },
-    selected: {
-      1: 0.2,
-      2: 1.3,
-      3: 1.5,
-      4: 1.5,
-    },
+    selected: { 1: 0.2, 2: 1.3, 3: 1.5, 4: 1.4 },
   },
   {
     id: 480,
@@ -13203,16 +9595,9 @@ export default [
       lastRoundPoints: 1,
       positionRank: 54,
       nextFixture: 26,
-      scores: {
-        3: 1,
-      },
+      scores: { 3: 1 },
     },
-    selected: {
-      1: 0.1,
-      2: 0.1,
-      3: 0.1,
-      4: 0.1,
-    },
+    selected: { 1: 0.1, 2: 0.1, 3: 0.1, 4: 0.1 },
   },
   {
     id: 481,
@@ -13230,16 +9615,9 @@ export default [
       lastRoundPoints: null,
       positionRank: 48,
       nextFixture: 26,
-      scores: {
-        2: -4,
-      },
+      scores: { 2: -4 },
     },
-    selected: {
-      1: 0.1,
-      2: 0.1,
-      3: 0.1,
-      4: 0.1,
-    },
+    selected: { 1: 0.1, 2: 0.1, 3: 0.1, 4: 0.1 },
   },
   {
     id: 482,
@@ -13257,17 +9635,9 @@ export default [
       lastRoundPoints: 59,
       positionRank: 22,
       nextFixture: 30,
-      scores: {
-        1: 22,
-        3: 59,
-      },
+      scores: { 1: 22, 3: 59 },
     },
-    selected: {
-      1: 7.5,
-      2: 3.6,
-      3: 7.7,
-      4: 8.7,
-    },
+    selected: { 1: 7.5, 2: 3.6, 3: 7.7, 4: 10 },
   },
   {
     id: 483,
@@ -13287,12 +9657,7 @@ export default [
       nextFixture: 30,
       scores: null,
     },
-    selected: {
-      1: 0.2,
-      2: 0.2,
-      3: 0.2,
-      4: 0.2,
-    },
+    selected: { 1: 0.2, 2: 0.2, 3: 0.2, 4: 0.3 },
   },
   {
     id: 484,
@@ -13310,17 +9675,9 @@ export default [
       lastRoundPoints: 91,
       positionRank: 48,
       nextFixture: 30,
-      scores: {
-        1: 11,
-        3: 91,
-      },
+      scores: { 1: 11, 3: 91 },
     },
-    selected: {
-      1: 8,
-      2: 3.8,
-      3: 7.9,
-      4: 10.1,
-    },
+    selected: { 1: 8, 2: 3.8, 3: 7.9, 4: 13.1 },
   },
   {
     id: 485,
@@ -13338,17 +9695,9 @@ export default [
       lastRoundPoints: 39,
       positionRank: 49,
       nextFixture: 30,
-      scores: {
-        1: 17,
-        3: 39,
-      },
+      scores: { 1: 17, 3: 39 },
     },
-    selected: {
-      1: 2.1,
-      2: 1,
-      3: 1.2,
-      4: 1.7,
-    },
+    selected: { 1: 2.1, 2: 1, 3: 1.2, 4: 2.3 },
   },
   {
     id: 486,
@@ -13366,17 +9715,9 @@ export default [
       lastRoundPoints: 84,
       positionRank: 50,
       nextFixture: 30,
-      scores: {
-        1: 24,
-        3: 84,
-      },
+      scores: { 1: 24, 3: 84 },
     },
-    selected: {
-      1: 1.5,
-      2: 0.8,
-      3: 3.4,
-      4: 5.2,
-    },
+    selected: { 1: 1.5, 2: 0.8, 3: 3.4, 4: 7.3 },
   },
   {
     id: 487,
@@ -13394,16 +9735,9 @@ export default [
       lastRoundPoints: null,
       positionRank: 52,
       nextFixture: 30,
-      scores: {
-        1: 8,
-      },
+      scores: { 1: 8 },
     },
-    selected: {
-      1: 0.4,
-      2: 0.3,
-      3: 0.3,
-      4: 0.3,
-    },
+    selected: { 1: 0.4, 2: 0.3, 3: 0.3, 4: 0.3 },
   },
   {
     id: 488,
@@ -13421,16 +9755,9 @@ export default [
       lastRoundPoints: 52,
       positionRank: 81,
       nextFixture: 30,
-      scores: {
-        3: 52,
-      },
+      scores: { 3: 52 },
     },
-    selected: {
-      1: 0.6,
-      2: 0.4,
-      3: 1.5,
-      4: 1.6,
-    },
+    selected: { 1: 0.6, 2: 0.4, 3: 1.5, 4: 1.8 },
   },
   {
     id: 489,
@@ -13448,16 +9775,9 @@ export default [
       lastRoundPoints: 30,
       positionRank: 70,
       nextFixture: 30,
-      scores: {
-        3: 30,
-      },
+      scores: { 3: 30 },
     },
-    selected: {
-      1: 0.4,
-      2: 0.3,
-      3: 2,
-      4: 2,
-    },
+    selected: { 1: 0.4, 2: 0.3, 3: 2, 4: 2 },
   },
   {
     id: 490,
@@ -13475,17 +9795,9 @@ export default [
       lastRoundPoints: 19,
       positionRank: 44,
       nextFixture: 30,
-      scores: {
-        1: 12,
-        3: 19,
-      },
+      scores: { 1: 12, 3: 19 },
     },
-    selected: {
-      1: 3.9,
-      2: 1.6,
-      3: 10,
-      4: 9.5,
-    },
+    selected: { 1: 3.9, 2: 1.6, 3: 10, 4: 9.1 },
   },
   {
     id: 491,
@@ -13503,17 +9815,9 @@ export default [
       lastRoundPoints: 13,
       positionRank: 45,
       nextFixture: 30,
-      scores: {
-        1: 8,
-        3: 13,
-      },
+      scores: { 1: 8, 3: 13 },
     },
-    selected: {
-      1: 7.7,
-      2: 2.7,
-      3: 3.1,
-      4: 3.4,
-    },
+    selected: { 1: 7.7, 2: 2.7, 3: 3.1, 4: 3.7 },
   },
   {
     id: 492,
@@ -13531,16 +9835,9 @@ export default [
       lastRoundPoints: null,
       positionRank: 47,
       nextFixture: 30,
-      scores: {
-        1: 7,
-      },
+      scores: { 1: 7 },
     },
-    selected: {
-      1: 0.3,
-      2: 0.2,
-      3: 0.3,
-      4: 0.3,
-    },
+    selected: { 1: 0.3, 2: 0.2, 3: 0.3, 4: 0.3 },
   },
   {
     id: 493,
@@ -13558,17 +9855,9 @@ export default [
       lastRoundPoints: 44,
       positionRank: 29,
       nextFixture: 30,
-      scores: {
-        1: 29,
-        3: 44,
-      },
+      scores: { 1: 29, 3: 44 },
     },
-    selected: {
-      1: 1.3,
-      2: 0.7,
-      3: 2.2,
-      4: 2.5,
-    },
+    selected: { 1: 1.3, 2: 0.7, 3: 2.2, 4: 3 },
   },
   {
     id: 494,
@@ -13586,16 +9875,9 @@ export default [
       lastRoundPoints: 30,
       positionRank: 49,
       nextFixture: 30,
-      scores: {
-        3: 30,
-      },
+      scores: { 3: 30 },
     },
-    selected: {
-      1: 0.1,
-      2: 0.1,
-      3: 0.1,
-      4: 0.2,
-    },
+    selected: { 1: 0.1, 2: 0.1, 3: 0.1, 4: 0.3 },
   },
   {
     id: 495,
@@ -13613,16 +9895,9 @@ export default [
       lastRoundPoints: null,
       positionRank: 30,
       nextFixture: 30,
-      scores: {
-        1: 11,
-      },
+      scores: { 1: 11 },
     },
-    selected: {
-      1: 0.5,
-      2: 0.3,
-      3: 0.3,
-      4: 0.3,
-    },
+    selected: { 1: 0.5, 2: 0.3, 3: 0.3, 4: 0.3 },
   },
   {
     id: 496,
@@ -13640,16 +9915,9 @@ export default [
       lastRoundPoints: null,
       positionRank: 48,
       nextFixture: 30,
-      scores: {
-        1: 11,
-      },
+      scores: { 1: 11 },
     },
-    selected: {
-      1: 1.7,
-      2: 0.8,
-      3: 0.9,
-      4: 0.9,
-    },
+    selected: { 1: 1.7, 2: 0.8, 3: 0.9, 4: 0.9 },
   },
   {
     id: 497,
@@ -13667,17 +9935,9 @@ export default [
       lastRoundPoints: 17,
       positionRank: 49,
       nextFixture: 30,
-      scores: {
-        1: 11,
-        3: 17,
-      },
+      scores: { 1: 11, 3: 17 },
     },
-    selected: {
-      1: 5.4,
-      2: 2.3,
-      3: 4.9,
-      4: 4.8,
-    },
+    selected: { 1: 5.4, 2: 2.3, 3: 4.9, 4: 4.7 },
   },
   {
     id: 498,
@@ -13695,17 +9955,9 @@ export default [
       lastRoundPoints: 30,
       positionRank: 50,
       nextFixture: 30,
-      scores: {
-        1: 9,
-        3: 30,
-      },
+      scores: { 1: 9, 3: 30 },
     },
-    selected: {
-      1: 0.5,
-      2: 0.4,
-      3: 1.2,
-      4: 1.4,
-    },
+    selected: { 1: 0.5, 2: 0.4, 3: 1.2, 4: 1.8 },
   },
   {
     id: 499,
@@ -13723,16 +9975,9 @@ export default [
       lastRoundPoints: 10,
       positionRank: 82,
       nextFixture: 30,
-      scores: {
-        3: 10,
-      },
+      scores: { 3: 10 },
     },
-    selected: {
-      1: 0.3,
-      2: 0.2,
-      3: 0.2,
-      4: 0.3,
-    },
+    selected: { 1: 0.3, 2: 0.2, 3: 0.2, 4: 0.3 },
   },
   {
     id: 500,
@@ -13752,12 +9997,7 @@ export default [
       nextFixture: 30,
       scores: null,
     },
-    selected: {
-      1: 1.5,
-      2: 1,
-      3: 1,
-      4: 1.1,
-    },
+    selected: { 1: 1.5, 2: 1, 3: 1, 4: 1.2 },
   },
   {
     id: 501,
@@ -13775,17 +10015,9 @@ export default [
       lastRoundPoints: 45,
       positionRank: 53,
       nextFixture: 30,
-      scores: {
-        1: 16,
-        3: 45,
-      },
+      scores: { 1: 16, 3: 45 },
     },
-    selected: {
-      1: 1.7,
-      2: 0.6,
-      3: 1.7,
-      4: 2.3,
-    },
+    selected: { 1: 1.7, 2: 0.6, 3: 1.7, 4: 3.1 },
   },
   {
     id: 502,
@@ -13803,17 +10035,9 @@ export default [
       lastRoundPoints: 30,
       positionRank: 54,
       nextFixture: 30,
-      scores: {
-        1: 31,
-        3: 30,
-      },
+      scores: { 1: 31, 3: 30 },
     },
-    selected: {
-      1: 1.7,
-      2: 1.1,
-      3: 9.8,
-      4: 9.7,
-    },
+    selected: { 1: 1.7, 2: 1.1, 3: 9.8, 4: 9.6 },
   },
   {
     id: 503,
@@ -13831,17 +10055,9 @@ export default [
       lastRoundPoints: 13,
       positionRank: 55,
       nextFixture: 30,
-      scores: {
-        1: 2,
-        3: 13,
-      },
+      scores: { 1: 2, 3: 13 },
     },
-    selected: {
-      1: 0.7,
-      2: 0.4,
-      3: 0.5,
-      4: 0.5,
-    },
+    selected: { 1: 0.7, 2: 0.4, 3: 0.5, 4: 0.6 },
   },
   {
     id: 504,
@@ -13859,17 +10075,9 @@ export default [
       lastRoundPoints: 6,
       positionRank: 57,
       nextFixture: 30,
-      scores: {
-        1: 10,
-        3: 6,
-      },
+      scores: { 1: 10, 3: 6 },
     },
-    selected: {
-      1: 4.1,
-      2: 1.8,
-      3: 3.1,
-      4: 3.1,
-    },
+    selected: { 1: 4.1, 2: 1.8, 3: 3.1, 4: 3 },
   },
   {
     id: 505,
@@ -13889,12 +10097,7 @@ export default [
       nextFixture: 30,
       scores: null,
     },
-    selected: {
-      1: 0.2,
-      2: 0.1,
-      3: 0.1,
-      4: 0.1,
-    },
+    selected: { 1: 0.2, 2: 0.1, 3: 0.1, 4: 0.1 },
   },
   {
     id: 506,
@@ -13912,17 +10115,9 @@ export default [
       lastRoundPoints: 14,
       positionRank: 59,
       nextFixture: 30,
-      scores: {
-        1: 12,
-        3: 14,
-      },
+      scores: { 1: 12, 3: 14 },
     },
-    selected: {
-      1: 3.9,
-      2: 1.8,
-      3: 4.2,
-      4: 4.2,
-    },
+    selected: { 1: 3.9, 2: 1.8, 3: 4.2, 4: 4.1 },
   },
   {
     id: 507,
@@ -13940,17 +10135,9 @@ export default [
       lastRoundPoints: 15,
       positionRank: 60,
       nextFixture: 30,
-      scores: {
-        1: 11,
-        3: 15,
-      },
+      scores: { 1: 11, 3: 15 },
     },
-    selected: {
-      1: 6,
-      2: 2.3,
-      3: 2.6,
-      4: 2.7,
-    },
+    selected: { 1: 6, 2: 2.3, 3: 2.6, 4: 2.8 },
   },
   {
     id: 508,
@@ -13968,16 +10155,9 @@ export default [
       lastRoundPoints: null,
       positionRank: 62,
       nextFixture: 30,
-      scores: {
-        1: 5,
-      },
+      scores: { 1: 5 },
     },
-    selected: {
-      1: 0.2,
-      2: 0.1,
-      3: 0.1,
-      4: 0.1,
-    },
+    selected: { 1: 0.2, 2: 0.1, 3: 0.1, 4: 0.1 },
   },
   {
     id: 509,
@@ -13995,16 +10175,9 @@ export default [
       lastRoundPoints: 19,
       positionRank: 101,
       nextFixture: 30,
-      scores: {
-        3: 19,
-      },
+      scores: { 3: 19 },
     },
-    selected: {
-      1: 0.3,
-      2: 0.2,
-      3: 1.4,
-      4: 1.4,
-    },
+    selected: { 1: 0.3, 2: 0.2, 3: 1.4, 4: 1.3 },
   },
   {
     id: 510,
@@ -14022,17 +10195,9 @@ export default [
       lastRoundPoints: 10,
       positionRank: 64,
       nextFixture: 30,
-      scores: {
-        1: 3,
-        3: 10,
-      },
+      scores: { 1: 3, 3: 10 },
     },
-    selected: {
-      1: 0.5,
-      2: 0.3,
-      3: 0.3,
-      4: 0.3,
-    },
+    selected: { 1: 0.5, 2: 0.3, 3: 0.3, 4: 0.3 },
   },
   {
     id: 511,
@@ -14052,12 +10217,7 @@ export default [
       nextFixture: 30,
       scores: null,
     },
-    selected: {
-      1: 0.1,
-      2: 0.1,
-      3: 0.1,
-      4: 0.1,
-    },
+    selected: { 1: 0.1, 2: 0.1, 3: 0.1, 4: 0.1 },
   },
   {
     id: 512,
@@ -14075,16 +10235,9 @@ export default [
       lastRoundPoints: null,
       positionRank: 1,
       nextFixture: 30,
-      scores: {
-        1: 9,
-      },
+      scores: { 1: 9 },
     },
-    selected: {
-      1: 1,
-      2: 0.6,
-      3: 0.7,
-      4: 0.7,
-    },
+    selected: { 1: 1, 2: 0.6, 3: 0.7, 4: 0.8 },
   },
   {
     id: 513,
@@ -14102,17 +10255,9 @@ export default [
       lastRoundPoints: 5,
       positionRank: 2,
       nextFixture: 30,
-      scores: {
-        1: 19,
-        3: 5,
-      },
+      scores: { 1: 19, 3: 5 },
     },
-    selected: {
-      1: 1.9,
-      2: 0.9,
-      3: 5.4,
-      4: 5.1,
-    },
+    selected: { 1: 1.9, 2: 0.9, 3: 5.4, 4: 4.7 },
   },
   {
     id: 514,
@@ -14130,16 +10275,9 @@ export default [
       lastRoundPoints: 36,
       positionRank: 49,
       nextFixture: 30,
-      scores: {
-        3: 36,
-      },
+      scores: { 3: 36 },
     },
-    selected: {
-      1: 0.2,
-      2: 0.1,
-      3: 0.1,
-      4: 0.3,
-    },
+    selected: { 1: 0.2, 2: 0.1, 3: 0.1, 4: 0.6 },
   },
   {
     id: 515,
@@ -14157,17 +10295,9 @@ export default [
       lastRoundPoints: 19,
       positionRank: 2,
       nextFixture: 32,
-      scores: {
-        1: 20,
-        3: 19,
-      },
+      scores: { 1: 20, 3: 19 },
     },
-    selected: {
-      1: 7.6,
-      2: 2.8,
-      3: 3.8,
-      4: 3.7,
-    },
+    selected: { 1: 7.6, 2: 2.8, 3: 3.8, 4: 3.6 },
   },
   {
     id: 516,
@@ -14185,18 +10315,9 @@ export default [
       lastRoundPoints: 37,
       positionRank: 3,
       nextFixture: 32,
-      scores: {
-        1: 15,
-        2: 52,
-        3: 37,
-      },
+      scores: { 1: 15, 2: 52, 3: 37 },
     },
-    selected: {
-      1: 1.7,
-      2: 7.7,
-      3: 4.9,
-      4: 5.2,
-    },
+    selected: { 1: 1.7, 2: 7.7, 3: 4.9, 4: 5.5 },
   },
   {
     id: 517,
@@ -14214,16 +10335,9 @@ export default [
       lastRoundPoints: null,
       positionRank: 56,
       nextFixture: 32,
-      scores: {
-        2: 119,
-      },
+      scores: { 2: 119 },
     },
-    selected: {
-      1: 1.6,
-      2: 9,
-      3: 2.5,
-      4: 4.9,
-    },
+    selected: { 1: 1.6, 2: 9, 3: 2.5, 4: 7.9 },
   },
   {
     id: 518,
@@ -14241,17 +10355,9 @@ export default [
       lastRoundPoints: 31,
       positionRank: 5,
       nextFixture: 32,
-      scores: {
-        1: 35,
-        3: 31,
-      },
+      scores: { 1: 35, 3: 31 },
     },
-    selected: {
-      1: 9.3,
-      2: 5,
-      3: 9,
-      4: 9.2,
-    },
+    selected: { 1: 9.3, 2: 5, 3: 9, 4: 9.3 },
   },
   {
     id: 519,
@@ -14269,17 +10375,9 @@ export default [
       lastRoundPoints: null,
       positionRank: 6,
       nextFixture: 32,
-      scores: {
-        1: 7,
-        2: 81,
-      },
+      scores: { 1: 7, 2: 81 },
     },
-    selected: {
-      1: 1.2,
-      2: 5.8,
-      3: 1.4,
-      4: 1.7,
-    },
+    selected: { 1: 1.2, 2: 5.8, 3: 1.4, 4: 2 },
   },
   {
     id: 520,
@@ -14297,17 +10395,9 @@ export default [
       lastRoundPoints: 30,
       positionRank: 8,
       nextFixture: 32,
-      scores: {
-        1: 33,
-        3: 30,
-      },
+      scores: { 1: 33, 3: 30 },
     },
-    selected: {
-      1: 6.8,
-      2: 2.6,
-      3: 6.1,
-      4: 6.3,
-    },
+    selected: { 1: 6.8, 2: 2.6, 3: 6.1, 4: 6.4 },
   },
   {
     id: 521,
@@ -14325,16 +10415,9 @@ export default [
       lastRoundPoints: null,
       positionRank: 57,
       nextFixture: 32,
-      scores: {
-        2: 25,
-      },
+      scores: { 2: 25 },
     },
-    selected: {
-      1: 2,
-      2: 14.8,
-      3: 2.4,
-      4: 2.5,
-    },
+    selected: { 1: 2, 2: 14.8, 3: 2.4, 4: 2.6 },
   },
   {
     id: 522,
@@ -14352,17 +10435,9 @@ export default [
       lastRoundPoints: 17,
       positionRank: 2,
       nextFixture: 32,
-      scores: {
-        1: 21,
-        3: 17,
-      },
+      scores: { 1: 21, 3: 17 },
     },
-    selected: {
-      1: 2.6,
-      2: 1.3,
-      3: 3.3,
-      4: 3.5,
-    },
+    selected: { 1: 2.6, 2: 1.3, 3: 3.3, 4: 3.8 },
   },
   {
     id: 523,
@@ -14380,16 +10455,9 @@ export default [
       lastRoundPoints: null,
       positionRank: 49,
       nextFixture: 32,
-      scores: {
-        2: 14,
-      },
+      scores: { 2: 14 },
     },
-    selected: {
-      1: 0.8,
-      2: 10.1,
-      3: 1.3,
-      4: 1.4,
-    },
+    selected: { 1: 0.8, 2: 10.1, 3: 1.3, 4: 1.5 },
   },
   {
     id: 524,
@@ -14407,18 +10475,9 @@ export default [
       lastRoundPoints: 14,
       positionRank: 4,
       nextFixture: 32,
-      scores: {
-        1: 9,
-        2: 1,
-        3: 14,
-      },
+      scores: { 1: 9, 2: 1, 3: 14 },
     },
-    selected: {
-      1: 5.2,
-      2: 1.7,
-      3: 3.3,
-      4: 3.4,
-    },
+    selected: { 1: 5.2, 2: 1.7, 3: 3.3, 4: 3.4 },
   },
   {
     id: 525,
@@ -14436,16 +10495,9 @@ export default [
       lastRoundPoints: null,
       positionRank: 2,
       nextFixture: 32,
-      scores: {
-        1: 19,
-      },
+      scores: { 1: 19 },
     },
-    selected: {
-      1: 10.6,
-      2: 3.9,
-      3: 3.4,
-      4: 3.4,
-    },
+    selected: { 1: 10.6, 2: 3.9, 3: 3.4, 4: 3.4 },
   },
   {
     id: 526,
@@ -14463,18 +10515,9 @@ export default [
       lastRoundPoints: 33,
       positionRank: 4,
       nextFixture: 32,
-      scores: {
-        1: 18,
-        2: 21,
-        3: 33,
-      },
+      scores: { 1: 18, 2: 21, 3: 33 },
     },
-    selected: {
-      1: 0.9,
-      2: 6.1,
-      3: 5,
-      4: 5.2,
-    },
+    selected: { 1: 0.9, 2: 6.1, 3: 5, 4: 5.4 },
   },
   {
     id: 527,
@@ -14492,17 +10535,9 @@ export default [
       lastRoundPoints: 13,
       positionRank: 1,
       nextFixture: 32,
-      scores: {
-        1: 5,
-        3: 13,
-      },
+      scores: { 1: 5, 3: 13 },
     },
-    selected: {
-      1: 11.7,
-      2: 5.3,
-      3: 6.7,
-      4: 6.7,
-    },
+    selected: { 1: 11.7, 2: 5.3, 3: 6.7, 4: 6.6 },
   },
   {
     id: 528,
@@ -14520,17 +10555,9 @@ export default [
       lastRoundPoints: 19,
       positionRank: 3,
       nextFixture: 32,
-      scores: {
-        1: 14,
-        3: 19,
-      },
+      scores: { 1: 14, 3: 19 },
     },
-    selected: {
-      1: 3.3,
-      2: 1.2,
-      3: 3.7,
-      4: 3.6,
-    },
+    selected: { 1: 3.3, 2: 1.2, 3: 3.7, 4: 3.5 },
   },
   {
     id: 529,
@@ -14548,18 +10575,9 @@ export default [
       lastRoundPoints: 17,
       positionRank: 5,
       nextFixture: 32,
-      scores: {
-        1: 13,
-        2: 23,
-        3: 17,
-      },
+      scores: { 1: 13, 2: 23, 3: 17 },
     },
-    selected: {
-      1: 1.6,
-      2: 1.4,
-      3: 1.5,
-      4: 2.3,
-    },
+    selected: { 1: 1.6, 2: 1.4, 3: 1.5, 4: 3.3 },
   },
   {
     id: 530,
@@ -14577,17 +10595,9 @@ export default [
       lastRoundPoints: 5,
       positionRank: 55,
       nextFixture: 32,
-      scores: {
-        2: 32,
-        3: 5,
-      },
+      scores: { 2: 32, 3: 5 },
     },
-    selected: {
-      1: 0.5,
-      2: 8.4,
-      3: 1.2,
-      4: 1.3,
-    },
+    selected: { 1: 0.5, 2: 8.4, 3: 1.2, 4: 1.4 },
   },
   {
     id: 531,
@@ -14605,16 +10615,9 @@ export default [
       lastRoundPoints: null,
       positionRank: 56,
       nextFixture: 32,
-      scores: {
-        2: 18,
-      },
+      scores: { 2: 18 },
     },
-    selected: {
-      1: 0.3,
-      2: 2.6,
-      3: 0.4,
-      4: 0.5,
-    },
+    selected: { 1: 0.3, 2: 2.6, 3: 0.4, 4: 0.5 },
   },
   {
     id: 532,
@@ -14632,17 +10635,9 @@ export default [
       lastRoundPoints: 20,
       positionRank: 2,
       nextFixture: 32,
-      scores: {
-        1: 22,
-        3: 20,
-      },
+      scores: { 1: 22, 3: 20 },
     },
-    selected: {
-      1: 6.5,
-      2: 2.8,
-      3: 6.2,
-      4: 6.2,
-    },
+    selected: { 1: 6.5, 2: 2.8, 3: 6.2, 4: 6.1 },
   },
   {
     id: 533,
@@ -14660,17 +10655,9 @@ export default [
       lastRoundPoints: 13,
       positionRank: 3,
       nextFixture: 32,
-      scores: {
-        1: 17,
-        3: 13,
-      },
+      scores: { 1: 17, 3: 13 },
     },
-    selected: {
-      1: 15.6,
-      2: 6.3,
-      3: 8.8,
-      4: 8.8,
-    },
+    selected: { 1: 15.6, 2: 6.3, 3: 8.8, 4: 8.7 },
   },
   {
     id: 534,
@@ -14688,17 +10675,9 @@ export default [
       lastRoundPoints: null,
       positionRank: 6,
       nextFixture: 32,
-      scores: {
-        1: 7,
-        2: 23,
-      },
+      scores: { 1: 7, 2: 23 },
     },
-    selected: {
-      1: 1.7,
-      2: 8.4,
-      3: 1.8,
-      4: 1.9,
-    },
+    selected: { 1: 1.7, 2: 8.4, 3: 1.8, 4: 2 },
   },
   {
     id: 535,
@@ -14716,18 +10695,9 @@ export default [
       lastRoundPoints: 17,
       positionRank: 8,
       nextFixture: 32,
-      scores: {
-        1: 29,
-        2: 1,
-        3: 17,
-      },
+      scores: { 1: 29, 2: 1, 3: 17 },
     },
-    selected: {
-      1: 3.6,
-      2: 1.9,
-      3: 6.6,
-      4: 6.5,
-    },
+    selected: { 1: 3.6, 2: 1.9, 3: 6.6, 4: 6.3 },
   },
   {
     id: 536,
@@ -14745,17 +10715,9 @@ export default [
       lastRoundPoints: 4,
       positionRank: 60,
       nextFixture: 32,
-      scores: {
-        2: 33,
-        3: 4,
-      },
+      scores: { 2: 33, 3: 4 },
     },
-    selected: {
-      1: 0.2,
-      2: 0.2,
-      3: 0.3,
-      4: 0.3,
-    },
+    selected: { 1: 0.2, 2: 0.2, 3: 0.3, 4: 0.3 },
   },
   {
     id: 537,
@@ -14773,17 +10735,9 @@ export default [
       lastRoundPoints: 5,
       positionRank: 61,
       nextFixture: 32,
-      scores: {
-        2: 26,
-        3: 5,
-      },
+      scores: { 2: 26, 3: 5 },
     },
-    selected: {
-      1: 0.7,
-      2: 10.1,
-      3: 1.3,
-      4: 1.4,
-    },
+    selected: { 1: 0.7, 2: 10.1, 3: 1.3, 4: 1.5 },
   },
   {
     id: 538,
@@ -14801,18 +10755,9 @@ export default [
       lastRoundPoints: 6,
       positionRank: 13,
       nextFixture: 32,
-      scores: {
-        1: 0,
-        2: 45,
-        3: 6,
-      },
+      scores: { 1: 0, 2: 45, 3: 6 },
     },
-    selected: {
-      1: 0.4,
-      2: 2.1,
-      3: 0.8,
-      4: 1.2,
-    },
+    selected: { 1: 0.4, 2: 2.1, 3: 0.8, 4: 1.7 },
   },
   {
     id: 539,
@@ -14830,18 +10775,9 @@ export default [
       lastRoundPoints: 24,
       positionRank: 4,
       nextFixture: 32,
-      scores: {
-        1: 5,
-        2: 15,
-        3: 24,
-      },
+      scores: { 1: 5, 2: 15, 3: 24 },
     },
-    selected: {
-      1: 11.7,
-      2: 5.3,
-      3: 7.6,
-      4: 7.6,
-    },
+    selected: { 1: 11.7, 2: 5.3, 3: 7.6, 4: 7.8 },
   },
   {
     id: 540,
@@ -14859,18 +10795,9 @@ export default [
       lastRoundPoints: 34,
       positionRank: 7,
       nextFixture: 32,
-      scores: {
-        1: 4,
-        2: 11,
-        3: 34,
-      },
+      scores: { 1: 4, 2: 11, 3: 34 },
     },
-    selected: {
-      1: 4.4,
-      2: 1.8,
-      3: 2.6,
-      4: 3,
-    },
+    selected: { 1: 4.4, 2: 1.8, 3: 2.6, 4: 3.5 },
   },
   {
     id: 541,
@@ -14888,18 +10815,9 @@ export default [
       lastRoundPoints: 7,
       positionRank: 9,
       nextFixture: 32,
-      scores: {
-        1: 8,
-        2: 20,
-        3: 7,
-      },
+      scores: { 1: 8, 2: 20, 3: 7 },
     },
-    selected: {
-      1: 1.3,
-      2: 1.3,
-      3: 1.3,
-      4: 1.3,
-    },
+    selected: { 1: 1.3, 2: 1.3, 3: 1.3, 4: 1.4 },
   },
   {
     id: 542,
@@ -14919,12 +10837,7 @@ export default [
       nextFixture: 32,
       scores: null,
     },
-    selected: {
-      1: 1.1,
-      2: 4.2,
-      3: 1,
-      4: 1.1,
-    },
+    selected: { 1: 1.1, 2: 4.2, 3: 1, 4: 1.1 },
   },
   {
     id: 543,
@@ -14942,18 +10855,9 @@ export default [
       lastRoundPoints: 10,
       positionRank: 12,
       nextFixture: 32,
-      scores: {
-        1: 7,
-        2: 12,
-        3: 10,
-      },
+      scores: { 1: 7, 2: 12, 3: 10 },
     },
-    selected: {
-      1: 1,
-      2: 6.1,
-      3: 1.3,
-      4: 1.4,
-    },
+    selected: { 1: 1, 2: 6.1, 3: 1.3, 4: 1.4 },
   },
   {
     id: 544,
@@ -14971,18 +10875,9 @@ export default [
       lastRoundPoints: 5,
       positionRank: 6,
       nextFixture: 32,
-      scores: {
-        1: 11,
-        2: 18,
-        3: 5,
-      },
+      scores: { 1: 11, 2: 18, 3: 5 },
     },
-    selected: {
-      1: 11.3,
-      2: 5.5,
-      3: 11.2,
-      4: 10.9,
-    },
+    selected: { 1: 11.3, 2: 5.5, 3: 11.2, 4: 10.8 },
   },
   {
     id: 545,
@@ -15000,17 +10895,9 @@ export default [
       lastRoundPoints: 1,
       positionRank: 34,
       nextFixture: 32,
-      scores: {
-        2: 89,
-        3: 1,
-      },
+      scores: { 2: 89, 3: 1 },
     },
-    selected: {
-      1: 0.3,
-      2: 3.8,
-      3: 0.9,
-      4: 1.7,
-    },
+    selected: { 1: 0.3, 2: 3.8, 3: 0.9, 4: 2.7 },
   },
   {
     id: 546,
@@ -15028,16 +10915,9 @@ export default [
       lastRoundPoints: null,
       positionRank: 35,
       nextFixture: 32,
-      scores: {
-        2: 17,
-      },
+      scores: { 2: 17 },
     },
-    selected: {
-      1: 0.2,
-      2: 0.2,
-      3: 0.2,
-      4: 0.2,
-    },
+    selected: { 1: 0.2, 2: 0.2, 3: 0.2, 4: 0.2 },
   },
   {
     id: 547,
@@ -15055,17 +10935,9 @@ export default [
       lastRoundPoints: null,
       positionRank: 8,
       nextFixture: 32,
-      scores: {
-        1: 18,
-        2: 71,
-      },
+      scores: { 1: 18, 2: 71 },
     },
-    selected: {
-      1: 0.4,
-      2: 15.6,
-      3: 1.7,
-      4: 2.3,
-    },
+    selected: { 1: 0.4, 2: 15.6, 3: 1.7, 4: 2.9 },
   },
   {
     id: 548,
@@ -15083,17 +10955,9 @@ export default [
       lastRoundPoints: 21,
       positionRank: 25,
       nextFixture: 32,
-      scores: {
-        2: 35,
-        3: 21,
-      },
+      scores: { 2: 35, 3: 21 },
     },
-    selected: {
-      1: 0.3,
-      2: 0.3,
-      3: 0.5,
-      4: 0.5,
-    },
+    selected: { 1: 0.3, 2: 0.3, 3: 0.5, 4: 0.5 },
   },
   {
     id: 549,
@@ -15111,17 +10975,9 @@ export default [
       lastRoundPoints: 33,
       positionRank: 58,
       nextFixture: 32,
-      scores: {
-        2: 23,
-        3: 33,
-      },
+      scores: { 2: 23, 3: 33 },
     },
-    selected: {
-      1: 2.8,
-      2: 3.6,
-      3: 3.3,
-      4: 3.2,
-    },
+    selected: { 1: 2.8, 2: 3.6, 3: 3.3, 4: 3.1 },
   },
   {
     id: 550,
@@ -15139,17 +10995,9 @@ export default [
       lastRoundPoints: 48,
       positionRank: 59,
       nextFixture: 32,
-      scores: {
-        2: 8,
-        3: 48,
-      },
+      scores: { 2: 8, 3: 48 },
     },
-    selected: {
-      1: 0.3,
-      2: 0.6,
-      3: 0.7,
-      4: 0.6,
-    },
+    selected: { 1: 0.3, 2: 0.6, 3: 0.7, 4: 0.6 },
   },
   {
     id: 551,
@@ -15169,12 +11017,7 @@ export default [
       nextFixture: 32,
       scores: null,
     },
-    selected: {
-      1: 0.8,
-      2: 0.5,
-      3: 0.4,
-      4: 0.4,
-    },
+    selected: { 1: 0.8, 2: 0.5, 3: 0.4, 4: 0.4 },
   },
   {
     id: 552,
@@ -15194,12 +11037,7 @@ export default [
       nextFixture: 32,
       scores: null,
     },
-    selected: {
-      1: 0.3,
-      2: 0.2,
-      3: 0.2,
-      4: 0.2,
-    },
+    selected: { 1: 0.3, 2: 0.2, 3: 0.2, 4: 0.2 },
   },
   {
     id: 553,
@@ -15219,12 +11057,7 @@ export default [
       nextFixture: 32,
       scores: null,
     },
-    selected: {
-      1: 0.2,
-      2: 0.1,
-      3: 0.1,
-      4: 0.1,
-    },
+    selected: { 1: 0.2, 2: 0.1, 3: 0.1, 4: 0.1 },
   },
   {
     id: 554,
@@ -15242,17 +11075,9 @@ export default [
       lastRoundPoints: 12,
       positionRank: 50,
       nextFixture: 32,
-      scores: {
-        2: 5,
-        3: 12,
-      },
+      scores: { 2: 5, 3: 12 },
     },
-    selected: {
-      1: 9,
-      2: 7.6,
-      3: 6.1,
-      4: 6,
-    },
+    selected: { 1: 9, 2: 7.6, 3: 6.1, 4: 5.9 },
   },
   {
     id: 555,
@@ -15270,17 +11095,9 @@ export default [
       lastRoundPoints: 11,
       positionRank: 51,
       nextFixture: 32,
-      scores: {
-        2: 20,
-        3: 11,
-      },
+      scores: { 2: 20, 3: 11 },
     },
-    selected: {
-      1: 0.8,
-      2: 0.9,
-      3: 1.7,
-      4: 1.6,
-    },
+    selected: { 1: 0.8, 2: 0.9, 3: 1.7, 4: 1.5 },
   },
   {
     id: 556,
@@ -15300,12 +11117,7 @@ export default [
       nextFixture: 32,
       scores: null,
     },
-    selected: {
-      1: 1.4,
-      2: 0.8,
-      3: 0.8,
-      4: 0.8,
-    },
+    selected: { 1: 1.4, 2: 0.8, 3: 0.8, 4: 0.8 },
   },
   {
     id: 557,
@@ -15323,17 +11135,9 @@ export default [
       lastRoundPoints: 8,
       positionRank: 52,
       nextFixture: 32,
-      scores: {
-        2: 12,
-        3: 8,
-      },
+      scores: { 2: 12, 3: 8 },
     },
-    selected: {
-      1: 0.4,
-      2: 0.5,
-      3: 0.6,
-      4: 0.6,
-    },
+    selected: { 1: 0.4, 2: 0.5, 3: 0.6, 4: 0.5 },
   },
   {
     id: 558,
@@ -15351,16 +11155,9 @@ export default [
       lastRoundPoints: null,
       positionRank: 53,
       nextFixture: 32,
-      scores: {
-        2: 0,
-      },
+      scores: { 2: 0 },
     },
-    selected: {
-      1: 0.4,
-      2: 0.3,
-      3: 0.3,
-      4: 0.3,
-    },
+    selected: { 1: 0.4, 2: 0.3, 3: 0.3, 4: 0.3 },
   },
   {
     id: 559,
@@ -15380,12 +11177,7 @@ export default [
       nextFixture: 32,
       scores: null,
     },
-    selected: {
-      1: 0.2,
-      2: 0.1,
-      3: 0.1,
-      4: 0.1,
-    },
+    selected: { 1: 0.2, 2: 0.1, 3: 0.1, 4: 0.1 },
   },
   {
     id: 560,
@@ -15403,17 +11195,9 @@ export default [
       lastRoundPoints: 22,
       positionRank: 34,
       nextFixture: 32,
-      scores: {
-        2: 19,
-        3: 22,
-      },
+      scores: { 2: 19, 3: 22 },
     },
-    selected: {
-      1: 0.1,
-      2: 0.6,
-      3: 0.7,
-      4: 0.7,
-    },
+    selected: { 1: 0.1, 2: 0.6, 3: 0.7, 4: 0.6 },
   },
   {
     id: 561,
@@ -15431,17 +11215,9 @@ export default [
       lastRoundPoints: 14,
       positionRank: 35,
       nextFixture: 32,
-      scores: {
-        2: 16,
-        3: 14,
-      },
+      scores: { 2: 16, 3: 14 },
     },
-    selected: {
-      1: 0.3,
-      2: 0.2,
-      3: 0.2,
-      4: 0.2,
-    },
+    selected: { 1: 0.3, 2: 0.2, 3: 0.2, 4: 0.2 },
   },
   {
     id: 562,
@@ -15459,16 +11235,9 @@ export default [
       lastRoundPoints: 11,
       positionRank: 76,
       nextFixture: 32,
-      scores: {
-        3: 11,
-      },
+      scores: { 3: 11 },
     },
-    selected: {
-      1: 2,
-      2: 1.2,
-      3: 1,
-      4: 1,
-    },
+    selected: { 1: 2, 2: 1.2, 3: 1, 4: 1 },
   },
   {
     id: 563,
@@ -15488,12 +11257,7 @@ export default [
       nextFixture: 32,
       scores: null,
     },
-    selected: {
-      1: 0.6,
-      2: 0.4,
-      3: 0.4,
-      4: 0.4,
-    },
+    selected: { 1: 0.6, 2: 0.4, 3: 0.4, 4: 0.4 },
   },
   {
     id: 564,
@@ -15511,17 +11275,9 @@ export default [
       lastRoundPoints: 12,
       positionRank: 59,
       nextFixture: 32,
-      scores: {
-        2: 6,
-        3: 12,
-      },
+      scores: { 2: 6, 3: 12 },
     },
-    selected: {
-      1: 0.3,
-      2: 1.5,
-      3: 0.7,
-      4: 0.7,
-    },
+    selected: { 1: 0.3, 2: 1.5, 3: 0.7, 4: 0.6 },
   },
   {
     id: 565,
@@ -15539,17 +11295,9 @@ export default [
       lastRoundPoints: 10,
       positionRank: 60,
       nextFixture: 32,
-      scores: {
-        2: 24,
-        3: 10,
-      },
+      scores: { 2: 24, 3: 10 },
     },
-    selected: {
-      1: 0.7,
-      2: 1.6,
-      3: 2.6,
-      4: 2.4,
-    },
+    selected: { 1: 0.7, 2: 1.6, 3: 2.6, 4: 2.2 },
   },
   {
     id: 566,
@@ -15567,17 +11315,9 @@ export default [
       lastRoundPoints: 1,
       positionRank: 61,
       nextFixture: 32,
-      scores: {
-        2: 2,
-        3: 1,
-      },
+      scores: { 2: 2, 3: 1 },
     },
-    selected: {
-      1: 0.2,
-      2: 0.1,
-      3: 0.1,
-      4: 0.1,
-    },
+    selected: { 1: 0.2, 2: 0.1, 3: 0.1, 4: 0.1 },
   },
   {
     id: 567,
@@ -15595,17 +11335,9 @@ export default [
       lastRoundPoints: -12,
       positionRank: 63,
       nextFixture: 32,
-      scores: {
-        2: 33,
-        3: -12,
-      },
+      scores: { 2: 33, 3: -12 },
     },
-    selected: {
-      1: 3.7,
-      2: 4.3,
-      3: 6.9,
-      4: 6.4,
-    },
+    selected: { 1: 3.7, 2: 4.3, 3: 6.9, 4: 5.8 },
   },
   {
     id: 568,
@@ -15623,16 +11355,9 @@ export default [
       lastRoundPoints: null,
       positionRank: 64,
       nextFixture: 32,
-      scores: {
-        2: 4,
-      },
+      scores: { 2: 4 },
     },
-    selected: {
-      1: 0.8,
-      2: 0.6,
-      3: 0.5,
-      4: 0.5,
-    },
+    selected: { 1: 0.8, 2: 0.6, 3: 0.5, 4: 0.5 },
   },
   {
     id: 569,
@@ -15650,17 +11375,9 @@ export default [
       lastRoundPoints: 4,
       positionRank: 65,
       nextFixture: 32,
-      scores: {
-        2: 4,
-        3: 4,
-      },
+      scores: { 2: 4, 3: 4 },
     },
-    selected: {
-      1: 0.5,
-      2: 0.3,
-      3: 0.3,
-      4: 0.3,
-    },
+    selected: { 1: 0.5, 2: 0.3, 3: 0.3, 4: 0.3 },
   },
   {
     id: 570,
@@ -15678,17 +11395,9 @@ export default [
       lastRoundPoints: 53,
       positionRank: 65,
       nextFixture: 32,
-      scores: {
-        2: 25,
-        3: 53,
-      },
+      scores: { 2: 25, 3: 53 },
     },
-    selected: {
-      1: 0.8,
-      2: 1.5,
-      3: 1.4,
-      4: 2.4,
-    },
+    selected: { 1: 0.8, 2: 1.5, 3: 1.4, 4: 3.7 },
   },
   {
     id: 571,
@@ -15706,17 +11415,9 @@ export default [
       lastRoundPoints: 29,
       positionRank: 66,
       nextFixture: 32,
-      scores: {
-        2: 30,
-        3: 29,
-      },
+      scores: { 2: 30, 3: 29 },
     },
-    selected: {
-      1: 0.1,
-      2: 0.5,
-      3: 2.8,
-      4: 2.6,
-    },
+    selected: { 1: 0.1, 2: 0.5, 3: 2.8, 4: 2.4 },
   },
   {
     id: 572,
@@ -15736,12 +11437,7 @@ export default [
       nextFixture: 32,
       scores: null,
     },
-    selected: {
-      1: 0.1,
-      2: 0.1,
-      3: 0.1,
-      4: 0.1,
-    },
+    selected: { 1: 0.1, 2: 0.1, 3: 0.1, 4: 0.1 },
   },
   {
     id: 573,
@@ -15759,17 +11455,9 @@ export default [
       lastRoundPoints: 7,
       positionRank: 68,
       nextFixture: 32,
-      scores: {
-        2: 4,
-        3: 7,
-      },
+      scores: { 2: 4, 3: 7 },
     },
-    selected: {
-      1: 0.1,
-      2: 0.1,
-      3: 0.1,
-      4: 0.1,
-    },
+    selected: { 1: 0.1, 2: 0.1, 3: 0.1, 4: 0.1 },
   },
   {
     id: 574,
@@ -15789,12 +11477,7 @@ export default [
       nextFixture: 32,
       scores: null,
     },
-    selected: {
-      1: 0.1,
-      2: 0.1,
-      3: 0.1,
-      4: 0.1,
-    },
+    selected: { 1: 0.1, 2: 0.1, 3: 0.1, 4: 0.1 },
   },
   {
     id: 575,
@@ -15814,12 +11497,7 @@ export default [
       nextFixture: 32,
       scores: null,
     },
-    selected: {
-      1: 0,
-      2: 0,
-      3: 0,
-      4: 0,
-    },
+    selected: { 1: 0, 2: 0, 3: 0, 4: 0 },
   },
   {
     id: 576,
@@ -15837,17 +11515,9 @@ export default [
       lastRoundPoints: 4,
       positionRank: 36,
       nextFixture: 32,
-      scores: {
-        2: 8,
-        3: 4,
-      },
+      scores: { 2: 8, 3: 4 },
     },
-    selected: {
-      1: 0.1,
-      2: 0.1,
-      3: 0.1,
-      4: 0.1,
-    },
+    selected: { 1: 0.1, 2: 0.1, 3: 0.1, 4: 0.1 },
   },
   {
     id: 577,
@@ -15865,17 +11535,9 @@ export default [
       lastRoundPoints: 22,
       positionRank: 37,
       nextFixture: 32,
-      scores: {
-        2: 4,
-        3: 22,
-      },
+      scores: { 2: 4, 3: 22 },
     },
-    selected: {
-      1: 0.2,
-      2: 0.3,
-      3: 0.4,
-      4: 0.4,
-    },
+    selected: { 1: 0.2, 2: 0.3, 3: 0.4, 4: 0.3 },
   },
   {
     id: 578,
@@ -15885,7 +11547,7 @@ export default [
     lastName: 'Berchesi',
     position: ['fly_half'],
     cost: 5500000,
-    status: 'uncertain',
+    status: 'bench',
     isLocked: false,
     stats: {
       totalPoints: 15,
@@ -15893,17 +11555,9 @@ export default [
       lastRoundPoints: 13,
       positionRank: 27,
       nextFixture: 25,
-      scores: {
-        2: 2,
-        3: 13,
-      },
+      scores: { 2: 2, 3: 13 },
     },
-    selected: {
-      1: 0.3,
-      2: 0.2,
-      3: 0.2,
-      4: 0.2,
-    },
+    selected: { 1: 0.3, 2: 0.2, 3: 0.2, 4: 0.2 },
   },
   {
     id: 579,
@@ -15913,7 +11567,7 @@ export default [
     lastName: 'Vilaseca',
     position: ['center'],
     cost: 3500000,
-    status: 'uncertain',
+    status: 'starting',
     isLocked: false,
     stats: {
       totalPoints: 18,
@@ -15921,17 +11575,9 @@ export default [
       lastRoundPoints: 10,
       positionRank: 54,
       nextFixture: 25,
-      scores: {
-        2: 8,
-        3: 10,
-      },
+      scores: { 2: 8, 3: 10 },
     },
-    selected: {
-      1: 0.1,
-      2: 0.5,
-      3: 1.2,
-      4: 1.2,
-    },
+    selected: { 1: 0.1, 2: 0.5, 3: 1.2, 4: 1.3 },
   },
   {
     id: 580,
@@ -15941,7 +11587,7 @@ export default [
     lastName: 'Etcheverry',
     position: ['fly_half'],
     cost: 5000000,
-    status: 'uncertain',
+    status: 'starting',
     isLocked: false,
     stats: {
       totalPoints: 94,
@@ -15949,17 +11595,9 @@ export default [
       lastRoundPoints: 49,
       positionRank: 28,
       nextFixture: 25,
-      scores: {
-        2: 45,
-        3: 49,
-      },
+      scores: { 2: 45, 3: 49 },
     },
-    selected: {
-      1: 0.5,
-      2: 0.6,
-      3: 1.4,
-      4: 1.7,
-    },
+    selected: { 1: 0.5, 2: 0.6, 3: 1.4, 4: 2.2 },
   },
   {
     id: 581,
@@ -15969,7 +11607,7 @@ export default [
     lastName: 'Freitas',
     position: ['outside_back'],
     cost: 4000000,
-    status: 'uncertain',
+    status: 'starting',
     isLocked: false,
     stats: {
       totalPoints: 88,
@@ -15977,17 +11615,9 @@ export default [
       lastRoundPoints: 30,
       positionRank: 60,
       nextFixture: 25,
-      scores: {
-        2: 58,
-        3: 30,
-      },
+      scores: { 2: 58, 3: 30 },
     },
-    selected: {
-      1: 0.7,
-      2: 1,
-      3: 2.5,
-      4: 2.8,
-    },
+    selected: { 1: 0.7, 2: 1, 3: 2.5, 4: 3.4 },
   },
   {
     id: 582,
@@ -15997,7 +11627,7 @@ export default [
     lastName: 'Mieres',
     position: ['outside_back'],
     cost: 4000000,
-    status: 'uncertain',
+    status: 'not-selected',
     isLocked: false,
     stats: {
       totalPoints: 6,
@@ -16005,16 +11635,9 @@ export default [
       lastRoundPoints: 6,
       positionRank: 74,
       nextFixture: 25,
-      scores: {
-        3: 6,
-      },
+      scores: { 3: 6 },
     },
-    selected: {
-      1: 0.3,
-      2: 0.2,
-      3: 0.3,
-      4: 0.3,
-    },
+    selected: { 1: 0.3, 2: 0.2, 3: 0.3, 4: 0.3 },
   },
   {
     id: 583,
@@ -16024,7 +11647,7 @@ export default [
     lastName: 'Amaya',
     position: ['outside_back'],
     cost: 3500000,
-    status: 'uncertain',
+    status: 'starting',
     isLocked: false,
     stats: {
       totalPoints: 63,
@@ -16032,17 +11655,9 @@ export default [
       lastRoundPoints: 4,
       positionRank: 61,
       nextFixture: 25,
-      scores: {
-        2: 59,
-        3: 4,
-      },
+      scores: { 2: 59, 3: 4 },
     },
-    selected: {
-      1: 0.4,
-      2: 0.6,
-      3: 4,
-      4: 3.6,
-    },
+    selected: { 1: 0.4, 2: 0.6, 3: 4, 4: 3.3 },
   },
   {
     id: 584,
@@ -16052,7 +11667,7 @@ export default [
     lastName: 'Silva',
     position: ['outside_back'],
     cost: 3500000,
-    status: 'uncertain',
+    status: 'not-selected',
     isLocked: false,
     stats: {
       totalPoints: null,
@@ -16062,12 +11677,7 @@ export default [
       nextFixture: 25,
       scores: null,
     },
-    selected: {
-      1: 0.9,
-      2: 0.6,
-      3: 0.6,
-      4: 0.6,
-    },
+    selected: { 1: 0.9, 2: 0.6, 3: 0.6, 4: 0.6 },
   },
   {
     id: 585,
@@ -16077,7 +11687,7 @@ export default [
     lastName: 'Manuel Alonso',
     position: ['outside_back'],
     cost: 3000000,
-    status: 'uncertain',
+    status: 'bench',
     isLocked: false,
     stats: {
       totalPoints: null,
@@ -16087,12 +11697,7 @@ export default [
       nextFixture: 25,
       scores: null,
     },
-    selected: {
-      1: 1.7,
-      2: 1.2,
-      3: 1.1,
-      4: 1.1,
-    },
+    selected: { 1: 1.7, 2: 1.2, 3: 1.1, 4: 1.1 },
   },
   {
     id: 586,
@@ -16102,7 +11707,7 @@ export default [
     lastName: 'Basso',
     position: ['outside_back'],
     cost: 3000000,
-    status: 'uncertain',
+    status: 'starting',
     isLocked: false,
     stats: {
       totalPoints: 18,
@@ -16110,17 +11715,9 @@ export default [
       lastRoundPoints: 6,
       positionRank: 62,
       nextFixture: 25,
-      scores: {
-        2: 12,
-        3: 6,
-      },
+      scores: { 2: 12, 3: 6 },
     },
-    selected: {
-      1: 1,
-      2: 1.1,
-      3: 0.9,
-      4: 0.9,
-    },
+    selected: { 1: 1, 2: 1.1, 3: 0.9, 4: 0.9 },
   },
   {
     id: 587,
@@ -16130,7 +11727,7 @@ export default [
     lastName: 'Facciolo',
     position: ['outside_back'],
     cost: 3000000,
-    status: 'uncertain',
+    status: 'not-selected',
     isLocked: false,
     stats: {
       totalPoints: null,
@@ -16140,12 +11737,7 @@ export default [
       nextFixture: 25,
       scores: null,
     },
-    selected: {
-      1: 0.9,
-      2: 0.7,
-      3: 0.7,
-      4: 0.7,
-    },
+    selected: { 1: 0.9, 2: 0.7, 3: 0.7, 4: 0.7 },
   },
   {
     id: 588,
@@ -16155,7 +11747,7 @@ export default [
     lastName: 'Piussi',
     position: ['prop'],
     cost: 2500000,
-    status: 'uncertain',
+    status: 'bench',
     isLocked: false,
     stats: {
       totalPoints: 6,
@@ -16163,16 +11755,9 @@ export default [
       lastRoundPoints: null,
       positionRank: 69,
       nextFixture: 25,
-      scores: {
-        2: 6,
-      },
+      scores: { 2: 6 },
     },
-    selected: {
-      1: 0.1,
-      2: 0.1,
-      3: 0.1,
-      4: 0.1,
-    },
+    selected: { 1: 0.1, 2: 0.1, 3: 0.1, 4: 0.1 },
   },
   {
     id: 589,
@@ -16182,7 +11767,7 @@ export default [
     lastName: 'Inciarte',
     position: ['center'],
     cost: 3500000,
-    status: 'uncertain',
+    status: 'not-selected',
     isLocked: false,
     stats: {
       totalPoints: 27,
@@ -16190,17 +11775,9 @@ export default [
       lastRoundPoints: 20,
       positionRank: 56,
       nextFixture: 25,
-      scores: {
-        2: 7,
-        3: 20,
-      },
+      scores: { 2: 7, 3: 20 },
     },
-    selected: {
-      1: 1.2,
-      2: 1,
-      3: 1,
-      4: 1.1,
-    },
+    selected: { 1: 1.2, 2: 1, 3: 1, 4: 1 },
   },
   {
     id: 590,
@@ -16210,7 +11787,7 @@ export default [
     lastName: 'Arcos Perez',
     position: ['center'],
     cost: 3000000,
-    status: 'uncertain',
+    status: 'starting',
     isLocked: false,
     stats: {
       totalPoints: null,
@@ -16220,12 +11797,7 @@ export default [
       nextFixture: 25,
       scores: null,
     },
-    selected: {
-      1: 1.9,
-      2: 1.3,
-      3: 1.2,
-      4: 1.2,
-    },
+    selected: { 1: 1.9, 2: 1.3, 3: 1.2, 4: 1.2 },
   },
   {
     id: 591,
@@ -16235,7 +11807,7 @@ export default [
     lastName: 'Kessler',
     position: ['hooker'],
     cost: 4500000,
-    status: 'uncertain',
+    status: 'starting',
     isLocked: false,
     stats: {
       totalPoints: 24,
@@ -16243,16 +11815,9 @@ export default [
       lastRoundPoints: 24,
       positionRank: 46,
       nextFixture: 25,
-      scores: {
-        3: 24,
-      },
+      scores: { 3: 24 },
     },
-    selected: {
-      1: 0.4,
-      2: 0.3,
-      3: 1.3,
-      4: 1.3,
-    },
+    selected: { 1: 0.4, 2: 0.3, 3: 1.3, 4: 1.6 },
   },
   {
     id: 592,
@@ -16262,7 +11827,7 @@ export default [
     lastName: 'Pujadas',
     position: ['hooker'],
     cost: 4000000,
-    status: 'uncertain',
+    status: 'bench',
     isLocked: false,
     stats: {
       totalPoints: 20,
@@ -16270,17 +11835,9 @@ export default [
       lastRoundPoints: 9,
       positionRank: 37,
       nextFixture: 25,
-      scores: {
-        2: 11,
-        3: 9,
-      },
+      scores: { 2: 11, 3: 9 },
     },
-    selected: {
-      1: 0.5,
-      2: 1.5,
-      3: 0.8,
-      4: 0.8,
-    },
+    selected: { 1: 0.5, 2: 1.5, 3: 0.8, 4: 0.8 },
   },
   {
     id: 593,
@@ -16290,7 +11847,7 @@ export default [
     lastName: 'Dotti',
     position: ['lock'],
     cost: 2500000,
-    status: 'uncertain',
+    status: 'not-selected',
     isLocked: false,
     stats: {
       totalPoints: 12,
@@ -16298,17 +11855,9 @@ export default [
       lastRoundPoints: 7,
       positionRank: 62,
       nextFixture: 25,
-      scores: {
-        2: 5,
-        3: 7,
-      },
+      scores: { 2: 5, 3: 7 },
     },
-    selected: {
-      1: 2.1,
-      2: 1.2,
-      3: 1.1,
-      4: 1.1,
-    },
+    selected: { 1: 2.1, 2: 1.2, 3: 1.1, 4: 1.1 },
   },
   {
     id: 594,
@@ -16318,7 +11867,7 @@ export default [
     lastName: 'Leindekar',
     position: ['lock'],
     cost: 2500000,
-    status: 'uncertain',
+    status: 'starting',
     isLocked: false,
     stats: {
       totalPoints: 25,
@@ -16326,17 +11875,9 @@ export default [
       lastRoundPoints: 18,
       positionRank: 63,
       nextFixture: 25,
-      scores: {
-        2: 7,
-        3: 18,
-      },
+      scores: { 2: 7, 3: 18 },
     },
-    selected: {
-      1: 0.4,
-      2: 1.6,
-      3: 1.6,
-      4: 1.6,
-    },
+    selected: { 1: 0.4, 2: 1.6, 3: 1.6, 4: 1.7 },
   },
   {
     id: 595,
@@ -16346,7 +11887,7 @@ export default [
     lastName: 'Aliaga',
     position: ['lock'],
     cost: 2500000,
-    status: 'uncertain',
+    status: 'starting',
     isLocked: false,
     stats: {
       totalPoints: 35,
@@ -16354,17 +11895,9 @@ export default [
       lastRoundPoints: 16,
       positionRank: 64,
       nextFixture: 25,
-      scores: {
-        2: 19,
-        3: 16,
-      },
+      scores: { 2: 19, 3: 16 },
     },
-    selected: {
-      1: 0.3,
-      2: 0.9,
-      3: 3.8,
-      4: 3.9,
-    },
+    selected: { 1: 0.3, 2: 0.9, 3: 3.8, 4: 4.3 },
   },
   {
     id: 596,
@@ -16374,7 +11907,7 @@ export default [
     lastName: 'Manuel Rodriguez',
     position: ['lock'],
     cost: 2500000,
-    status: 'uncertain',
+    status: 'bench',
     isLocked: false,
     stats: {
       totalPoints: null,
@@ -16384,12 +11917,7 @@ export default [
       nextFixture: 25,
       scores: null,
     },
-    selected: {
-      1: 0.4,
-      2: 0.3,
-      3: 0.3,
-      4: 0.3,
-    },
+    selected: { 1: 0.4, 2: 0.3, 3: 0.3, 4: 0.3 },
   },
   {
     id: 597,
@@ -16399,7 +11927,7 @@ export default [
     lastName: 'Diana',
     position: ['loose_forward'],
     cost: 3000000,
-    status: 'uncertain',
+    status: 'not-selected',
     isLocked: false,
     stats: {
       totalPoints: 18,
@@ -16407,17 +11935,9 @@ export default [
       lastRoundPoints: 10,
       positionRank: 66,
       nextFixture: 25,
-      scores: {
-        2: 8,
-        3: 10,
-      },
+      scores: { 2: 8, 3: 10 },
     },
-    selected: {
-      1: 0.8,
-      2: 1.4,
-      3: 1.4,
-      4: 1.3,
-    },
+    selected: { 1: 0.8, 2: 1.4, 3: 1.4, 4: 1.2 },
   },
   {
     id: 598,
@@ -16427,7 +11947,7 @@ export default [
     lastName: 'Ardao',
     position: ['loose_forward'],
     cost: 2500000,
-    status: 'uncertain',
+    status: 'starting',
     isLocked: false,
     stats: {
       totalPoints: 73,
@@ -16435,17 +11955,9 @@ export default [
       lastRoundPoints: 52,
       positionRank: 68,
       nextFixture: 25,
-      scores: {
-        2: 21,
-        3: 52,
-      },
+      scores: { 2: 21, 3: 52 },
     },
-    selected: {
-      1: 0.6,
-      2: 0.7,
-      3: 2.5,
-      4: 4.1,
-    },
+    selected: { 1: 0.6, 2: 0.7, 3: 2.5, 4: 6.9 },
   },
   {
     id: 599,
@@ -16455,7 +11967,7 @@ export default [
     lastName: 'Civetta',
     position: ['loose_forward'],
     cost: 2500000,
-    status: 'uncertain',
+    status: 'starting',
     isLocked: false,
     stats: {
       totalPoints: 26,
@@ -16463,17 +11975,9 @@ export default [
       lastRoundPoints: 16,
       positionRank: 69,
       nextFixture: 25,
-      scores: {
-        2: 10,
-        3: 16,
-      },
+      scores: { 2: 10, 3: 16 },
     },
-    selected: {
-      1: 0.3,
-      2: 0.5,
-      3: 0.7,
-      4: 0.7,
-    },
+    selected: { 1: 0.3, 2: 0.5, 3: 0.7, 4: 0.8 },
   },
   {
     id: 600,
@@ -16483,7 +11987,7 @@ export default [
     lastName: 'Bianchi',
     position: ['loose_forward'],
     cost: 2000000,
-    status: 'uncertain',
+    status: 'not-selected',
     isLocked: false,
     stats: {
       totalPoints: 14,
@@ -16491,16 +11995,9 @@ export default [
       lastRoundPoints: null,
       positionRank: 71,
       nextFixture: 25,
-      scores: {
-        2: 14,
-      },
+      scores: { 2: 14 },
     },
-    selected: {
-      1: 1.1,
-      2: 0.9,
-      3: 0.8,
-      4: 0.8,
-    },
+    selected: { 1: 1.1, 2: 0.9, 3: 0.8, 4: 0.8 },
   },
   {
     id: 601,
@@ -16510,7 +12007,7 @@ export default [
     lastName: 'Deus',
     position: ['loose_forward'],
     cost: 2000000,
-    status: 'uncertain',
+    status: 'starting',
     isLocked: false,
     stats: {
       totalPoints: 23,
@@ -16518,17 +12015,9 @@ export default [
       lastRoundPoints: 14,
       positionRank: 73,
       nextFixture: 25,
-      scores: {
-        2: 9,
-        3: 14,
-      },
+      scores: { 2: 9, 3: 14 },
     },
-    selected: {
-      1: 1,
-      2: 0.8,
-      3: 0.7,
-      4: 0.8,
-    },
+    selected: { 1: 1, 2: 0.8, 3: 0.7, 4: 0.8 },
   },
   {
     id: 602,
@@ -16538,7 +12027,7 @@ export default [
     lastName: 'Dosantos',
     position: ['loose_forward'],
     cost: 2000000,
-    status: 'uncertain',
+    status: 'bench',
     isLocked: false,
     stats: {
       totalPoints: null,
@@ -16548,12 +12037,7 @@ export default [
       nextFixture: 25,
       scores: null,
     },
-    selected: {
-      1: 1.5,
-      2: 1,
-      3: 1,
-      4: 1,
-    },
+    selected: { 1: 1.5, 2: 1, 3: 1, 4: 1 },
   },
   {
     id: 603,
@@ -16563,7 +12047,7 @@ export default [
     lastName: 'Gattas',
     position: ['prop'],
     cost: 3000000,
-    status: 'uncertain',
+    status: 'bench',
     isLocked: false,
     stats: {
       totalPoints: 19,
@@ -16571,17 +12055,9 @@ export default [
       lastRoundPoints: 8,
       positionRank: 70,
       nextFixture: 25,
-      scores: {
-        2: 11,
-        3: 8,
-      },
+      scores: { 2: 11, 3: 8 },
     },
-    selected: {
-      1: 0.2,
-      2: 0.1,
-      3: 0.2,
-      4: 0.4,
-    },
+    selected: { 1: 0.2, 2: 0.1, 3: 0.2, 4: 0.3 },
   },
   {
     id: 604,
@@ -16591,7 +12067,7 @@ export default [
     lastName: 'Peculo',
     position: ['prop'],
     cost: 3000000,
-    status: 'uncertain',
+    status: 'not-selected',
     isLocked: false,
     stats: {
       totalPoints: 16,
@@ -16599,17 +12075,9 @@ export default [
       lastRoundPoints: 10,
       positionRank: 71,
       nextFixture: 25,
-      scores: {
-        2: 6,
-        3: 10,
-      },
+      scores: { 2: 6, 3: 10 },
     },
-    selected: {
-      1: 0.1,
-      2: 0.8,
-      3: 1.5,
-      4: 1.5,
-    },
+    selected: { 1: 0.1, 2: 0.8, 3: 1.5, 4: 1.3 },
   },
   {
     id: 605,
@@ -16619,7 +12087,7 @@ export default [
     lastName: 'Sanguinetti',
     position: ['prop'],
     cost: 3000000,
-    status: 'uncertain',
+    status: 'starting',
     isLocked: false,
     stats: {
       totalPoints: 14,
@@ -16627,17 +12095,9 @@ export default [
       lastRoundPoints: 11,
       positionRank: 73,
       nextFixture: 25,
-      scores: {
-        2: 3,
-        3: 11,
-      },
+      scores: { 2: 3, 3: 11 },
     },
-    selected: {
-      1: 0.1,
-      2: 0.7,
-      3: 0.8,
-      4: 0.8,
-    },
+    selected: { 1: 0.1, 2: 0.7, 3: 0.8, 4: 1.3 },
   },
   {
     id: 606,
@@ -16647,7 +12107,7 @@ export default [
     lastName: 'Arbelo',
     position: ['prop'],
     cost: 2500000,
-    status: 'uncertain',
+    status: 'starting',
     isLocked: false,
     stats: {
       totalPoints: 6,
@@ -16655,16 +12115,9 @@ export default [
       lastRoundPoints: 6,
       positionRank: 94,
       nextFixture: 25,
-      scores: {
-        3: 6,
-      },
+      scores: { 3: 6 },
     },
-    selected: {
-      1: 1.1,
-      2: 0.7,
-      3: 0.6,
-      4: 0.6,
-    },
+    selected: { 1: 1.1, 2: 0.7, 3: 0.6, 4: 0.9 },
   },
   {
     id: 607,
@@ -16674,7 +12127,7 @@ export default [
     lastName: 'Benitez',
     position: ['prop'],
     cost: 2500000,
-    status: 'uncertain',
+    status: 'not-selected',
     isLocked: false,
     stats: {
       totalPoints: 5,
@@ -16682,16 +12135,9 @@ export default [
       lastRoundPoints: null,
       positionRank: 74,
       nextFixture: 25,
-      scores: {
-        2: 5,
-      },
+      scores: { 2: 5 },
     },
-    selected: {
-      1: 0.3,
-      2: 0.2,
-      3: 0.2,
-      4: 0.2,
-    },
+    selected: { 1: 0.3, 2: 0.2, 3: 0.2, 4: 0.2 },
   },
   {
     id: 608,
@@ -16701,7 +12147,7 @@ export default [
     lastName: 'Arata',
     position: ['scrum_half'],
     cost: 7000000,
-    status: 'uncertain',
+    status: 'starting',
     isLocked: false,
     stats: {
       totalPoints: 21,
@@ -16709,27 +12155,19 @@ export default [
       lastRoundPoints: 15,
       positionRank: 40,
       nextFixture: 25,
-      scores: {
-        2: 6,
-        3: 15,
-      },
+      scores: { 2: 6, 3: 15 },
     },
-    selected: {
-      1: 0.6,
-      2: 1.1,
-      3: 1.5,
-      4: 1.6,
-    },
+    selected: { 1: 0.6, 2: 1.1, 3: 1.5, 4: 1.7 },
   },
   {
     id: 609,
     feedId: 20708,
     squadId: 17,
-    firstName: 'Agust\u00edn',
+    firstName: 'Agustín',
     lastName: 'Ormaechea',
     position: ['scrum_half'],
     cost: 4500000,
-    status: 'uncertain',
+    status: 'bench',
     isLocked: false,
     stats: {
       totalPoints: 13,
@@ -16737,17 +12175,9 @@ export default [
       lastRoundPoints: 13,
       positionRank: 41,
       nextFixture: 25,
-      scores: {
-        2: 0,
-        3: 13,
-      },
+      scores: { 2: 0, 3: 13 },
     },
-    selected: {
-      1: 0.1,
-      2: 0.1,
-      3: 0.1,
-      4: 0.1,
-    },
+    selected: { 1: 0.1, 2: 0.1, 3: 0.1, 4: 0.1 },
   },
   {
     id: 610,
@@ -16757,7 +12187,7 @@ export default [
     lastName: 'Alvarez',
     position: ['scrum_half'],
     cost: 4000000,
-    status: 'uncertain',
+    status: 'not-selected',
     isLocked: false,
     stats: {
       totalPoints: null,
@@ -16767,12 +12197,7 @@ export default [
       nextFixture: 25,
       scores: null,
     },
-    selected: {
-      1: 0.2,
-      2: 0.1,
-      3: 0.1,
-      4: 0.1,
-    },
+    selected: { 1: 0.2, 2: 0.1, 3: 0.1, 4: 0.1 },
   },
   {
     id: 611,
@@ -16790,17 +12215,9 @@ export default [
       lastRoundPoints: 5,
       positionRank: 14,
       nextFixture: 35,
-      scores: {
-        1: 28,
-        3: 5,
-      },
+      scores: { 1: 28, 3: 5 },
     },
-    selected: {
-      1: 4.1,
-      2: 1.9,
-      3: 2.7,
-      4: 2.6,
-    },
+    selected: { 1: 4.1, 2: 1.9, 3: 2.7, 4: 2.4 },
   },
   {
     id: 612,
@@ -16818,17 +12235,9 @@ export default [
       lastRoundPoints: 53,
       positionRank: 30,
       nextFixture: 35,
-      scores: {
-        2: 18,
-        3: 53,
-      },
+      scores: { 2: 18, 3: 53 },
     },
-    selected: {
-      1: 0.2,
-      2: 3.5,
-      3: 0.5,
-      4: 0.5,
-    },
+    selected: { 1: 0.2, 2: 3.5, 3: 0.5, 4: 0.5 },
   },
   {
     id: 613,
@@ -16846,17 +12255,9 @@ export default [
       lastRoundPoints: null,
       positionRank: 15,
       nextFixture: 35,
-      scores: {
-        1: 8,
-        2: 6,
-      },
+      scores: { 1: 8, 2: 6 },
     },
-    selected: {
-      1: 0.4,
-      2: 0.4,
-      3: 0.3,
-      4: 0.3,
-    },
+    selected: { 1: 0.4, 2: 0.4, 3: 0.3, 4: 0.3 },
   },
   {
     id: 614,
@@ -16874,18 +12275,9 @@ export default [
       lastRoundPoints: 20,
       positionRank: 29,
       nextFixture: 35,
-      scores: {
-        1: 37,
-        2: -1,
-        3: 20,
-      },
+      scores: { 1: 37, 2: -1, 3: 20 },
     },
-    selected: {
-      1: 1.4,
-      2: 1.1,
-      3: 1.4,
-      4: 1.4,
-    },
+    selected: { 1: 1.4, 2: 1.1, 3: 1.4, 4: 1.3 },
   },
   {
     id: 615,
@@ -16903,18 +12295,9 @@ export default [
       lastRoundPoints: 6,
       positionRank: 30,
       nextFixture: 35,
-      scores: {
-        1: 55,
-        2: 39,
-        3: 6,
-      },
+      scores: { 1: 55, 2: 39, 3: 6 },
     },
-    selected: {
-      1: 5.8,
-      2: 28.9,
-      3: 14.3,
-      4: 13.5,
-    },
+    selected: { 1: 5.8, 2: 28.9, 3: 14.3, 4: 12.5 },
   },
   {
     id: 616,
@@ -16932,16 +12315,9 @@ export default [
       lastRoundPoints: null,
       positionRank: 64,
       nextFixture: 35,
-      scores: {
-        2: 18,
-      },
+      scores: { 2: 18 },
     },
-    selected: {
-      1: 1.3,
-      2: 5.4,
-      3: 1.3,
-      4: 1.2,
-    },
+    selected: { 1: 1.3, 2: 5.4, 3: 1.3, 4: 1.2 },
   },
   {
     id: 617,
@@ -16959,17 +12335,9 @@ export default [
       lastRoundPoints: 11,
       positionRank: 33,
       nextFixture: 35,
-      scores: {
-        1: 24,
-        3: 11,
-      },
+      scores: { 1: 24, 3: 11 },
     },
-    selected: {
-      1: 2.3,
-      2: 1.1,
-      3: 1.3,
-      4: 1.3,
-    },
+    selected: { 1: 2.3, 2: 1.1, 3: 1.3, 4: 1.2 },
   },
   {
     id: 618,
@@ -16987,18 +12355,9 @@ export default [
       lastRoundPoints: 2,
       positionRank: 34,
       nextFixture: 35,
-      scores: {
-        1: 5,
-        2: 34,
-        3: 2,
-      },
+      scores: { 1: 5, 2: 34, 3: 2 },
     },
-    selected: {
-      1: 0.5,
-      2: 6.2,
-      3: 1.1,
-      4: 1.1,
-    },
+    selected: { 1: 0.5, 2: 6.2, 3: 1.1, 4: 1.1 },
   },
   {
     id: 619,
@@ -17016,17 +12375,9 @@ export default [
       lastRoundPoints: 34,
       positionRank: 26,
       nextFixture: 35,
-      scores: {
-        1: 54,
-        3: 34,
-      },
+      scores: { 1: 54, 3: 34 },
     },
-    selected: {
-      1: 4.1,
-      2: 2.6,
-      3: 6.8,
-      4: 6.3,
-    },
+    selected: { 1: 4.1, 2: 2.6, 3: 6.8, 4: 5.7 },
   },
   {
     id: 620,
@@ -17044,17 +12395,9 @@ export default [
       lastRoundPoints: 44,
       positionRank: 28,
       nextFixture: 35,
-      scores: {
-        1: 44,
-        3: 44,
-      },
+      scores: { 1: 44, 3: 44 },
     },
-    selected: {
-      1: 1.3,
-      2: 0.8,
-      3: 2.1,
-      4: 2,
-    },
+    selected: { 1: 1.3, 2: 0.8, 3: 2.1, 4: 1.8 },
   },
   {
     id: 621,
@@ -17072,16 +12415,9 @@ export default [
       lastRoundPoints: null,
       positionRank: 57,
       nextFixture: 35,
-      scores: {
-        2: 14,
-      },
+      scores: { 2: 14 },
     },
-    selected: {
-      1: 0.3,
-      2: 3.4,
-      3: 0.6,
-      4: 0.6,
-    },
+    selected: { 1: 0.3, 2: 3.4, 3: 0.6, 4: 0.6 },
   },
   {
     id: 622,
@@ -17099,16 +12435,9 @@ export default [
       lastRoundPoints: null,
       positionRank: 58,
       nextFixture: 35,
-      scores: {
-        2: 21,
-      },
+      scores: { 2: 21 },
     },
-    selected: {
-      1: 0.4,
-      2: 4.9,
-      3: 0.7,
-      4: 0.7,
-    },
+    selected: { 1: 0.4, 2: 4.9, 3: 0.7, 4: 0.7 },
   },
   {
     id: 623,
@@ -17126,16 +12455,9 @@ export default [
       lastRoundPoints: null,
       positionRank: 39,
       nextFixture: 35,
-      scores: {
-        2: 32,
-      },
+      scores: { 2: 32 },
     },
-    selected: {
-      1: 0.6,
-      2: 6,
-      3: 0.9,
-      4: 0.9,
-    },
+    selected: { 1: 0.6, 2: 6, 3: 0.9, 4: 0.9 },
   },
   {
     id: 624,
@@ -17153,17 +12475,9 @@ export default [
       lastRoundPoints: 15,
       positionRank: 19,
       nextFixture: 35,
-      scores: {
-        1: 35,
-        3: 15,
-      },
+      scores: { 1: 35, 3: 15 },
     },
-    selected: {
-      1: 0.6,
-      2: 0.8,
-      3: 0.7,
-      4: 0.7,
-    },
+    selected: { 1: 0.6, 2: 0.8, 3: 0.7, 4: 0.7 },
   },
   {
     id: 625,
@@ -17181,18 +12495,9 @@ export default [
       lastRoundPoints: 34,
       positionRank: 20,
       nextFixture: 35,
-      scores: {
-        1: 29,
-        2: 19,
-        3: 34,
-      },
+      scores: { 1: 29, 2: 19, 3: 34 },
     },
-    selected: {
-      1: 2.9,
-      2: 1,
-      3: 3.1,
-      4: 2.9,
-    },
+    selected: { 1: 2.9, 2: 1, 3: 3.1, 4: 2.6 },
   },
   {
     id: 626,
@@ -17210,18 +12515,9 @@ export default [
       lastRoundPoints: 23,
       positionRank: 27,
       nextFixture: 35,
-      scores: {
-        1: 14,
-        2: 3,
-        3: 23,
-      },
+      scores: { 1: 14, 2: 3, 3: 23 },
     },
-    selected: {
-      1: 3.1,
-      2: 1.2,
-      3: 1.4,
-      4: 1.4,
-    },
+    selected: { 1: 3.1, 2: 1.2, 3: 1.4, 4: 1.4 },
   },
   {
     id: 627,
@@ -17239,18 +12535,9 @@ export default [
       lastRoundPoints: 1,
       positionRank: 29,
       nextFixture: 35,
-      scores: {
-        1: 15,
-        2: 12,
-        3: 1,
-      },
+      scores: { 1: 15, 2: 12, 3: 1 },
     },
-    selected: {
-      1: 0.5,
-      2: 12.3,
-      3: 1.9,
-      4: 1.8,
-    },
+    selected: { 1: 0.5, 2: 12.3, 3: 1.9, 4: 1.8 },
   },
   {
     id: 628,
@@ -17268,17 +12555,9 @@ export default [
       lastRoundPoints: 10,
       positionRank: 30,
       nextFixture: 35,
-      scores: {
-        1: 48,
-        3: 10,
-      },
+      scores: { 1: 48, 3: 10 },
     },
-    selected: {
-      1: 6.6,
-      2: 3,
-      3: 10.7,
-      4: 9.6,
-    },
+    selected: { 1: 6.6, 2: 3, 3: 10.7, 4: 8.5 },
   },
   {
     id: 629,
@@ -17296,18 +12575,9 @@ export default [
       lastRoundPoints: 25,
       positionRank: 32,
       nextFixture: 35,
-      scores: {
-        1: 13,
-        2: 42,
-        3: 25,
-      },
+      scores: { 1: 13, 2: 42, 3: 25 },
     },
-    selected: {
-      1: 4.2,
-      2: 9.9,
-      3: 7.1,
-      4: 6.7,
-    },
+    selected: { 1: 4.2, 2: 9.9, 3: 7.1, 4: 6.2 },
   },
   {
     id: 630,
@@ -17325,18 +12595,9 @@ export default [
       lastRoundPoints: 57,
       positionRank: 35,
       nextFixture: 35,
-      scores: {
-        1: 23,
-        2: 42,
-        3: 57,
-      },
+      scores: { 1: 23, 2: 42, 3: 57 },
     },
-    selected: {
-      1: 9.3,
-      2: 3,
-      3: 10.2,
-      4: 9.5,
-    },
+    selected: { 1: 9.3, 2: 3, 3: 10.2, 4: 8.7 },
   },
   {
     id: 631,
@@ -17354,17 +12615,9 @@ export default [
       lastRoundPoints: 0,
       positionRank: 75,
       nextFixture: 35,
-      scores: {
-        2: 12,
-        3: 0,
-      },
+      scores: { 2: 12, 3: 0 },
     },
-    selected: {
-      1: 0.3,
-      2: 0.2,
-      3: 0.2,
-      4: 0.2,
-    },
+    selected: { 1: 0.3, 2: 0.2, 3: 0.2, 4: 0.2 },
   },
   {
     id: 632,
@@ -17382,16 +12635,9 @@ export default [
       lastRoundPoints: null,
       positionRank: 38,
       nextFixture: 35,
-      scores: {
-        1: 13,
-      },
+      scores: { 1: 13 },
     },
-    selected: {
-      1: 0.3,
-      2: 4.1,
-      3: 0.7,
-      4: 0.7,
-    },
+    selected: { 1: 0.3, 2: 4.1, 3: 0.7, 4: 0.7 },
   },
   {
     id: 633,
@@ -17409,16 +12655,9 @@ export default [
       lastRoundPoints: null,
       positionRank: 76,
       nextFixture: 35,
-      scores: {
-        2: 7,
-      },
+      scores: { 2: 7 },
     },
-    selected: {
-      1: 0.2,
-      2: 2.3,
-      3: 0.4,
-      4: 0.4,
-    },
+    selected: { 1: 0.2, 2: 2.3, 3: 0.4, 4: 0.4 },
   },
   {
     id: 634,
@@ -17436,16 +12675,9 @@ export default [
       lastRoundPoints: null,
       positionRank: 77,
       nextFixture: 35,
-      scores: {
-        2: 29,
-      },
+      scores: { 2: 29 },
     },
-    selected: {
-      1: 0.2,
-      2: 1.5,
-      3: 0.3,
-      4: 0.3,
-    },
+    selected: { 1: 0.2, 2: 1.5, 3: 0.3, 4: 0.3 },
   },
   {
     id: 635,
@@ -17463,18 +12695,9 @@ export default [
       lastRoundPoints: 20,
       positionRank: 34,
       nextFixture: 35,
-      scores: {
-        1: 29,
-        2: 21,
-        3: 20,
-      },
+      scores: { 1: 29, 2: 21, 3: 20 },
     },
-    selected: {
-      1: 2,
-      2: 1.2,
-      3: 10.3,
-      4: 9.3,
-    },
+    selected: { 1: 2, 2: 1.2, 3: 10.3, 4: 8.1 },
   },
   {
     id: 636,
@@ -17492,17 +12715,9 @@ export default [
       lastRoundPoints: 28,
       positionRank: 37,
       nextFixture: 35,
-      scores: {
-        1: 30,
-        3: 28,
-      },
+      scores: { 1: 30, 3: 28 },
     },
-    selected: {
-      1: 1.3,
-      2: 1.4,
-      3: 1.8,
-      4: 1.7,
-    },
+    selected: { 1: 1.3, 2: 1.4, 3: 1.8, 4: 1.6 },
   },
   {
     id: 637,
@@ -17520,18 +12735,9 @@ export default [
       lastRoundPoints: 11,
       positionRank: 39,
       nextFixture: 35,
-      scores: {
-        1: -2,
-        2: 25,
-        3: 11,
-      },
+      scores: { 1: -2, 2: 25, 3: 11 },
     },
-    selected: {
-      1: 0.2,
-      2: 0.1,
-      3: 0.1,
-      4: 0.1,
-    },
+    selected: { 1: 0.2, 2: 0.1, 3: 0.1, 4: 0.1 },
   },
   {
     id: 638,
@@ -17549,17 +12755,9 @@ export default [
       lastRoundPoints: null,
       positionRank: 41,
       nextFixture: 35,
-      scores: {
-        1: 8,
-        2: 5,
-      },
+      scores: { 1: 8, 2: 5 },
     },
-    selected: {
-      1: 0.2,
-      2: 7,
-      3: 0.8,
-      4: 0.8,
-    },
+    selected: { 1: 0.2, 2: 7, 3: 0.8, 4: 0.7 },
   },
   {
     id: 639,
@@ -17577,16 +12775,9 @@ export default [
       lastRoundPoints: 11,
       positionRank: 96,
       nextFixture: 35,
-      scores: {
-        3: 11,
-      },
+      scores: { 3: 11 },
     },
-    selected: {
-      1: 0.1,
-      2: 0.1,
-      3: 0.1,
-      4: 0.1,
-    },
+    selected: { 1: 0.1, 2: 0.1, 3: 0.1, 4: 0.1 },
   },
   {
     id: 640,
@@ -17604,16 +12795,9 @@ export default [
       lastRoundPoints: null,
       positionRank: 76,
       nextFixture: 35,
-      scores: {
-        2: 12,
-      },
+      scores: { 2: 12 },
     },
-    selected: {
-      1: 0.1,
-      2: 4.7,
-      3: 0.4,
-      4: 0.4,
-    },
+    selected: { 1: 0.1, 2: 4.7, 3: 0.4, 4: 0.4 },
   },
   {
     id: 641,
@@ -17631,18 +12815,9 @@ export default [
       lastRoundPoints: 27,
       positionRank: 23,
       nextFixture: 35,
-      scores: {
-        1: 12,
-        2: 14,
-        3: 27,
-      },
+      scores: { 1: 12, 2: 14, 3: 27 },
     },
-    selected: {
-      1: 4.5,
-      2: 1.6,
-      3: 3.3,
-      4: 3.2,
-    },
+    selected: { 1: 4.5, 2: 1.6, 3: 3.3, 4: 3 },
   },
   {
     id: 642,
@@ -17660,18 +12835,9 @@ export default [
       lastRoundPoints: 4,
       positionRank: 24,
       nextFixture: 35,
-      scores: {
-        1: 8,
-        2: 13,
-        3: 4,
-      },
+      scores: { 1: 8, 2: 13, 3: 4 },
     },
-    selected: {
-      1: 1,
-      2: 8.4,
-      3: 1.5,
-      4: 1.5,
-    },
+    selected: { 1: 1, 2: 8.4, 3: 1.5, 4: 1.4 },
   },
   {
     id: 643,
@@ -17691,12 +12857,7 @@ export default [
       nextFixture: 28,
       scores: null,
     },
-    selected: {
-      1: 0,
-      2: 0,
-      3: 0,
-      4: 0,
-    },
+    selected: { 1: 0, 2: 0, 3: 0, 4: 0 },
   },
   {
     id: 644,
@@ -17716,12 +12877,7 @@ export default [
       nextFixture: 30,
       scores: null,
     },
-    selected: {
-      1: 0.1,
-      2: 0.2,
-      3: 0.2,
-      4: 0.2,
-    },
+    selected: { 1: 0.1, 2: 0.2, 3: 0.2, 4: 0.2 },
   },
   {
     id: 645,
@@ -17741,12 +12897,7 @@ export default [
       nextFixture: 30,
       scores: null,
     },
-    selected: {
-      1: 0.2,
-      2: 0.2,
-      3: 0.2,
-      4: 0.2,
-    },
+    selected: { 1: 0.2, 2: 0.2, 3: 0.2, 4: 0.2 },
   },
   {
     id: 646,
@@ -17764,16 +12915,9 @@ export default [
       lastRoundPoints: 2,
       positionRank: 94,
       nextFixture: 28,
-      scores: {
-        3: 2,
-      },
+      scores: { 3: 2 },
     },
-    selected: {
-      1: 0.1,
-      2: 0.1,
-      3: 0.1,
-      4: 0.1,
-    },
+    selected: { 1: 0.1, 2: 0.1, 3: 0.1, 4: 0.1 },
   },
   {
     id: 647,
@@ -17791,16 +12935,9 @@ export default [
       lastRoundPoints: 4,
       positionRank: 97,
       nextFixture: 28,
-      scores: {
-        3: 4,
-      },
+      scores: { 3: 4 },
     },
-    selected: {
-      1: 0.1,
-      2: 0.1,
-      3: 0.1,
-      4: 0.1,
-    },
+    selected: { 1: 0.1, 2: 0.1, 3: 0.1, 4: 0.1 },
   },
   {
     id: 648,
@@ -17818,17 +12955,9 @@ export default [
       lastRoundPoints: null,
       positionRank: 31,
       nextFixture: 26,
-      scores: {
-        1: 30,
-        2: 6,
-      },
+      scores: { 1: 30, 2: 6 },
     },
-    selected: {
-      1: 0.2,
-      2: 0.7,
-      3: 0.4,
-      4: 0.4,
-    },
+    selected: { 1: 0.2, 2: 0.7, 3: 0.4, 4: 0.5 },
   },
   {
     id: 649,
@@ -17846,16 +12975,9 @@ export default [
       lastRoundPoints: null,
       positionRank: 78,
       nextFixture: 26,
-      scores: {
-        2: 32,
-      },
+      scores: { 2: 32 },
     },
-    selected: {
-      1: 0.2,
-      2: 0.6,
-      3: 0.3,
-      4: 0.3,
-    },
+    selected: { 1: 0.2, 2: 0.6, 3: 0.3, 4: 0.4 },
   },
   {
     id: 650,
@@ -17873,17 +12995,9 @@ export default [
       lastRoundPoints: null,
       positionRank: 31,
       nextFixture: 26,
-      scores: {
-        1: 66,
-        2: 17,
-      },
+      scores: { 1: 66, 2: 17 },
     },
-    selected: {
-      1: 2.6,
-      2: 6.6,
-      3: 2.3,
-      4: 2.9,
-    },
+    selected: { 1: 2.6, 2: 6.6, 3: 2.3, 4: 3.6 },
   },
   {
     id: 651,
@@ -17901,16 +13015,9 @@ export default [
       lastRoundPoints: null,
       positionRank: 32,
       nextFixture: 26,
-      scores: {
-        1: 18,
-      },
+      scores: { 1: 18 },
     },
-    selected: {
-      1: 0.1,
-      2: 0.3,
-      3: 0.2,
-      4: 0.2,
-    },
+    selected: { 1: 0.1, 2: 0.3, 3: 0.2, 4: 0.2 },
   },
   {
     id: 652,
@@ -17928,17 +13035,9 @@ export default [
       lastRoundPoints: null,
       positionRank: 33,
       nextFixture: 26,
-      scores: {
-        1: 13,
-        2: 3,
-      },
+      scores: { 1: 13, 2: 3 },
     },
-    selected: {
-      1: 1.7,
-      2: 0.8,
-      3: 0.6,
-      4: 0.6,
-    },
+    selected: { 1: 1.7, 2: 0.8, 3: 0.6, 4: 0.6 },
   },
   {
     id: 653,
@@ -17948,7 +13047,7 @@ export default [
     lastName: 'Shifuka',
     position: ['prop'],
     cost: 2500000,
-    status: 'uncertain',
+    status: 'bench',
     isLocked: false,
     stats: {
       totalPoints: 7,
@@ -17956,17 +13055,9 @@ export default [
       lastRoundPoints: 2,
       positionRank: 77,
       nextFixture: 25,
-      scores: {
-        2: 5,
-        3: 2,
-      },
+      scores: { 2: 5, 3: 2 },
     },
-    selected: {
-      1: 0.1,
-      2: 0.1,
-      3: 0.1,
-      4: 0.1,
-    },
+    selected: { 1: 0.1, 2: 0.1, 3: 0.1, 4: 0.1 },
   },
   {
     id: 654,
@@ -17976,7 +13067,7 @@ export default [
     lastName: 'Nortje',
     position: ['hooker'],
     cost: 3500000,
-    status: 'uncertain',
+    status: 'not-selected',
     isLocked: false,
     stats: {
       totalPoints: 6,
@@ -17984,16 +13075,9 @@ export default [
       lastRoundPoints: 6,
       positionRank: 48,
       nextFixture: 25,
-      scores: {
-        3: 6,
-      },
+      scores: { 3: 6 },
     },
-    selected: {
-      1: 0.2,
-      2: 0.1,
-      3: 0.2,
-      4: 0.2,
-    },
+    selected: { 1: 0.2, 2: 0.1, 3: 0.2, 4: 0.2 },
   },
   {
     id: 655,
@@ -18011,16 +13095,9 @@ export default [
       lastRoundPoints: null,
       positionRank: 79,
       nextFixture: 30,
-      scores: {
-        2: 6,
-      },
+      scores: { 2: 6 },
     },
-    selected: {
-      1: 0.1,
-      2: 0.2,
-      3: 0.1,
-      4: 0.1,
-    },
+    selected: { 1: 0.1, 2: 0.2, 3: 0.1, 4: 0.1 },
   },
   {
     id: 656,
@@ -18038,17 +13115,9 @@ export default [
       lastRoundPoints: 21,
       positionRank: 78,
       nextFixture: 26,
-      scores: {
-        2: 20,
-        3: 21,
-      },
+      scores: { 2: 20, 3: 21 },
     },
-    selected: {
-      1: 0.1,
-      2: 4,
-      3: 4.5,
-      4: 4.3,
-    },
+    selected: { 1: 0.1, 2: 4, 3: 4.5, 4: 4 },
   },
   {
     id: 657,
@@ -18066,17 +13135,9 @@ export default [
       lastRoundPoints: 15,
       positionRank: 66,
       nextFixture: 32,
-      scores: {
-        2: 5,
-        3: 15,
-      },
+      scores: { 2: 5, 3: 15 },
     },
-    selected: {
-      1: 0.3,
-      2: 1.2,
-      3: 0.6,
-      4: 0.6,
-    },
+    selected: { 1: 0.3, 2: 1.2, 3: 0.6, 4: 0.6 },
   },
   {
     id: 658,
@@ -18094,17 +13155,9 @@ export default [
       lastRoundPoints: 12,
       positionRank: 39,
       nextFixture: 35,
-      scores: {
-        1: 25,
-        3: 12,
-      },
+      scores: { 1: 25, 3: 12 },
     },
-    selected: {
-      1: 1.8,
-      2: 0.8,
-      3: 1.2,
-      4: 1.2,
-    },
+    selected: { 1: 1.8, 2: 0.8, 3: 1.2, 4: 1.1 },
   },
   {
     id: 659,
@@ -18122,17 +13175,9 @@ export default [
       lastRoundPoints: null,
       positionRank: 40,
       nextFixture: 30,
-      scores: {
-        1: 21,
-        2: 29,
-      },
+      scores: { 1: 21, 2: 29 },
     },
-    selected: {
-      1: 0.8,
-      2: 1.2,
-      3: 0.7,
-      4: 0.7,
-    },
+    selected: { 1: 0.8, 2: 1.2, 3: 0.7, 4: 0.7 },
   },
   {
     id: 660,
@@ -18150,17 +13195,9 @@ export default [
       lastRoundPoints: null,
       positionRank: 42,
       nextFixture: 26,
-      scores: {
-        1: 11,
-        2: 13,
-      },
+      scores: { 1: 11, 2: 13 },
     },
-    selected: {
-      1: 1,
-      2: 1.2,
-      3: 0.3,
-      4: 0.3,
-    },
+    selected: { 1: 1, 2: 1.2, 3: 0.3, 4: 0.3 },
   },
   {
     id: 661,
@@ -18178,15 +13215,9 @@ export default [
       lastRoundPoints: null,
       positionRank: 70,
       nextFixture: 34,
-      scores: {
-        2: 6,
-      },
+      scores: { 2: 6 },
     },
-    selected: {
-      2: 0,
-      3: 0,
-      4: 0,
-    },
+    selected: { 2: 0, 3: 0, 4: 0 },
   },
   {
     id: 662,
@@ -18206,11 +13237,7 @@ export default [
       nextFixture: 30,
       scores: null,
     },
-    selected: {
-      2: 0,
-      3: 0,
-      4: 0.1,
-    },
+    selected: { 2: 0, 3: 0, 4: 0.1 },
   },
   {
     id: 663,
@@ -18228,15 +13255,9 @@ export default [
       lastRoundPoints: 13,
       positionRank: 95,
       nextFixture: 29,
-      scores: {
-        3: 13,
-      },
+      scores: { 3: 13 },
     },
-    selected: {
-      2: 0,
-      3: 0.4,
-      4: 0.3,
-    },
+    selected: { 2: 0, 3: 0.4, 4: 0.3 },
   },
   {
     id: 664,
@@ -18254,16 +13275,9 @@ export default [
       lastRoundPoints: 20,
       positionRank: 83,
       nextFixture: 32,
-      scores: {
-        2: 23,
-        3: 20,
-      },
+      scores: { 2: 23, 3: 20 },
     },
-    selected: {
-      2: 0.1,
-      3: 0.8,
-      4: 0.8,
-    },
+    selected: { 2: 0.1, 3: 0.8, 4: 0.7 },
   },
   {
     id: 665,
@@ -18281,16 +13295,9 @@ export default [
       lastRoundPoints: 7,
       positionRank: 81,
       nextFixture: 32,
-      scores: {
-        2: 4,
-        3: 7,
-      },
+      scores: { 2: 4, 3: 7 },
     },
-    selected: {
-      2: 0,
-      3: 0,
-      4: 0,
-    },
+    selected: { 2: 0, 3: 0, 4: 0 },
   },
   {
     id: 666,
@@ -18300,7 +13307,7 @@ export default [
     lastName: 'Jacobs',
     position: ['center'],
     cost: 3000000,
-    status: 'uncertain',
+    status: 'not-selected',
     isLocked: false,
     stats: {
       totalPoints: null,
@@ -18310,10 +13317,7 @@ export default [
       nextFixture: 25,
       scores: null,
     },
-    selected: {
-      3: 0,
-      4: 0,
-    },
+    selected: { 3: 0, 4: 0 },
   },
   {
     id: 667,
@@ -18333,10 +13337,7 @@ export default [
       nextFixture: 32,
       scores: null,
     },
-    selected: {
-      3: 0,
-      4: 0.3,
-    },
+    selected: { 3: 0, 4: 0.8 },
   },
   {
     id: 668,
@@ -18356,10 +13357,7 @@ export default [
       nextFixture: 32,
       scores: null,
     },
-    selected: {
-      3: 0,
-      4: 0,
-    },
+    selected: { 3: 0, 4: 0 },
   },
   {
     id: 669,
@@ -18377,14 +13375,9 @@ export default [
       lastRoundPoints: 1,
       positionRank: 40,
       nextFixture: 32,
-      scores: {
-        3: 1,
-      },
+      scores: { 3: 1 },
     },
-    selected: {
-      3: 0,
-      4: 0,
-    },
+    selected: { 3: 0, 4: 0 },
   },
   {
     id: 670,
@@ -18404,9 +13397,6 @@ export default [
       nextFixture: 26,
       scores: null,
     },
-    selected: {
-      3: 0,
-      4: 0,
-    },
+    selected: { 3: 0, 4: 0 },
   },
 ];
