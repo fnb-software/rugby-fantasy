@@ -10,7 +10,9 @@
     "mz:solve": "node -r @swc-node/register ./minizinc/solve.js",
     "mz:update:players": "node -r @swc-node/register ./minizinc/updatePlayers.ts",
     "mz:update:matches": "node -r @swc-node/register ./minizinc/updateMatches.ts",
-    "boosters": "node -r @swc-node/register ./minizinc/boosters.js",
+    "boosters": "node -r @swc-node/register ./other/boosters.js",
+    "teamFromStats": "node -r @swc-node/register ./other/teamFromStats.js",
+    "teamStats": "node -r @swc-node/register ./other/teamStats.js",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "author": "",
