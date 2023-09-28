@@ -13,6 +13,7 @@
     "boosters": "node -r @swc-node/register ./other/boosters.js",
     "teamFromStats": "node -r @swc-node/register ./other/teamFromStats.js",
     "teamStats": "node -r @swc-node/register ./other/teamStats.js",
+    "teamDuel": "node -r @swc-node/register ./other/teamDuel.js",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "author": "",
@@ -21,6 +22,7 @@
     "lodash": "^4.17.21",
     "minizinc": "^4.1.1",
     "prettier": "^3.0.3",
+    "prompts": "^2.4.2",
     "typescript": "^5.2.2"
   },
   "devDependencies": {
