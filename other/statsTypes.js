@@ -233,7 +233,7 @@ export default {
   Tackles: { name: 'Tackles', type: 'positive' },
   Territory: { name: 'Territory', type: 'positive' },
   TerritoryLast10Mins: { name: 'TerritoryLast10Mins', type: 'positive' },
-  TotalFreeKicksConceded: { name: 'TotalFreeKicksConceded', type: 'negative' },
+  TotalFreeKicksConceded: { name: 'TotalFreeKicksConceded', type: 'ignore' },
   TotalKicks: { name: 'TotalKicks', type: 'positive' },
   TotalKicksSucceeded: { name: 'TotalKicksSucceeded', type: 'positive' },
   TotalLineouts: { name: 'TotalLineouts', type: 'positive' },

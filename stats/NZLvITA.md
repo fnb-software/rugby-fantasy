@@ -1,4 +1,4 @@
-##NZL vs ITA: stats analysis (value per match)
+##NZL vs ITA: stats analysis (per match)
 
 ###NZL best stats
 CarriesMetres: #1 (682)
