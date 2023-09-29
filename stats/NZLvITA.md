@@ -1,68 +1,44 @@
-###NZL vs ITA: significant stats (per match)  
-**BallWonZoneA**
-NZL: #4 (10.5) - ITA: #20 (5)
+##NZL vs ITA: stats analysis (value per match)
 
-**CarriesNotMadeGainLine**
-NZL: #18 (29) - ITA: #6 (43.5)
+###NZL best stats
+CarriesMetres: #1 (682)
+CleanBreaks: #1 (14.5)
+CollectionSuccess: #1 (51)
+DefendersBeaten: #1 (38.5)
+LineoutSuccess: #1 (0.96)
+Metres: #1 (682)
+PcPossessionFirst: #1 (0.64)
+RuckOverGainlinePercent: #1 (0.53)
+TryKicks: #1 (1)
+RuckSpeed6Plus: #17 (5)
 
-**CollectionLooseBall**
-NZL: #1 (27.5) - ITA: #17 (17)
+###NZL worst stats
+PenaltyConcededFoulPlay: #2 (1.5)
+TacklePenaltyConceded: #2 (2.5)
+PcTerritorySecond: #20 (0.28)
 
-**DominantTackles**
-NZL: #18 (7) - ITA: #3 (12)
+###ITA best stats
+ScrumsWonPenalty: #1 (3.5)
+SetPieceWon: #1 (22)
+TackleSuccess: #1 (0.87)
+LineoutsLost: #19 (1)
+RuckSpeed6Plus: #19 (2)
 
-**KickPenaltyGood**
-NZL: #20 (3.5) - ITA: #5 (8)
+###ITA worst stats
+TurnoverBadPass: #2 (8.5)
+RuckSuccess: #18 (0.92)
+PcTerritoryFirst: #17 (0.43)
 
-**KickPossessionRetained**
-NZL: #2 (6.5) - ITA: #19 (1)
-
-**KickTryScored**
-NZL: #1 (1) - ITA: #20 (0)
-
-**Opposition22EntryOutcomeTurnover**
-NZL: #18 (3) - ITA: #5 (6)
-
-**PcPossessionFirst**
-NZL: #1 (0.64) - ITA: #14 (0.44)
-
-**PcTerritoryFirst**
-NZL: #3 (0.58) - ITA: #17 (0.43)
-
-**PcTerritorySecond**
-NZL: #20 (0.28) - ITA: #5 (0.58)
-
-**PenaltyConcededKillingRuck**
-NZL: #3 (5) - ITA: #18 (2.5)
-
-**PenaltyKickForTouchMetres**
-NZL: #19 (130) - ITA: #1 (287)
-
-**ScrumsWon**
-NZL: #18 (5) - ITA: #4 (7.5)
-
-**ScrumsWonPenalty**
-NZL: #19 (0.5) - ITA: #1 (3.5)
-
-**SetPieceWon**
-NZL: #15 (15.5) - ITA: #2 (22)
-
-**TacklePenaltyConceded**
-NZL: #2 (2.5) - ITA: #17 (1)
-
-**Tackles**
-NZL: #20 (80.5) - ITA: #7 (133)
-
-**TerritoryLast10Mins**
-NZL: #18 (0.33) - ITA: #2 (0.71)
-
-**TurnoverOppHalf**
-NZL: #20 (6.5) - ITA: #4 (10)
+###NZL vs ITA: largest gaps
+PenaltyKickForTouchMetres: NZL #19 (130) - ITA #1 (287)
+ScrumsWonPenalty: NZL #16 (0.5) - ITA #1 (3.5)
+PcTerritorySecond: NZL #20 (0.28) - ITA #3 (0.58)
+KickPossessionRetained: NZL #2 (6.5) - ITA #17 (1)
 
 ### Analysis
 
-NZL to start strong and could put the game away in the first half (_PcPossessionFirst_, _PcTerritoryFirst_).  
-The second half could see Italy putting more pressure (_PcTerritorySecond_), and especially at the end (_TerritoryLast10Mins_).  
-Italy set piece is looking strong (_SetPieceWon_), especially the scrum (_ScrumsWonPenalty_). Italy puts many dominant tackles (_DominantTackles_) and often steals the ball in opposition territory (_TurnoverOppHalf_), but NZL can easily counter that with kicks (_KickTryScored_, _KickPossessionRetained_, _CollectionLooseBall_).  
-Italy with ball in hand is not very effective (_CarriesNotMadeGainLine_) but NZL concedes many penalties from tackles (_TacklePenaltyConceded_) so it could be critical in order for Italy to score points beside set pieces.  
-So if Italy can defend the kicks well, they might get a chance by forcing penalties from set pieces and relentless phases (100% goal kicking accuracy so far).
+NZL top stats are impressive in the carry area and they might well start the game very strong (_PcPossessionFirst_). It will be an interesting challenge for ITA who is leading the stats in tackle completion (_TackleSuccess_).  
+ITA set piece is looking strong (_SetPieceWon_), especially the scrum (_ScrumsWonPenalty_). Both teams are excellent in the lineout.  
+NZL looks dominant with kicks in play and recollecting the ball (_KickTryScored_, _KickPossessionRetained_, _CollectionSuccess_).  
+ITA rucks are not very effective (_RuckSuccess_) but NZL concedes many penalties from tackles (_TacklePenaltyConceded_) so this sector will be key in order for ITA to gain momentum beside set pieces.  
+We could see a better finish from ITA, with a lot of pressure on NZL (_PcTerritorySecond_), and especially in the last minutes (_TerritoryLast10Mins_).

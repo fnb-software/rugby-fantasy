@@ -1,5 +1,6 @@
 import { flatMapDeep, mergeWith, sortBy } from 'lodash';
 import matches from '../data/matches';
+import statsTypes from './statsTypes';
 
 const getTeamStats = () => {
   const teamByMatch = flatMapDeep(matches, (m) =>
@@ -43,7 +44,11 @@ const getTeamStats = () => {
     {}
   );
 
-  return sortBy(Object.entries(statsMap), ([n1]) => n1).map(([name, stats]) => {
+  const filteredStats = Object.entries(statsMap).filter(
+    ([name]) => statsTypes[name].type !== 'ignore'
+  );
+
+  return sortBy(filteredStats, ([n1]) => n1).map(([name, stats]) => {
     const sorted = sortBy(stats, (stat) => stat.value).reverse();
     return { name, stats: sorted };
   });
