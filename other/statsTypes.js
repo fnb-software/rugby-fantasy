@@ -50,7 +50,7 @@ export default {
     name: 'FreeKickConcededAtScrum',
     type: 'negative',
   },
-  Goals: { name: 'Goals', type: 'positive' },
+  Goals: { name: 'Goals', type: 'positive', description: '3 points attempts' },
   KickChargedDown: { name: 'KickChargedDown', type: 'negative' },
   KickFromHandMetres: { name: 'KickFromHandMetres', type: 'positive' },
   KickInTouch: { name: 'KickInTouch', type: 'positive' },
@@ -128,7 +128,11 @@ export default {
   PcPossessionSecond: { name: 'PcPossessionSecond', type: 'positive' },
   PcTerritoryFirst: { name: 'PcTerritoryFirst', type: 'positive' },
   PcTerritorySecond: { name: 'PcTerritorySecond', type: 'positive' },
-  Penalties: { name: 'Penalties', type: 'positive' },
+  Penalties: {
+    name: 'Penalties',
+    type: 'positive',
+    description: 'Penalties scored',
+  },
   PenaltiesConceded: { name: 'PenaltiesConceded', type: 'negative' },
   PenaltyConcededCollapsingMaul: {
     name: 'PenaltyConcededCollapsingMaul',
@@ -246,7 +250,7 @@ export default {
   TurnoverCarriedOver: { name: 'TurnoverCarriedOver', type: 'negative' },
   TurnoverForwardPass: { name: 'TurnoverForwardPass', type: 'negative' },
   TurnoverKickError: { name: 'TurnoverKickError', type: 'negative' },
-  TurnoverKnockOn: { name: 'TurnoverKnockOn', type: 'negative' },
+  TurnoverKnockOn: { name: 'TurnoverKnockOn', type: 'ignore' },
   TurnoverLostInRuckOrMaul: {
     name: 'TurnoverLostInRuckOrMaul',
     type: 'negative',

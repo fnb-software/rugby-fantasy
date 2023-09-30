@@ -119,30 +119,31 @@ const main = async () => {
   );
 
   console.log(
-    `##${team1Name} vs ${team2Name}: stats analysis (value per match)  `
+    `###${team1Name} vs ${team2Name}: stats analysis (value per match)  `
   );
+  console.log(`_Data from rugby world match centers_\\`);
   console.log(``);
-  console.log(`###${team1Name} best stats  `);
+  console.log(`####${team1Name} best stats  `);
   bestStatsTeam1.forEach(({ name, stats: [stats] }) => {
-    console.log(`${name}: #${stats.rank} (${stats.value})`);
+    console.log(`${name}: #${stats.rank} (${stats.value})\\`);
   });
   console.log(``);
 
-  console.log(`###${team1Name} worst stats  `);
+  console.log(`####${team1Name} worst stats  `);
   worstStatsTeam1.forEach(({ name, stats: [stats] }) => {
-    console.log(`${name}: #${stats.rank} (${stats.value})`);
+    console.log(`${name}: #${stats.rank} (${stats.value})\\`);
   });
   console.log(``);
 
-  console.log(`###${team2Name} best stats  `);
+  console.log(`####${team2Name} best stats  `);
   bestStatsTeam2.forEach(({ name, stats: [, stats] }) => {
-    console.log(`${name}: #${stats.rank} (${stats.value})`);
+    console.log(`${name}: #${stats.rank} (${stats.value})\\`);
   });
   console.log(``);
 
-  console.log(`###${team2Name} worst stats  `);
+  console.log(`####${team2Name} worst stats  `);
   worstStatsTeam2.forEach(({ name, stats: [, stats] }) => {
-    console.log(`${name}: #${stats.rank} (${stats.value})`);
+    console.log(`${name}: #${stats.rank} (${stats.value})\\`);
   });
   console.log(``);
 
@@ -158,10 +159,10 @@ const main = async () => {
     .slice(-STATS_PER_SECTION - 3)
     .reverse();
 
-  console.log(`###${team1Name} vs ${team2Name}: largest gaps`);
+  console.log(`####${team1Name} vs ${team2Name}: largest gaps`);
   sortedStats.forEach(({ name, stats: [stats1, stats2] }) => {
     console.log(
-      `${name}: ${team1Name} #${stats1.rank} (${stats1.value}) - ${team2Name} #${stats2.rank} (${stats2.value})  `
+      `${name}: ${team1Name} #${stats1.rank} (${stats1.value}) - ${team2Name} #${stats2.rank} (${stats2.value})\\`
     );
   });
 };

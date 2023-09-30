@@ -13,9 +13,10 @@ const parseResult = ({ teamIds, captainId }) => {
     console.log(
       `${i + 1}. ${p === captain ? '(c)' : ''} ${p.lastName} ${p.firstName} (${
         squads.find((s) => p.squadId === s.id)?.abbreviation
-      } - ${p.cost / 1000000}) - ${getPlayerScore(p) ?? 'N/A'} `
+      } - ${p.cost / 1000000}) - ${getPlayerScore(p) ?? 'N/A'}\\`
     );
   });
+
   console.log('');
   console.log(
     'Points : ',
