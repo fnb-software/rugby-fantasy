@@ -108,7 +108,7 @@ const main = async () => {
     statsType: 'positive',
     type: 'best',
   }).concat(
-    getExtremeStats({ index: 0, statsType: 'negative', type: 'worst' })
+    getExtremeStats({ index: 1, statsType: 'negative', type: 'worst' })
   );
   const worstStatsTeam2 = getExtremeStats({
     index: 1,

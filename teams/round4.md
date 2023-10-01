@@ -37,3 +37,23 @@ Points : 858 - Cost: 79.5
 15. Jordan Will (NZL - 8) - 88
 
 Points : 932 - Cost: 87
+
+## After game 6
+
+1.  Tagi Luke (FIJ - 3.5) - 35
+2.  Coles Dane (NZL - 8) - 73
+3.  Gigashvili Beka (GEO - 4.5) - 29
+4.  Ruzza Federico (ITA - 6) - 28
+5.  Mcfarland Theo (SAM - 6) - 38
+6.  Martin Gonzalez Juan (ARG - 6.5) - 67
+7.  Isa Facundo (ARG - 5.5) - 67
+8.  Savea Ardie (NZL - 7) - 92
+9.  Arata Santiago (URU - 7) - 52
+10. Healy Ben (SCO - 8) - 130
+11. Bogado Martín (ARG - 6.5) - 61
+12. Mouton Gerswin (NAM - 3) - 56
+13. Redpath Cameron (SCO - 7) - 97
+14. Jordan Will (NZL - 8) - 88
+15. (c) Graham Darcy (SCO - 8) - 195
+
+Points : 1303 - Cost: 94.5

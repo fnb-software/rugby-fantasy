@@ -123,7 +123,7 @@ export default {
     type: 'negative',
   },
   Passes: { name: 'Passes', type: 'positive' },
-  PcKickPercent: { name: 'PcKickPercent', type: 'positive' },
+  PcKickPercent: { name: 'PcKickPercent', type: 'ignore' },
   PcPossessionFirst: { name: 'PcPossessionFirst', type: 'positive' },
   PcPossessionSecond: { name: 'PcPossessionSecond', type: 'positive' },
   PcTerritoryFirst: { name: 'PcTerritoryFirst', type: 'positive' },
