@@ -5,7 +5,8 @@ const MAX_PER_TEAM = 3;
 
 const getDzn = () => {
   const players = allPlayers.filter((p) => getPlayerScore(p) !== undefined);
-  //const players = players1.filter((p) => p.cost <= 6500000); // No star
+  //const players = players1.filter((p) => p.squadId !== 14); // No scots
+  //const players = players1.filter((p) => p.cost <= 7000000); // No star
   const squadIds = Array.from(
     players.reduce((squads, p) => {
       squads.add(p.squadId);

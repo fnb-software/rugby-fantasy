@@ -1,4 +1,4 @@
-###AUS vs POR: stats analysis (value per match)  
+###AUS vs POR: stats highlights (value per match)  
 _Data from rugby world match centers_
 
 ####AUS best stats

@@ -119,7 +119,7 @@ const main = async () => {
   );
 
   console.log(
-    `###${team1Name} vs ${team2Name}: stats analysis (value per match)  `
+    `###${team1Name} vs ${team2Name}: stats highlights (value per match)  `
   );
   console.log(`_Data from rugby world match centers_\\`);
   console.log(``);

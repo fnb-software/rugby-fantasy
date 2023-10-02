@@ -19,7 +19,10 @@ RuckOverGainlinePercent: #18 (0.36)
 ####ROU best stats
 TackleTrySaver: #1 (3)  
 CarriesPickAndGoMetres: #2 (35.5)  
-YellowCards: #6 (0.5)
+RuckSpeed6Plus: #20 (1.5)  
+CarriesNotMadeGainLine: #20 (23)  
+TurnoverBadPass: #19 (3)  
+RuckBehindGainline: #19 (10)
 
 ####ROU worst stats
 KickPenaltyBad: #1 (1)  
