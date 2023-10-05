@@ -1,17 +1,11 @@
 import { flatMap, flatMapDeep, sortBy } from 'lodash';
 import matches from '../data/matches';
 import players from '../data/players';
+import getPlayerStats from './getPlayerStats';
 
 const main = async () => {
-  const playersByMatch = flatMapDeep(matches, (m) =>
-    m.teamStats.map((ts) =>
-      ts.playerStats.map((ps) => ({
-        ...ps,
-        matchId: m.match.matchId,
-        matchDescription: m.match.description,
-      }))
-    )
-  );
+  const { playersByMatch, playersAggr } = getPlayerStats();
+
   const getKickerScore = (p) =>
     2 * (p.stats.Conversions || 0) +
     -(p.stats.MissedConversions || 0) +
@@ -46,6 +40,26 @@ const main = async () => {
       } scored ${getDefenderScore(defensiveKing)} booster points in ${
         defensiveKing.matchDescription
       }`
+    );
+  });
+
+  const getDefenderScoreBy80Minutes = (p) =>
+    p.stats.MinutesPlayedTotal / p.stats.MatchesPlayed > 30
+      ? Math.round(
+          (getDefenderScore(p) / p.stats.MinutesPlayedTotal) * 80 * 1000
+        ) / 1000
+      : 0;
+
+  const defensiveKingAgg = sortBy(playersAggr, getDefenderScoreBy80Minutes)
+    .slice(-20)
+    .reverse();
+  defensiveKingAgg.map((defensiveKing, i) => {
+    console.log(
+      `DefensiveKingAgg ${i + 1}: ${
+        defensiveKing.player.name.display
+      } scores avg ${getDefenderScoreBy80Minutes(defensiveKing)} per 80min (${
+        defensiveKing.stats.MinutesPlayedTotal
+      }min in ${defensiveKing.stats.MatchesPlayed} matches)`
     );
   });
 

@@ -33,7 +33,6 @@ constraint forall (i in index_set(team)) (position[team[i]] = team_position[i]);
 
 % Maximum cost (for low cost use 750)
 constraint sum (p in team) (cost[p]) <= 1000;
-constraint sum (p in team) (cost[p]) >= 925;
 
 % Don't pick the same player more than once
 constraint alldifferent (team);
@@ -50,6 +49,6 @@ constraint forall (position_type in position_identifiers) (
 var Players: captain;
 constraint captain in team;
 
-solve minimize sum (p in team) (value[p]) + value[captain] ;
+solve maximize sum (p in team) (value[p]) + value[captain] ;
 
 output ["const team = {ids:\(team), captain: \(captain)};\nexport default team;\n\nValue: \(sum (p in team) (value[p]))\nCost: \(sum (p in team) (cost[p]))\n"];

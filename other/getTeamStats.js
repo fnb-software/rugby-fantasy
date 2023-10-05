@@ -44,9 +44,12 @@ const getTeamStats = () => {
     {}
   );
 
-  const filteredStats = Object.entries(statsMap).filter(
-    ([name]) => statsTypes[name].type !== 'ignore'
-  );
+  const filteredStats = Object.entries(statsMap).filter(([name]) => {
+    if (!statsTypes[name]) {
+      console.log(name);
+    }
+    return statsTypes[name].type !== 'ignore';
+  });
 
   return sortBy(filteredStats, ([n1]) => n1).map(([name, stats]) => {
     const sorted = sortBy(stats, (stat) => stat.value).reverse();

@@ -1,3 +1,543 @@
+### Average per match - up until end of round 4
+
+**AttackingEventsZoneA**
+NZL (76.67) - FRA (60.67) - IRE (56.33) - ITA (53.67) - AUS (53.5) - POR (52.67) - TGA (52.33) - SAM (52.33) - GEO (52) - ROU (45.67) - SCO (40) - URU (39) - ARG (38.67) - ENG (38.33) - CHI (38) - JPN (36) - FIJ (35) - NAM (34.5) - RSA (34.25) - WAL (32.67)
+
+**AttackingEventsZoneB**
+SCO (155.67) - CHI (134.25) - NZL (131.67) - POR (128.67) - ITA (126) - IRE (104) - WAL (103.33) - URU (100.67) - ARG (100.67) - ENG (99.67) - FIJ (97.67) - FRA (97.33) - AUS (94.75) - RSA (93.5) - GEO (92.67) - JPN (91.33) - ROU (89) - SAM (88.33) - TGA (66.33) - NAM (66)
+
+**AttackingEventsZoneC**
+FIJ (183.33) - SCO (183.33) - ENG (163.33) - IRE (155) - ARG (148.33) - POR (146.67) - ITA (139.67) - NAM (136.5) - GEO (126.33) - WAL (123) - RSA (120.5) - AUS (119.5) - URU (119.33) - SAM (114) - JPN (109.33) - NZL (105.33) - CHI (103.75) - FRA (101) - TGA (100.33) - ROU (73)
+
+**AttackingEventsZoneD**
+IRE (145.33) - ARG (128.67) - FIJ (118.33) - NZL (111) - RSA (103.25) - SCO (102.33) - ENG (100.67) - WAL (95.67) - AUS (87.75) - POR (87) - TGA (81) - ITA (79.33) - SAM (78) - GEO (78) - URU (74) - FRA (73.33) - JPN (72) - NAM (63.5) - CHI (36.25) - ROU (34.67)
+
+**BallPossessionLast10Mins**
+FIJ (0.72) - ITA (0.64) - GEO (0.6) - SAM (0.58) - IRE (0.57) - URU (0.55) - WAL (0.55) - ARG (0.55) - SCO (0.54) - RSA (0.53) - CHI (0.53) - ENG (0.53) - FRA (0.53) - NZL (0.48) - ROU (0.47) - TGA (0.38) - NAM (0.35) - AUS (0.34) - POR (0.33) - JPN (0.31)
+
+**BallWonZoneA**
+NZL (12) - POR (11) - GEO (11) - SAM (10.67) - AUS (10.5) - IRE (10.33) - FRA (9.33) - CHI (9.25) - TGA (9) - ROU (9) - ENG (8.33) - JPN (7.67) - ARG (7.67) - FIJ (7.33) - NAM (7.25) - URU (7) - RSA (6.75) - ITA (6.33) - WAL (5.67) - SCO (5.67)
+
+**BallWonZoneB**
+CHI (33.25) - SCO (28.33) - POR (25.33) - NZL (25.33) - SAM (22) - URU (22) - IRE (22) - ROU (21.33) - ITA (21.33) - WAL (21) - ARG (20.67) - ENG (20.33) - RSA (20.25) - JPN (20) - AUS (19.75) - FIJ (19.33) - FRA (18.33) - TGA (15.67) - GEO (15.33) - NAM (13.75)
+
+**BallWonZoneC**
+FIJ (49.67) - NAM (37.75) - SCO (37.67) - ENG (37.33) - ARG (35.67) - POR (34.67) - ITA (34.33) - IRE (32) - AUS (31.75) - URU (31.67) - CHI (30.25) - SAM (29) - RSA (29) - JPN (29) - WAL (28.67) - GEO (27.67) - TGA (26) - ROU (24.33) - NZL (21.67) - FRA (21.33)
+
+**BallWonZoneD**
+ARG (41.67) - IRE (41) - FIJ (40.67) - WAL (32.33) - RSA (31.5) - ENG (30.33) - AUS (28.75) - TGA (27.67) - POR (27.67) - SCO (27.67) - URU (27.33) - NZL (27) - SAM (26.33) - GEO (25) - NAM (23) - JPN (22.67) - ITA (21.67) - FRA (18.33) - ROU (13.33) - CHI (13.25)
+
+**CarriesCrossedGainLine**
+NZL (82) - SCO (75) - IRE (74) - FIJ (69.67) - ARG (66) - ITA (65.67) - AUS (61.75) - RSA (61) - GEO (61) - ENG (60.33) - WAL (60) - FRA (55.67) - POR (54.33) - SAM (53.67) - URU (52) - JPN (48) - TGA (47.67) - NAM (41.75) - ROU (38.67) - CHI (38.5)
+
+**CarriesKickReturn**
+ITA (18.67) - ENG (16.33) - GEO (16) - POR (14.67) - NZL (14.67) - FRA (14.67) - AUS (14.25) - FIJ (13) - SCO (13) - ARG (13) - WAL (12.67) - CHI (12.5) - TGA (12) - URU (11.67) - ROU (11.67) - SAM (10.67) - IRE (10.67) - RSA (10) - NAM (10) - JPN (8)
+
+**CarriesKickReturnMetres**
+ITA (171) - GEO (168.33) - POR (136) - RSA (116.25) - NZL (113) - WAL (108) - ENG (108) - SCO (106.33) - CHI (105.5) - AUS (104.75) - FIJ (101.33) - IRE (101.33) - NAM (98) - ROU (96) - URU (93.67) - FRA (92.67) - ARG (73.67) - TGA (72.67) - SAM (67.67) - JPN (55.33)
+
+**CarriesMetres**
+NZL (723.33) - SCO (699) - IRE (626.33) - ITA (585.67) - FRA (569.67) - RSA (548.75) - GEO (523) - FIJ (516.33) - ENG (483.67) - AUS (479.75) - ARG
+(470) - POR (466.67) - WAL (428.67) - URU (382.33) - JPN (353.67) - SAM (323.33) - NAM (323) - CHI (311.75) - ROU (286.67) - TGA (282)
+
+**CarriesNotMadeGainLine**
+FIJ (54.67) - SCO (54.33) - POR (52) - CHI (50.5) - ARG (48) - ITA (43.67) - URU (42) - FRA (42) - WAL (39.67) - ENG (39.67) - NAM (39.25) - AUS (38) - SAM (37) - RSA (36.75) - TGA (36.67) - GEO (36.33) - IRE (36) - ROU (30) - NZL (28.67) - JPN (26)
+
+**CarriesOneOutDrive**
+FIJ (53.67) - NAM (38.25) - RSA (38) - POR (37.33) - ARG (36.33) - TGA (35) - AUS (35) - CHI (33) - IRE (32) - GEO (31) - SAM (29.67) - WAL (29.67) - ENG (29.67) - ROU (28.33) - NZL (27.33) - JPN (26.67) - ITA (25) - URU (23.67) - SCO (21.33) - FRA (19.67)
+
+**CarriesOneOutDriveMetres**
+FIJ (91.67) - AUS (75) - RSA (69) - NAM (65.5) - ARG (59.67) - ITA (57.67) - JPN (55) - FRA (52.67) - NZL (52) - WAL (50.33) - ENG (43) - TGA (42.67) - IRE (39) - POR (38.33) - SAM (34.33) - GEO (33) - ROU (32.67) - URU (29) - SCO (27.33) - CHI (16.75)
+
+**CarriesPickAndGo**
+SAM (14.33) - URU (14.33) - FIJ (14.33) - ARG (13.33) - TGA (11.67) - CHI (11.5) - ENG (10) - AUS (9.75) - WAL (9.33) - ROU (9) - NZL (9) - FRA (9) - SCO (8.33) - POR (7.33) - GEO (7.33) - IRE (7) - ITA (7) - NAM (5) - JPN (4.67) - RSA (4.5)
+
+**CarriesPickAndGoMetres**
+NZL (37) - ROU (35.33) - SAM (30.33) - URU (30) - CHI (29.75) - ARG (28.33) - FRA (28) - FIJ (23.67) - ENG (22.33) - RSA (22.25) - ITA (21) - TGA (20.67) - SCO (19) - WAL (18.67) - AUS (17.5) - GEO (16.33) - IRE (15.67) - NAM (12.25) - POR (9.33) - JPN (4.33)
+
+**CarriesSupport**
+SCO (13.33) - IRE (12.33) - FRA (10.33) - GEO (9.33) - NZL (9.33) - FIJ (8.67) - CHI (7.5) - SAM (7.33) - WAL (7.33) - ITA (7.33) - AUS (7) - POR (6.67) - TGA (6.33) - RSA (5.75) - ARG (5.67) - ENG (5.67) - URU (4.33) - JPN (3.33) - NAM (2.5) - ROU (2)
+
+**CarriesSupportMetres**
+IRE (118) - SCO (113) - NZL (102.33) - GEO (82.67) - ITA (81.33) - FRA (77.33) - POR (67.67) - FIJ (62) - ENG (52) - CHI (47.25) - WAL (44.67) - AUS (43) - RSA (40.75) - SAM (39.33) - URU (34.33) - TGA (32) - ARG (29.67) - JPN (26.33) - NAM (14) - ROU (13)
+
+**CarryDominant**
+FIJ (56.33) - IRE (49.33) - ITA (45) - ARG (40.33) - NZL (40) - SCO (39.67) - NAM (39) - SAM (38.67) - WAL (38.33) - ENG (37) - AUS (35.75) - FRA (35.67) - URU (33.33) - RSA (33.25) - POR (31.33) - GEO (29.67) - CHI (29) - TGA (25.67) - JPN (25) - ROU (23.33)
+
+**CarryIneffective**
+IRE (12.33) - ARG (11.67) - URU (10) - FIJ (9) - WAL (9) - CHI (8.5) - SAM (8) - AUS (7.75) - POR (7.67) - JPN (7.67) - ITA (7.67) - NAM (7.25) - TGA (7) - NZL (6.67) - FRA (6.67) - GEO (6.33) - SCO (6) - ENG (6) - ROU (6) - RSA (5.5)
+
+**CarryNeutral**
+SCO (58.67) - POR (57.67) - FIJ (56.33) - ARG (54.33) - CHI (53.5) - GEO (49.67) - AUS (49) - RSA (48.75) - ENG (48) - IRE (47.67) - TGA (47.33) - NZL (42.67) - SAM (41.67) - ROU (39.33) - WAL (38.67) - ITA (38.67) - URU (37.33) - JPN (35.67) - NAM (30) - FRA (27.33)
+
+**CleanBreaks**
+NZL (16.33) - SCO (14) - IRE (10.67) - FRA (10.33) - ENG (8) - POR (7.67) - ITA (7.67) - RSA (6.25) - URU (6) - JPN (6) - GEO (6) - ARG (5.67) - AUS (5.25) - WAL (5) - FIJ (4.67) - CHI (3.75) - TGA (3) - SAM (2.67) - NAM (2.5) - ROU (2)
+
+**CollectionFailed**
+ARG (11) - ENG (10.33) - SAM (10) - WAL (9) - RSA (9) - JPN (8.67) - IRE (8.33) - NZL (8.33) - URU (7.67) - ROU (7.67) - FRA (7.67) - CHI (7) - TGA
+(6.33) - FIJ (6.33) - NAM (6) - SCO (5.67) - AUS (5.5) - POR (5.33) - GEO (5.33) - ITA (5.33)
+
+**CollectionFromKick**
+NZL (18.67) - FRA (18.67) - ENG (18) - IRE (16.33) - AUS (16) - ITA (15.67) - GEO (15) - POR (14.67) - ARG (14) - FIJ (13.67) - URU (13) - WAL (13) - SAM (12.33) - SCO (12.33) - RSA (11.25) - JPN (11) - TGA (9.67) - NAM (9.25) - ROU (8.33) - CHI (7.25)
+
+**CollectionInterception**
+WAL (1.67) - NAM (1.5) - SCO (1.33) - GEO (1.33) - AUS (1) - CHI (0.75) - SAM (0.67) - ROU (0.67) - ITA (0.67) - RSA (0.5) - TGA (0.33) - POR (0.33) - URU (0.33) - FIJ (0.33) - JPN (0.33) - ARG (0.33) - ENG (0.33) - IRE (0.33) - NZL (0.33) - FRA (0.33)
+
+**CollectionLooseBall**
+ENG (26) - NZL (25) - FRA (23.33) - CHI (23) - URU (22.33) - GEO (21.67) - POR (21.33) - FIJ (21.33) - TGA (19.67) - SCO (19.67) - ROU (19.67) - WAL (19.33) - JPN (19) - RSA (18.5) - AUS (18.25) - ARG (18) - ITA (17.33) - SAM (15.33) - NAM (15.25) - IRE (14.67)
+
+**CollectionSuccess**
+ENG (50.67) - NZL (48.67) - FRA (47.33) - FIJ (43.33) - POR (42.67) - URU (41.33) - GEO (40.67) - AUS (39.75) - ITA (38.33) - IRE (38) - RSA (37) -
+ARG (37) - SCO (36.67) - WAL (36) - JPN (35.67) - CHI (35) - TGA (34.33) - SAM (34) - ROU (30.67) - NAM (27.75)
+
+**Conversions**
+NZL (7) - IRE (6.67) - SCO (5.67) - FRA (5.33) - ITA (4.67) - ENG (4) - RSA (3.75) - ARG (3.33) - WAL (3) - JPN (2.67) - SAM (2) - URU (2) - FIJ (2) - AUS (1.75) - TGA (1) - POR (1) - GEO (0.67) - CHI (0.5) - NAM (0.5)
+
+**DefendersBeaten**
+SCO (47.67) - NZL (36.67) - ARG (34.67) - IRE (31.67) - ITA (26.33) - FIJ (24.67) - GEO (24) - RSA (23.25) - CHI (23) - URU (22.33) - POR (22) - WAL (21.67) - ENG (21.33) - FRA (20.33) - AUS (19.5) - JPN (18.33) - SAM (17) - ROU (14) - TGA (13) - NAM (13)
+
+**DominantTackles**
+GEO (15) - RSA (14.75) - JPN (12) - FRA (11.33) - CHI (11) - ROU (10.33) - AUS (10.25) - ARG (9.67) - FIJ (9.33) - WAL (9.33) - IRE (9.33) - ITA (9.33) - NZL (9.33) - NAM (9.25) - SAM (8.67) - TGA (7.33) - SCO (7.33) - ENG (7.33) - URU (7) - POR (5.33)
+
+**DropGoals**
+ENG (1) - URU (0.33) - WAL (0.33)
+
+**FreeKickConceded**
+ENG (1.67) - POR (1.33) - WAL (1.33) - JPN (1.33) - ARG (1.33) - NZL (1.33) - SAM (1) - CHI (1) - ROU (1) - IRE (1) - RSA (0.75) - AUS (0.75) - TGA
+(0.67) - URU (0.67) - SCO (0.67) - GEO (0.67) - ITA (0.67) - FRA (0.67) - NAM (0.25)
+
+**FreeKickConcededAtLineout**
+ARG (0.67) - ENG (0.67) - SAM (0.33) - WAL (0.33) - SCO (0.33) - JPN (0.33) - GEO (0.33) - ITA (0.33) - CHI (0.25) - NAM (0.25)
+
+**FreeKickConcededAtScrum**
+POR (1.33) - WAL (1) - JPN (1) - ENG (1) - ROU (1) - IRE (1) - NZL (1) - RSA (0.75) - CHI (0.75) - AUS (0.75) - SAM (0.67) - URU (0.67) - ARG (0.67) - FRA (0.67) - TGA (0.33) - SCO (0.33) - GEO (0.33) - ITA (0.33)
+
+**Goals**
+IRE (7.67) - FRA (7.67) - NZL (7.33) - ENG (6.67) - SCO (6) - WAL (5.67) - ITA (5.67) - ARG (5.33) - JPN (5) - RSA (4.5) - SAM (4) - FIJ (4) - AUS (3.5) - GEO (3) - TGA (2.67) - URU (2.33) - POR (2) - NAM (2) - CHI (0.75) - ROU (0.33)
+
+**KickChargedDown**
+POR (1) - SAM (1) - SCO (1) - ENG (1) - ROU (1) - IRE (1) - FRA (1) - AUS (0.75) - TGA (0.67) - URU (0.67) - WAL (0.67) - JPN (0.67) - ARG (0.67) -
+GEO (0.67) - CHI (0.5) - NAM (0.5) - FIJ (0.33) - ITA (0.33) - NZL (0.33)
+
+**KickFromHandMetres**
+FRA (1105.33) - AUS (1015) - ENG (974.33) - NZL (952.67) - GEO (937.67) - POR (866) - WAL (814.33) - SCO (730) - JPN (730) - ITA (715.67) - ARG (699) - IRE (683) - NAM (655.75) - FIJ (627.67) - ROU (624) - URU (606.67) - SAM (604.67) - TGA (535) - RSA (502.5) - CHI (405.75)
+
+**KickInTouch**
+SAM (14.67) - AUS (14.5) - FIJ (14.33) - IRE (13.33) - RSA (13.25) - NZL (13) - FRA (13) - POR (12.67) - TGA (12.33) - ITA (12.33) - ENG (12) - GEO
+(12) - JPN (11.67) - URU (11.33) - NAM (11) - SCO (10.33) - CHI (9.75) - WAL (9.33) - ARG (9.33) - ROU (9)
+
+**KickOppnCollection**
+POR (17) - ENG (17) - FRA (17) - WAL (15.67) - GEO (15.67) - JPN (15) - NZL (15) - URU (14) - AUS (13.75) - SCO (13.67) - ARG (13.67) - IRE (12.67) - FIJ (11.67) - ITA (11.33) - NAM (11.25) - RSA (11) - ROU (11) - CHI (8.75) - SAM (8.67) - TGA (7)
+
+**KickOutOfPlay**
+TGA (1) - GEO (1) - JPN (0.67) - ROU (0.67) - IRE (0.67) - POR (0.33) - SAM (0.33) - FIJ (0.33) - WAL (0.33) - SCO (0.33) - ARG (0.33) - ENG (0.33) - ITA (0.33) - NZL (0.33) - FRA (0.33) - RSA (0.25) - CHI (0.25) - AUS (0.25) - NAM (0.25)
+
+**KickPenaltyBad**
+ROU (1) - CHI (0.75) - FIJ (0.67) - SCO (0.67) - ITA (0.67) - NZL (0.67) - AUS (0.5) - TGA (0.33) - SAM (0.33) - GEO (0.33) - FRA (0.33) - RSA (0.25)
+
+**KickPenaltyGood**
+IRE (10.33) - URU (9) - SAM (8.67) - FIJ (8.67) - RSA (8.25) - SCO (7.33) - ITA (7.33) - POR (7) - CHI (7) - ARG (7) - FRA (6.67) - TGA (6.33) - NAM (6.25) - ROU (6) - NZL (6) - JPN (5.67) - ENG (5.67) - AUS (5.5) - WAL (5.33) - GEO (5)
+
+**KickPercentSuccess**
+ITA (1) - IRE (0.97) - JPN (0.94) - SCO (0.9) - WAL (0.84) - ARG (0.83) - GEO (0.81) - FRA (0.81) - ENG (0.78) - AUS (0.78) - TGA (0.75) - NZL (0.66) - FIJ (0.65) - SAM (0.63) - POR (0.62) - NAM (0.58) - RSA (0.57) - URU (0.55) - CHI (0.38) - ROU (0.17)
+
+**KickPossessionLost**
+ENG (25.33) - FRA (24.67) - AUS (24.25) - NZL (23.33) - POR (23) - JPN (23) - GEO (23) - WAL (20) - FIJ (17.67) - SCO (17.67) - ITA (17.33) - RSA (17.25) - IRE (17) - NAM (16.75) - URU (16.67) - ARG (16.33) - SAM (16) - ROU (15) - TGA (13) - CHI (12)
+
+**KickPossessionRetained**
+ENG (9.33) - NZL (5) - FRA (5) - JPN (4.33) - WAL (4) - URU (3.67) - SAM (3) - AUS (2.75) - RSA (2.5) - CHI (2.5) - TGA (2.33) - GEO (2.33) - ROU (2.33) - FIJ (2) - ARG (2) - IRE (2) - POR (1.67) - NAM (1.25) - SCO (1) - ITA (1)
+
+**KickTouchInGoal**
+AUS (0.75) - ENG (0.67) - NAM (0.5) - SAM (0.33) - WAL (0.33) - SCO (0.33) - JPN (0.33) - GEO (0.33) - ITA (0.33) - NZL (0.33) - FRA (0.33)
+
+**KicksFromHand**
+ENG (36.67) - FRA (31.67) - NZL (29.67) - AUS (29) - JPN (28.67) - GEO (27.67) - POR (26.67) - WAL (25) - URU (21.33) - IRE (21) - FIJ (20.67) - SAM (20.33) - SCO (20.33) - RSA (20.25) - ARG (19.67) - NAM (19.25) - ROU (19) - ITA (19) - TGA (17) - CHI (15.5)
+
+**Lineout3Man**
+JPN (0.67) - SAM (0.33) - URU (0.33)
+
+**Lineout4Man**
+FIJ (3.33) - AUS (2.75) - RSA (1.5) - ROU (1.33) - NAM (1.25) - TGA (1) - CHI (1) - IRE (1) - NZL (1) - POR (0.67) - SCO (0.67) - ENG (0.67) - GEO (0.67) - URU (0.33) - JPN (0.33) - ARG (0.33) - ITA (0.33)
+
+**Lineout5Man**
+POR (3) - JPN (2.67) - SAM (2.33) - SCO (2.33) - NZL (2.33) - FRA (2.33) - CHI (2.25) - TGA (2) - GEO (2) - IRE (2) - NAM (2) - AUS (1.75) - ITA (1.33) - URU (1) - FIJ (1) - ROU (1) - ENG (0.67) - ARG (0.33) - RSA (0.25)
+
+**Lineout6Man**
+SAM (2.67) - WAL (2.67) - TGA (1.67) - CHI (1.5) - POR (1) - ENG (1) - RSA (0.75) - JPN (0.67) - ITA (0.67) - SCO (0.33) - NZL (0.33)
+
+**LineoutFull**
+AUS (5.75) - ARG (5.33) - IRE (5.33) - FRA (4.67) - FIJ (4.33) - SCO (4) - JPN (3.67) - NAM (3.5) - TGA (3.33) - URU (2.67) - ITA (2.67) - WAL (2.33) - SAM (2) - NZL (2) - RSA (1.75) - POR (1.67) - ENG (1.33) - ROU (1) - CHI (0.75)
+
+**LineoutSuccess**
+NZL (0.97) - ARG (0.91) - FRA (0.91) - POR (0.89) - RSA (0.89) - ENG (0.89) - URU (0.86) - WAL (0.85) - SCO (0.85) - AUS (0.85) - JPN (0.83) - GEO (0.83) - SAM (0.81) - ITA (0.8) - NAM (0.79) - FIJ (0.78) - IRE (0.75) - ROU (0.73) - CHI (0.7) - TGA (0.65)
+
+**LineoutThrowLostFreeKick**
+ARG (0.67) - SAM (0.33) - WAL (0.33) - SCO (0.33) - ENG (0.33) - ITA (0.33) - CHI (0.25) - NAM (0.25)
+
+**LineoutThrowLostHandlingError**
+FIJ (1.67) - WAL (1) - IRE (1) - NAM (1) - TGA (0.67) - POR (0.67) - SCO (0.67) - ROU (0.67) - FRA (0.67) - RSA (0.5) - SAM (0.33) - JPN (0.33) - ARG (0.33) - GEO (0.33) - CHI (0.25)
+
+**LineoutThrowLostNotStraight**
+TGA (0.67) - JPN (0.67) - ROU (0.67) - IRE (0.67) - FRA (0.67) - RSA (0.5) - NAM (0.5) - POR (0.33) - SAM (0.33) - URU (0.33) - FIJ (0.33) - SCO (0.33) - ENG (0.33) - GEO (0.33) - ITA (0.33) - CHI (0.25) - AUS (0.25)
+
+**LineoutThrowLostOutright**
+ROU (1.67) - IRE (1.67) - CHI (1.5) - TGA (1.33) - FIJ (1.33) - JPN (1.33) - GEO (1.33) - SAM (1) - URU (1) - SCO (1) - AUS (1) - ITA (1) - ENG (0.67) - NAM (0.5) - POR (0.33) - WAL (0.33) - NZL (0.33) - RSA (0.25)
+
+**LineoutThrowLostPenalty**
+AUS (0.25)
+
+**LineoutThrowWonClean**
+ARG (13.67) - IRE (13.33) - SCO (13) - FRA (12.67) - NZL (12) - WAL (11.67) - FIJ (11.33) - RSA (11) - JPN (10.67) - AUS (10.5) - ITA (10.33) - GEO
+(9.67) - POR (9.33) - SAM (9) - URU (9) - ENG (8) - NAM (8) - CHI (7) - ROU (7) - TGA (6.33)
+
+**LineoutThrowWonFreeKick**
+SAM (0.33) - JPN (0.33) - AUS (0.25)
+
+**LineoutThrowWonPenalty**
+SAM (0.67) - RSA (0.5) - NAM (0.5) - TGA (0.33) - FIJ (0.33) - WAL (0.33) - ROU (0.33) - ITA (0.33) - CHI (0.25)
+
+**LineoutThrowWonTap**
+POR (0.67) - FIJ (0.67) - ITA (0.67) - CHI (0.5) - TGA (0.33) - URU (0.33) - SCO (0.33) - ROU (0.33) - FRA (0.33) - AUS (0.25) - NAM (0.25)
+
+**LineoutWonOwnThrow**
+ARG (14.33) - SCO (14) - IRE (13.33) - FRA (13) - FIJ (12.33) - RSA (12.25) - WAL (12) - NZL (12) - ITA (11.67) - AUS (11.5) - POR (11.33) - URU (11) - JPN (11) - SAM (10.33) - GEO (9.67) - ENG (9) - NAM (9) - CHI (8.75) - ROU (8.33) - TGA (7.33)
+
+**LineoutWonSteal**
+JPN (2.67) - RSA (2.5) - POR (1.67) - NZL (1.67) - AUS (1.5) - SAM (1.33) - GEO (1.33) - FRA (1.33) - WAL (1) - SCO (1) - ENG (1) - ROU (1) - IRE (1) - TGA (0.67) - FIJ (0.67) - ARG (0.67) - URU (0.33) - ITA (0.33) - NAM (0.25)
+
+**LineoutsInfringeOpp**
+SAM (1) - RSA (0.5) - NAM (0.5) - TGA (0.33) - FIJ (0.33) - WAL (0.33) - JPN (0.33) - ROU (0.33) - ITA (0.33) - CHI (0.25) - AUS (0.25)
+
+**LineoutsInfringeOwn**
+ARG (0.67) - SAM (0.33) - WAL (0.33) - SCO (0.33) - ENG (0.33) - ITA (0.33) - CHI (0.25) - AUS (0.25) - NAM (0.25)
+
+**LineoutsLost**
+FIJ (4) - IRE (4) - CHI (3.5) - ROU (3.33) - TGA (3) - NAM (2.75) - SCO (2.67) - SAM (2.33) - JPN (2.33) - ITA (2.33) - URU (2) - WAL (2) - GEO (2) - AUS (2) - POR (1.67) - RSA (1.5) - ARG (1.33) - ENG (1.33) - FRA (1.33) - NZL (0.33)
+
+**LineoutsToOppPlayer**
+FIJ (4) - IRE (4) - CHI (3.5) - ROU (3.33) - TGA (3) - NAM (2.75) - SCO (2.67) - SAM (2.33) - JPN (2.33) - ITA (2.33) - URU (2) - WAL (2) - GEO (2) - AUS (2) - POR (1.67) - RSA (1.5) - ARG (1.33) - ENG (1.33) - FRA (1.33) - NZL (0.33)
+
+**LineoutsToOwnPlayer**
+SCO (15) - ARG (14.33) - POR (13.67) - IRE (13.67) - FIJ (13.33) - FRA (13.33) - RSA (12.75) - WAL (12) - AUS (12) - NZL (12) - JPN (11.67) - ITA (11.67) - URU (11) - SAM (10.67) - GEO (10.33) - NAM (9.5) - ENG (9) - CHI (8.75) - ROU (8.67) - TGA (7.33)
+
+**LineoutsWon**
+SCO (15) - ARG (14.33) - POR (13.67) - IRE (13.67) - FIJ (13.33) - FRA (13.33) - RSA (12.75) - WAL (12) - AUS (12) - NZL (12) - JPN (11.67) - ITA (11.67) - URU (11) - SAM (10.67) - GEO (10.33) - NAM (9.5) - ENG (9) - CHI (8.75) - ROU (8.67) - TGA (7.33)
+
+**MaulingMetres**
+ARG (32.67) - ENG (25.67) - SCO (24.33) - WAL (24) - SAM (23) - FRA (21.67) - URU (21) - NZL (21) - RSA (18) - AUS (17) - ITA (15.33) - FIJ (14) - GEO (11) - ROU (10.33) - CHI (9.75) - POR (8.67) - IRE (8.67) - NAM (2.75) - TGA (2.67) - JPN (2.67)
+
+**MaulsLost**
+ROU (1.67) - RSA (1.5) - URU (1) - JPN (1) - GEO (1) - ITA (1) - FRA (1) - CHI (0.75) - AUS (0.75) - NAM (0.75) - WAL (0.67) - ARG (0.67) - TGA (0.33) - POR (0.33) - NZL (0.33)
+
+**MaulsLostOutright**
+URU (0.33) - WAL (0.33) - JPN (0.33) - ARG (0.33) - ITA (0.33) - AUS (0.25)
+
+**MaulsLostTurnover**
+TGA (0.33) - URU (0.33) - NZL (0.33) - RSA (0.25)
+
+**MaulsTotal**
+RSA (8) - WAL (7.67) - ARG (7.33) - SCO (6.33) - FRA (6.33) - URU (5.67) - ROU (5.67) - ITA (5.33) - ENG (5) - GEO (5) - SAM (4.33) - IRE (4.33) - NZL (4) - AUS (3.75) - CHI (3.5) - FIJ (3.33) - NAM (3.25) - POR (3) - JPN (3) - TGA (1)
+
+**MaulsWon**
+WAL (7) - ARG (6.67) - RSA (6.5) - SCO (6.33) - FRA (5.33) - ENG (5) - URU (4.67) - SAM (4.33) - IRE (4.33) - ITA (4.33) - GEO (4) - ROU (4) - NZL (3.67) - FIJ (3.33) - AUS (3) - CHI (2.75) - POR (2.67) - NAM (2.5) - JPN (2) - TGA (0.67)
+
+**MaulsWonOutright**
+SCO (6) - ARG (5.33) - WAL (5) - IRE (4.33) - FRA (4.33) - RSA (4.25) - URU (4) - ITA (4) - ENG (3.67) - GEO (3.33) - ROU (3.33) - AUS (3) - NZL (3) - SAM (2.67) - FIJ (2.67) - CHI (2.5) - NAM (2.25) - POR (2) - JPN (1.33) - TGA (0.67)
+
+**MaulsWonPenalty**
+RSA (1.75) - WAL (1) - ARG (1) - ENG (1) - POR (0.67) - SAM (0.67) - FIJ (0.67) - FRA (0.67) - JPN (0.33) - GEO (0.33) - ROU (0.33) - ITA (0.33) - NZL (0.33)
+
+**MaulsWonPenaltyTry**
+URU (0.33) - FRA (0.33)
+
+**MaulsWonTry**
+SAM (1) - WAL (0.67) - RSA (0.5) - URU (0.33) - SCO (0.33) - JPN (0.33) - ARG (0.33) - ENG (0.33) - GEO (0.33) - NZL (0.33) - CHI (0.25)
+
+**MissedConversions**
+NZL (2) - RSA (1.5) - TGA (1) - SAM (1) - ENG (1) - AUS (1) - POR (0.67) - URU (0.67) - WAL (0.67) - SCO (0.67) - GEO (0.67) - FRA (0.67) - CHI (0.5) - FIJ (0.33) - JPN (0.33) - ROU (0.33) - IRE (0.33) - NAM (0.25)
+
+**MissedDropGoals**
+POR (0.33) - FIJ (0.33) - ARG (0.33) - GEO (0.33) - IRE (0.33) - ITA (0.33) - CHI (0.25)
+
+**MissedPenalties**
+FIJ (1.67) - RSA (1.5) - POR (1) - SAM (1) - ENG (1) - FRA (1) - URU (0.67) - WAL (0.67) - ARG (0.67) - ROU (0.33) - CHI (0.25) - AUS (0.25) - NAM (0.25)
+
+**MissedTackles**
+ROU (49) - NAM (38.25) - TGA (33) - JPN (27.33) - SAM (26.67) - CHI (26.25) - FIJ (24) - POR (22.33) - WAL (22.33) - AUS (22.25) - FRA (20.67) - GEO (20) - ITA (20) - RSA (19) - ENG (18.33) - URU (17.33) - IRE (15.33) - SCO (14.67) - ARG (14.67) - NZL (14)
+
+**Offload**
+SCO (14.67) - IRE (11.33) - FRA (10) - NZL (9.67) - SAM (9) - FIJ (9) - GEO (8.33) - POR (8) - ITA (8) - AUS (7.75) - WAL (7.67) - ARG (7) - RSA (6.75) - TGA (5.67) - ENG (5.67) - CHI (5.25) - JPN (4) - URU (3.33) - NAM (2.25) - ROU (1.33)
+
+**Opposition22EntryOutcomeTurnover**
+IRE (7.67) - SCO (6.33) - FIJ (5.67) - FRA (5.67) - NAM (5.5) - GEO (5.33) - ITA (5.33) - POR (4.67) - URU (4.33) - RSA (4) - ARG (4) - AUS (3.75) - ENG (3.67) - CHI (3.5) - SAM (3.33) - NZL (3.33) - WAL (3) - ROU (2.67) - TGA (1.67) - JPN (1.67)
+
+**Passes**
+SCO (212) - IRE (197.33) - NZL (178) - ITA (173.67) - POR (167) - ARG (159.67) - FIJ (156.33) - ENG (149) - GEO (132.67) - RSA (130.25) - WAL (128) - AUS (122.25) - SAM (121.33) - URU (117.33) - FRA (116) - JPN (114) - CHI (107.25) - NAM (106.75) - TGA (104.33) - ROU (77)
+
+**PcPossessionFirst**
+NZL (0.66) - ENG (0.62) - SCO (0.59) - IRE (0.57) - FIJ (0.56) - ARG (0.56) - AUS (0.55) - FRA (0.54) - RSA (0.51) - GEO (0.5) - SAM (0.49) - URU (0.48) - WAL (0.47) - TGA (0.45) - NAM (0.45) - CHI (0.44) - POR (0.41) - JPN (0.4) - ITA (0.4) - ROU (0.37)
+
+**PcPossessionSecond**
+IRE (0.6) - RSA (0.59) - ARG (0.58) - ITA (0.57) - POR (0.56) - FIJ (0.56) - URU (0.55) - ENG (0.54) - WAL (0.53) - SCO (0.49) - CHI (0.49) - NZL (0.49) - SAM (0.48) - FRA (0.48) - AUS (0.44) - GEO (0.43) - NAM (0.43) - JPN (0.41) - TGA (0.39) - ROU (0.39)
+
+**PcTerritoryFirst**
+ARG (0.62) - NZL (0.59) - FIJ (0.57) - ENG (0.57) - AUS (0.56) - IRE (0.56) - SCO (0.54) - SAM (0.53) - JPN (0.53) - TGA (0.52) - FRA (0.52) - RSA (0.5) - GEO (0.5) - NAM (0.5) - URU (0.48) - POR (0.43) - WAL (0.42) - ITA (0.41) - ROU (0.39) - CHI (0.31)
+
+**PcTerritorySecond**
+NAM (0.61) - SCO (0.58) - IRE (0.58) - ITA (0.57) - ARG (0.55) - FIJ (0.54) - ENG (0.53) - WAL (0.52) - CHI (0.51) - POR (0.5) - RSA (0.5) - JPN (0.5) - AUS (0.5) - URU (0.48) - ROU (0.47) - FRA (0.46) - GEO (0.44) - SAM (0.41) - TGA (0.36) - NZL (0.34)
+
+**Penalties**
+WAL (2.67) - ENG (2.67) - JPN (2.33) - GEO (2.33) - FRA (2.33) - SAM (2) - FIJ (2) - ARG (2) - AUS (1.75) - TGA (1.67) - NAM (1.5) - POR (1) - IRE (1) - ITA (1) - RSA (0.75) - URU (0.33) - SCO (0.33) - ROU (0.33) - NZL (0.33) - CHI (0.25)
+
+**PenaltiesConceded**
+ROU (13.33) - TGA (12.67) - CHI (12.5) - WAL (12.33) - NAM (12.25) - AUS (12) - URU (11.67) - GEO (11.67) - SAM (11.33) - ARG (11) - ITA (10.33) - NZL (10.33) - POR (9.67) - SCO (9.67) - IRE (9) - RSA (8.5) - FIJ (8) - ENG (8) - FRA (7.67) - JPN (7.33)
+
+**PenaltyConcededCollapsingMaul**
+ROU (1) - AUS (0.75) - CHI (0.5) - NAM (0.5) - POR (0.33) - FIJ (0.33) - GEO (0.33) - ITA (0.33) - NZL (0.33)
+
+**PenaltyConcededDelibKnockOn**
+SCO (0.67) - TGA (0.33) - FIJ (0.33) - JPN (0.33) - ROU (0.33) - RSA (0.25) - AUS (0.25)
+
+**PenaltyConcededDissent**
+GEO (0.67) - POR (0.33) - SAM (0.33) - SCO (0.33) - ENG (0.33) - ITA (0.33) - CHI (0.25)
+
+**PenaltyConcededEarlyTackle**
+CHI (0.75) - TGA (0.67) - SAM (0.67) - WAL (0.67) - AUS (0.5) - URU (0.33) - JPN (0.33) - ARG (0.33) - ENG (0.33) - GEO (0.33) - NZL (0.33)
+
+**PenaltyConcededFoulPlay**
+TGA (1.67) - POR (1) - NZL (1) - AUS (0.75) - WAL (0.67) - ARG (0.67) - ITA (0.67) - FRA (0.67) - RSA (0.5) - CHI (0.5) - NAM (0.5) - URU (0.33) - FIJ (0.33) - SCO (0.33) - ENG (0.33) - GEO (0.33) - IRE (0.33)
+
+**PenaltyConcededHandlingInRuck**
+SAM (0.67) - ITA (0.67) - NZL (0.67) - FRA (0.67) - URU (0.33) - ENG (0.33) - ROU (0.33)
+
+**PenaltyConcededHighTackle**
+FIJ (2) - WAL (1) - SCO (1) - GEO (1) - RSA (0.75) - NAM (0.75) - SAM (0.67) - ROU (0.67) - IRE (0.67) - FRA (0.67) - AUS (0.5) - TGA (0.33) - POR (0.33) - URU (0.33) - JPN (0.33) - ARG (0.33) - ENG (0.33) - ITA (0.33) - NZL (0.33) - CHI (0.25)
+
+**PenaltyConcededKillingRuck**
+ARG (5.33) - GEO (4.67) - ROU (4.67) - IRE (4.67) - NAM (4.5) - SAM (4.33) - ITA (4.33) - NZL (4.33) - CHI (4.25) - AUS (4.25) - TGA (4) - ENG (4) - WAL (3.67) - POR (3.33) - FIJ (3) - JPN (3) - FRA (2.67) - RSA (2.5) - SCO (2.33) - URU (2)
+
+**PenaltyConcededLineoutOffence**
+SCO (1) - ARG (0.67) - NZL (0.67) - AUS (0.5) - TGA (0.33) - URU (0.33) - JPN (0.33) - GEO (0.33)
+
+**PenaltyConcededObstruction**
+WAL (1) - URU (0.67) - SAM (0.33) - SCO (0.33) - GEO (0.33) - IRE (0.33) - ITA (0.33) - FRA (0.33) - NAM (0.25)
+
+**PenaltyConcededOffside**
+ROU (3.33) - URU (3) - CHI (2.5) - POR (2.33) - WAL (2.33) - TGA (2) - RSA (2) - AUS (1.75) - ENG (1.67) - GEO (1.67) - FIJ (1.33) - JPN (1.33) - ARG (1.33) - ITA (1.33) - SAM (1) - IRE (1) - NAM (1) - NZL (1) - FRA (0.67) - SCO (0.33)
+
+**PenaltyConcededOppHalf**
+ROU (7) - ARG (6.67) - GEO (6.33) - SCO (6) - TGA (5.67) - NAM (5.5) - SAM (5.33) - AUS (5) - CHI (4.75) - URU (4.33) - ENG (4.33) - IRE (4.33) - NZL (4.33) - WAL (4) - RSA (4) - ITA (4) - FRA (3.33) - JPN (3) - POR (2.33) - FIJ (2.33)
+
+**PenaltyConcededOther**
+SAM (0.67) - URU (0.67) - NZL (0.67) - RSA (0.5) - NAM (0.5) - TGA (0.33) - WAL (0.33) - ARG (0.33) - ROU (0.33) - IRE (0.33) - ITA (0.33) - FRA (0.33) - CHI (0.25) - AUS (0.25)
+
+**PenaltyConcededOwnHalf**
+WAL (8.33) - CHI (7.75) - POR (7.33) - URU (7.33) - TGA (7) - AUS (7) - NAM (6.75) - ROU (6.33) - ITA (6.33) - SAM (6) - NZL (6) - FIJ (5.67) - GEO
+(5.33) - IRE (4.67) - RSA (4.5) - JPN (4.33) - ARG (4.33) - FRA (4.33) - SCO (3.67) - ENG (3.67)
+
+**PenaltyConcededScrumOffence**
+NAM (3.5) - URU (3.33) - SCO (3) - CHI (2) - ARG (2) - ROU (2) - TGA (1.67) - POR (1.67) - SAM (1.67) - WAL (1.67) - GEO (1.67) - RSA (1.5) - AUS (1.5) - IRE (1.33) - FRA (1.33) - JPN (1) - ITA (1) - FIJ (0.67) - ENG (0.67) - NZL (0.67)
+
+**PenaltyConcededWrongSide**
+TGA (1.33) - CHI (1.25) - SAM (1) - WAL (1) - AUS (1) - NAM (0.75) - JPN (0.67) - ROU (0.67) - ITA (0.67) - RSA (0.5) - POR (0.33) - URU (0.33) - SCO (0.33) - GEO (0.33) - IRE (0.33) - NZL (0.33) - FRA (0.33)
+
+**PenaltyKickForTouchMetres**
+IRE (279) - RSA (247.25) - ITA (245.67) - FIJ (244) - SAM (223) - CHI (218) - URU (210.33) - TGA (209.67) - NZL (209.33) - FRA (206.67) - ROU (193.33) - SCO (190) - ARG (169.67) - POR (167) - ENG (160.67) - AUS (159.5) - NAM (144.5) - WAL (140.67) - GEO (124.67) - JPN (109)
+
+**PenaltyTries**
+URU (0.33) - FRA (0.33) - RSA (0.25)
+
+**Points**
+NZL (60) - IRE (51.33) - FRA (50) - SCO (44) - ENG (44) - RSA (37.75) - ITA (35.67) - WAL (33.33) - ARG (29.33) - JPN (27.33) - SAM (25) - AUS (22.5) - URU (21.67) - FIJ (21.67) - TGA (17) - GEO (15) - POR (13.33) - NAM (9.25) - CHI (6.75) - ROU (2.67)
+
+**Possession**
+IRE (0.59) - ENG (0.58) - ARG (0.57) - NZL (0.57) - FIJ (0.56) - RSA (0.55) - SCO (0.54) - URU (0.51) - FRA (0.51) - AUS (0.5) - POR (0.49) - SAM (0.49) - WAL (0.49) - ITA (0.49) - CHI (0.47) - GEO (0.47) - NAM (0.44) - TGA (0.42) - JPN (0.4) - ROU (0.38)
+
+**RedCards**
+NAM (0.5) - TGA (0.33) - POR (0.33) - SAM (0.33) - ENG (0.33) - NZL (0.33)
+
+**RestartErrorNotTen**
+URU (0.33)
+
+**RestartErrorOutOfPlay**
+SAM (0.33) - ROU (0.33) - NZL (0.33) - AUS (0.25) - NAM (0.25)
+
+**RestartHalfway**
+ROU (12.33) - NAM (10.25) - CHI (8) - TGA (7.33) - URU (6.67) - ITA (6.67) - AUS (6.25) - GEO (5.67) - SAM (5.33) - FIJ (5.33) - POR (5) - ARG (5) - JPN (4.33) - NZL (4.33) - WAL (3.67) - SCO (3.33) - IRE (3.33) - ENG (3) - RSA (2.75) - FRA (2.67)
+
+**RestartOppError**
+URU (1) - RSA (0.75) - CHI (0.75) - TGA (0.33) - SAM (0.33) - JPN (0.33) - ARG (0.33) - ENG (0.33) - ITA (0.33) - NZL (0.33) - AUS (0.25) - NAM (0.25)
+
+**RestartOppPlayer**
+ROU (11) - NAM (10) - CHI (7) - ITA (7) - TGA (6.67) - URU (6.33) - AUS (6.25) - ARG (5.67) - GEO (5.67) - POR (5) - SAM (5) - FIJ (5) - WAL (4.33) - JPN (4.33) - NZL (4.33) - IRE (4) - SCO (3.67) - ENG (3.33) - FRA (2.33) - RSA (2)
+
+**RestartOwnPlayer**
+FIJ (1) - ROU (1) - GEO (0.67) - TGA (0.33) - POR (0.33) - SAM (0.33) - ITA (0.33) - NZL (0.33) - FRA (0.33) - RSA (0.25) - CHI (0.25) - NAM (0.25)
+
+**RestartsLost**
+ROU (11.33) - NAM (10) - CHI (7) - ITA (7) - TGA (6.67) - URU (6.33) - AUS (6.25) - ARG (5.67) - GEO (5.67) - POR (5) - SAM (5) - FIJ (5) - WAL (4.33) - JPN (4.33) - NZL (4.33) - IRE (4) - SCO (3.67) - ENG (3.33) - FRA (2.33) - RSA (2)
+
+**RestartsSuccess**
+RSA (0.36) - SAM (0.16) - FIJ (0.15) - URU (0.11) - JPN (0.11) - GEO (0.11) - CHI (0.1) - TGA (0.08) - ROU (0.08) - FRA (0.08) - ENG (0.06) - NZL (0.06) - NAM (0.05) - ITA (0.05) - POR (0.04) - ARG (0.03) - AUS (0.02)
+
+**RestartsWon**
+URU (1) - FIJ (1) - RSA (1) - CHI (1) - ROU (1) - TGA (0.67) - SAM (0.67) - GEO (0.67) - ITA (0.67) - NZL (0.67) - NAM (0.5) - POR (0.33) - JPN (0.33) - ARG (0.33) - ENG (0.33) - FRA (0.33) - AUS (0.25)
+
+**RuckBehindGainline**
+POR (30.33) - CHI (30.25) - FIJ (26.33) - SCO (24) - ARG (22.67) - URU (20) - NAM (18.75) - WAL (18) - ENG (17) - SAM (16.33) - IRE (16.33) - TGA (15.67) - AUS (15.25) - ITA (15) - RSA (14.75) - GEO (14.67) - ROU (13.33) - JPN (13) - FRA (11.67) - NZL (11.33)
+
+**RuckOnGainline**
+IRE (20.67) - ENG (16.67) - CHI (14.5) - RSA (13.75) - FIJ (13.33) - ARG (13.33) - SCO (13) - GEO (13) - URU (12.67) - POR (12.33) - NZL (12.33) - TGA (12) - NAM (12) - ROU (11) - ITA (11) - WAL (10.67) - SAM (10) - AUS (10) - FRA (10) - JPN (8)
+
+**RuckOverGainline**
+FIJ (47.67) - ARG (46.67) - IRE (39.67) - AUS (39.25) - NZL (36) - ITA (35.33) - SCO (35) - RSA (34.5) - SAM (34.33) - WAL (34) - URU (32.67) - GEO
+(30.33) - JPN (30) - NAM (29.75) - ENG (28.67) - POR (28.33) - ROU (28.33) - TGA (28) - CHI (22.5) - FRA (19)
+
+**RuckOverGainlinePercent**
+AUS (0.52) - ARG (0.51) - NZL (0.5) - FIJ (0.49) - ITA (0.49) - RSA (0.48) - JPN (0.48) - ROU (0.48) - SAM (0.45) - WAL (0.45) - URU (0.44) - GEO (0.44) - IRE (0.44) - NAM (0.43) - TGA (0.41) - SCO (0.41) - FRA (0.37) - POR (0.35) - ENG (0.34) - CHI (0.28)
+
+**RuckSpeed03**
+ARG (56.67) - IRE (56) - FIJ (51.33) - SCO (47.67) - ENG (43.67) - ITA (43.67) - RSA (42.25) - AUS (41) - NZL (41) - SAM (40) - NAM (37.5) - POR (37) - CHI (37) - URU (36) - JPN (36) - GEO (32.67) - ROU (31.67) - TGA (27.33) - WAL (26) - FRA (25.67)
+
+**RuckSpeed36**
+POR (27) - FIJ (25.67) - WAL (25) - CHI (23.75) - AUS (22.5) - SCO (21.33) - URU (21) - NZL (19.67) - IRE (19) - NAM (19) - TGA (18.33) - SAM (18.33) - GEO (16.67) - ITA (16.67) - ENG (16.33) - ROU (16.33) - ARG (16) - RSA (15.75) - FRA (12.67) - JPN (12.33)
+
+**RuckSpeed6Plus**
+ENG (16) - WAL (12.67) - POR (12.33) - FIJ (12) - TGA (11.67) - GEO (9) - URU (8.33) - RSA (8) - CHI (7.75) - SAM (7.33) - AUS (7.25) - ARG (6.67) - FRA (6.33) - SCO (6) - JPN (6) - IRE (6) - NAM (5.75) - NZL (5) - ROU (3) - ITA (1.67)
+
+**RuckSuccess**
+POR (0.97) - FIJ (0.97) - ENG (0.97) - SAM (0.96) - URU (0.96) - SCO (0.96) - RSA (0.96) - JPN (0.96) - AUS (0.96) - IRE (0.96) - NZL (0.96) - WAL (0.95) - ARG (0.95) - NAM (0.95) - CHI (0.94) - FRA (0.94) - TGA (0.93) - GEO (0.92) - ITA (0.92) - ROU (0.91)
+
+**RucksLost**
+ITA (5.67) - GEO (5.33) - ROU (5.33) - TGA (5) - ARG (5) - CHI (4.5) - IRE (3.67) - SCO (3.33) - FRA (3.33) - WAL (3) - NAM (3) - NZL (3) - RSA (2.75) - AUS (2.75) - URU (2.67) - FIJ (2.67) - JPN (2.67) - SAM (2.33) - ENG (2.33) - POR (2)
+
+**RucksTotal**
+FIJ (98.67) - ARG (91.33) - IRE (89.33) - SCO (82.67) - POR (81.33) - ENG (81.33) - CHI (78.25) - AUS (76) - SAM (73.33) - URU (73.33) - RSA (72) -
+ITA (72) - NZL (72) - WAL (71.33) - NAM (70) - TGA (68) - GEO (67.33) - JPN (61.67) - ROU (58.67) - FRA (51.33)
+
+**RucksWon**
+FIJ (96) - ARG (86.33) - IRE (85.67) - POR (79.33) - SCO (79.33) - ENG (79) - CHI (73.75) - AUS (73.25) - SAM (71) - URU (70.67) - RSA (69.25) - NZL (69) - WAL (68.33) - NAM (67) - ITA (66.33) - TGA (63) - GEO (62) - JPN (59) - ROU (53.33) - FRA (48)
+
+**Runs**
+SCO (143.33) - FIJ (137.67) - IRE (129.67) - ARG (127.67) - NZL (122) - POR (120.67) - ITA (117.33) - ENG (114) - FRA (111) - AUS (110.75) - WAL (110) - RSA (108) - GEO (108) - URU (103) - CHI (102.25) - SAM (100) - TGA (98.33) - NAM (92) - JPN (83.67) - ROU (78)
+
+**ScrumsLost**
+SCO (1.67) - POR (1.33) - URU (1.33) - ITA (1.33) - RSA (1) - ARG (1) - FRA (1) - AUS (0.75) - NAM (0.75) - TGA (0.67) - JPN (0.67) - ENG (0.67) - GEO (0.67) - ROU (0.67) - NZL (0.67) - CHI (0.5) - SAM (0.33) - WAL (0.33) - IRE (0.33)
+
+**ScrumsLostFreeKick**
+ROU (0.67) - TGA (0.33) - POR (0.33) - URU (0.33) - WAL (0.33) - JPN (0.33) - ENG (0.33) - ITA (0.33) - NZL (0.33) - FRA (0.33)
+
+**ScrumsLostOutright**
+POR (0.33) - ITA (0.33) - AUS (0.25) - NAM (0.25)
+
+**ScrumsLostPenalty**
+SCO (1.67) - URU (1) - RSA (1) - ARG (1) - POR (0.67) - GEO (0.67) - ITA (0.67) - FRA (0.67) - CHI (0.5) - AUS (0.5) - NAM (0.5) - TGA (0.33) - SAM
+(0.33) - JPN (0.33) - ENG (0.33) - IRE (0.33) - NZL (0.33)
+
+**ScrumsReset**
+FIJ (3.67) - ITA (1.67) - SCO (1.33) - ENG (1.33) - SAM (1) - WAL (1) - JPN (1) - RSA (0.75) - TGA (0.67) - URU (0.67) - ROU (0.67) - IRE (0.67) - NZL (0.67) - FRA (0.67) - CHI (0.5) - POR (0.33) - AUS (0.25) - NAM (0.25)
+
+**ScrumsSuccess**
+GEO (0.92) - TGA (0.88) - IRE (0.87) - SAM (0.85) - AUS (0.85) - NAM (0.85) - JPN (0.84) - WAL (0.83) - FRA (0.83) - ENG (0.81) - ROU (0.8) - POR (0.79) - NZL (0.79) - CHI (0.76) - URU (0.74) - RSA (0.74) - ARG (0.74) - FIJ (0.68) - ITA (0.67) - SCO (0.61)
+
+**ScrumsTotal**
+FIJ (11.33) - JPN (10.33) - ENG (10.33) - TGA (9.33) - WAL (8.67) - ITA (8.67) - URU (8.33) - SCO (8) - SAM (7.67) - FRA (7.67) - POR (7.33) - GEO (7.33) - ROU (7.33) - RSA (7.25) - IRE (7) - AUS (6.5) - NZL (6.33) - NAM (6.25) - ARG (6) - CHI (4.5)
+
+**ScrumsWon**
+JPN (8.67) - ENG (8.33) - TGA (8) - FIJ (7.67) - WAL (7.33) - GEO (6.67) - SAM (6.33) - URU (6.33) - ROU (6) - IRE (6) - FRA (6) - POR (5.67) - ITA
+(5.67) - RSA (5.5) - AUS (5.5) - NAM (5.25) - SCO (5) - ARG (5) - NZL (5) - CHI (3.5)
+
+**ScrumsWonFreeKick**
+POR (1.33) - SAM (1) - WAL (1) - JPN (1) - CHI (0.75) - SCO (0.67) - ENG (0.67) - ROU (0.67) - IRE (0.67) - FRA (0.67) - TGA (0.33) - FIJ (0.33) - GEO (0.33) - ITA (0.33) - NZL (0.33) - RSA (0.25)
+
+**ScrumsWonOutright**
+TGA (7) - JPN (7) - ENG (6.33) - FIJ (5.67) - GEO (5.33) - NAM (5.25) - WAL (5) - ROU (4.67) - AUS (4.5) - SAM (4.33) - POR (4) - URU (4) - RSA (4) - NZL (4) - SCO (3.33) - ARG (3.33) - IRE (3) - ITA (3) - FRA (3) - CHI (2.25)
+
+**ScrumsWonPenalty**
+URU (2.33) - IRE (2.33) - ITA (2.33) - FRA (2.33) - FIJ (1.67) - ARG (1.67) - WAL (1.33) - ENG (1.33) - SAM (1) - SCO (1) - RSA (1) - GEO (1) - AUS
+(1) - TGA (0.67) - JPN (0.67) - ROU (0.67) - NZL (0.67) - CHI (0.5) - POR (0.33)
+
+**ScrumsWonPenaltyTry**
+RSA (0.25)
+
+**SetPieceWon**
+FIJ (21) - JPN (20.33) - SCO (20) - IRE (19.67) - POR (19.33) - WAL (19.33) - ARG (19.33) - FRA (19.33) - RSA (18.25) - AUS (17.5) - URU (17.33) - ENG (17.33) - ITA (17.33) - SAM (17) - GEO (17) - NZL (17) - TGA (15.33) - NAM (14.75) - ROU (14.67) - CHI (12.25)
+
+**TackleOffloadAllowed**
+ROU (28.67) - JPN (19.33) - POR (18) - GEO (17) - WAL (15.33) - NAM (13.5) - AUS (13.25) - TGA (12) - FIJ (12) - ENG (11.33) - CHI (11.25) - URU (10.67) - ITA (10.33) - RSA (9.25) - SAM (9) - SCO (9) - NZL (8.67) - IRE (6) - FRA (5.67) - ARG (3.33)
+
+**TacklePenaltyConceded**
+RSA (2.75) - FIJ (2.67) - NZL (2.67) - NAM (2.25) - POR (2) - SAM (2) - WAL (2) - GEO (2) - AUS (2) - TGA (1.67) - SCO (1.67) - ENG (1.67) - IRE (1.67) - ITA (1.67) - FRA (1.67) - CHI (1.5) - URU (1) - ROU (1) - JPN (0.67) - ARG (0.67)
+
+**TackleSuccess**
+ARG (0.83) - SCO (0.81) - IRE (0.81) - FRA (0.81) - WAL (0.8) - RSA (0.8) - GEO (0.8) - ITA (0.79) - ENG (0.78) - NZL (0.78) - JPN (0.77) - URU (0.76) - CHI (0.76) - TGA (0.75) - POR (0.75) - SAM (0.74) - AUS (0.73) - FIJ (0.71) - ROU (0.64) - NAM (0.63)
+
+**TackleTrySaver**
+ROU (2.67) - TGA (2) - WAL (1.33) - POR (1) - SCO (1) - ENG (1) - AUS (1) - CHI (0.75) - URU (0.67)
+
+**TackleTurnover**
+SCO (5.33) - WAL (4.33) - JPN (4.33) - FRA (4.33) - POR (4) - SAM (4) - GEO (3.67) - ROU (3.67) - NAM (3.5) - FIJ (3.33) - AUS (3) - ITA (3) - NZL (2.67) - RSA (2.25) - URU (2) - CHI (2) - ENG (2) - TGA (1.67) - ARG (1.67) - IRE (1.67)
+
+**Tackles**
+WAL (168.67) - JPN (168.67) - GEO (162) - TGA (156.67) - ROU (145.67) - POR (140.33) - CHI (132.25) - ITA (130.33) - RSA (124.5) - SCO (117.33) - FRA (117.33) - SAM (111.33) - ENG (111) - AUS (108.25) - URU (105.33) - NAM (102) - FIJ (98) - IRE (94) - NZL (89.67) - ARG (88)
+
+**Territory**
+ARG (0.58) - IRE (0.57) - SCO (0.56) - NAM (0.56) - FIJ (0.55) - ENG (0.55) - AUS (0.53) - JPN (0.51) - RSA (0.5) - ITA (0.5) - FRA (0.49) - URU (0.48) - POR (0.47) - SAM (0.47) - GEO (0.47) - WAL (0.46) - NZL (0.46) - TGA (0.44) - ROU (0.43) - CHI (0.41)
+
+**TerritoryLast10Mins**
+FIJ (0.69) - ITA (0.69) - IRE (0.67) - SCO (0.65) - NAM (0.63) - ARG (0.62) - AUS (0.61) - ENG (0.51) - SAM (0.5) - RSA (0.49) - JPN (0.47) - GEO (0.47) - URU (0.45) - ROU (0.45) - CHI (0.43) - WAL (0.39) - FRA (0.36) - NZL (0.34) - POR (0.3) - TGA (0.24)
+
+**TotalKicks**
+ENG (36.67) - FRA (31.67) - NZL (29.67) - AUS (29) - JPN (28.67) - GEO (27.67) - POR (26.67) - WAL (25) - URU (21.33) - IRE (21) - FIJ (20.67) - SAM (20.33) - SCO (20.33) - RSA (20.25) - ARG (19.67) - NAM (19.25) - ROU (19) - ITA (19) - TGA (17) - CHI (15.5)
+
+**TotalKicksSucceeded**
+ENG (34.67) - FRA (29.67) - NZL (28.33) - JPN (27.33) - AUS (27) - GEO (25.33) - POR (24.67) - WAL (24) - URU (20.33) - RSA (19.75) - FIJ (19.67) -
+SAM (19) - IRE (19) - SCO (18.67) - ARG (18.33) - ITA (18.33) - NAM (18) - ROU (17.33) - TGA (15.33) - CHI (14.5)
+
+**TotalLineouts**
+SCO (17.67) - IRE (17.67) - FIJ (17.33) - ARG (15.67) - POR (15.33) - FRA (14.67) - RSA (14.25) - WAL (14) - JPN (14) - AUS (14) - ITA (14) - SAM (13) - URU (13) - GEO (12.33) - NZL (12.33) - CHI (12.25) - NAM (12.25) - ROU (12) - TGA (10.33) - ENG (10.33)
+
+**Tries**
+NZL (9) - IRE (7) - SCO (6.33) - FRA (6.33) - RSA (5.5) - ENG (5) - ITA (4.67) - WAL (3.67) - ARG (3.33) - SAM (3) - URU (3) - JPN (3) - AUS (2.75) - FIJ (2.33) - TGA (2) - POR (1.67) - GEO (1.33) - CHI (1) - NAM (0.75) - ROU (0.33)
+
+**TryAssists**
+NZL (8) - IRE (6) - FRA (5.67) - SCO (5.33) - ITA (4.33) - RSA (3.25) - ENG (3) - ARG (2.33) - URU (2) - FIJ (2) - JPN (2) - AUS (2) - SAM (1.67) -
+TGA (1.33) - POR (1.33) - WAL (1.33) - GEO (0.67) - NAM (0.5) - ROU (0.33)
+
+**TryKicks**
+NZL (1) - FRA (1) - URU (0.67) - FIJ (0.33) - WAL (0.33) - ENG (0.33) - RSA (0.25)
+
+**TurnoverBadPass**
+FIJ (2) - FRA (1.67) - AUS (1.5) - SAM (1.33) - ENG (1.33) - GEO (1.33) - NZL (1.33) - POR (1) - URU (1) - WAL (1) - RSA (1) - JPN (1) - NAM (1) - ITA (1) - CHI (0.75) - ARG (0.67) - TGA (0.33) - SCO (0.33) - ROU (0.33) - IRE (0.33)
+
+**TurnoverCarriedInTouch**
+RSA (3.75) - NAM (2.75) - ENG (2.67) - GEO (2.67) - POR (2.33) - TGA (2) - CHI (2) - JPN (2) - IRE (2) - WAL (1.67) - ROU (1.33) - NZL (1.33) - AUS
+(1.25) - SAM (1) - FIJ (1) - URU (0.67) - SCO (0.67) - FRA (0.67) - ARG (0.33) - ITA (0.33)
+
+**TurnoverCarriedOver**
+ARG (1) - CHI (0.5) - TGA (0.33) - URU (0.33) - JPN (0.33) - GEO (0.33) - IRE (0.33) - RSA (0.25) - AUS (0.25) - NAM (0.25)
+
+**TurnoverForwardPass**
+GEO (1) - NZL (1) - RSA (0.75) - SAM (0.67) - URU (0.67) - WAL (0.67) - SCO (0.67) - CHI (0.5) - TGA (0.33) - POR (0.33) - FIJ (0.33) - ARG (0.33) - ENG (0.33) - ITA (0.33) - AUS (0.25)
+
+**TurnoverKickError**
+ROU (2.33) - AUS (2.25) - GEO (2) - NZL (2) - ITA (1.67) - FRA (1.67) - NAM (1.5) - TGA (1.33) - POR (1.33) - SAM (1.33) - FIJ (1.33) - SCO (1.33) - CHI (1.25) - JPN (1) - ENG (1) - IRE (1) - RSA (0.75) - URU (0.67) - ARG (0.67) - WAL (0.33)
+
+**TurnoverLostInRuckOrMaul**
+GEO (3.33) - ROU (3.33) - ITA (3.33) - RSA (3.25) - CHI (2.75) - FRA (2.67) - TGA (2) - URU (2) - ARG (2) - JPN (1.67) - SCO (1.33) - IRE (1.33) - AUS (1.25) - NAM (1.25) - WAL (1) - ENG (1) - SAM (0.67) - NZL (0.67) - POR (0.33) - FIJ (0.33)
+
+**TurnoverOppHalf**
+FIJ (11.33) - RSA (10.5) - GEO (10) - SCO (9.67) - POR (9.33) - NAM (9.25) - SAM (9) - ENG (9) - AUS (9) - IRE (9) - ITA (9) - FRA (8.67) - CHI (8.5) - WAL (8) - URU (7.67) - ARG (7.67) - ROU (7) - TGA (6.33) - NZL (6.33) - JPN (6)
+
+**TurnoverOwnHalf**
+CHI (8.5) - JPN (7.67) - ARG (7.33) - ROU (7.33) - ITA (7.33) - NZL (6.67) - RSA (6.5) - FIJ (6.33) - GEO (6.33) - TGA (6) - URU (5.67) - IRE (5.67) - FRA (5.67) - POR (5.33) - SAM (5.33) - SCO (5.33) - AUS (4.5) - WAL (4.33) - NAM (4.25) - ENG (2.67)
+
+**TurnoversWon**
+FIJ (8.33) - SAM (8) - SCO (7.67) - POR (7) - URU (7) - JPN (7) - FRA (7) - RSA (6.75) - WAL (6.67) - IRE (6.67) - TGA (5.67) - CHI (5.5) - AUS (5.5) - NAM (5.5) - GEO (5.33) - ROU (5.33) - NZL (5.33) - ITA (5) - ENG (4.67) - ARG (3.67)
+
+**YellowCards**
+SAM (1.33) - ROU (1.33) - CHI (1.25) - FIJ (1) - NAM (1) - POR (0.67) - URU (0.67) - WAL (0.67) - JPN (0.67) - ARG (0.67) - ITA (0.67) - AUS (0.5) - TGA (0.33) - GEO (0.33) - IRE (0.33) - NZL (0.33) - FRA (0.33)
+
 ### Average per match - up until end of round 3
 
 **AttackingEventsZoneA**  
