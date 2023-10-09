@@ -21,8 +21,9 @@ export const positionToInt = (p) => {
   }
 };
 
-const ROUND = 4;
+export const getPlayerTotalScore = (p: (typeof players)[number]) =>
+  p.stats.totalPoints;
 
-export const getPlayerScore = (p: (typeof players)[number]) =>
-  //p.stats.totalPoints;
-  p.stats.scores?.[ROUND];
+export const getPlayerScoreForRound =
+  (round: number) => (p: (typeof players)[number]) =>
+    p.stats.scores?.[round];

@@ -1,9 +1,10 @@
 import allPlayers from '../data/players';
-import { getPlayerScore, positionToInt } from './params';
+import { getPlayerScoreForRound, positionToInt } from './params';
 
 const MAX_PER_TEAM = 3;
 
-const getDzn = () => {
+const getDzn = (round = 1) => {
+  const getPlayerScore = getPlayerScoreForRound(round);
   const players = allPlayers.filter((p) => getPlayerScore(p) !== undefined);
   //const players = players1.filter((p) => p.squadId !== 14); // No scots
   //const players = players1.filter((p) => p.cost <= 7000000); // No star

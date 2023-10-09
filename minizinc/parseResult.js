@@ -1,32 +1,36 @@
 import players from '../data/players';
 import squads from '../data/squads';
-import { getPlayerScore } from './params';
+import { getPlayerScoreForRound } from './params';
 
-const parseResult = ({ teamIds, captainId }) => {
+const parseResult = ({ teamIds, captainId, round }) => {
+  const getPlayerScore = getPlayerScoreForRound(round);
   const team = teamIds.map((id) => players.find((p) => p.id === id));
   const captain = players.find((p) => p.id === captainId);
   team.sort((p1, p2) => positionToInt(p1) - positionToInt(p2));
   team.splice(2, 0, team.splice(1, 1)[0]);
   team.splice(11, 0, team.splice(14, 1)[0]);
   team.splice(11, 0, team.splice(14, 1)[0]);
-  team.map((p, i) => {
-    console.log(
-      `${i + 1}. ${p === captain ? '(c)' : ''} ${p.lastName} ${p.firstName} (${
-        squads.find((s) => p.squadId === s.id)?.abbreviation
-      } - ${p.cost / 1000000}) - ${getPlayerScore(p) ?? 'N/A'}\\`
-    );
+  const teamOutput = team.map((p, i) => {
+    return `${i + 1}. ${p === captain ? '(c)' : ''} ${p.firstName} ${
+      p.lastName
+    }  (${squads.find((s) => p.squadId === s.id)?.abbreviation} - ${
+      p.cost / 1000000
+    }) - ${getPlayerScore(p) ?? 'N/A'}\\`;
   });
 
-  console.log('');
-  console.log(
-    'Points : ',
-    team.reduce(
-      (total, p) => total + (getPlayerScore(p) || 0),
-      getPlayerScore(captain)
-    ),
-    ' - Cost: ',
-    team.reduce((total, p) => total + p.cost, 0) / 1000000
+  const teamPoints = team.reduce(
+    (total, p) => total + (getPlayerScore(p) || 0),
+    getPlayerScore(captain)
   );
+
+  const teamCost = team.reduce((total, p) => total + p.cost, 0) / 1000000;
+
+  return {
+    team,
+    teamOutput,
+    points: teamPoints,
+    cost: teamCost,
+  };
 };
 
 const positionToInt = (p) => {
