@@ -34,6 +34,11 @@ const getTeamStats = () => {
     {}
   );
 
+  const teamSet = Object.keys(statsAggrPerTeam).reduce((teams, teamId) => {
+    teams.add(teamId);
+    return teams;
+  }, new Set());
+
   const statsMap = Object.entries(statsAggrPerTeam).reduce(
     (stats, [teamId, teamStats]) => {
       Object.entries(teamStats).forEach(([name, value]) => {
@@ -51,9 +56,18 @@ const getTeamStats = () => {
     return statsTypes[name].type !== 'ignore';
   });
 
-  return sortBy(filteredStats, ([n1]) => n1).map(([name, stats]) => {
+  const statsAllTeams = filteredStats.map(([name, teamEntries]) => {
+    teamSet.forEach((teamId) => {
+      if (!teamEntries.some((entry) => entry.teamId === teamId)) {
+        teamEntries.push({ teamId, value: 0 });
+      }
+    });
+    return [name, teamEntries];
+  });
+
+  return sortBy(statsAllTeams, ([n1]) => n1).map(([name, stats]) => {
     const sorted = sortBy(stats, (stat) => stat.value).reverse();
-    return { name, stats: sorted };
+    return { name, stats: sorted, type: statsTypes[name].type };
   });
 };
 

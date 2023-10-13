@@ -99,8 +99,8 @@ export default {
   LineoutsInfringeOpp: { name: 'LineoutsInfringeOpp', type: 'negative' },
   LineoutsInfringeOwn: { name: 'LineoutsInfringeOwn', type: 'negative' },
   LineoutsLost: { name: 'LineoutsLost', type: 'negative' },
-  LineoutsToOppPlayer: { name: 'LineoutsToOppPlayer', type: 'negative' },
-  LineoutsToOwnPlayer: { name: 'LineoutsToOwnPlayer', type: 'positive' },
+  LineoutsToOppPlayer: { name: 'LineoutsToOppPlayer', type: 'ignore' },
+  LineoutsToOwnPlayer: { name: 'LineoutsToOwnPlayer', type: 'ignore' },
   LineoutsWon: { name: 'LineoutsWon', type: 'positive' },
   LineoutThrowLostPenalty: {
     name: 'LineoutThrowLostPenalty',
@@ -183,6 +183,10 @@ export default {
     name: 'PenaltyConcededScrumOffence',
     type: 'negative',
   },
+  PenaltyConcededStamping: {
+    name: 'PenaltyConcededStamping',
+    type: 'negative',
+  },
   PenaltyConcededWrongSide: {
     name: 'PenaltyConcededWrongSide',
     type: 'negative',
@@ -242,7 +246,7 @@ export default {
   Territory: { name: 'Territory', type: 'positive' },
   TerritoryLast10Mins: { name: 'TerritoryLast10Mins', type: 'positive' },
   TotalFreeKicksConceded: { name: 'TotalFreeKicksConceded', type: 'ignore' },
-  TotalKicks: { name: 'TotalKicks', type: 'positive' },
+  TotalKicks: { name: 'TotalKicks', type: 'ignore' },
   TotalKicksSucceeded: { name: 'TotalKicksSucceeded', type: 'positive' },
   TotalLineouts: { name: 'TotalLineouts', type: 'positive' },
   Tries: { name: 'Tries', type: 'positive' },
