@@ -24,7 +24,7 @@ const main = async () => {
 `;
 
   teamStats.forEach(({ name, type, stats }) => {
-    output += `**${name}** ${type === 'positive' ? '👍' : '👎'} 
+    output += `**${name}** ${type === 'positive' ? '👍' : '👎'}  
     `;
     const list = stats
       .map((stat) => {
