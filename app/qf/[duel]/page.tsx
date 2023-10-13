@@ -16,7 +16,10 @@ const Match = async ({ params: { duel } }: { params: { duel: string } }) => {
       </h1>
       {statRanks.map(({ name, stats }) => (
         <div key={name} className="my-3">
-          <h4 className="font-semibold">{name}</h4>
+          <div id={name} className="invisible relative -top-14" />
+          <a className="font-semibold" href={`#${name}`}>
+            {name}
+          </a>
           <DuelChart
             team1Name={team1Name}
             team2Name={team2Name}
