@@ -1,4 +1,4 @@
-import { sortBy } from 'lodash';
+import { max, maxBy, minBy, sortBy } from 'lodash';
 import getTeamStats from './getTeamStats';
 import statsTypes from './statsTypes';
 
@@ -21,6 +21,8 @@ const getTeamDuelStats = ({ team1Name, team2Name }) => {
     const sameValue2 = stats.filter(
       (stat) => (stat?.value ?? 0) == (stat2?.value ?? 0)
     ).length;
+    const statHighest = maxBy(stats, ({ value }) => value);
+    const statLowest = minBy(stats, ({ value }) => value);
 
     const statRank = {
       name,
@@ -35,6 +37,8 @@ const getTeamDuelStats = ({ team1Name, team2Name }) => {
           value: stat2?.value ?? 0,
           sameValue: sameValue2,
         },
+        statHighest,
+        statLowest,
       ],
     };
 
