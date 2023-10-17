@@ -32,7 +32,7 @@ array[1..15] of var Players: team;
 constraint forall (i in index_set(team)) (position[team[i]] = team_position[i]);
 
 % Maximum cost (for low cost use 750)
-constraint sum (p in team) (cost[p]) <= 1000;
+constraint sum (p in team) (cost[p]) <= 1150;
 
 % Don't pick the same player more than once
 constraint alldifferent (team);

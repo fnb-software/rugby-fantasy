@@ -4,11 +4,12 @@ import statsTypes from './statsTypes';
 
 const getPlayerStats = () => {
   const playersByMatch = flatMapDeep(matches, (m) =>
-    m.teamStats.map((ts) =>
+    m.teamStats.map((ts, teamIndex) =>
       ts.playerStats.map((ps) => ({
         ...ps,
         matchId: m.match.matchId,
         matchDescription: m.match.description,
+        teamId: m.match.teams[teamIndex].abbreviation,
       }))
     )
   );
@@ -42,8 +43,8 @@ const getPlayerStats = () => {
     playersByMatch,
     playersAggr: Object.entries(statsAggrPerPlayer).map(
       ([playerId, stats]) => ({
+        ...playersByMatch.find((p) => p.player.id === playerId),
         stats,
-        player: playersByMatch.find((p) => p.player.id === playerId).player,
       })
     ),
   };

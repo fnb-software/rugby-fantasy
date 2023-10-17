@@ -1,10 +1,65 @@
 import { flatMap, flatMapDeep, sortBy } from 'lodash';
-import matches from '../data/matches';
 import players from '../data/players';
 import getPlayerStats from './getPlayerStats';
 
+const teamsToHighlight = [
+  'WAL',
+  'ARG',
+  'IRE',
+  'NZL',
+  'ENG',
+  'FIJ',
+  'FRA',
+  'RSA',
+];
+
 const main = async () => {
-  const { playersByMatch, playersAggr } = getPlayerStats();
+  const { playersByMatch: allPlayersByMatch, playersAggr: allPlayersAggr } =
+    getPlayerStats();
+
+  const playersByMatch = allPlayersByMatch.filter((p) =>
+    teamsToHighlight.includes(p.teamId)
+  );
+
+  const normalize = (s) =>
+    s
+      .normalize('NFD')
+      .replace(/[\u0300-\u036f]/g, '')
+      .replace("'", '')
+      .toLowerCase();
+
+  const getFantasyPlayer = (p) => {
+    const fantasyPlayer = players.find(
+      (fantasyPlayer) =>
+        normalize(fantasyPlayer.firstName + ' ' + fantasyPlayer.lastName) ===
+          normalize(
+            p.player.name.first.known + ' ' + p.player.name.last.known
+          ) ||
+        (fantasyPlayer.lastName === 'Whitelock' &&
+          p.player.name.last.known === fantasyPlayer.lastName) ||
+        (fantasyPlayer.lastName === 'Mbonambi' &&
+          p.player.name.last.known === fantasyPlayer.lastName) ||
+        (fantasyPlayer.lastName === 'Matavesi' &&
+          p.player.name.last.known === fantasyPlayer.lastName) ||
+        (fantasyPlayer.lastName === 'Derenalagi' &&
+          p.player.name.last.known === fantasyPlayer.lastName) ||
+        (fantasyPlayer.lastName === 'Ravutaumada' &&
+          p.player.name.last.known === fantasyPlayer.lastName) ||
+        (fantasyPlayer.lastName === 'Meli Derenalagi' &&
+          p.player.name.last.known === 'Derenalagi')
+    );
+    if (!fantasyPlayer) {
+      console.log({ fantasyPlayer, playerName: p.player.name });
+    }
+    return fantasyPlayer;
+  };
+
+  const playersAggr = allPlayersAggr
+    .filter((p) => teamsToHighlight.includes(p.teamId))
+    .map((playerAggr) => ({
+      ...playerAggr,
+      fantasyPlayer: getFantasyPlayer(playerAggr),
+    }));
 
   const getKickerScore = (p) =>
     2 * (p.stats.Conversions || 0) +
@@ -43,6 +98,57 @@ const main = async () => {
     );
   });
 
+  const getLineoutBeast = (p) =>
+    5 * (p.stats.LineoutWonOppThrow || 0) +
+    1 * (p.stats.LineoutWonOwnThrow || 0);
+  const lineoutStealers = sortBy(playersByMatch, getLineoutBeast)
+    .slice(-5)
+    .reverse();
+  lineoutStealers.map((defensiveKing, i) => {
+    console.log(
+      `LineoutBeast ${i + 1}: ${
+        defensiveKing.player.name.display
+      } scored ${getLineoutBeast(defensiveKing)} lineout points in ${
+        defensiveKing.matchDescription
+      }`
+    );
+  });
+
+  const getPlayerScoreBy80Minutes = (p) =>
+    p.stats.MinutesPlayedTotal / p.stats.MatchesPlayed > 30
+      ? Math.round(
+          (p.fantasyPlayer.stats.totalPoints / p.stats.MinutesPlayedTotal) *
+            80 *
+            1000
+        ) / 1000
+      : 0;
+  [
+    'prop',
+    'hooker',
+    'lock',
+    'loose_forward',
+    'scrum_half',
+    'fly_half',
+    'center',
+    'outside_back',
+  ].forEach((position) => {
+    const props = sortBy(
+      playersAggr.filter((p) => p.fantasyPlayer?.position[0] === position),
+      getPlayerScoreBy80Minutes
+    )
+      .slice(-15)
+      .reverse();
+    props.map((defensiveKing, i) => {
+      console.log(
+        `${position} Score ${i + 1}: ${
+          defensiveKing.player.name.display
+        } scores avg ${getPlayerScoreBy80Minutes(defensiveKing)} per 80min (${
+          defensiveKing.stats.MinutesPlayedTotal
+        }min in ${defensiveKing.stats.MatchesPlayed} matches)`
+      );
+    });
+  });
+
   const getDefenderScoreBy80Minutes = (p) =>
     p.stats.MinutesPlayedTotal / p.stats.MatchesPlayed > 30
       ? Math.round(
@@ -51,7 +157,7 @@ const main = async () => {
       : 0;
 
   const defensiveKingAgg = sortBy(playersAggr, getDefenderScoreBy80Minutes)
-    .slice(-20)
+    .slice(-5)
     .reverse();
   defensiveKingAgg.map((defensiveKing, i) => {
     console.log(

@@ -4,7 +4,7 @@ import path from 'path';
 import getDzn from './getDzn';
 import parseResult from './parseResult';
 
-const ROUND = 5;
+const ROUND = 6;
 
 const main = async () => {
   try {
