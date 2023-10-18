@@ -51,4 +51,6 @@ constraint captain in team;
 
 solve maximize sum (p in team) (value[p]) + value[captain] ;
 
+% constraint team[10] = '97';
+
 output ["const team = {ids:\(team), captain: \(captain)};\nexport default team;\n\nValue: \(sum (p in team) (value[p]))\nCost: \(sum (p in team) (cost[p]))\n"];

@@ -1,17 +1,18 @@
 import { flatMapDeep, mergeWith, sortBy } from 'lodash';
 import matches from '../data/matches';
-import statsTypes from './statsTypes';
 
-const getPlayerStats = () => {
-  const playersByMatch = flatMapDeep(matches, (m) =>
-    m.teamStats.map((ts, teamIndex) =>
-      ts.playerStats.map((ps) => ({
-        ...ps,
-        matchId: m.match.matchId,
-        matchDescription: m.match.description,
-        teamId: m.match.teams[teamIndex].abbreviation,
-      }))
-    )
+const getPlayerStats = (options) => {
+  const playersByMatch = flatMapDeep(
+    matches.slice(options?.firstIndex, options?.lastIndex),
+    (m) =>
+      m.teamStats.map((ts, teamIndex) =>
+        ts.playerStats.map((ps) => ({
+          ...ps,
+          matchId: m.match.matchId,
+          matchDescription: m.match.description,
+          teamId: m.match.teams[teamIndex].abbreviation,
+        }))
+      )
   );
 
   const statsPerPlayer = playersByMatch.reduce((stats, playerMatch) => {

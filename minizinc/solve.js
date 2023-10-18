@@ -50,6 +50,8 @@ const main = async () => {
     teamResult.teamOutput.forEach((s) => console.log(s));
     console.log('');
     console.log('Points : ', teamResult.points, ' - Cost: ', teamResult.cost);
+    console.log(JSON.stringify(teamResult.team.map((p) => p.id)));
+    console.log(captainId);
 
     //return teamResult;
     //})

@@ -13,9 +13,13 @@ const teamsToHighlight = [
   'RSA',
 ];
 
+const STAGE = 'knockouts'; // 'pools'
+
 const main = async () => {
   const { playersByMatch: allPlayersByMatch, playersAggr: allPlayersAggr } =
-    getPlayerStats();
+    getPlayerStats(
+      STAGE === 'knockouts' ? { firstIndex: 40 } : { lastIndex: 40 }
+    );
 
   const playersByMatch = allPlayersByMatch.filter((p) =>
     teamsToHighlight.includes(p.teamId)
@@ -102,7 +106,7 @@ const main = async () => {
     5 * (p.stats.LineoutWonOppThrow || 0) +
     1 * (p.stats.LineoutWonOwnThrow || 0);
   const lineoutStealers = sortBy(playersByMatch, getLineoutBeast)
-    .slice(-5)
+    .slice(-3)
     .reverse();
   lineoutStealers.map((defensiveKing, i) => {
     console.log(
@@ -114,12 +118,24 @@ const main = async () => {
     );
   });
 
+  const getFantasyPlayerScore = (p) => {
+    const rounds = STAGE === 'knockouts' ? { first: 6 } : { last: 5 };
+    if (!p.fantasyPlayer) {
+      return 0;
+    }
+    return Object.entries(p.fantasyPlayer.stats.scores).reduce(
+      (total, [round, score]) =>
+        total +
+        ((rounds.first && round >= rounds.first && score) || 0) +
+        ((rounds.last && round <= rounds.last && score) || 0),
+      0
+    );
+  };
+
   const getPlayerScoreBy80Minutes = (p) =>
     p.stats.MinutesPlayedTotal / p.stats.MatchesPlayed > 30
       ? Math.round(
-          (p.fantasyPlayer.stats.totalPoints / p.stats.MinutesPlayedTotal) *
-            80 *
-            1000
+          (getFantasyPlayerScore(p) / p.stats.MinutesPlayedTotal) * 80 * 1000
         ) / 1000
       : 0;
   [
@@ -136,7 +152,7 @@ const main = async () => {
       playersAggr.filter((p) => p.fantasyPlayer?.position[0] === position),
       getPlayerScoreBy80Minutes
     )
-      .slice(-15)
+      .slice(-3)
       .reverse();
     props.map((defensiveKing, i) => {
       console.log(
@@ -171,11 +187,13 @@ const main = async () => {
 
   const tripleCaptains = sortBy(
     flatMap(players, (p) =>
-      Object.entries(p.stats.scores || {}).map(([round, score]) => ({
-        round,
-        score,
-        name: p.lastName,
-      }))
+      Object.entries(p.stats.scores || {})
+        .filter(([round]) => (STAGE === 'knockouts' ? round >= 6 : round <= 5))
+        .map(([round, score]) => ({
+          round,
+          score,
+          name: p.lastName,
+        }))
     ),
     (p) => p.score
   )

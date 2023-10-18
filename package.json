@@ -18,7 +18,9 @@
     "teamFromStats": "node -r @swc-node/register ./other/teamFromStats.js",
     "teamStats": "node -r @swc-node/register ./other/teamStats.js",
     "teamDuel": "node -r @swc-node/register ./other/teamDuel.js",
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "postinstall": "npm run copy:mz",
+    "copy:mz": "cpy --flat node_modules/minizinc/dist/minizinc-worker.js node_modules/minizinc/dist/minizinc.wasm node_modules/minizinc/dist/minizinc.data public"
   },
   "author": "",
   "license": "ISC",
@@ -42,6 +44,7 @@
   },
   "devDependencies": {
     "@swc-node/register": "^1.6.7",
-    "@types/lodash": "^4.14.198"
+    "@types/lodash": "^4.14.198",
+    "cpy-cli": "^5.0.0"
   }
 }
