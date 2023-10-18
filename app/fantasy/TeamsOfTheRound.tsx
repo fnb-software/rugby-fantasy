@@ -5,8 +5,8 @@ const TeamsOfTheRound = ({ teams }: { teams: any[] }) => {
   const [round, setRound] = useState(6);
 
   return (
-    <div className="flex flex-col gap-3">
-      <h1 className="text-xl">Fantasy team of the round</h1>
+    <div className="w-full flex flex-col items-center gap-3">
+      <h1 className="text-xl font-bold">Fantasy team of the round</h1>
       <div className="flex flex-wrap gap-2">
         {Array.from(new Array(5)).map((_, i) => (
           <button

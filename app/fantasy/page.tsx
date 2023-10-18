@@ -4,7 +4,7 @@ import Solve from './solver/Solve';
 
 const Fantasy = async () => {
   return (
-    <div>
+    <div className="w-full">
       <TeamsOfTheRound
         teams={[
           <Team

@@ -23,15 +23,34 @@ const Team = ({
   const teamCost = team.reduce((total, p) => total + p.cost, 0) / 1000000;
   return (
     <div>
-      <ul className="flex flex-col gap-1">
-        {team.map((p, i) => (
-          <li key={p.id}>
-            {i + 1}. {p === captain ? '(c)' : ''} {p.firstName} {p.lastName} (
-            {squads.find((s) => p.squadId === s.id)?.abbreviation} -{' '}
-            {p.cost / 1000000}) - {getPlayerScore(p)}
-          </li>
-        ))}
-      </ul>
+      <table>
+        <thead>
+          <tr>
+            <th></th>
+            <th></th>
+            <th></th>
+            <th></th>
+            <th>Score</th>
+          </tr>
+        </thead>
+        <tbody>
+          {team.map((p, i) => (
+            <tr key={p.id}>
+              <td className="pr-2">
+                {i + 1} {p === captain ? '(c)' : ''}
+              </td>
+              <td className="pr-5">
+                {p.firstName} {p.lastName}
+              </td>
+              <td className="pr-5">
+                {squads.find((s) => p.squadId === s.id)?.abbreviation}
+              </td>
+              <td className="pr-2">{p.cost / 1000000}</td>
+              <td className="text-right">{getPlayerScore(p)}</td>
+            </tr>
+          ))}
+        </tbody>
+      </table>
       <br />
       <div>
         Points: {teamPoints} - Cost: {teamCost}
