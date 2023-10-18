@@ -8,7 +8,9 @@ import parseResult from '../../../minizinc/parseResult';
 const ROUND = 6;
 
 const Solve = () => {
-  const [teamResult, setTeamResult] = useState();
+  const [teamResult, setTeamResult] = useState<
+    ReturnType<typeof parseResult> | undefined | null
+  >();
 
   useEffect(() => {
     MiniZinc.init({
@@ -32,6 +34,10 @@ const Solve = () => {
           return;
         }
         const resultData = result.solution.output.json;
+        if (!resultData) {
+          setTeamResult(null);
+          return;
+        }
         const teamIds = resultData.team.map(({ e }) => Number(e));
         const captainId = Number(resultData.captain.e);
         const teamResult = parseResult({ teamIds, captainId, round: ROUND });

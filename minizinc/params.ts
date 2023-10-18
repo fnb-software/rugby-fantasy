@@ -25,8 +25,8 @@ export const getPlayerTotalScore = (p: (typeof players)[number]) =>
   p.stats.totalPoints;
 
 export const getPlayerScoreForRound =
-  (round: number) => (p: (typeof players)[number]) =>
-    p.stats.scores?.[round];
+  (round: number) => (p?: (typeof players)[number]) =>
+    p?.stats.scores?.[round];
 
 export const getMaxPlayerScore =
   (round: number) => (p: (typeof players)[number]) =>
