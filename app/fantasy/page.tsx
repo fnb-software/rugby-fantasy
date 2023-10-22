@@ -55,6 +55,14 @@ const Fantasy = async () => {
             round={6}
             captainId={175}
           ></Team>,
+          <Team
+            teamIds={[
+              26, 526, 539, 528, 529, 116, 373, 375, 33, 353, 3, 10, 362, 4,
+              357,
+            ]}
+            round={7}
+            captainId={357}
+          ></Team>,
         ]}
       ></TeamsOfTheRound>
     </div>

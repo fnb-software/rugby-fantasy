@@ -2,16 +2,7 @@ import { flatMap, flatMapDeep, sortBy } from 'lodash';
 import players from '../data/players';
 import getPlayerStats from './getPlayerStats';
 
-const teamsToHighlight = [
-  'WAL',
-  'ARG',
-  'IRE',
-  'NZL',
-  'ENG',
-  'FIJ',
-  'FRA',
-  'RSA',
-];
+const teamsToHighlight = ['ARG', 'NZL', 'ENG', 'RSA'];
 
 const STAGE = 'knockouts'; // 'pools'
 
@@ -123,6 +114,7 @@ const main = async () => {
     if (!p.fantasyPlayer) {
       return 0;
     }
+    //return p.fantasyPlayer.stats.totalPoints;
     return Object.entries(p.fantasyPlayer.stats.scores).reduce(
       (total, [round, score]) =>
         total +

@@ -1,7 +1,7 @@
 import allPlayers from '../data/players';
 import { getPlayerScoreForRound, positionToInt } from './params';
 
-const MAX_PER_TEAM = 4;
+const MAX_PER_TEAM = 5;
 
 const getDzn = (round = 1) => {
   const getPlayerScore = getPlayerScoreForRound(round);
