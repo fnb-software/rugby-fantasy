@@ -23,6 +23,12 @@ const TeamsOfTheRound = ({ teams }: { teams: any[] }) => {
         >
           QF
         </button>
+        <button
+          className={round === 7 ? 'font-bold' : ''}
+          onClick={() => setRound(7)}
+        >
+          SF
+        </button>
       </div>
       {teams[round - 1]}
     </div>

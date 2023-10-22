@@ -131,7 +131,7 @@ const getTeamDuelStats = ({ team1Name, team2Name }) => {
     );
     return [
       matches[duelIndex].teamStats[team1Index].stats,
-      matches[duelIndex].teamStats[team1Index + (1 % 2)].stats,
+      matches[duelIndex].teamStats[team1Index % 2].stats,
     ];
   };
 
