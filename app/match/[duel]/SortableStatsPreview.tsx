@@ -72,14 +72,14 @@ const SortableStatsPreview = ({
             )}
             backgroundColor={[
               'rgba(133, 133, 133, 0.21)',
-              teamColors[team1Name][0],
-              teamColors[team2Name][0],
+              teamColors[team1Name]?.[0],
+              teamColors[team2Name]?.[0],
               'rgba(133, 133, 133, 0.21)',
             ]}
             borderColor={[
               'rgba(125, 125, 125, 0.671)',
-              teamColors[team1Name][1],
-              teamColors[team2Name][1],
+              teamColors[team1Name]?.[1],
+              teamColors[team2Name]?.[1],
               'rgba(125, 125, 125, 0.671)',
             ]}
           ></DuelChart>

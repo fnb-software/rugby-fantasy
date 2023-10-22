@@ -64,16 +64,16 @@ const MatchStats = ({
               statsPreview[1].value,
             ]}
             backgroundColor={[
-              teamColors[team1Name][2],
-              teamColors[team1Name][0],
-              teamColors[team2Name][0],
-              teamColors[team2Name][2],
+              teamColors[team1Name]?.[2],
+              teamColors[team1Name]?.[0],
+              teamColors[team2Name]?.[0],
+              teamColors[team2Name]?.[2],
             ]}
             borderColor={[
-              teamColors[team1Name][3],
-              teamColors[team1Name][1],
-              teamColors[team2Name][1],
-              teamColors[team2Name][3],
+              teamColors[team1Name]?.[3],
+              teamColors[team1Name]?.[1],
+              teamColors[team2Name]?.[1],
+              teamColors[team2Name]?.[3],
             ]}
           ></DuelChart>
         </div>
