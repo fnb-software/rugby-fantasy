@@ -2,7 +2,7 @@
 import { useState } from 'react';
 
 const TeamsOfTheRound = ({ teams }: { teams: any[] }) => {
-  const [round, setRound] = useState(6);
+  const [round, setRound] = useState(8);
 
   return (
     <div className="w-full flex flex-col items-center gap-3">
@@ -28,6 +28,12 @@ const TeamsOfTheRound = ({ teams }: { teams: any[] }) => {
           onClick={() => setRound(7)}
         >
           SF
+        </button>
+        <button
+          className={round === 8 ? 'font-bold' : ''}
+          onClick={() => setRound(8)}
+        >
+          Finals
         </button>
       </div>
       {teams[round - 1]}
