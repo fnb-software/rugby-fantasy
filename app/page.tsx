@@ -16,7 +16,7 @@ const Home = () => {
           </Link>
         </div>
         <div>
-          <Link className="underline" href={`/match/ENGvARG`}>
+          <Link className="underline" href={`/match/ENGvARG2`}>
             🏴󠁧󠁢󠁥󠁮󠁧󠁿 England vs Argentina 🇦🇷
           </Link>
         </div>

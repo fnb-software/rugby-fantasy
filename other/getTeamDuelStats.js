@@ -5,12 +5,20 @@ import matches from '../data/matches';
 
 const STATS_PER_SECTION = 6;
 
-const getTeamDuelStats = ({ team1Name, team2Name }) => {
+const getTeamDuelStats = ({ team1Name, team2Name, duelCount = 1 }) => {
+  const duelSearch = { count: 0 };
   const duelIndex = matches.findIndex((m) => {
     const abbreviations = m.match.teams.map((t) => t.abbreviation);
-    return (
-      abbreviations.includes(team1Name) && abbreviations.includes(team2Name)
-    );
+    const isDuel =
+      abbreviations.includes(team1Name) && abbreviations.includes(team2Name);
+    if (!isDuel) {
+      return;
+    }
+    duelSearch.count++;
+    if (duelSearch.count === duelCount) {
+      return true;
+    }
+    return false;
   });
   const teamStatsPreview = getTeamStats(
     duelIndex >= 0 && { lastIndex: duelIndex }
@@ -131,7 +139,7 @@ const getTeamDuelStats = ({ team1Name, team2Name }) => {
     );
     return [
       matches[duelIndex].teamStats[team1Index].stats,
-      matches[duelIndex].teamStats[team1Index % 2].stats,
+      matches[duelIndex].teamStats[(team1Index + 1) % 2].stats,
     ];
   };
 
