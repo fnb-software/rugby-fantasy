@@ -1,6 +1,6 @@
-import players from '../../data/players';
-import squads from '../../data/squads';
-import { getPlayerScoreForRound } from '../../minizinc/params';
+import players from "../../../2023/data/players";
+import squads from "../../../2023/data/squads";
+import { getPlayerScoreForRound } from "../../../2023/minizinc/params";
 
 const Team = ({
   teamIds,
@@ -17,7 +17,7 @@ const Team = ({
 
   const teamPoints = team.reduce(
     (total, p) => total + (getPlayerScore(p) || 0),
-    getPlayerScore(captain)
+    getPlayerScore(captain),
   );
 
   const teamCost =
@@ -38,7 +38,7 @@ const Team = ({
           {team.map((p, i) => (
             <tr key={p?.id}>
               <td className="pr-2">
-                {i + 1} {p === captain ? '(c)' : ''}
+                {i + 1} {p === captain ? "(c)" : ""}
               </td>
               <td className="pr-5">
                 {p?.firstName} {p?.lastName}

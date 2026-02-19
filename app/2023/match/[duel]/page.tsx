@@ -1,5 +1,5 @@
-import getTeamDuelStats from '@/other/getTeamDuelStats';
-import StatsChoice from './StatsChoice';
+import getTeamDuelStats from "@/2023/other/getTeamDuelStats";
+import StatsChoice from "./StatsChoice";
 
 const Match = async ({ params: { duel } }: { params: { duel: string } }) => {
   const team1Name = duel.slice(0, 3);

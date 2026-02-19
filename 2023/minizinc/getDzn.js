@@ -1,5 +1,5 @@
-import allPlayers from '../data/players';
-import { getPlayerScoreForRound, positionToInt } from './params';
+import allPlayers from "../data/players";
+import { getPlayerScoreForRound, positionToInt } from "./params";
 
 const MAX_PER_TEAM = 5;
 
@@ -12,7 +12,7 @@ const getDzn = (round = 1) => {
     players.reduce((squads, p) => {
       squads.add(p.squadId);
       return squads;
-    }, new Set([]))
+    }, new Set([])),
   );
   const data = `Players = {${players.map((p) => `'${p.id}'`)}};
   cost = [${players.map((p) => p.cost / 100000)}];

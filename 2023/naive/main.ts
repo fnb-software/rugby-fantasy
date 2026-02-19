@@ -1,16 +1,16 @@
-import players from '../data/players';
-import squads from '../data/squads';
-import knapsack from './knapsack';
+import players from "../data/players";
+import squads from "../data/squads";
+import knapsack from "./knapsack";
 
 const POSITIONS = [
-  { name: 'prop', number: 2 },
-  { name: 'hooker', number: 1 },
-  { name: 'lock', number: 2 },
-  { name: 'loose_forward', number: 3 },
-  { name: 'scrum_half', number: 1 },
-  { name: 'fly_half', number: 1 },
-  { name: 'center', number: 2 },
-  { name: 'outside_back', number: 3 },
+  { name: "prop", number: 2 },
+  { name: "hooker", number: 1 },
+  { name: "lock", number: 2 },
+  { name: "loose_forward", number: 3 },
+  { name: "scrum_half", number: 1 },
+  { name: "fly_half", number: 1 },
+  { name: "center", number: 2 },
+  { name: "outside_back", number: 3 },
 ];
 
 const BUDGET = 100000000;
@@ -28,10 +28,10 @@ const main = async () => {
     k[p.id] = [p.cost, p.stats.scores?.[ROUND] || 0];
     return k;
   }, {});
-  console.log('start');
+  console.log("start");
 
   const [ids] = knapsack(pb, BUDGET);
-  console.log('done', ids);
+  console.log("done", ids);
 
   /* const team = POSITIONS.reduce((team, position) => {
     const playerAtPosition = players.filter(
@@ -49,16 +49,16 @@ const main = async () => {
 
   team.map((p) => {
     console.log(
-      `${p.lastName} ${p.firstName} - ${p.position[0]} (${
-        squads.find((s) => p.squadId === s.id)?.abbreviation
-      }) - ${p.stats.scores[ROUND]} - ${p.cost / 1000000}`
+      `${p.lastName} ${p.firstName} - ${p.position[0]} (${squads.find(
+        (s) => p.squadId === s.id,
+      )?.abbreviation}) - ${p.stats.scores[ROUND]} - ${p.cost / 1000000}`,
     );
   });
   console.log(
-    'Points : ',
+    "Points : ",
     team.reduce((total, p) => total + p.stats.scores[ROUND], 0),
-    ' - Cost: ',
-    team.reduce((total, p) => total + p.cost, 0) / 1000000
+    " - Cost: ",
+    team.reduce((total, p) => total + p.cost, 0) / 1000000,
   );
 };
 

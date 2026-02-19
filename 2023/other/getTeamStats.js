@@ -1,6 +1,6 @@
-import { flatMapDeep, mergeWith, sortBy } from 'lodash';
-import matches from '../data/matches';
-import statsTypes from './statsTypes';
+import { flatMapDeep, mergeWith, sortBy } from "lodash";
+import matches from "../data/matches";
+import statsTypes from "./statsTypes";
 
 const getTeamStats = (options) => {
   const teamByMatch = flatMapDeep(
@@ -9,7 +9,7 @@ const getTeamStats = (options) => {
       m.teamStats.map((ts, teamIndex) => ({
         ...ts,
         teamId: m.match.teams[teamIndex].abbreviation,
-      }))
+      })),
   );
 
   const statsPerTeam = teamByMatch.reduce((stats, teamMatch) => {
@@ -29,11 +29,11 @@ const getTeamStats = (options) => {
           stats[key] = Math.round((value / teamStats.length) * 100) / 100;
           return stats;
         },
-        {}
+        {},
       );
       return stats;
     },
-    {}
+    {},
   );
 
   const teamSet = Object.keys(statsAggrPerTeam).reduce((teams, teamId) => {
@@ -48,14 +48,14 @@ const getTeamStats = (options) => {
       });
       return stats;
     },
-    {}
+    {},
   );
 
   const filteredStats = Object.entries(statsMap).filter(([name]) => {
     if (!statsTypes[name]) {
       console.log(name);
     }
-    return statsTypes[name].type !== 'ignore';
+    return statsTypes[name].type !== "ignore";
   });
 
   const statsAllTeams = filteredStats.map(([name, teamEntries]) => {

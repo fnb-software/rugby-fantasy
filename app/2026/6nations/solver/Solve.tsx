@@ -1,11 +1,11 @@
-'use client';
-import * as MiniZinc from 'minizinc';
-import { useEffect, useState } from 'react';
-import fantasyModel from '../../../minizinc/fantasy.mzn';
-import getDzn from '../../../minizinc/getDzn';
-import parseResult from '../../../minizinc/parseResult';
+"use client";
+import * as MiniZinc from "minizinc";
+import { useEffect, useState } from "react";
+import fantasyModel from "../../../../2026/6nations/minizinc/fantasy.mzn";
+import getDzn from "../../../../2026/6nations/minizinc/getDzn";
+import parseResult from "../../../../2026/6nations/minizinc/parseResult";
 
-const ROUND = 6;
+const ROUND = 1;
 
 const Solve = () => {
   const [teamResult, setTeamResult] = useState<
@@ -14,7 +14,7 @@ const Solve = () => {
 
   useEffect(() => {
     MiniZinc.init({
-      workerURL: 'http://localhost:3000/minizinc-worker.js',
+      workerURL: "http://localhost:3000/minizinc-worker.js",
     })
       .then(() => {
         const model = new MiniZinc.Model();
@@ -22,8 +22,8 @@ const Solve = () => {
         model.addDznString(getDzn(ROUND));
         return model.solve({
           options: {
-            solver: 'highs',
-            'time-limit': 3 * 60000,
+            solver: "highs",
+            "time-limit": 3 * 60000,
             statistics: true,
           },
         });
@@ -47,11 +47,11 @@ const Solve = () => {
   }, []);
 
   if (teamResult === undefined) {
-    return 'Solving....';
+    return "Solving....";
   }
 
   if (teamResult === null) {
-    return 'No solution';
+    return "No solution";
   }
 
   return (

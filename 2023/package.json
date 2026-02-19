@@ -1,0 +1,14 @@
+{
+  "scripts": {
+    "naive": "tsx ./naive/main.ts",
+    "mz:write": "tsx ./minizinc/writeDzn.js",
+    "mz:read": "tsx ./minizinc/readResult.js",
+    "mz:solve": "tsx ./minizinc/solve.js",
+    "mz:update:players": "tsx ./minizinc/updatePlayers.ts",
+    "mz:update:matches": "tsx ./minizinc/updateMatches.ts",
+    "boosters": "tsx ./other/boosters.js",
+    "teamFromStats": "tsx ./other/teamFromStats.js",
+    "teamStats": "tsx ./other/teamStats.js",
+    "teamDuel": "tsx ./other/teamDuel.js"
+  }
+}

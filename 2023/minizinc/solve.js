@@ -1,15 +1,15 @@
-import fs from 'fs/promises';
-import * as MiniZinc from 'minizinc';
-import path from 'path';
-import getDzn from './getDzn';
-import parseResult from './parseResult';
+import fs from "fs/promises";
+import * as MiniZinc from "minizinc";
+import path from "path";
+import getDzn from "./getDzn";
+import parseResult from "./parseResult";
 
 const ROUND = 8;
 
 const main = async () => {
   try {
     MiniZinc.init({
-      minizinc: 'minizinc',
+      minizinc: "minizinc",
     });
 
     //const roundsIterator = Array.from(new Array(5));
@@ -18,21 +18,21 @@ const main = async () => {
     //  roundsIterator.map(async (_, i) => {
     const model = new MiniZinc.Model();
     const modelString = await fs.readFile(
-      path.resolve('./minizinc/fantasy.mzn')
+      path.resolve("./minizinc/fantasy.mzn"),
     );
     model.addString(modelString);
     model.addDznString(getDzn(ROUND));
 
     const solve = model.solve({
       options: {
-        solver: 'highs',
-        'time-limit': 3 * 60000,
+        solver: "highs",
+        "time-limit": 3 * 60000,
         statistics: true,
       },
     });
     setInterval(() => {
       if (solve.isRunning()) {
-        console.log('Still running');
+        console.log("Still running");
       }
     }, 5000);
 
@@ -48,8 +48,8 @@ const main = async () => {
     const captainId = Number(resultData.captain.e);
     const teamResult = parseResult({ teamIds, captainId, round: ROUND });
     teamResult.teamOutput.forEach((s) => console.log(s));
-    console.log('');
-    console.log('Points : ', teamResult.points, ' - Cost: ', teamResult.cost);
+    console.log("");
+    console.log("Points : ", teamResult.points, " - Cost: ", teamResult.cost);
     console.log(JSON.stringify(teamResult.team.map((p) => p.id)));
     console.log(captainId);
 

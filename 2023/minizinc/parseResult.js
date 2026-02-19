@@ -1,6 +1,6 @@
-import players from '../data/players';
-import squads from '../data/squads';
-import { getPlayerScoreForRound } from './params';
+import players from "../data/players";
+import squads from "../data/squads";
+import { getPlayerScoreForRound } from "./params";
 
 const parseResult = ({ teamIds, captainId, round }) => {
   const getPlayerScore = getPlayerScoreForRound(round);
@@ -11,16 +11,16 @@ const parseResult = ({ teamIds, captainId, round }) => {
   team.splice(11, 0, team.splice(14, 1)[0]);
   team.splice(11, 0, team.splice(14, 1)[0]);
   const teamOutput = team.map((p, i) => {
-    return `${i + 1}. ${p === captain ? '(c)' : ''} ${p.firstName} ${
+    return `${i + 1}. ${p === captain ? "(c)" : ""} ${p.firstName} ${
       p.lastName
     }  (${squads.find((s) => p.squadId === s.id)?.abbreviation} - ${
       p.cost / 1000000
-    }) - ${getPlayerScore(p) ?? 'N/A'}\\`;
+    }) - ${getPlayerScore(p) ?? "N/A"}\\`;
   });
 
   const teamPoints = team.reduce(
     (total, p) => total + (getPlayerScore(p) || 0),
-    getPlayerScore(captain)
+    getPlayerScore(captain),
   );
 
   const teamCost = team.reduce((total, p) => total + p.cost, 0) / 1000000;
@@ -35,21 +35,21 @@ const parseResult = ({ teamIds, captainId, round }) => {
 
 const positionToInt = (p) => {
   switch (p.position[0]) {
-    case 'prop':
+    case "prop":
       return 1;
-    case 'hooker':
+    case "hooker":
       return 2;
-    case 'lock':
+    case "lock":
       return 4;
-    case 'loose_forward':
+    case "loose_forward":
       return 6;
-    case 'scrum_half':
+    case "scrum_half":
       return 9;
-    case 'fly_half':
+    case "fly_half":
       return 10;
-    case 'center':
+    case "center":
       return 12;
-    case 'outside_back':
+    case "outside_back":
       return 11;
   }
 };
