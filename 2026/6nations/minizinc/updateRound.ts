@@ -14,7 +14,7 @@ const file = `./data/round${ROUND}.js`;
 
 const main = async () => {
   const roundResult = await fetch(
-    "https://fantasy.sixnationsrugby.com/v1/private/journeecalendrier/2?lg=en",
+    `https://fantasy.sixnationsrugby.com/v1/private/journeecalendrier/${ROUND}?lg=en`,
     OPTIONS,
   );
   const round = await roundResult.json();

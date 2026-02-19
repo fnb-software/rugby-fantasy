@@ -1,5 +1,5 @@
 {
   "scripts": {
-    "update:round": "tsx ./minizinc/updateRound.ts"
+    "update:players": "tsx ./minizinc/updatePlayers.ts"
   }
 }
