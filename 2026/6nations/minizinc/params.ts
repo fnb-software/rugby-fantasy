@@ -4,7 +4,7 @@ export const getPlayerScoreForRound =
   (round: number) => (p?: (typeof players)[number]) => {
     const score = p?.stats.points_marques?.[round]?.nb_points;
     if (!score) {
-      return score;
+      return 0;
     }
     return parseInt(score);
   };

@@ -11,7 +11,7 @@ const parseResult = ({ teamIds, captainId, supersubId, round }) => {
   team.splice(2, 0, team.splice(1, 1)[0]);
   team.splice(11, 0, team.splice(14, 1)[0]);
   team.splice(11, 0, team.splice(14, 1)[0]);
-  console.log({ team });
+
   const teamOutput = team.map((p, i) => {
     return `${i + 1}. ${p === supersub ? "(s)" : p === captain ? "(c)" : ""} ${
       p.nom
@@ -27,6 +27,8 @@ const parseResult = ({ teamIds, captainId, supersubId, round }) => {
 
   const teamCost = team.reduce((total, p) => total + getPlayerCost(p), 0);
   console.log(teamPoints);
+  console.log(JSON.stringify(team.map((p) => p.id)));
+  console.log(captainId);
   return {
     team,
     teamOutput,

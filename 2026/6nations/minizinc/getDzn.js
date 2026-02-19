@@ -9,6 +9,7 @@ const MAX_PER_TEAM = 4;
 
 const getDzn = (round = 1) => {
   const getPlayerScore = getPlayerScoreForRound(round);
+  const getPlayerCost = getPlayerCostForRound(round);
   const getPlayerSub = getPlayerSubForRound(round);
   const players = allPlayers.filter(
     (p) => getPlayerScore(p) !== undefined && getPlayerScore(p) > 0,
@@ -22,7 +23,7 @@ const getDzn = (round = 1) => {
     }, new Set([])),
   );
   const data = `Players = {${players.map((p) => `'${p.id}'`)}};
-  cost = [${players.map((p) => getPlayerCostForRound(p) * 10 || 0)}];
+  cost = [${players.map((p) => getPlayerCost(p) * 10 || 0)}];
   value = [${players.map((p) => getPlayerScore(p) || 0)}];
   position = [${players.map((p) => p.id_position)}];
   sub = [${players.map((p) => getPlayerSub(p))}];

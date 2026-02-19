@@ -1,6 +1,8 @@
-import players from "../../../2023/data/players";
-import squads from "../../../2023/data/squads";
-import { getPlayerScoreForRound } from "../../../2023/minizinc/params";
+import players from "../../../2026/6nations/data/players";
+import {
+  getPlayerCostForRound,
+  getPlayerScoreForRound,
+} from "../../../2026/6nations/minizinc/params";
 
 const Team = ({
   teamIds,
@@ -12,16 +14,18 @@ const Team = ({
   captainId: number;
 }) => {
   const team = teamIds.map((id) => players.find((p) => p.id === id));
-  const captain = players.find((p) => p.id === captainId);
+  const captain = team.find((p) => p?.id === captainId);
+  const supersub = team[15];
   const getPlayerScore = getPlayerScoreForRound(round);
+  const getPlayerCost = getPlayerCostForRound(round);
 
   const teamPoints = team.reduce(
     (total, p) => total + (getPlayerScore(p) || 0),
-    getPlayerScore(captain),
+    getPlayerScore(captain) + 2 * getPlayerScore(supersub),
   );
 
   const teamCost =
-    team.reduce((total, p) => total + (p?.cost || 0), 0) / 1000000;
+    team.reduce((total, p) => total + 10 * (getPlayerCost(p) || 0), 0) / 10;
   return (
     <div>
       <table>
@@ -38,16 +42,14 @@ const Team = ({
           {team.map((p, i) => (
             <tr key={p?.id}>
               <td className="pr-2">
-                {i + 1} {p === captain ? "(c)" : ""}
+                {i === 15 ? "(s)" : i + 1} {p === captain ? "(c)" : ""}
               </td>
-              <td className="pr-5">
-                {p?.firstName} {p?.lastName}
+              <td className="pr-5">{p?.nom}</td>
+              <td className="pr-5">{p?.trgclub}</td>
+              <td className="pr-2">{getPlayerCost(p)}</td>
+              <td className="text-right">
+                {getPlayerScore(p) * (i === 15 ? 3 : p === captain ? 2 : 1)}
               </td>
-              <td className="pr-5">
-                {squads.find((s) => p?.squadId === s.id)?.abbreviation}
-              </td>
-              <td className="pr-2">{(p?.cost || 0) / 1000000}</td>
-              <td className="text-right">{getPlayerScore(p)}</td>
             </tr>
           ))}
         </tbody>
