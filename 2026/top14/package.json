@@ -1,0 +1,5 @@
+{
+  "scripts": {
+    "update:players": "tsx ./minizinc/updatePlayers.ts"
+  }
+}

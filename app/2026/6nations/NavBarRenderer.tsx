@@ -7,7 +7,7 @@ const NavBarRenderer = () => {
       <div className="font-semibold">
         6 Nations 2026{" "}
         <Link
-          href="/2026"
+          href="/2026/6nations"
           className={`rounded-sm p-1 text-gray-700 bg-cyan-500 hover:bg-cyan-6`}
         >
           fantasy
