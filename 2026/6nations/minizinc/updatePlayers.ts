@@ -2,8 +2,10 @@ import fs from "fs/promises";
 import * as prettier from "prettier";
 import token from "../token.js";
 import pLimit from "p-limit";
+import playersOff from "../data/playersOff.js";
 
 const ROUND = "3";
+
 const OPTIONS = {
   headers: {
     Authorization: `Token ${token}`,
@@ -54,7 +56,7 @@ const main = async () => {
   console.log(players.length);
 
   const limit = pLimit(10);
-  const playerStatsRequests = players.map((player) =>
+  const playerStatsRequests = players.concat(playersOff).map((player) =>
     limit(async () => {
       const result = await fetch(
         `https://fantasy.sixnationsrugby.com/v1/private/statsjoueur?lg=en`,

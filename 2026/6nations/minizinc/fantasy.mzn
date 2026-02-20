@@ -38,7 +38,7 @@ constraint sub[supersub] = 1;
 constraint forall (i in 1..15) (position[team[i]] = team_position[i]);
 
 % Maximum cost (for low cost use 750)
-constraint sum (p in team) (cost[p]) <= 2000;
+constraint sum (p in team) (cost[p]) <= 20000;
 
 % Don't pick the same player more than once
 constraint alldifferent (team);

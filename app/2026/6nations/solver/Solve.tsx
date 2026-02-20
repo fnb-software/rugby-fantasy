@@ -63,8 +63,8 @@ const Solve = () => {
     <div>
       <div>
         <h1>Team</h1>
-        {teamResult.teamOutput.map((s) => (
-          <div>{s}</div>
+        {teamResult.teamOutput.map((s, i) => (
+          <div key={i}>{s}</div>
         ))}
       </div>
       <div>

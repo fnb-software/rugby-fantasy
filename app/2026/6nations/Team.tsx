@@ -2,6 +2,7 @@ import players from "../../../2026/6nations/data/players";
 import {
   getPlayerCostForRound,
   getPlayerScoreForRound,
+  getPlayerCostNewForRound,
 } from "../../../2026/6nations/minizinc/params";
 
 const Team = ({
@@ -18,6 +19,7 @@ const Team = ({
   const supersub = team[15];
   const getPlayerScore = getPlayerScoreForRound(round);
   const getPlayerCost = getPlayerCostForRound(round);
+  const getPlayerCostNew = getPlayerCostNewForRound(round);
 
   const teamPoints = team.reduce(
     (total, p) => total + (getPlayerScore(p) || 0),
@@ -26,6 +28,8 @@ const Team = ({
 
   const teamCost =
     team.reduce((total, p) => total + 10 * (getPlayerCost(p) || 0), 0) / 10;
+  const teamCostNew =
+    team.reduce((total, p) => total + 10 * (getPlayerCostNew(p) || 0), 0) / 10;
   return (
     <div>
       <table>
@@ -56,7 +60,8 @@ const Team = ({
       </table>
       <br />
       <div>
-        Points: {teamPoints} - Cost: {teamCost}
+        Points: {teamPoints} - Cost: {teamCost} - Budget gained:{" "}
+        {(teamCostNew * 10 - teamCost * 10) / 10}
       </div>
     </div>
   );

@@ -10,8 +10,22 @@ export const getPlayerScoreForRound =
   };
 
 export const getPlayerCostForRound =
-  (round: number) => (p?: (typeof players)[number]) =>
-    p?.stats.valeur_footballeur?.[round];
+  (round: number) => (p?: (typeof players)[number]) => {
+    const roundDetail = p?.stats.detail?.find(
+      (roundDetail) => roundDetail.numero === round + 1,
+    );
+
+    return roundDetail?.valeuravant;
+  };
+
+export const getPlayerCostNewForRound =
+  (round: number) => (p?: (typeof players)[number]) => {
+    const roundDetail = p?.stats.detail?.find(
+      (roundDetail) => roundDetail.numero === round + 1,
+    );
+
+    return roundDetail?.valeurapres;
+  };
 
 export const getPlayerSubForRound =
   (round: number) => (p?: (typeof players)[number]) => {

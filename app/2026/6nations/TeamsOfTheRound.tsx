@@ -2,7 +2,7 @@
 import { useState } from "react";
 
 const TeamsOfTheRound = ({ teams }: { teams: any[] }) => {
-  const [round, setRound] = useState(8);
+  const [round, setRound] = useState(2);
 
   return (
     <div className="w-full flex flex-col items-center gap-3">

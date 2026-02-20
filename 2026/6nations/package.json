@@ -1,5 +1,6 @@
 {
   "scripts": {
-    "update:players": "tsx ./minizinc/updatePlayers.ts"
+    "update:players": "tsx ./minizinc/updatePlayers.ts",
+    "search:off": "tsx ./minizinc/searchOff.ts"
   }
 }
