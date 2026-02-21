@@ -1,7 +1,7 @@
 "use client";
 import { useState } from "react";
 
-const ROUND_OFFSET = 16;
+const ROUND_OFFSET = 15;
 
 const TeamsOfTheRound = ({ teams }: { teams: any[] }) => {
   const [round, setRound] = useState(1);

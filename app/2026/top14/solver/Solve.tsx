@@ -5,7 +5,7 @@ import fantasyModel from "../../../../2026/top14/minizinc/fantasy.mzn";
 import getDzn from "../../../../2026/top14/minizinc/getDzn";
 import parseResult from "../../../../2026/top14/minizinc/parseResult";
 
-const ROUND = 16; // 0-based
+const ROUND = 15; // 0-based
 
 const solver = MiniZinc.init({
   workerURL: "http://localhost:3000/minizinc-worker.js",
