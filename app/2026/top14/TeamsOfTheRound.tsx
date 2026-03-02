@@ -1,26 +1,36 @@
 "use client";
 import { useState } from "react";
-
-const ROUND_OFFSET = 15;
+import Stats from "./Stats";
 
 const TeamsOfTheRound = ({ teams }: { teams: any[] }) => {
   const [round, setRound] = useState(1);
+  const [tab, setTab] = useState("round");
 
   return (
     <div className="w-full flex flex-col items-center gap-3">
       <h1 className="text-xl font-bold">Fantasy team of the round</h1>
       <div className="flex flex-wrap gap-2">
-        {Array.from(new Array(5)).map((_, i) => (
+        {Array.from(new Array(teams.length)).map((_, i) => (
           <button
             key={i}
-            onClick={() => setRound(i + 1)}
+            onClick={() => {
+              setRound(i + 1);
+              setTab("round");
+            }}
             className={round === i + 1 ? "font-bold" : ""}
           >
-            Round {i + ROUND_OFFSET + 1}
+            Round {i + 1}
           </button>
         ))}
+        <button
+          onClick={() => setTab("stats")}
+          className={tab === "stats" ? "font-bold" : ""}
+        >
+          Stats
+        </button>
       </div>
-      {teams[round - 1]}
+      {tab === "round" && teams[round - 1]}
+      {tab === "stats" && <Stats />}
     </div>
   );
 };

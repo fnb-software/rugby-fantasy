@@ -26,14 +26,15 @@ const parseResult = ({ teamIds, captainId, supersubId, round }) => {
   );
 
   const teamCost = team.reduce((total, p) => total + getPlayerCost(p), 0);
-  console.log(teamPoints);
-  console.log(JSON.stringify(team.map((p) => p.id)));
-  console.log(captainId);
   return {
     team,
     teamOutput,
     points: teamPoints,
     cost: teamCost,
+    log: `{teamIds: [${team
+      .map((p) => p.id)
+      .join(",")}], captainId: ${captainId}}
+  `,
   };
 };
 

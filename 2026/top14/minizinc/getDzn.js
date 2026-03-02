@@ -5,7 +5,7 @@ import {
   getPlayerSubForRound,
 } from "./params";
 
-const MAX_PER_TEAM = 4;
+const MAX_PER_TEAM = 40;
 
 const getDzn = (round = 1) => {
   const getPlayerScore = getPlayerScoreForRound(round);
@@ -14,6 +14,12 @@ const getDzn = (round = 1) => {
   const players = allPlayers.filter(
     (p) => getPlayerScore(p) !== undefined && getPlayerScore(p) > 0,
   );
+  // .filter((p) => p.proprietaire.id === "" && !p.offres_encours);
+  // .filter(
+  //   (p) =>
+  //     (p.proprietaire.id === "" || p.proprietaire.nom === "d0m3") &&
+  //     (!p.offres_encours || p.offres_encours_parmoi),
+  // );
   //const players = players1.filter((p) => p.squadId !== 14); // No scots
   //const players = players1.filter((p) => p.cost <= 7000000); // No star
   const squadIds = Array.from(

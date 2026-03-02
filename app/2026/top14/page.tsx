@@ -1,35 +1,53 @@
 import Team from "./Team";
 import TeamsOfTheRound from "./TeamsOfTheRound";
-import Solve from "./solver/Solve";
+import { TEAMS } from "./bestTeams";
+import { TEAMS_NO_CLUB_LIMIT } from "./bestTeamsNoClubLimit";
 
 const Fantasy = async () => {
   return (
     <div className="w-full">
       <TeamsOfTheRound
-        teams={[
-          <Team
-            teamIds={[
-              525, 118, 517, 1310, 758, 957, 1082, 1440, 588, 1239, 442, 1528,
-              1229, 881, 1513, 165, 633, 1510,
-            ]}
-            round={15}
-            captainId={1082}
-          ></Team>,
-          <Team
-            teamIds={[
-              186, 1332, 1027, 113, 30, 548, 658, 1571, 842, 605, 416, 1056,
-              1507, 80, 369, 928, 957, 1239,
-            ]}
-            round={16}
-            captainId={80}
-          ></Team>,
-
-          <EmptyTeam round={17}></EmptyTeam>,
-          <EmptyTeam round={18}></EmptyTeam>,
-          <EmptyTeam round={19}></EmptyTeam>,
-          <EmptyTeam round={20}></EmptyTeam>,
-        ]}
+        teams={TEAMS.map((team, i) =>
+          team.teamIds ? (
+            <div className="flex  gap-5">
+              <div>
+                <h3 className="font-bold">Full rules</h3>
+                <Team
+                  teamIds={team.teamIds}
+                  round={i}
+                  captainId={team.captainId}
+                ></Team>
+              </div>
+              <div>
+                <h3 className="font-bold">No club limit</h3>
+                <Team
+                  teamIds={TEAMS_NO_CLUB_LIMIT[i].teamIds}
+                  round={i}
+                  captainId={TEAMS_NO_CLUB_LIMIT[i].captainId}
+                ></Team>
+              </div>
+            </div>
+          ) : (
+            <EmptyTeam round={i}></EmptyTeam>
+          ),
+        )}
       ></TeamsOfTheRound>
+      <Team
+        round={17}
+        teamIds={[
+          70, 174, 430, 382, 1730, 354, 509, 391, 121, 457, 498, 1298, 177, 371,
+          1505, 1032, 32, 491,
+        ]}
+        captainId={509}
+      />
+      <Team
+        round={17}
+        teamIds={[
+          70, 595, 594, 382, 1730, 1032, 354, 509, 800, 457, 881, 1298, 549,
+          498, 369, 1505, 1339, 997,
+        ]}
+        captainId={509}
+      />
     </div>
   );
 };

@@ -5,49 +5,51 @@ import fantasyModel from "../../../../2026/top14/minizinc/fantasy.mzn";
 import getDzn from "../../../../2026/top14/minizinc/getDzn";
 import parseResult from "../../../../2026/top14/minizinc/parseResult";
 
-const ROUND = 15; // 0-based
+const ROUND = 17; // 0-based
 
 const solver = MiniZinc.init({
   workerURL: "http://localhost:3000/minizinc-worker.js",
-}).then(() => {
-  const model = new MiniZinc.Model();
-  model.addString(fantasyModel);
-  model.addDznString(getDzn(ROUND));
-  return model.solve({
-    options: {
-      solver: "highs",
-      "time-limit": 3 * 60000,
-      statistics: true,
-    },
-  });
 });
-
 const Solve = () => {
   const [teamResult, setTeamResult] = useState<
     ReturnType<typeof parseResult> | undefined | null
   >();
 
   useEffect(() => {
-    solver.then((result) => {
-      if (!result.solution) {
-        setTeamResult(null);
-        return;
+    let log = ``;
+    solver.then(async () => {
+      for (let currentRound = 0; currentRound <= ROUND; currentRound++) {
+        const model = new MiniZinc.Model();
+        model.addString(fantasyModel);
+        model.addDznString(getDzn(currentRound));
+        const result = await model.solve({
+          options: {
+            solver: "highs",
+            "time-limit": 3 * 60000,
+            statistics: true,
+          },
+        });
+        if (!result.solution) {
+          setTeamResult(null);
+          return;
+        }
+        const resultData = result.solution.output.json;
+        if (!resultData) {
+          setTeamResult(null);
+          return;
+        }
+        const teamIds = resultData.team.map(({ e }) => Number(e));
+        const captainId = Number(resultData.captain.e);
+        const teamResult = parseResult({
+          teamIds,
+          captainId,
+          supersubId: teamIds[15],
+          round: currentRound,
+        });
+        log += teamResult.log + `,`;
+        setTeamResult(teamResult);
       }
-      const resultData = result.solution.output.json;
-      if (!resultData) {
-        setTeamResult(null);
-        return;
-      }
-      const teamIds = resultData.team.map(({ e }) => Number(e));
-      const captainId = Number(resultData.captain.e);
-      const teamResult = parseResult({
-        teamIds,
-        captainId,
-        supersubId: teamIds[15],
-        round: ROUND,
-      });
-      setTeamResult(teamResult);
-      teamResult.teamOutput.forEach((s) => console.log(s));
+      console.log(`[${log}]`);
     });
   }, []);
 
@@ -68,7 +70,7 @@ const Solve = () => {
         ))}
       </div>
       <div>
-        Points: {teamResult.points} - Cost: {teamResult.cost}
+        Points: {teamResult.points / 20} - Cost: {teamResult.cost}
       </div>
     </div>
   );
