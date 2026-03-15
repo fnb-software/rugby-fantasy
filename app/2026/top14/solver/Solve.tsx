@@ -5,7 +5,8 @@ import fantasyModel from "../../../../2026/top14/minizinc/fantasy.mzn";
 import getDzn from "../../../../2026/top14/minizinc/getDzn";
 import parseResult from "../../../../2026/top14/minizinc/parseResult";
 
-const ROUND = 17; // 0-based
+const START_ROUND = 18;
+const END_ROUND = 18; // 0-based
 
 const solver = MiniZinc.init({
   workerURL: "http://localhost:3000/minizinc-worker.js",
@@ -18,7 +19,11 @@ const Solve = () => {
   useEffect(() => {
     let log = ``;
     solver.then(async () => {
-      for (let currentRound = 0; currentRound <= ROUND; currentRound++) {
+      for (
+        let currentRound = START_ROUND;
+        currentRound <= END_ROUND;
+        currentRound++
+      ) {
         const model = new MiniZinc.Model();
         model.addString(fantasyModel);
         model.addDznString(getDzn(currentRound));

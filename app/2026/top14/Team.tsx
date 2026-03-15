@@ -69,7 +69,7 @@ const Team = ({
       </table>
       <br />
       <div>
-        Points: {teamPoints} - Cost: {teamCost} - Budget gained:{" "}
+        Score: {teamPoints} - Cost: {teamCost} - Increase:{" "}
         {(teamCostNew * 10 - teamCost * 10) / 10}
       </div>
     </div>

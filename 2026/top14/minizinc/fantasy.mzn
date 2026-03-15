@@ -42,7 +42,7 @@ var Players: sub2 = team[18];
 constraint forall (i in 1..15) (position[team[i]] = team_position[i]);
 
 % Maximum cost (for low cost use 750)
-constraint sum (p in team) (cost[p]) <= 20000;
+% constraint sum (p in team) (cost[p]) <= 20000;
 
 % Don't pick the same player more than once
 constraint alldifferent (team);
@@ -65,7 +65,7 @@ constraint captain != supersub;
 constraint captain != sub1;
 constraint captain != sub2;
 
-solve maximize sum (p in team) (value[p]) + value[captain] + 2 * value[supersub] - value[sub1]/2 - value[sub2]/2 ;
+solve :: int_search(team, input_order, indomain_min) maximize sum (p in team) (value[p]) + value[captain] + 2 * value[supersub] - value[sub1]/2 - value[sub2]/2 ;
 
 % constraint team[10] = '97';
 

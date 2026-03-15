@@ -1,5 +1,6 @@
 import Team from "./Team";
 import TeamsOfTheRound from "./TeamsOfTheRound";
+import { TEAMS_SECOND_NO_CLUB_LIMIT } from "./bestSecondTeamsNoClubLimits";
 import { TEAMS } from "./bestTeams";
 import { TEAMS_NO_CLUB_LIMIT } from "./bestTeamsNoClubLimit";
 
@@ -9,7 +10,7 @@ const Fantasy = async () => {
       <TeamsOfTheRound
         teams={TEAMS.map((team, i) =>
           team.teamIds ? (
-            <div className="flex  gap-5">
+            <div className="flex gap-7">
               <div>
                 <h3 className="font-bold">Full rules</h3>
                 <Team
@@ -24,6 +25,14 @@ const Fantasy = async () => {
                   teamIds={TEAMS_NO_CLUB_LIMIT[i].teamIds}
                   round={i}
                   captainId={TEAMS_NO_CLUB_LIMIT[i].captainId}
+                ></Team>
+              </div>
+              <div>
+                <h3 className="font-bold">B - No club limit</h3>
+                <Team
+                  teamIds={TEAMS_SECOND_NO_CLUB_LIMIT[i].teamIds}
+                  round={i}
+                  captainId={TEAMS_SECOND_NO_CLUB_LIMIT[i].captainId}
                 ></Team>
               </div>
             </div>

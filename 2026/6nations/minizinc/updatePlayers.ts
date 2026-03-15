@@ -4,7 +4,7 @@ import token from "../token.js";
 import pLimit from "p-limit";
 import playersOff from "../data/playersOff.js";
 
-const ROUND = "3";
+const ROUND = "5";
 
 const OPTIONS = {
   headers: {
@@ -43,7 +43,9 @@ const main = async () => {
         body: `{"filters":{"nom":"","club":"","position":"","budget_ok":false,"valeur_max":25,"engage":false,"partant":false,"dreamteam":false,"quota":"","idj":${ROUND},"pageIndex":${index},"pageSize":10,"loadSelect":0,"searchonly":1}}`,
       },
     );
-    batchedPlayers = (await batch.json()).joueurs;
+    const response = await batch.json();
+    console.log(response);
+    batchedPlayers = response.joueurs;
     console.log({
       index,
       length: batchedPlayers.length,

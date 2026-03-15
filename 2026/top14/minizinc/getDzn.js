@@ -1,3 +1,4 @@
+import { TEAMS_NO_CLUB_LIMIT } from "@/app/2026/top14/bestTeamsNoClubLimit";
 import allPlayers from "../data/players";
 import {
   getPlayerCostForRound,
@@ -11,9 +12,10 @@ const getDzn = (round = 1) => {
   const getPlayerScore = getPlayerScoreForRound(round);
   const getPlayerCost = getPlayerCostForRound(round);
   const getPlayerSub = getPlayerSubForRound(round);
-  const players = allPlayers.filter(
-    (p) => getPlayerScore(p) !== undefined && getPlayerScore(p) > 0,
-  );
+  const firstTeamPlayers = TEAMS_NO_CLUB_LIMIT[round].teamIds;
+  const players = allPlayers
+    .filter((p) => getPlayerScore(p) !== undefined && getPlayerScore(p) > 0)
+    .filter((p) => !firstTeamPlayers.find((ftp) => ftp === p.id));
   // .filter((p) => p.proprietaire.id === "" && !p.offres_encours);
   // .filter(
   //   (p) =>
