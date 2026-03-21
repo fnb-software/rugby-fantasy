@@ -24,6 +24,13 @@ const allClubs = [
     }),
   ),
 ].sort();
+const allPositions = [
+  ...new Set(
+    players.map((p) => {
+      return p.position;
+    }),
+  ),
+].sort();
 
 const countedPlayers = countBy(flatPlayers);
 const sortedPlayers = sortBy(
@@ -51,6 +58,7 @@ Chart.register(CategoryScale, LinearScale, BarElement, Title, Tooltip, Legend);
 
 const Stats = () => {
   const [club, setClub] = useState("");
+  const [position, setPosition] = useState("");
   const [player, setPlayer] = useState(undefined);
   const chartRef = useRef();
   const onClick = (event) => {
@@ -67,11 +75,68 @@ const Stats = () => {
     ? sortedPlayers.filter((player) => player.trgclub === club)
     : [...sortedPlayers];
   const playersOfTheRoundToShow = allPlayersOfTheRound.slice(0, 20);
+
+  const filteredClubPlayers = club
+    ? players.filter((p) => p.trgclub === club)
+    : players;
+  const filteredPlayers = position
+    ? players.filter((p) => p.position === position)
+    : players;
+
+  const playerWithPoints = filteredPlayers.map((p) => {
+    const starterPoints = p.stats.detail.reduce(
+      ({ points, startCount }, round) => {
+        if (round.titulaire) {
+          return {
+            points: points + parseFloat(round.points) * 10,
+            startCount: startCount + 1,
+          };
+        }
+        return { points, startCount };
+      },
+      { points: 0, startCount: 0 },
+    );
+    const starterAverage = starterPoints.startCount
+      ? starterPoints.points / starterPoints.startCount / 10
+      : 0;
+    const subPoints = p.stats.detail.reduce(
+      ({ points, subCount }, round) => {
+        if (round.remplacant) {
+          return {
+            points: points + parseFloat(round.points) * 10,
+            subCount: subCount + 1,
+          };
+        }
+        return { points, subCount };
+      },
+      { points: 0, subCount: 0 },
+    );
+    const subAverage = subPoints.subCount
+      ? subPoints.points / subPoints.subCount / 10
+      : 0;
+    return {
+      ...p,
+      starterAverage,
+      subAverage,
+      startCount: starterPoints.startCount,
+      subCount: subPoints.subCount,
+    };
+  });
+
+  const sortedStarterPoints = sortBy(
+    playerWithPoints.filter((p) => p.startCount > 2),
+    (p) => -p.starterAverage,
+  ).slice(0, 40);
+  const sortedSubPoints = sortBy(
+    playerWithPoints.filter((p) => p.subCount > 2),
+    (p) => -p.subAverage,
+  ).slice(0, 40);
+
   return (
     <>
       <div>
         <label>
-          Filter by team
+          Filter by team{` `}
           <select onChange={(e) => setClub(e.target.value)}>
             <option label={"All"} value={""}></option>
             {allClubs.map((club) => (
@@ -80,7 +145,7 @@ const Stats = () => {
           </select>
         </label>
       </div>
-      <div>
+      <div className={`w-full h-[500px]`}>
         <Bar
           ref={chartRef}
           onClick={onClick}
@@ -128,7 +193,7 @@ const Stats = () => {
         </div>
       )}
 
-      <div>
+      <div className={`w-full h-[500px]`}>
         <Bar
           data={{
             labels: sortedClubs.map((club) => club.name),
@@ -136,6 +201,67 @@ const Stats = () => {
               {
                 label: "In team of the round",
                 data: sortedClubs.map((club) => club.bestTeamCount),
+                borderWidth: 1,
+              },
+            ],
+          }}
+          options={{
+            plugins: {
+              legend: {
+                display: false,
+              },
+            },
+          }}
+        />
+      </div>
+      <div>
+        <label>
+          Filter by position{` `}
+          <select onChange={(e) => setPosition(e.target.value)}>
+            <option label={"All"} value={""}></option>
+            {allPositions.map((position) => (
+              <option label={position} value={position}></option>
+            ))}
+          </select>
+        </label>
+      </div>
+      <div className={`w-full h-[500px]`}>
+        <Bar
+          data={{
+            labels: sortedStarterPoints.map(
+              (player) =>
+                `${player.nom} - ${player.trgclub} - ${player.startCount}`,
+            ),
+            datasets: [
+              {
+                label: "Starter points",
+                data: sortedStarterPoints.map((p) =>
+                  Math.round(p.starterAverage),
+                ),
+                borderWidth: 1,
+              },
+            ],
+          }}
+          options={{
+            plugins: {
+              legend: {
+                display: false,
+              },
+            },
+          }}
+        />
+      </div>
+      <div className={`w-full h-[500px]`}>
+        <Bar
+          data={{
+            labels: sortedSubPoints.map(
+              (player) =>
+                `${player.nom} - ${player.trgclub} - ${player.subCount}`,
+            ),
+            datasets: [
+              {
+                label: "Sub points",
+                data: sortedSubPoints.map((p) => Math.round(p.subAverage)),
                 borderWidth: 1,
               },
             ],

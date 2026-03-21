@@ -12,8 +12,8 @@ array[Players] of int: cost;
 array[Players] of int: value; 
 % position of each player
 array[Players] of int: position; 
-% if each player was a sub
-array[Players] of int: sub; 
+% value of each player as a sub
+array[Players] of int: sub_value; 
 % squad of each player
 array[Players] of int: squad; 
 % all squad ids
@@ -30,15 +30,14 @@ array[1..15] of int: team_position = [12, 12, 13, 11, 11, 10, 10, 10, 9, 8, 6, 6
 
 array[1..16] of var Players: team;
 
-% Supersub is 16th player, should be a sub and points count triple
+% Supersub is 16th player and points count triple
 var Players: supersub = team[16];
-constraint sub[supersub] = 1;
 
 % Connect team and team_position
 constraint forall (i in 1..15) (position[team[i]] = team_position[i]);
 
 % Maximum cost (for low cost use 750)
-% onstraint sum (p in team) (cost[p]) <= 20000;
+%constraint sum (p in team) (cost[p]) <= 20000;
 
 % Don't pick the same player more than once
 constraint alldifferent (team);
@@ -56,7 +55,7 @@ var Players: captain;
 constraint captain in team;
 constraint captain != supersub;
 
-solve maximize sum (p in team) (value[p]) + value[captain] + 2 * value[supersub] ;
+solve maximize sum (p in team) (value[p]) + value[captain] + 3 * sub_value[supersub] - value[supersub] + (value[supersub] - sub_value[supersub]) / 2 ;
 
 % constraint team[10] = '97';
 

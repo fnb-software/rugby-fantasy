@@ -1,5 +1,6 @@
 import Team from "./Team";
 import TeamsOfTheRound from "./TeamsOfTheRound";
+import TournamentTeam from "./TournamentTeam";
 import { TEAMS_SECOND_NO_CLUB_LIMIT } from "./bestSecondTeamsNoClubLimits";
 import { TEAMS } from "./bestTeams";
 import { TEAMS_NO_CLUB_LIMIT } from "./bestTeamsNoClubLimit";
@@ -57,6 +58,32 @@ const Fantasy = async () => {
         ]}
         captainId={509}
       />
+      <div>
+        <h1>Team of the championship</h1>
+        <TournamentTeam
+          teamIds={[
+            160, 1284, 1283, 599, 113, 957, 1082, 866, 588, 1586, 416, 890, 919,
+            1016, 633, 609, 1239, 283,
+          ]}
+          captainId={1586}
+        />
+        <TeamsOfTheRound
+          teams={TEAMS.map((team, i) =>
+            team.teamIds ? (
+              <Team
+                round={i}
+                teamIds={[
+                  160, 1284, 1283, 599, 113, 957, 1082, 866, 588, 1586, 416,
+                  890, 919, 1016, 633, 609, 1239, 283,
+                ]}
+                captainId={1586}
+              />
+            ) : (
+              <EmptyTeam round={i}></EmptyTeam>
+            ),
+          )}
+        ></TeamsOfTheRound>
+      </div>
     </div>
   );
 };

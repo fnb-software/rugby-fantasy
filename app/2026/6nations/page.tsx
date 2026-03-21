@@ -1,10 +1,11 @@
 import Team from "./Team";
 import TeamsOfTheRound from "./TeamsOfTheRound";
+import TournamentTeam from "./TournamentTeam";
 import Solve from "./solver/Solve";
 
 const Fantasy = async () => {
   return (
-    <div className="w-full">
+    <div className="w-full flex flex-col gap-4">
       <TeamsOfTheRound
         teams={[
           <Team
@@ -66,6 +67,63 @@ const Fantasy = async () => {
           ></Team>,
         ]}
       ></TeamsOfTheRound>
+      <div>
+        <h2 className="font-bold">Team of the Tournament</h2>
+        <TournamentTeam
+          teamIds={[
+            342, 338, 161, 291, 369, 182, 28, 351, 113, 117, 108, 400, 257, 704,
+            191, 318,
+          ]}
+          captainId={704}
+        ></TournamentTeam>
+        <div>
+          <TeamsOfTheRound
+            teams={[
+              <Team
+                teamIds={[
+                  342, 338, 161, 291, 369, 182, 28, 351, 113, 117, 108, 400,
+                  257, 704, 191, 318,
+                ]}
+                captainId={704}
+                round={0}
+              ></Team>,
+              <Team
+                teamIds={[
+                  342, 338, 161, 291, 369, 182, 28, 351, 113, 117, 108, 400,
+                  257, 704, 191, 318,
+                ]}
+                captainId={704}
+                round={1}
+              ></Team>,
+              <Team
+                teamIds={[
+                  342, 338, 161, 291, 369, 182, 28, 351, 113, 117, 108, 400,
+                  257, 704, 191, 318,
+                ]}
+                captainId={704}
+                round={2}
+              ></Team>,
+
+              <Team
+                teamIds={[
+                  342, 338, 161, 291, 369, 182, 28, 351, 113, 117, 108, 400,
+                  257, 704, 191, 318,
+                ]}
+                captainId={704}
+                round={3}
+              ></Team>,
+              <Team
+                teamIds={[
+                  342, 338, 161, 291, 369, 182, 28, 351, 113, 117, 108, 400,
+                  257, 704, 191, 318,
+                ]}
+                captainId={704}
+                round={4}
+              ></Team>,
+            ]}
+          ></TeamsOfTheRound>
+        </div>
+      </div>
     </div>
   );
 };

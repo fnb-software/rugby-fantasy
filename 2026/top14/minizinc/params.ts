@@ -1,4 +1,5 @@
 import players from "../data/players";
+import sumBy from "lodash/sumBy";
 
 export const getPlayerScoreForRound =
   (round: number) => (p?: (typeof players)[number]) => {
@@ -6,7 +7,7 @@ export const getPlayerScoreForRound =
       (roundDetail) => roundDetail.numero === round + 1,
     );
 
-    return parseFloat(roundDetail?.points) * 20;
+    return parseFloat(roundDetail?.points || "0") * 20;
   };
 
 export const getPlayerCostForRound =
@@ -37,3 +38,23 @@ export const getPlayerSubForRound =
     }
     return 0;
   };
+
+export const getPlayerScoreTotal = () => (p?: (typeof players)[number]) => {
+  const score = sumBy(
+    p?.stats.detail,
+    (r) => parseFloat(r?.points || "0") * 20,
+  );
+  if (!score) {
+    return 0;
+  }
+  return score;
+};
+
+export const getPlayerSubTotal = () => (p?: (typeof players)[number]) => {
+  const subPoints = p?.stats.detail?.filter((r) => r?.remplacant);
+  const score = sumBy(subPoints, (r) => parseFloat(r?.points || "0") * 20);
+  if (!score) {
+    return 0;
+  }
+  return score;
+};
