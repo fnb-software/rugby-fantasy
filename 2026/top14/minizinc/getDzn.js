@@ -12,10 +12,11 @@ const getDzn = (round = 1) => {
   const getPlayerScore = getPlayerScoreForRound(round);
   const getPlayerCost = getPlayerCostForRound(round);
   const getPlayerSub = getPlayerSubForRound(round);
-  const firstTeamPlayers = TEAMS_NO_CLUB_LIMIT[round].teamIds;
-  const players = allPlayers
-    .filter((p) => getPlayerScore(p) !== undefined && getPlayerScore(p) > 0)
-    .filter((p) => !firstTeamPlayers.find((ftp) => ftp === p.id));
+  // const firstTeamPlayers = TEAMS_NO_CLUB_LIMIT[round].teamIds;
+  const players = allPlayers.filter(
+    (p) => getPlayerScore(p) !== undefined && getPlayerScore(p) > 0,
+  );
+  //  .filter((p) => !firstTeamPlayers.find((ftp) => ftp === p.id));
   // .filter((p) => p.proprietaire.id === "" && !p.offres_encours);
   // .filter(
   //   (p) =>

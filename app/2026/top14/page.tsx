@@ -20,22 +20,26 @@ const Fantasy = async () => {
                   captainId={team.captainId}
                 ></Team>
               </div>
-              <div>
-                <h3 className="font-bold">No club limit</h3>
-                <Team
-                  teamIds={TEAMS_NO_CLUB_LIMIT[i].teamIds}
-                  round={i}
-                  captainId={TEAMS_NO_CLUB_LIMIT[i].captainId}
-                ></Team>
-              </div>
-              <div>
-                <h3 className="font-bold">B - No club limit</h3>
-                <Team
-                  teamIds={TEAMS_SECOND_NO_CLUB_LIMIT[i].teamIds}
-                  round={i}
-                  captainId={TEAMS_SECOND_NO_CLUB_LIMIT[i].captainId}
-                ></Team>
-              </div>
+              {TEAMS_NO_CLUB_LIMIT[i] && (
+                <div>
+                  <h3 className="font-bold">No club limit</h3>
+                  <Team
+                    teamIds={TEAMS_NO_CLUB_LIMIT[i].teamIds}
+                    round={i}
+                    captainId={TEAMS_NO_CLUB_LIMIT[i].captainId}
+                  ></Team>
+                </div>
+              )}
+              {TEAMS_SECOND_NO_CLUB_LIMIT[i] && (
+                <div>
+                  <h3 className="font-bold">B - No club limit</h3>
+                  <Team
+                    teamIds={TEAMS_SECOND_NO_CLUB_LIMIT[i].teamIds}
+                    round={i}
+                    captainId={TEAMS_SECOND_NO_CLUB_LIMIT[i].captainId}
+                  ></Team>
+                </div>
+              )}
             </div>
           ) : (
             <EmptyTeam round={i}></EmptyTeam>
