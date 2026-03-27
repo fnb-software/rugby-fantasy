@@ -26,7 +26,7 @@ array[int] of int: lbound;
 set of int: position_identifiers = {13, 12, 11, 10, 9, 8, 7, 6, 5};
 
 % Distribution of positions in the team
-array[1..15] of int: team_position = [12, 12, 13, 11, 11, 10, 10, 10, 9, 8, 6, 6, 5, 7, 7];
+array[1..15] of int: team_position = [5, 6, 7, 7, 6, 8, 9, 10, 10, 10, 11, 11, 12, 13, 12];
 
 array[1..18] of var Players: team;
 
