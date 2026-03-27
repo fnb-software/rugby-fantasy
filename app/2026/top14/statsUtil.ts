@@ -80,14 +80,25 @@ export const matchesName = (
     s
       .toLowerCase()
       .normalize("NFD")
-      .replace(/[\u0300-\u036f]/g, "");
-  const n = normalize(name);
-  const nom = normalize(p.nom);
-  const nomcomplet = normalize(p.nomcomplet);
+      .replace(/[\u0300-\u036f]/g, "")
+      .replace(/'/g, "")
+      .replace(/-/g, " ");
+  const nameTeamsheet = normalize(name);
+  const nameWithInitial = normalize(p.nom);
+  const nameFull = normalize(p.nomcomplet);
   // "R. Ntamack" style: match initial + last name against p.nom
-  if (n.includes(".")) return nom === n;
-  // plain last name: check nomcomplet ends with it
-  return nomcomplet.endsWith(" " + n) || nomcomplet === n;
+  if (nameTeamsheet.includes(".")) return nameWithInitial === nameTeamsheet;
+  // plain last name: check nomcomplet ends with it, or it appears as a word within it
+  const matchesLastName = (n: string) =>
+    nameFull.endsWith(" " + n) ||
+    nameFull === n ||
+    nameFull.includes(" " + n + " ");
+  if (matchesLastName(nameTeamsheet)) return true;
+  // if teamsheet name was hyphenated, also try just the first segment
+  // (e.g. "Tanga-Mangene" matching a player registered as "Tanga")
+  if (!name.includes("-")) return false;
+  const firstSegment = nameTeamsheet.split(" ")[0];
+  return matchesLastName(firstSegment);
 };
 
 export const getTeamPoints = ({ isMatchHome, result }) => {
@@ -102,18 +113,18 @@ const getHomeResult = (result) => (result > 0 ? 6 : result < 0 ? -2 : 2);
 const getAwayResult = (result) => (result > 0 ? 8 : result < 0 ? 0 : 4);
 
 export const TEAM_RESULTS_EXPECTED = {
-  Bayonne: 5,
-  Castres: 40,
-  Clermont: -12,
-  Lyon: -5,
-  Montpellier: -20,
-  Montauban: -40,
-  Pau: 10,
-  Perpignan: 5,
-  "Racing 92": -10,
-  "La Rochelle": -5,
-  "Stade français": 12,
-  Toulon: -5,
-  Toulouse: 20,
-  "Bordeaux-Bègles": 5,
+  Bayonne: -5,
+  Castres: 25,
+  Clermont: -8,
+  Lyon: 1,
+  Montpellier: -40,
+  Montauban: -25,
+  Pau: 5,
+  Perpignan: -5,
+  "Racing 92": -5,
+  "La Rochelle": 5,
+  "Stade français": 8,
+  Toulon: 5,
+  Toulouse: 40,
+  "Bordeaux-Bègles": -1,
 };

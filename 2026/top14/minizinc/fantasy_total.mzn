@@ -40,8 +40,9 @@ var Players: sub2 = team[18];
 % Connect team and team_position
 constraint forall (i in 1..15) (position[team[i]] = team_position[i]);
 
-% Maximum cost (for low cost use 750)
-%constraint sum (p in team) (cost[p]) <= 20000;
+% Maximum cost (optional, pass a large number to disable)
+int: max_cost;
+constraint sum (p in team) (cost[p]) <= max_cost;
 
 % Don't pick the same player more than once
 constraint alldifferent (team);

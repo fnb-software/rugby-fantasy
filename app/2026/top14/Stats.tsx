@@ -40,13 +40,28 @@ const allClubs = [
     }),
   ),
 ].sort();
+const POSITION_ORDER = [
+  "lib_arriere",
+  "lib_34aile",
+  "lib_34centre",
+  "lib_ouverture",
+  "lib_12melee",
+  "lib_3emeligne",
+  "lib_2emeligne",
+  "lib_talonneur",
+  "lib_pilier",
+];
 const allPositions = [
   ...new Set(
     players.map((p) => {
       return p.position;
     }),
   ),
-].sort();
+].sort(
+  (a, b) =>
+    (POSITION_ORDER.indexOf(a) + 1 || 99) -
+    (POSITION_ORDER.indexOf(b) + 1 || 99),
+);
 const allOwners = [
   ...new Set(
     players.map((p) => {
@@ -105,7 +120,9 @@ const Stats = () => {
   }>({ visible: false, position: null });
   const [searchQuery, setSearchQuery] = useState("");
   const [filterByTeamsheet, setFilterByTeamsheet] = useState(true);
-  const [teamResultsExpected, setTeamResultsExpected] = useState<Record<string, number>>({ ...TEAM_RESULTS_EXPECTED });
+  const [teamResultsExpected, setTeamResultsExpected] = useState<
+    Record<string, number>
+  >({ ...TEAM_RESULTS_EXPECTED });
   const [minSheetsPerPlayer, setMinSheetsPerPlayer] = useState(3);
 
   const chartRef = useRef();
@@ -192,14 +209,16 @@ const Stats = () => {
     ? owner.slice("free__".length)
     : owner;
   const filteredOwner = owner
-    ? owner === actualOwner
-      ? players.filter(
-          (p) => p.proprietaire.nom === owner,
-          //&&   (!p.offres_encours || p.offres_encours_parmoi),
-        )
-      : players.filter(
-          (p) => p.proprietaire.id === "" || p.proprietaire.nom === actualOwner,
-        )
+    ? owner === "__free__"
+      ? players.filter((p) => p.proprietaire.id === "")
+      : owner === actualOwner
+        ? players.filter(
+            (p) => p.proprietaire.nom === owner,
+            //&&   (!p.offres_encours || p.offres_encours_parmoi),
+          )
+        : players.filter(
+            (p) => p.proprietaire.id === "" || p.proprietaire.nom === actualOwner,
+          )
     : players;
   const filteredClubPlayers = club
     ? filteredOwner.filter((p) => p.trgclub === club)
@@ -334,8 +353,12 @@ const Stats = () => {
     };
   });
 
+  const playersWithPointsAndTeamsheet = filterByTeamsheet
+    ? playersWithPoints.filter((p) => p.isTeamsheetStarter || p.isTeamsheetSub)
+    : playersWithPoints;
+
   const sortedStarterPoints = sortBy(
-    playersWithPoints.filter(
+    playersWithPointsAndTeamsheet.filter(
       (p) =>
         p.startCount >= minSheetsPerPlayer &&
         !excludedStarterPlayers.includes(p.id) &&
@@ -344,7 +367,7 @@ const Stats = () => {
     (p) => -p.expectedStarterPoints,
   ).slice(0, 40);
   const sortedSubPoints = sortBy(
-    playersWithPoints.filter(
+    playersWithPointsAndTeamsheet.filter(
       (p) =>
         p.subCount >= minSheetsPerPlayer &&
         !excludedSubPlayers.includes(p.id) &&
@@ -353,8 +376,8 @@ const Stats = () => {
     (p) => -p.expectedSubPoints,
   ).slice(0, 40);
 
-  const selectedPlayers = selectedPlayerIds.map(
-    (id) => (id == null ? null : playersWithPoints.find((p) => p.id === id) ?? null),
+  const selectedPlayers = selectedPlayerIds.map((id) =>
+    id == null ? null : playersWithPoints.find((p) => p.id === id) ?? null,
   );
 
   const addPlayerToSlots = (
@@ -362,8 +385,8 @@ const Stats = () => {
     player: any,
     slotIndex?: number,
   ): (number | null)[] => {
-    const resolved = ids.map(
-      (id) => (id == null ? null : playersWithPoints.find((p) => p.id === id) ?? null),
+    const resolved = ids.map((id) =>
+      id == null ? null : playersWithPoints.find((p) => p.id === id) ?? null,
     );
     return assignPlayerToSlot({ slots: resolved, player, slotIndex }).map(
       (p: any) => p?.id ?? null,
@@ -414,6 +437,7 @@ const Stats = () => {
             ))}
           </select>
         </label>
+        {club && <>{playersWithPointsAndTeamsheet.length} players</>}
       </div>
 
       <div className={`flex gap-4`}>
@@ -422,7 +446,10 @@ const Stats = () => {
           <select onChange={(e) => setPosition(e.target.value)}>
             <option label={"All"} value={""}></option>
             {allPositions.map((position) => (
-              <option label={POSITION_LABELS[position] ?? position} value={position}></option>
+              <option
+                label={POSITION_LABELS[position] ?? position}
+                value={position}
+              ></option>
             ))}
           </select>
         </label>
@@ -430,6 +457,7 @@ const Stats = () => {
           Filter by owner{` `}
           <select onChange={(e) => setOwner(e.target.value)}>
             <option label={"All"} value={""}></option>
+            <option label={"Free"} value={"__free__"}></option>
             {allOwners.map((owner) => (
               <option label={owner} value={owner}></option>
             ))}
@@ -497,7 +525,9 @@ const Stats = () => {
             type="number"
             min={0}
             value={minSheetsPerPlayer}
-            onChange={(e) => setMinSheetsPerPlayer(parseInt(e.target.value) || 0)}
+            onChange={(e) =>
+              setMinSheetsPerPlayer(parseInt(e.target.value) || 0)
+            }
             className="border border-slate-200 rounded px-2 py-1 w-16 text-sm"
           />
         </label>
@@ -640,13 +670,16 @@ const Stats = () => {
         <SelectedPlayers
           players={selectedPlayers}
           removePlayer={(player) => {
-            setSelectedPlayerIds((ids) => ids.map((id) => (id === player.id ? null : id)));
+            setSelectedPlayerIds((ids) =>
+              ids.map((id) => (id === player.id ? null : id)),
+            );
           }}
-          onSolveTeam={async ({ lockedPlayers }) => {
+          onSolveTeam={async ({ lockedPlayers, budget }) => {
             const { teamIds, captainId } = await solve({
               fantasyModel,
               dznString: getDznFromStats({
-                players: playersWithPoints.map((p) => {
+                maxCost: budget,
+                players: playersWithPointsAndTeamsheet.map((p) => {
                   const teamsheet = TEAMSHEETS[p.club];
                   const hasTeamsheet =
                     (teamsheet?.starters.length ?? 0) > 0 ||
@@ -655,7 +688,9 @@ const Stats = () => {
                     ...p,
                     expectedStarterPoints:
                       excludedStarterPlayers.includes(p.id) ||
-                      (filterByTeamsheet && hasTeamsheet && !p.isTeamsheetStarter)
+                      (filterByTeamsheet &&
+                        hasTeamsheet &&
+                        !p.isTeamsheetStarter)
                         ? 0
                         : p.expectedStarterPoints,
                     expectedSubPoints:
@@ -832,7 +867,7 @@ const Stats = () => {
               />
             </div>
             <div className="overflow-y-auto max-h-72 flex flex-col">
-              {playersWithPoints
+              {playersWithPointsAndTeamsheet
                 .filter((p) =>
                   p.nom.toLowerCase().includes(searchQuery.toLowerCase()),
                 )

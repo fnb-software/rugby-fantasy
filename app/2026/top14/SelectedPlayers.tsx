@@ -29,6 +29,9 @@ const SelectedPlayers = ({
 }) => {
   const [status, setStatus] = useState<"solving" | undefined>(undefined);
   const [lockedPlayerIds, setLockedPlayerIds] = useState<string[]>([]);
+  const [budget, setBudget] = useState<number | undefined>(undefined);
+  const [hoveredOwner, setHoveredOwner] = useState<string | null>(null);
+  const [hoveredTeam, setHoveredTeam] = useState<string | null>(null);
   if (!players) {
     return null;
   }
@@ -43,12 +46,21 @@ const SelectedPlayers = ({
 
   return (
     <div>
-      <div>
+      <div className="flex items-center gap-2">
+        <input
+          type="number"
+          step="0.1"
+          placeholder="Budget"
+          value={budget ?? ""}
+          onChange={(e) => setBudget(e.target.value ? parseFloat(e.target.value) : undefined)}
+          className="px-2 py-1 text-xs border border-slate-300 rounded-lg w-24"
+        />
         <button
           onClick={async () => {
             setStatus("solving");
             try {
               await onSolveTeam({
+                budget,
                 lockedPlayers: lockedPlayerIds
                   .map((id) => {
                     const index = players.findIndex(
@@ -102,6 +114,11 @@ const SelectedPlayers = ({
               lockPlayer={lockPlayer}
               unlockPlayer={unlockPlayer}
               onSearchPlayer={() => onSearchPlayer(slotIndex)}
+              isHighlighted={
+                (hoveredOwner !== null &&
+                  player?.proprietaire?.nom === hoveredOwner) ||
+                (hoveredTeam !== null && player?.trgclub === hoveredTeam)
+              }
             />
           ))}
         </tbody>
@@ -144,9 +161,35 @@ const SelectedPlayers = ({
           .map(([ownerName, count]) => (
             <span
               key={ownerName}
-              className="px-2 py-0.5 bg-slate-100 text-slate-600 rounded"
+              className="px-2 py-0.5 bg-slate-100 text-slate-600 rounded cursor-default"
+              onMouseEnter={() => setHoveredOwner(ownerName)}
+              onMouseLeave={() => setHoveredOwner(null)}
             >
               {ownerName} - <span className="font-bold">{count}</span>
+            </span>
+          ))}
+      </div>
+      <div className="mt-2 flex flex-wrap gap-2 text-xs">
+        {(
+          Object.entries(
+            players
+              .filter((player) => player?.trgclub)
+              .reduce((countByTeam: Record<string, number>, player) => {
+                const teamName = player.trgclub;
+                countByTeam[teamName] = (countByTeam[teamName] || 0) + 1;
+                return countByTeam;
+              }, {}),
+          ) as [string, number][]
+        )
+          .sort(([, countA], [, countB]) => countB - countA)
+          .map(([teamName, count]) => (
+            <span
+              key={teamName}
+              className="px-2 py-0.5 bg-blue-50 text-blue-600 rounded cursor-default"
+              onMouseEnter={() => setHoveredTeam(teamName)}
+              onMouseLeave={() => setHoveredTeam(null)}
+            >
+              {teamName} - <span className="font-bold">{count}</span>
             </span>
           ))}
       </div>
@@ -163,8 +206,9 @@ const Player = ({
   lockPlayer,
   unlockPlayer,
   onSearchPlayer,
+  isHighlighted,
 }) => (
-  <tr className={isLocked ? "font-bold" : ""}>
+  <tr className={`${isLocked ? "font-bold" : ""} ${isHighlighted ? "bg-yellow-100" : ""}`}>
     <td className="">{getSlotPosition({ slotIndex })}</td>
     <td className="pl-2">{player?.nom}</td>
     <td className="pl-5">{player?.trgclub}</td>
@@ -173,6 +217,10 @@ const Player = ({
         player.proprietaire?.id === "" ? (
           <span className="px-1 py-0.5 bg-green-100 text-green-700 rounded font-medium">
             free
+          </span>
+        ) : player.offres_encours_parmoi ? (
+          <span className="text-slate-400 italic" title="Pending offer">
+            {player.proprietaire?.nom} ~
           </span>
         ) : (
           <span className="text-slate-500">{player.proprietaire?.nom}</span>

@@ -1,6 +1,6 @@
 const MAX_PER_TEAM = 4;
 
-const getDznFromStats = ({ players: allPlayers, lockedPlayers }) => {
+const getDznFromStats = ({ players: allPlayers, lockedPlayers, maxCost }) => {
   const getPlayerScore = (p) => (p.expectedStarterPoints || 0).toFixed(1);
   const getPlayerCost = (p) => p.valeur;
   const getPlayerSub = (p) => (p.expectedSubPoints || 0).toFixed(1);
@@ -30,6 +30,7 @@ const getDznFromStats = ({ players: allPlayers, lockedPlayers }) => {
   squadIds = [${squadIds}];
   lbound = [${squadIds.map(() => 0)}];
   ubound = [${squadIds.map(() => MAX_PER_TEAM)}];
+  max_cost = ${maxCost != null ? Math.round(maxCost * 10) : 999999};
   ${lockedPlayers.length ? `team = [${team.join(",")}];` : ``}
   `;
   console.log(data);
