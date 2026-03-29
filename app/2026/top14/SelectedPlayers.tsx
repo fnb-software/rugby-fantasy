@@ -210,7 +210,7 @@ const Player = ({
 }) => (
   <tr className={`${isLocked ? "font-bold" : ""} ${isHighlighted ? "bg-yellow-100" : ""}`}>
     <td className="">{getSlotPosition({ slotIndex })}</td>
-    <td className="pl-2">{player?.nom}</td>
+    <td className="pl-2">{player?.nom}{player?.hasTeamsheet && !player?.isTeamsheetStarter && !player?.isTeamsheetSub ? " ⚠️" : ""}</td>
     <td className="pl-5">{player?.trgclub}</td>
     <td className="pl-5 text-xs">
       {player ? (
@@ -272,6 +272,15 @@ const Player = ({
           >
             🚫
           </button>
+          <a
+            href={`https://www.allrugby.com/recherche?q=${(player.nomcomplet || player.nom).replace(/ /g, "+")}`}
+            target="_blank"
+            rel="noreferrer"
+            title="Search on allrugby.com"
+            className="px-1 py-1 text-xs font-medium text-slate-700 bg-slate-200 hover:bg-slate-50 rounded-lg transition-colors"
+          >
+            🔍
+          </a>
         </div>
       ) : (
         <div className={"flex gap-2"}>

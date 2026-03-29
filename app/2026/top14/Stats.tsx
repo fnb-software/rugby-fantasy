@@ -102,8 +102,10 @@ const Stats = () => {
   const [owner, setOwner] = useState("");
   const [maxRound, setMaxRound] = useState(0);
   const [player, setPlayer] = useState(undefined);
-  const [excludedStarterPlayers, setExcludedStarterPlayers] = useState([]);
-  const [excludedSubPlayers, setExcludedSubPlayers] = useState([]);
+  const [excludedStarterPlayers, setExcludedStarterPlayers] = useState<
+    number[]
+  >([]);
+  const [excludedSubPlayers, setExcludedSubPlayers] = useState<number[]>([]);
   const [selectedPlayerIds, setSelectedPlayerIds] = useState<(number | null)[]>(
     Array(18).fill(null),
   );
@@ -111,8 +113,9 @@ const Stats = () => {
     visible: false,
     x: 0,
     y: 0,
-    data: undefined,
-    event: undefined,
+    data: undefined as { label: any } | undefined,
+    playerIndex: undefined as number | undefined,
+    source: undefined as "starter" | "sub" | undefined,
   });
   const [searchModal, setSearchModal] = useState<{
     visible: boolean;
@@ -124,6 +127,9 @@ const Stats = () => {
     Record<string, number>
   >({ ...TEAM_RESULTS_EXPECTED });
   const [minSheetsPerPlayer, setMinSheetsPerPlayer] = useState(3);
+  const [maxSheetsPerPlayer, setMaxSheetsPerPlayer] = useState<
+    number | undefined
+  >(undefined);
 
   const chartRef = useRef();
   const starterRef = useRef();
@@ -136,38 +142,45 @@ const Stats = () => {
     return () => window.removeEventListener("click", handleClickOutside);
   }, [popover]);
 
-  const onClickStarterPlayer = (event) => {
-    const chart = starterRef.current;
-    if (!chart) return;
-
-    // Find the element under the click
+  const openPopover = (
+    event: React.MouseEvent,
+    chart: any,
+    source: "starter" | "sub",
+  ) => {
     const points = chart.getElementsAtEventForMode(
       event.nativeEvent,
       "nearest",
       { intersect: true },
       true,
     );
-
     if (points.length > 0) {
-      event.nativeEvent.stopPropagation(); // Prevent immediate closing from the window listener
+      event.nativeEvent.stopPropagation();
       const firstPoint = points[0];
       const label = chart.data.labels[firstPoint.index];
-      const value =
-        chart.data.datasets[firstPoint.datasetIndex].data[firstPoint.index];
-
-      // Get position of the clicked bar
       const { offsetLeft, offsetTop } = chart.canvas;
-
       setPopover({
         visible: true,
         x: offsetLeft + firstPoint.element.x,
         y: offsetTop + firstPoint.element.y,
-        data: { label, value },
-        event,
+        data: { label },
+        playerIndex: firstPoint.index,
+        source,
       });
     } else {
-      setPopover({ ...popover, visible: false });
+      setPopover((p) => ({ ...p, visible: false }));
     }
+  };
+
+  const onClickStarterPlayer = (event) => {
+    const chart = starterRef.current;
+    if (!chart) return;
+    openPopover(event, chart, "starter");
+  };
+
+  const onClickSubPlayer = (event) => {
+    const chart = subRef.current;
+    if (!chart) return;
+    openPopover(event, chart, "sub");
   };
 
   const onClickPlayerOfTheRound = (event) => {
@@ -180,25 +193,19 @@ const Stats = () => {
     setPlayer(playersOfTheRoundToShow[element[0].index]);
   };
 
-  const onClickExcludeStarterPlayer = (event) => {
-    const element = getElementAtEvent(starterRef.current, event);
-    if (!element) {
-      return;
+  const onClickExcludeFromChart = () => {
+    const idx = popover.playerIndex;
+    if (idx === undefined) return;
+    if (popover.source === "sub") {
+      setExcludedSubPlayers((players) =>
+        players.concat([sortedSubPoints[idx].id]),
+      );
+    } else {
+      setExcludedStarterPlayers((players) =>
+        players.concat([sortedStarterPoints[idx].id]),
+      );
     }
-    setExcludedStarterPlayers((players) =>
-      players.concat([sortedStarterPoints[element[0].index].id]),
-    );
-    setPopover({ visible: false });
-  };
-
-  const onClickExcludeSubPlayer = (event) => {
-    const element = getElementAtEvent(subRef.current, event);
-    if (!element) {
-      return;
-    }
-    setExcludedSubPlayers((players) =>
-      players.concat([sortedSubPoints[element[0].index].id]),
-    );
+    setPopover((p) => ({ ...p, visible: false }));
   };
 
   const allPlayersOfTheRound = club
@@ -212,13 +219,13 @@ const Stats = () => {
     ? owner === "__free__"
       ? players.filter((p) => p.proprietaire.id === "")
       : owner === actualOwner
-        ? players.filter(
-            (p) => p.proprietaire.nom === owner,
-            //&&   (!p.offres_encours || p.offres_encours_parmoi),
-          )
-        : players.filter(
-            (p) => p.proprietaire.id === "" || p.proprietaire.nom === actualOwner,
-          )
+      ? players.filter(
+          (p) => p.proprietaire.nom === owner,
+          //&&   (!p.offres_encours || p.offres_encours_parmoi),
+        )
+      : players.filter(
+          (p) => p.proprietaire.id === "" || p.proprietaire.nom === actualOwner,
+        )
     : players;
   const filteredClubPlayers = club
     ? filteredOwner.filter((p) => p.trgclub === club)
@@ -277,7 +284,7 @@ const Stats = () => {
       : 0;
     const starterMinutes = starterPoints.minutes
       ? starterPoints.minutes / starterPoints.startCount
-      : 0;
+      : 60; // Fake minutes to show expected team points
     const subPoints = p.stats.detail.reduce(
       ({ points, subCount, playerPoints, minutes }, round) => {
         if (round.remplacant && (!maxRound || round.numero <= maxRound)) {
@@ -305,7 +312,7 @@ const Stats = () => {
       : 0;
     const subMinutes = subPoints.minutes
       ? subPoints.minutes / subPoints.subCount
-      : 0;
+      : 20; // Fake minutes to show expected team points
 
     const expectedTeamPoints = getTeamPoints({
       isMatchHome,
@@ -328,11 +335,27 @@ const Stats = () => {
       teamsheet?.starters.some((name) => matchesName(p, name)) ?? false;
     const isTeamsheetSub =
       teamsheet?.subs.some((name) => matchesName(p, name)) ?? false;
+    const hasTeamsheet =
+      (teamsheet?.starters.length ?? 0) > 0 ||
+      (teamsheet?.subs.length ?? 0) > 0;
+
+    const totalMinutes = p.stats.detail.reduce(
+      (sum: number, r: any) => sum + (r.minutes ?? 0),
+      0,
+    );
+    const getStat = (libelle: string) => {
+      const action = p.stats.stats_individuelles?.find(
+        (a: any) => a.libelle.trim().toLowerCase() === libelle.toLowerCase(),
+      );
+      if (!action || !totalMinutes) return 0;
+      return Math.round((action.total / totalMinutes) * 80 * 10) / 10;
+    };
 
     return {
       ...p,
       isTeamsheetStarter,
       isTeamsheetSub,
+      hasTeamsheet,
       starterAverage,
       starterMinutes,
       subAverage,
@@ -350,6 +373,10 @@ const Stats = () => {
       starterNextRoundPoints,
       nextRoundMinutes,
       subNextRoundPoints,
+      avgPenalties: getStat("Conceded penalty"),
+      avgYellowCards: getStat("Yellow cards"),
+      avgOrangeCards: getStat("lib_carton_orange"),
+      avgRedCards: getStat("Red cards"),
     };
   });
 
@@ -361,6 +388,8 @@ const Stats = () => {
     playersWithPointsAndTeamsheet.filter(
       (p) =>
         p.startCount >= minSheetsPerPlayer &&
+        (maxSheetsPerPlayer === undefined ||
+          p.startCount <= maxSheetsPerPlayer) &&
         !excludedStarterPlayers.includes(p.id) &&
         (!filterByTeamsheet || p.isTeamsheetStarter),
     ),
@@ -370,6 +399,8 @@ const Stats = () => {
     playersWithPointsAndTeamsheet.filter(
       (p) =>
         p.subCount >= minSheetsPerPlayer &&
+        (maxSheetsPerPlayer === undefined ||
+          p.subCount <= maxSheetsPerPlayer) &&
         !excludedSubPlayers.includes(p.id) &&
         (!filterByTeamsheet || p.isTeamsheetSub),
     ),
@@ -393,36 +424,38 @@ const Stats = () => {
     );
   };
 
-  const onClickAddStarterPlayer = (event) => {
-    const element = getElementAtEvent(starterRef.current, event);
-    if (!element) return;
-    const player = sortedStarterPoints[element[0].index];
-    const playerWithPoints = playersWithPoints.find((p) => p.id === player.id);
-    setSelectedPlayerIds((ids) => addPlayerToSlots(ids, playerWithPoints));
-    setPopover({ visible: false });
+  const resolvePopoverPlayer = () => {
+    const idx = popover.playerIndex;
+    if (idx === undefined) return undefined;
+    const list =
+      popover.source === "sub" ? sortedSubPoints : sortedStarterPoints;
+    return playersWithPoints.find((p) => p.id === list[idx].id);
   };
 
-  const onClickAddSubPlayer = (event) => {
-    const element = getElementAtEvent(starterRef.current, event);
-    if (!element) return;
-    const player = sortedStarterPoints[element[0].index];
-    const playerWithPoints = playersWithPoints.find((p) => p.id === player.id);
+  const onClickAddStarterPlayer = () => {
+    const playerWithPoints = resolvePopoverPlayer();
+    if (!playerWithPoints) return;
+    setSelectedPlayerIds((ids) => addPlayerToSlots(ids, playerWithPoints));
+    setPopover((p) => ({ ...p, visible: false }));
+  };
+
+  const onClickAddSubPlayer = () => {
+    const playerWithPoints = resolvePopoverPlayer();
+    if (!playerWithPoints) return;
     setSelectedPlayerIds((ids) => {
       const emptySubIdx = [16, 17].find((i) => !ids[i]);
       return emptySubIdx !== undefined
         ? addPlayerToSlots(ids, playerWithPoints, emptySubIdx)
         : ids;
     });
-    setPopover({ visible: false });
+    setPopover((p) => ({ ...p, visible: false }));
   };
 
-  const onClickAddSupersub = (event) => {
-    const element = getElementAtEvent(starterRef.current, event);
-    if (!element) return;
-    const player = sortedStarterPoints[element[0].index];
-    const playerWithPoints = playersWithPoints.find((p) => p.id === player.id);
+  const onClickAddSupersub = () => {
+    const playerWithPoints = resolvePopoverPlayer();
+    if (!playerWithPoints) return;
     setSelectedPlayerIds((ids) => addPlayerToSlots(ids, playerWithPoints, 15));
-    setPopover({ visible: false });
+    setPopover((p) => ({ ...p, visible: false }));
   };
 
   return (
@@ -437,7 +470,6 @@ const Stats = () => {
             ))}
           </select>
         </label>
-        {club && <>{playersWithPointsAndTeamsheet.length} players</>}
       </div>
 
       <div className={`flex gap-4`}>
@@ -498,6 +530,7 @@ const Stats = () => {
           </span>
         </div>
       </div>
+      <div>{playersWithPointsAndTeamsheet.length} players</div>
       <div>
         <label>
           Count stats until{` `}
@@ -531,6 +564,21 @@ const Stats = () => {
             className="border border-slate-200 rounded px-2 py-1 w-16 text-sm"
           />
         </label>
+        {` `}
+        <label>
+          Max{` `}
+          <input
+            type="number"
+            min={0}
+            value={maxSheetsPerPlayer ?? ""}
+            onChange={(e) =>
+              setMaxSheetsPerPlayer(
+                e.target.value ? parseInt(e.target.value) : undefined,
+              )
+            }
+            className="border border-slate-200 rounded px-2 py-1 w-16 text-sm"
+          />
+        </label>
       </div>
       <div className={`w-full h-[500px]`}>
         <Bar
@@ -539,9 +587,11 @@ const Stats = () => {
           data={{
             labels: sortedStarterPoints.map(
               (player) =>
-                `${player.nom} - ${player.trgclub} - ${
-                  player.startCount
-                } - ${Math.round(player.starterMinutes)}`,
+                `${player.nom}${player.hasTeamsheet && !player.isTeamsheetStarter && !player.isTeamsheetSub ? " ⚠️" : ""} - ${
+                  player.proprietaire?.id === ""
+                    ? "🟢"
+                    : player.proprietaire?.nom ?? ""
+                }`,
             ),
             datasets: maxRound
               ? [
@@ -595,8 +645,32 @@ const Stats = () => {
               },
             },
             plugins: {
-              legend: {
-                display: false,
+              legend: { display: false },
+              tooltip: {
+                callbacks: {
+                  title: (items) => {
+                    const p = sortedStarterPoints[items[0].dataIndex];
+                    const f = (k: string) => k.padEnd(13);
+                    return [
+                      p.nom,
+                      `${f("Position")}${
+                        POSITION_LABELS[p.position] ?? p.position
+                      }`,
+                      `${f("Club")}${p.trgclub}`,
+                      `${f("Owner")}${
+                        p.proprietaire?.id === ""
+                          ? "🟢 free"
+                          : p.proprietaire?.nom ?? ""
+                      }`,
+                      `${f("Starts")}${p.startCount}`,
+                      `${f("Avg minutes")}${Math.round(p.starterMinutes)}`,
+                      ...(p.avgPenalties ? [`${f("Pen/80min")}${p.avgPenalties}`] : []),
+                      ...(p.avgYellowCards ? [`${f("Yellow/80min")}${p.avgYellowCards}`] : []),
+                      ...(p.avgOrangeCards ? [`${f("Orange/80min")}${p.avgOrangeCards}`] : []),
+                      ...(p.avgRedCards ? [`${f("Red/80min")}${p.avgRedCards}`] : []),
+                    ];
+                  },
+                },
               },
             },
           }}
@@ -605,13 +679,15 @@ const Stats = () => {
       <div className={`w-full h-[500px]`}>
         <Bar
           ref={subRef}
-          onClick={onClickExcludeSubPlayer}
+          onClick={onClickSubPlayer}
           data={{
             labels: sortedSubPoints.map(
               (player) =>
-                `${player.nom} - ${player.trgclub} - ${
-                  player.subCount
-                } - ${Math.round(player.subMinutes)}`,
+                `${player.nom}${player.hasTeamsheet && !player.isTeamsheetStarter && !player.isTeamsheetSub ? " ⚠️" : ""} - ${
+                  player.proprietaire?.id === ""
+                    ? "🟢"
+                    : player.proprietaire?.nom ?? ""
+                }`,
             ),
             datasets: maxRound
               ? [
@@ -659,8 +735,32 @@ const Stats = () => {
               },
             },
             plugins: {
-              legend: {
-                display: false,
+              legend: { display: false },
+              tooltip: {
+                callbacks: {
+                  title: (items) => {
+                    const p = sortedSubPoints[items[0].dataIndex];
+                    const f = (k: string) => k.padEnd(13);
+                    return [
+                      p.nom,
+                      `${f("Position")}${
+                        POSITION_LABELS[p.position] ?? p.position
+                      }`,
+                      `${f("Club")}${p.trgclub}`,
+                      `${f("Owner")}${
+                        p.proprietaire?.id === ""
+                          ? "🟢 free"
+                          : p.proprietaire?.nom ?? ""
+                      }`,
+                      `${f("Subs")}${p.subCount}`,
+                      `${f("Avg minutes")}${Math.round(p.subMinutes)}`,
+                      ...(p.avgPenalties ? [`${f("Pen/80min")}${p.avgPenalties}`] : []),
+                      ...(p.avgYellowCards ? [`${f("Yellow/80min")}${p.avgYellowCards}`] : []),
+                      ...(p.avgOrangeCards ? [`${f("Orange/80min")}${p.avgOrangeCards}`] : []),
+                      ...(p.avgRedCards ? [`${f("Red/80min")}${p.avgRedCards}`] : []),
+                    ];
+                  },
+                },
               },
             },
           }}
@@ -731,7 +831,12 @@ const Stats = () => {
           onClick={onClickPlayerOfTheRound}
           data={{
             labels: playersOfTheRoundToShow.map(
-              (player) => `${player.nom} - ${player.trgclub}`,
+              (player) =>
+                `${player.nom} - ${
+                  player.proprietaire?.id === ""
+                    ? "🟢"
+                    : player.proprietaire?.nom ?? ""
+                }`,
             ),
             datasets: [
               {
@@ -745,8 +850,26 @@ const Stats = () => {
           }}
           options={{
             plugins: {
-              legend: {
-                display: false,
+              legend: { display: false },
+              tooltip: {
+                callbacks: {
+                  title: (items) => {
+                    const p = playersOfTheRoundToShow[items[0].dataIndex];
+                    const f = (k: string) => k.padEnd(13);
+                    return [
+                      p.nom,
+                      `${f("Position")}${
+                        POSITION_LABELS[p.position] ?? p.position
+                      }`,
+                      `${f("Club")}${p.trgclub}`,
+                      `${f("Owner")}${
+                        p.proprietaire?.id === ""
+                          ? "🟢 free"
+                          : p.proprietaire?.nom ?? ""
+                      }`,
+                    ];
+                  },
+                },
               },
             },
           }}
@@ -812,7 +935,7 @@ const Stats = () => {
             </div>
 
             <button
-              onClick={() => onClickAddStarterPlayer(popover.event)}
+              onClick={() => onClickAddStarterPlayer()}
               className="flex items-center w-full px-3 py-2 text-xs font-medium text-slate-700 hover:bg-slate-50 rounded-lg transition-colors group"
             >
               <span className="w-2 h-2 rounded-full bg-indigo-500 mr-2" />
@@ -820,7 +943,7 @@ const Stats = () => {
             </button>
 
             <button
-              onClick={() => onClickAddSubPlayer(popover.event)}
+              onClick={() => onClickAddSubPlayer()}
               className="flex items-center w-full px-3 py-2 text-xs font-medium text-slate-700 hover:bg-slate-50 rounded-lg transition-colors group"
             >
               <span className="w-2 h-2 rounded-full bg-indigo-500 mr-2" />
@@ -828,7 +951,7 @@ const Stats = () => {
             </button>
 
             <button
-              onClick={() => onClickAddSupersub(popover.event)}
+              onClick={() => onClickAddSupersub()}
               className="flex items-center w-full px-3 py-2 text-xs font-medium text-slate-700 hover:bg-slate-50 rounded-lg transition-colors group"
             >
               <span className="w-2 h-2 rounded-full bg-indigo-500 mr-2" />
@@ -836,7 +959,7 @@ const Stats = () => {
             </button>
 
             <button
-              onClick={() => onClickExcludeStarterPlayer(popover.event)}
+              onClick={() => onClickExcludeFromChart()}
               className="flex items-center w-full px-3 py-2 text-xs font-medium text-red-600 hover:bg-red-50 rounded-lg transition-colors"
             >
               <span className="w-2 h-2 rounded-full bg-red-500 mr-2" />
