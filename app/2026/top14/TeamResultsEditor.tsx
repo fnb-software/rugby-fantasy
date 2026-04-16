@@ -9,6 +9,38 @@ type Props = {
   onChange: (teamResultsExpected: Record<string, number>) => void;
 };
 
+const ALLRUGBY_SLUGS: Record<string, string> = {
+  Toulouse: 'stade-toulousain',
+  'La Rochelle': 'la-rochelle',
+  'Bordeaux-Bègles': 'union-bordeaux-begles',
+  'Racing 92': 'racing-92',
+  'Stade français': 'stade-francais-paris',
+  Toulon: 'rugby-club-toulonnais',
+  Clermont: 'asm-clermont-auvergne',
+  Lyon: 'lou',
+  Castres: 'castres-olympique',
+  Montpellier: 'montpellier',
+  Pau: 'pau',
+  Bayonne: 'aviron-bayonnais',
+  Perpignan: 'usap',
+  Montauban: 'usm',
+};
+
+const clubLink = (club: string) => {
+  const slug = ALLRUGBY_SLUGS[club];
+  if (!slug) return <span className="font-medium">{club}</span>;
+  return (
+    <a
+      href={`https://www.allrugby.com/clubs/${slug}/calendrier`}
+      target="_blank"
+      rel="noopener noreferrer"
+      className="font-medium text-blue-600 hover:underline"
+    >
+      {club}
+    </a>
+  );
+};
+
 const TeamResultsEditor = ({ matches, teamResultsExpected, onChange }: Props) => {
   return (
     <div className="flex flex-wrap gap-4">
@@ -16,9 +48,9 @@ const TeamResultsEditor = ({ matches, teamResultsExpected, onChange }: Props) =>
         const homeResult = teamResultsExpected[match.clubdom] ?? 0;
         return (
           <div key={match.clubdom} className="flex items-center gap-2 text-sm border border-slate-200 rounded-lg px-3 py-2">
-            <span className="font-medium">{match.clubdom}</span>
+            {clubLink(match.clubdom)}
             <span className="text-slate-400">vs</span>
-            <span className="font-medium">{match.clubext}</span>
+            {clubLink(match.clubext)}
             <input
               type="number"
               value={homeResult}

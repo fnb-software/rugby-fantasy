@@ -132,18 +132,18 @@ const getHomeResult = (result) => (result > 0 ? 6 : result < 0 ? -2 : 2);
 const getAwayResult = (result) => (result > 0 ? 8 : result < 0 ? 0 : 4);
 
 export const TEAM_RESULTS_EXPECTED = {
-  Bayonne: 1,
+  Bayonne: -10,
   Castres: -25,
   Clermont: 12,
   Lyon: -12,
-  Montpellier: 20,
-  Montauban: -35,
-  Pau: -1,
-  Perpignan: -20,
-  "Racing 92": 8,
-  "La Rochelle": -20,
-  "Stade français": -8,
-  Toulon: 35,
+  Montpellier: 40,
+  Montauban: -15,
+  Pau: 10,
+  Perpignan: -40,
+  "Racing 92": 1,
+  "La Rochelle": 1,
+  "Stade français": -1,
+  Toulon: 15,
   Toulouse: 25,
-  "Bordeaux-Bègles": 20,
+  "Bordeaux-Bègles": -1,
 };

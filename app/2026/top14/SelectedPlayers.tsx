@@ -29,12 +29,40 @@ const SelectedPlayers = ({
 }) => {
   const [status, setStatus] = useState<"solving" | undefined>(undefined);
   const [lockedPlayerIds, setLockedPlayerIds] = useState<string[]>([]);
+  const [lockedCaptainId, setLockedCaptainId] = useState<string | null>(null);
   const [budget, setBudget] = useState<number | undefined>(undefined);
   const [hoveredOwner, setHoveredOwner] = useState<string | null>(null);
   const [hoveredTeam, setHoveredTeam] = useState<string | null>(null);
   if (!players) {
     return null;
   }
+
+  const lockedCaptainIndex = lockedCaptainId
+    ? players
+        .slice(0, 15)
+        .findIndex((player) => player?.id === lockedCaptainId)
+    : -1;
+  const captainIndex =
+    lockedCaptainIndex !== -1
+      ? lockedCaptainIndex
+      : players
+          .slice(0, 15)
+          .reduce(
+            (bestIndex, player, index) =>
+              player &&
+              (bestIndex === -1 ||
+                player.expectedStarterPoints >
+                  players[bestIndex].expectedStarterPoints)
+                ? index
+                : bestIndex,
+            -1,
+          );
+
+  const toggleCaptainLock = (player) => {
+    setLockedCaptainId((currentId) =>
+      currentId === player.id ? null : player.id,
+    );
+  };
 
   const lockPlayer = (player) => {
     setLockedPlayerIds((ids) => ids.concat([player.id]));
@@ -119,6 +147,12 @@ const SelectedPlayers = ({
                   player?.proprietaire?.nom === hoveredOwner) ||
                 (hoveredTeam !== null && player?.trgclub === hoveredTeam)
               }
+              isCaptain={slotIndex === captainIndex}
+              isCaptainLocked={
+                !!player && player.id === lockedCaptainId
+              }
+              canBeCaptain={slotIndex < 15}
+              toggleCaptainLock={toggleCaptainLock}
             />
           ))}
         </tbody>
@@ -132,6 +166,9 @@ const SelectedPlayers = ({
               (total, player) => total + (player?.expectedStarterPoints || 0),
               0,
             ) +
+          (captainIndex !== -1
+            ? players[captainIndex].expectedStarterPoints
+            : 0) +
           players
             .slice(16, 18)
             .reduce(
@@ -207,10 +244,14 @@ const Player = ({
   unlockPlayer,
   onSearchPlayer,
   isHighlighted,
+  isCaptain,
+  isCaptainLocked,
+  canBeCaptain,
+  toggleCaptainLock,
 }) => (
   <tr className={`${isLocked ? "font-bold" : ""} ${isHighlighted ? "bg-yellow-100" : ""}`}>
     <td className="">{getSlotPosition({ slotIndex })}</td>
-    <td className="pl-2">{player?.nom}{player?.hasTeamsheet && !player?.isTeamsheetStarter && !player?.isTeamsheetSub ? " ⚠️" : ""}</td>
+    <td className="pl-2">{isCaptain && player ? "(c) " : ""}{player?.nom}{player?.hasTeamsheet && !player?.isTeamsheetStarter && !player?.isTeamsheetSub ? " ⚠️" : ""}</td>
     <td className="pl-5">{player?.trgclub}</td>
     <td className="pl-5 text-xs">
       {player ? (
@@ -253,6 +294,23 @@ const Player = ({
               className="px-1 py-1 text-xs font-medium text-slate-700 bg-slate-200 hover:bg-slate-50 rounded-lg transition-colors"
             >
               🔒
+            </button>
+          )}
+          {canBeCaptain && (
+            <button
+              title={
+                isCaptainLocked
+                  ? "Unlock captain (auto-select highest scorer)"
+                  : "Lock this player as captain"
+              }
+              onClick={() => toggleCaptainLock(player)}
+              className={`px-1 py-1 text-xs font-medium rounded-lg transition-colors ${
+                isCaptainLocked
+                  ? "text-white bg-amber-500 hover:bg-amber-400"
+                  : "text-slate-700 bg-slate-200 hover:bg-slate-50"
+              }`}
+            >
+              🎖️
             </button>
           )}
           <button
