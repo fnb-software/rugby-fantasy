@@ -107,7 +107,7 @@ const Stats = () => {
   >([]);
   const [excludedSubPlayers, setExcludedSubPlayers] = useState<number[]>([]);
   const [selectedPlayerIds, setSelectedPlayerIds] = useState<(number | null)[]>(
-    Array(18).fill(null),
+    Array(21).fill(null),
   );
   const [popover, setPopover] = useState({
     visible: false,
@@ -776,35 +776,58 @@ const Stats = () => {
             );
           }}
           onSolveTeam={async ({ lockedPlayers, budget }) => {
+            const reservePlayers = selectedPlayers
+              .slice(18, 21)
+              .filter((p): p is NonNullable<typeof p> => !!p);
+            const reserveIds = new Set(reservePlayers.map((p) => p.id));
+            const teamLockedPlayers = lockedPlayers.filter(
+              ({ index }) => index < 18,
+            );
+            const adjustedBudget =
+              budget != null
+                ? budget -
+                  reservePlayers.reduce((sum, p) => sum + (p.valeur || 0), 0)
+                : undefined;
             const { teamIds, captainId } = await solve({
               fantasyModel,
               dznString: getDznFromStats({
-                maxCost: budget,
-                players: playersWithPointsAndTeamsheet.map((p) => {
-                  const teamsheet = TEAMSHEETS[p.club];
-                  const hasTeamsheet =
-                    (teamsheet?.starters.length ?? 0) > 0 ||
-                    (teamsheet?.subs.length ?? 0) > 0;
-                  return {
-                    ...p,
-                    expectedStarterPoints:
-                      excludedStarterPlayers.includes(p.id) ||
-                      (filterByTeamsheet &&
-                        hasTeamsheet &&
-                        !p.isTeamsheetStarter)
-                        ? 0
-                        : p.expectedStarterPoints,
-                    expectedSubPoints:
-                      excludedSubPlayers.includes(p.id) ||
-                      (filterByTeamsheet && hasTeamsheet && !p.isTeamsheetSub)
-                        ? 0
-                        : p.expectedSubPoints,
-                  };
-                }),
-                lockedPlayers,
+                maxCost: adjustedBudget,
+                players: playersWithPointsAndTeamsheet
+                  .filter((p) => !reserveIds.has(p.id))
+                  .map((p) => {
+                    const teamsheet = TEAMSHEETS[p.club];
+                    const hasTeamsheet =
+                      (teamsheet?.starters.length ?? 0) > 0 ||
+                      (teamsheet?.subs.length ?? 0) > 0;
+                    return {
+                      ...p,
+                      expectedStarterPoints:
+                        excludedStarterPlayers.includes(p.id) ||
+                        (filterByTeamsheet &&
+                          hasTeamsheet &&
+                          !p.isTeamsheetStarter)
+                          ? 0
+                          : p.expectedStarterPoints,
+                      expectedSubPoints:
+                        excludedSubPlayers.includes(p.id) ||
+                        (filterByTeamsheet && hasTeamsheet && !p.isTeamsheetSub)
+                          ? 0
+                          : p.expectedSubPoints,
+                    };
+                  }),
+                lockedPlayers: teamLockedPlayers,
+                reservePlayers,
               }),
             });
-            setSelectedPlayerIds(teamIds.map((id: number) => id ?? null));
+            const reserveSlots: (number | null)[] = [
+              ...reservePlayers.map((p) => p.id),
+              ...Array(3 - reservePlayers.length).fill(null),
+            ];
+            setSelectedPlayerIds([
+              ...teamIds.map((id: number) => id ?? null),
+              ...reserveSlots,
+            ]);
+            return { captainId };
           }}
           excludeStarter={(player) =>
             setExcludedStarterPlayers((players) => players.concat([player.id]))
@@ -991,7 +1014,10 @@ const Stats = () => {
               />
             </div>
             <div className="overflow-y-auto max-h-72 flex flex-col">
-              {playersWithPointsAndTeamsheet
+              {(typeof searchModal.position === "number" &&
+              searchModal.position >= 18
+                ? playersWithPoints
+                : playersWithPointsAndTeamsheet)
                 .filter((p) =>
                   p.nom.toLowerCase().includes(searchQuery.toLowerCase()),
                 )

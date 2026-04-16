@@ -3,6 +3,7 @@ import { useState } from "react";
 const getSlotPosition = ({ slotIndex }: { slotIndex: number }) => {
   if (slotIndex < 15) return 15 - slotIndex;
   if (slotIndex === 15) return "(S)";
+  if (slotIndex >= 18) return "(R)";
   return "(s)";
 };
 
@@ -16,6 +17,7 @@ const getSlotScore = ({
   if (!player) return undefined;
   if (slotIndex < 15) return player.expectedStarterPoints;
   if (slotIndex === 15) return player.expectedSubPoints * 3;
+  if (slotIndex >= 18) return 0;
   return player.expectedStarterPoints / 2;
 };
 
@@ -29,7 +31,7 @@ const SelectedPlayers = ({
 }) => {
   const [status, setStatus] = useState<"solving" | undefined>(undefined);
   const [lockedPlayerIds, setLockedPlayerIds] = useState<string[]>([]);
-  const [lockedCaptainId, setLockedCaptainId] = useState<string | null>(null);
+  const [lockedCaptainId, setLockedCaptainId] = useState<string | number | null>(null);
   const [budget, setBudget] = useState<number | undefined>(undefined);
   const [hoveredOwner, setHoveredOwner] = useState<string | null>(null);
   const [hoveredTeam, setHoveredTeam] = useState<string | null>(null);
@@ -87,7 +89,7 @@ const SelectedPlayers = ({
           onClick={async () => {
             setStatus("solving");
             try {
-              await onSolveTeam({
+              const result = await onSolveTeam({
                 budget,
                 lockedPlayers: lockedPlayerIds
                   .map((id) => {
@@ -99,6 +101,9 @@ const SelectedPlayers = ({
                   })
                   .filter(({ player }) => !!player),
               });
+              if (result?.captainId != null) {
+                setLockedCaptainId(result.captainId);
+              }
             } catch (e) {
               console.log("Something went wrong");
               console.error(e);
@@ -279,23 +284,24 @@ const Player = ({
     <td className="pl-5">
       {player ? (
         <div className={"flex gap-2"}>
-          {isLocked ? (
-            <button
-              title="Unlock this player from the team"
-              onClick={() => unlockPlayer(player)}
-              className="px-1 py-1 text-xs font-medium text-slate-700 bg-slate-200 hover:bg-slate-50 rounded-lg transition-colors"
-            >
-              🔓
-            </button>
-          ) : (
-            <button
-              title="Lock this player in the team"
-              onClick={() => lockPlayer(player)}
-              className="px-1 py-1 text-xs font-medium text-slate-700 bg-slate-200 hover:bg-slate-50 rounded-lg transition-colors"
-            >
-              🔒
-            </button>
-          )}
+          {slotIndex < 18 &&
+            (isLocked ? (
+              <button
+                title="Unlock this player from the team"
+                onClick={() => unlockPlayer(player)}
+                className="px-1 py-1 text-xs font-medium text-slate-700 bg-slate-200 hover:bg-slate-50 rounded-lg transition-colors"
+              >
+                🔓
+              </button>
+            ) : (
+              <button
+                title="Lock this player in the team"
+                onClick={() => lockPlayer(player)}
+                className="px-1 py-1 text-xs font-medium text-slate-700 bg-slate-200 hover:bg-slate-50 rounded-lg transition-colors"
+              >
+                🔒
+              </button>
+            ))}
           {canBeCaptain && (
             <button
               title={

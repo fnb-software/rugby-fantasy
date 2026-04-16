@@ -5,16 +5,23 @@ const REQUIRED_POSITIONS = { 5: 1, 6: 2, 7: 2, 8: 1, 9: 1, 10: 3, 11: 2, 12: 2, 
 // 15 starters + supersub (slot 16) + 2 subs (slots 17-18)
 const TEAM_SIZE = 18;
 
-const getDznFromStats = ({ players: allPlayers, lockedPlayers, maxCost }) => {
+const getDznFromStats = ({
+  players: allPlayers,
+  lockedPlayers,
+  maxCost,
+  reservePlayers = [],
+}) => {
   const getPlayerScore = (p) => (p.expectedStarterPoints || 0).toFixed(1);
   const getPlayerCost = (p) => p.valeur;
   const getPlayerSub = (p) => (p.expectedSubPoints || 0).toFixed(1);
   const lockedPlayerIds = new Set(lockedPlayers.map(({ player }) => player.id));
+  const reservePlayerIds = new Set(reservePlayers.map((p) => p.id));
   const players = allPlayers.filter(
     (p) =>
-      lockedPlayerIds.has(p.id) ||
-      (getPlayerScore(p) !== undefined && getPlayerScore(p) > 0) ||
-      (getPlayerSub(p) !== undefined && getPlayerSub(p) > 0),
+      !reservePlayerIds.has(p.id) &&
+      (lockedPlayerIds.has(p.id) ||
+        (getPlayerScore(p) !== undefined && getPlayerScore(p) > 0) ||
+        (getPlayerSub(p) !== undefined && getPlayerSub(p) > 0)),
   );
 
   const includedIds = new Set(players.map((p) => p.id));
@@ -83,12 +90,18 @@ const getDznFromStats = ({ players: allPlayers, lockedPlayers, maxCost }) => {
     }
   }
 
-  const squadIds = Array.from(
-    players.reduce((squads, p) => {
-      squads.add(p.id_club);
-      return squads;
-    }, new Set([])),
-  );
+  const reserveCountByClub = {};
+  for (const p of reservePlayers) {
+    reserveCountByClub[p.id_club] = (reserveCountByClub[p.id_club] || 0) + 1;
+  }
+  const squadIdSet = players.reduce((squads, p) => {
+    squads.add(p.id_club);
+    return squads;
+  }, new Set([]));
+  for (const clubId of Object.keys(reserveCountByClub)) {
+    squadIdSet.add(Number(clubId));
+  }
+  const squadIds = Array.from(squadIdSet);
   const team = Array.from({ length: 18 }).map(() => `_`);
   lockedPlayers.forEach(
     ({ player, index }) => (team[index] = `'${player.id}'`),
@@ -101,7 +114,7 @@ const getDznFromStats = ({ players: allPlayers, lockedPlayers, maxCost }) => {
   squad = [${players.map((p) => p.id_club)}];
   squadIds = [${squadIds}];
   lbound = [${squadIds.map(() => 0)}];
-  ubound = [${squadIds.map(() => MAX_PER_TEAM)}];
+  ubound = [${squadIds.map((id) => Math.max(0, MAX_PER_TEAM - (reserveCountByClub[id] || 0)))}];
   max_cost = ${maxCost != null ? Math.round(maxCost * 10) : 999999};
   ${lockedPlayers.length ? `team = [${team.join(",")}];` : ``}
   `;
