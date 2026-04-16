@@ -55,7 +55,7 @@ var Players: captain;
 constraint captain in team;
 constraint captain != supersub;
 
-solve maximize sum (p in team) (value[p]) + value[captain] + 3 * sub_value[supersub] - value[supersub] + (value[supersub] - sub_value[supersub]) / 2 ;
+solve maximize sum (p in team) (value[p]) + value[captain] + max(3 * sub_value[supersub], value[supersub] div 2) - value[supersub] ;
 
 % constraint team[10] = '97';
 

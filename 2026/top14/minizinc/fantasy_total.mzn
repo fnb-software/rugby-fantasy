@@ -65,7 +65,7 @@ constraint captain != supersub;
 constraint captain != sub1;
 constraint captain != sub2;
 
-solve :: int_search(team, input_order, indomain_min) maximize sum (p in team) (value[p]) + value[captain] + 3 * sub_value[supersub] - value[supersub] + (value[supersub] - sub_value[supersub]) / 2 - value[sub1]/2 - value[sub2]/2 ;
+solve :: int_search(team, input_order, indomain_min) maximize sum (p in team) (value[p]) + value[captain] + max(3 * sub_value[supersub], value[supersub] div 2) - value[supersub] - value[sub1]/2 - value[sub2]/2 ;
 
 % constraint team[10] = '97';
 

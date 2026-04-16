@@ -16,7 +16,11 @@ const getSlotScore = ({
 }) => {
   if (!player) return undefined;
   if (slotIndex < 15) return player.expectedStarterPoints;
-  if (slotIndex === 15) return player.expectedSubPoints * 3;
+  if (slotIndex === 15)
+    return Math.max(
+      player.expectedSubPoints * 3,
+      player.expectedStarterPoints / 2,
+    );
   if (slotIndex >= 18) return 0;
   return player.expectedStarterPoints / 2;
 };
@@ -181,7 +185,12 @@ const SelectedPlayers = ({
               0,
             ) /
             2 +
-          (players[15] ? players[15].expectedSubPoints * 3 : 0)
+          (players[15]
+            ? Math.max(
+                players[15].expectedSubPoints * 3,
+                players[15].expectedStarterPoints / 2,
+              )
+            : 0)
         ).toFixed(0)}{" "}
       </div>
       <div className="mt-2 flex flex-wrap gap-2 text-xs">
