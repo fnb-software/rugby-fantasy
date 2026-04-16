@@ -1,8 +1,10 @@
 import fs from "fs/promises";
 import * as prettier from "prettier";
-import token from "../token.js";
 import pLimit from "p-limit";
 import playersOff from "../data/playersOff.js";
+
+const token = process.env.SIX_NATIONS_TOKEN;
+if (!token) throw new Error("SIX_NATIONS_TOKEN is not set");
 
 const ROUND = "5";
 

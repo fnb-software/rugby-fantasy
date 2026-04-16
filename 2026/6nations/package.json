@@ -1,6 +1,7 @@
 {
   "scripts": {
-    "update:players": "tsx ./minizinc/updatePlayers.ts",
-    "search:off": "tsx ./minizinc/searchOff.ts"
+    "update:players": "tsx --env-file=.env ./minizinc/updatePlayers.ts",
+    "search:off": "tsx --env-file=.env ./minizinc/searchOff.ts",
+    "update:round": "tsx --env-file=.env ./minizinc/updateRound.ts"
   }
 }

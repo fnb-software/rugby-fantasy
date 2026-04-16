@@ -1,7 +1,9 @@
 import fs from "fs/promises";
 import * as prettier from "prettier";
-import token from "../token.js";
 import pLimit from "p-limit";
+
+const token = process.env.TOP14_TOKEN;
+if (!token) throw new Error("TOP14_TOKEN is not set");
 
 const ROUND = 21;
 
