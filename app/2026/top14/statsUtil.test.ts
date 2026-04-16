@@ -63,6 +63,41 @@ describe("matchesName", () => {
         false,
       );
     });
+
+    it("multi-letter disambiguating initial: Pa. matches P. Boudehent", () => {
+      assert.equal(
+        matchesName(p("P. Boudehent", "Paul Boudehent"), "Pa. Boudehent"),
+        true,
+      );
+    });
+
+    it("multi-letter initial: wrong prefix does NOT match", () => {
+      assert.equal(
+        matchesName(p("P. Boudehent", "Paul Boudehent"), "Pi. Boudehent"),
+        false,
+      );
+    });
+
+    it("multi-letter initial: wrong last name does NOT match", () => {
+      assert.equal(
+        matchesName(p("P. Boudehent", "Paul Boudehent"), "Pa. Willis"),
+        false,
+      );
+    });
+
+    it("composite initial with dash: J.-L. Joseph matches Jefferson Joseph", () => {
+      assert.equal(
+        matchesName(p("J. Joseph", "Jefferson Joseph"), "J.-L. Joseph"),
+        true,
+      );
+    });
+
+    it("composite initial: wrong leading letter does NOT match", () => {
+      assert.equal(
+        matchesName(p("J. Joseph", "Jefferson Joseph"), "T.-L. Joseph"),
+        false,
+      );
+    });
   });
 
   describe("plain last name (no '.')", () => {

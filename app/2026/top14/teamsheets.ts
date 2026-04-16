@@ -288,7 +288,7 @@ export const TEAMSHEETS: Record<string, Teamsheet> = {
       "Devaux",
     ],
     subs: [
-      "Mongaillard",
+      "Montgaillard",
       "Beria",
       "Gray",
       "Van Tonder",

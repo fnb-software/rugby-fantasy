@@ -36,7 +36,7 @@ const allClubs = [
   ...new Set(
     flatPlayers.map((id) => {
       const player = players.find((p) => p.id === id);
-      return player.trgclub;
+      return player!.trgclub;
     }),
   ),
 ].sort();
@@ -84,7 +84,7 @@ const sortedPlayers = sortBy(
 const countedClubs = countBy(
   flatPlayers.map((id) => {
     const player = players.find((p) => p.id === id);
-    return player.trgclub;
+    return player!.trgclub;
   }),
 );
 const sortedClubs = sortBy(
@@ -101,7 +101,7 @@ const Stats = () => {
   const [position, setPosition] = useState("");
   const [owner, setOwner] = useState("");
   const [maxRound, setMaxRound] = useState(0);
-  const [player, setPlayer] = useState(undefined);
+  const [player, setPlayer] = useState<any>(undefined);
   const [excludedStarterPlayers, setExcludedStarterPlayers] = useState<
     number[]
   >([]);
@@ -184,6 +184,7 @@ const Stats = () => {
   };
 
   const onClickPlayerOfTheRound = (event) => {
+    if (!chartRef.current) return;
     const element = getElementAtEvent(chartRef.current, event);
     console.log(element);
     if (!element) {

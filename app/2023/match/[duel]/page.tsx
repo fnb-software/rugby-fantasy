@@ -1,7 +1,8 @@
 import getTeamDuelStats from "@/2023/other/getTeamDuelStats";
 import StatsChoice from "./StatsChoice";
 
-const Match = async ({ params: { duel } }: { params: { duel: string } }) => {
+const Match = async ({ params }: { params: Promise<{ duel: string }> }) => {
+  const { duel } = await params;
   const team1Name = duel.slice(0, 3);
   const team2Name = duel.slice(4, 7);
   const duelCount = duel.slice(7, 8);

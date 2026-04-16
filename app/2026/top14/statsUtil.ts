@@ -87,7 +87,26 @@ export const matchesName = (
   const nameWithInitial = normalize(p.nom);
   const nameFull = normalize(p.nomcomplet);
   // "R. Ntamack" style: match initial + last name against p.nom
-  if (nameTeamsheet.includes(".")) return nameWithInitial === nameTeamsheet;
+  if (nameTeamsheet.includes(".")) {
+    if (nameWithInitial === nameTeamsheet) return true;
+    // Multi-letter disambiguating initial like "Pa. Boudehent" — player's
+    // nom keeps a single initial "P.", so fall back to matching the prefix
+    // against the first name from nomcomplet.
+    // Works for both multi-letter initials ("Pa. Boudehent") and composite
+    // initials where the dash has been normalized to a space ("J.-L. Joseph"
+    // → "j. l. joseph"). We take the first dotted segment's letters as the
+    // prefix to match against the player's first name from nomcomplet.
+    const lastDotIdx = nameTeamsheet.lastIndexOf(".");
+    if (nameTeamsheet[lastDotIdx + 1] !== " ") return false;
+    const firstDotIdx = nameTeamsheet.indexOf(".");
+    const initials = nameTeamsheet.slice(0, firstDotIdx);
+    const rest = nameTeamsheet.slice(lastDotIdx + 2);
+    const spaceIdx = nameFull.indexOf(" ");
+    if (spaceIdx < 0) return false;
+    const firstName = nameFull.slice(0, spaceIdx);
+    const lastName = nameFull.slice(spaceIdx + 1);
+    return firstName.startsWith(initials) && lastName === rest;
+  }
   // plain last name: check nomcomplet ends with it, or it appears as a word within it
   const matchesLastName = (n: string) =>
     nameFull.endsWith(" " + n) ||
