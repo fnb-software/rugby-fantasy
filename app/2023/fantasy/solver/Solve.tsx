@@ -14,7 +14,7 @@ const Solve = () => {
 
   useEffect(() => {
     MiniZinc.init({
-      workerURL: "/minizinc-worker.js",
+      workerURL: `${window.location.origin}/minizinc-worker.js`,
     })
       .then(() => {
         const model = new MiniZinc.Model();

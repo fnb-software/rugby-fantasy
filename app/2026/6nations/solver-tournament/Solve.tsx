@@ -6,7 +6,10 @@ import getDzn from "../../../../2026/6nations/minizinc/getDznTotal";
 import parseResult from "../../../../2026/6nations/minizinc/parseResult";
 
 const solver = MiniZinc.init({
-  workerURL: "/minizinc-worker.js",
+  workerURL:
+    typeof window !== "undefined"
+      ? `${window.location.origin}/minizinc-worker.js`
+      : "",
 }).then(() => {
   const model = new MiniZinc.Model();
   model.addString(fantasyModel);
