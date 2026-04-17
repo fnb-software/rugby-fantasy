@@ -8,7 +8,7 @@ import parseResult from "../../../../2026/6nations/minizinc/parseResult";
 const ROUND = 4; // 0-based
 
 const solver = MiniZinc.init({
-  workerURL: "http://localhost:3000/minizinc-worker.js",
+  workerURL: "/minizinc-worker.js",
 }).then(() => {
   const model = new MiniZinc.Model();
   model.addString(fantasyModel);

@@ -5,7 +5,7 @@ let solver;
 export const solve = async ({ dznString, fantasyModel }) => {
   if (!solver) {
     solver = MiniZinc.init({
-      workerURL: "http://localhost:3000/minizinc-worker.js",
+      workerURL: "/minizinc-worker.js",
     });
   }
   await solver;

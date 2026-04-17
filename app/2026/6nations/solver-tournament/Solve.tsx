@@ -6,7 +6,7 @@ import getDzn from "../../../../2026/6nations/minizinc/getDznTotal";
 import parseResult from "../../../../2026/6nations/minizinc/parseResult";
 
 const solver = MiniZinc.init({
-  workerURL: "http://localhost:3000/minizinc-worker.js",
+  workerURL: "/minizinc-worker.js",
 }).then(() => {
   const model = new MiniZinc.Model();
   model.addString(fantasyModel);
