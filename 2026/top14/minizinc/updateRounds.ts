@@ -5,7 +5,7 @@ import pLimit from "p-limit";
 const token = process.env.TOP14_TOKEN;
 if (!token) throw new Error("TOP14_TOKEN is not set");
 
-const ROUND = 21;
+const ROUND = 22;
 
 const OPTIONS = {
   headers: {
