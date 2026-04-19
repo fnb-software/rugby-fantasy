@@ -139,4 +139,5 @@ export const TEAMS = [
     ],
     captainId: 1032,
   },
+  {},
 ];
