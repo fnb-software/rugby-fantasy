@@ -5,8 +5,8 @@ import getDzn from "../../../../2026/top14/minizinc/getDzn";
 import parseResult from "../../../../2026/top14/minizinc/parseResult";
 import { solve } from "../solve";
 
-const START_ROUND = 19;
-const END_ROUND = 19; // 0-based
+const START_ROUND = 20;
+const END_ROUND = 20; // 0-based
 
 const Solve = () => {
   const [teamResult, setTeamResult] = useState<
