@@ -48,7 +48,16 @@ constraint forall (i in 1..15) (position[team[i]] = team_position[i]);
 constraint alldifferent (team);
 
 % Max number of players per country
-constraint global_cardinality([squad[p] | p in team], squadIds, lbound, ubound); 
+constraint global_cardinality([squad[p] | p in team], squadIds, lbound, ubound);
+
+% Max number of players per position (across the full 18-player team)
+array[position_identifiers] of int: max_per_position = array1d(
+    position_identifiers,
+    [2, 4, 4, 2, 2, 6, 4, 4, 2]  % positions 5, 6, 7, 8, 9, 10, 11, 12, 13
+);
+constraint forall (pos in position_identifiers) (
+    sum (p in team) (position[p] = pos) <= max_per_position[pos]
+);
 
 % For each position, the players are ordered (breaking symmetry)
 constraint forall (position_type in position_identifiers) (
