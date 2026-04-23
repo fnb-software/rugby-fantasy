@@ -265,7 +265,7 @@ const Player = ({
 }) => (
   <tr className={`${isLocked ? "font-bold" : ""} ${isHighlighted ? "bg-yellow-100" : ""}`}>
     <td className="">{getSlotPosition({ slotIndex })}</td>
-    <td className="pl-2">{isCaptain && player ? "(c) " : ""}{player?.nom}{player?.hasTeamsheet && !player?.isTeamsheetStarter && !player?.isTeamsheetSub ? " ⚠️" : ""}</td>
+    <td className="pl-2">{isCaptain && player ? "(c) " : ""}{player?.nom}{player?.hasTeamsheet && !player?.isTeamsheetStarter && !player?.isTeamsheetSub ? " ⚠️" : ""}{player?.isTeamsheetUncertain ? " ❓" : ""}</td>
     <td className="pl-5">{player?.trgclub}</td>
     <td className="pl-5 text-xs">
       {player ? (

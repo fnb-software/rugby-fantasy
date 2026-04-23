@@ -21,7 +21,7 @@ import { solve } from "./solve";
 import fantasyModel from "../../../2026/top14/minizinc/fantasy_total.mzn";
 import WantedPlayers from "./WantedPlayers";
 import { assignPlayerToSlot } from "./slots";
-import { TEAMSHEETS } from "./teamsheets";
+import { TEAMSHEETS, entryName, entryUncertain } from "./teamsheets";
 import {
   getRoundPlayerOnlyPoints,
   getTeamPoints,
@@ -95,6 +95,16 @@ const sortedClubs = sortBy(
 );
 
 Chart.register(CategoryScale, LinearScale, BarElement, Title, Tooltip, Legend);
+
+for (const [club, teamsheet] of Object.entries(TEAMSHEETS)) {
+  const clubPlayers = players.filter((p) => p.club === club);
+  for (const entry of [...teamsheet.starters, ...teamsheet.subs]) {
+    const name = entryName(entry);
+    if (!clubPlayers.some((p) => matchesName(p, name))) {
+      console.warn(`Teamsheet player not matched in stats: ${club} / ${name}`);
+    }
+  }
+}
 
 const Stats = () => {
   const [club, setClub] = useState("");
@@ -332,10 +342,17 @@ const Stats = () => {
     const actualTeamPoints = (expectedTeamPoints * nextRoundMinutes) / 80;
 
     const teamsheet = TEAMSHEETS[p.club];
-    const isTeamsheetStarter =
-      teamsheet?.starters.some((name) => matchesName(p, name)) ?? false;
-    const isTeamsheetSub =
-      teamsheet?.subs.some((name) => matchesName(p, name)) ?? false;
+    const starterEntry = teamsheet?.starters.find((e) =>
+      matchesName(p, entryName(e)),
+    );
+    const subEntry = teamsheet?.subs.find((e) =>
+      matchesName(p, entryName(e)),
+    );
+    const isTeamsheetStarter = !!starterEntry;
+    const isTeamsheetSub = !!subEntry;
+    const isTeamsheetUncertain =
+      (!!starterEntry && entryUncertain(starterEntry)) ||
+      (!!subEntry && entryUncertain(subEntry));
     const hasTeamsheet =
       (teamsheet?.starters.length ?? 0) > 0 ||
       (teamsheet?.subs.length ?? 0) > 0;
@@ -356,6 +373,7 @@ const Stats = () => {
       ...p,
       isTeamsheetStarter,
       isTeamsheetSub,
+      isTeamsheetUncertain,
       hasTeamsheet,
       starterAverage,
       starterMinutes,
@@ -588,7 +606,7 @@ const Stats = () => {
           data={{
             labels: sortedStarterPoints.map(
               (player) =>
-                `${player.nom}${player.hasTeamsheet && !player.isTeamsheetStarter && !player.isTeamsheetSub ? " ⚠️" : ""} - ${
+                `${player.nom}${player.hasTeamsheet && !player.isTeamsheetStarter && !player.isTeamsheetSub ? " ⚠️" : ""}${player.isTeamsheetUncertain ? " ❓" : ""} - ${
                   player.proprietaire?.id === ""
                     ? "🟢"
                     : player.proprietaire?.nom ?? ""
@@ -684,7 +702,7 @@ const Stats = () => {
           data={{
             labels: sortedSubPoints.map(
               (player) =>
-                `${player.nom}${player.hasTeamsheet && !player.isTeamsheetStarter && !player.isTeamsheetSub ? " ⚠️" : ""} - ${
+                `${player.nom}${player.hasTeamsheet && !player.isTeamsheetStarter && !player.isTeamsheetSub ? " ⚠️" : ""}${player.isTeamsheetUncertain ? " ❓" : ""} - ${
                   player.proprietaire?.id === ""
                     ? "🟢"
                     : player.proprietaire?.nom ?? ""
