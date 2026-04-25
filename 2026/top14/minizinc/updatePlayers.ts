@@ -1,6 +1,13 @@
 import fs from "fs/promises";
+import path from "path";
+import { pathToFileURL } from "url";
 import * as prettier from "prettier";
 import pLimit from "p-limit";
+import {
+  TEAMSHEETS,
+  entryName,
+} from "../../../app/2026/top14/teamsheets";
+import { matchesName } from "../../../app/2026/top14/statsUtil";
 
 const token = process.env.TOP14_TOKEN;
 if (!token) throw new Error("TOP14_TOKEN is not set");
@@ -31,6 +38,92 @@ const OPTIONS = {
 const file = `./data/players.js`;
 
 const main = async () => {
+  const teamsheetIndex = buildTeamsheetIndex();
+  const existing = teamsheetIndex ? await loadExistingPlayers() : [];
+
+  let players: any[];
+  let playersToUpdate: any[];
+  if (teamsheetIndex && existing.length > 0) {
+    players = existing;
+    playersToUpdate = existing.filter((p) => {
+      const entries = teamsheetIndex.get(p.club);
+      return entries?.some((name) => matchesName(p, name)) ?? false;
+    });
+    console.log(
+      `Teamsheets populated: skipping searchjoueurs, fetching stats for ${playersToUpdate.length}/${existing.length} players`,
+    );
+  } else {
+    players = await fetchAllPlayers();
+    playersToUpdate = players;
+    console.log(
+      `Teamsheets empty: fetching stats for all ${players.length} players`,
+    );
+  }
+
+  const limit = pLimit(10);
+  const playerStatsRequests = playersToUpdate.map((player) =>
+    limit(async () => {
+      const result = await fetch(
+        `https://lagrandemelee.midi-olympique.fr/v1/private/statsjoueur?lg=en`,
+        {
+          ...OPTIONS,
+          method: "POST",
+          body: JSON.stringify({
+            credentials: { idj: ROUND, idf: player.id, detail: true },
+          }),
+        },
+      );
+      console.log("Player stats OK", { id: player.id });
+      const stats = await result.json();
+      return {
+        ...player,
+        stats,
+      };
+    }),
+  );
+  const updatedStats = await Promise.all(playerStatsRequests);
+  const updatedById = new Map(updatedStats.map((p) => [p.id, p]));
+
+  const playerStats = players.map((p) => updatedById.get(p.id) ?? p);
+
+  const code = await prettier.format(
+    `export default ${JSON.stringify(playerStats)};`,
+    {
+      singleQuote: true,
+      semi: true,
+      trailingComma: "es5",
+      parser: "babel",
+    },
+  );
+  await fs.writeFile(file, code);
+};
+
+// --- helpers ---
+
+const buildTeamsheetIndex = (): Map<string, string[]> | null => {
+  const total = Object.values(TEAMSHEETS).reduce(
+    (s, ts) => s + ts.starters.length + ts.subs.length,
+    0,
+  );
+  if (total === 0) return null;
+  const byClub = new Map<string, string[]>();
+  for (const [club, ts] of Object.entries(TEAMSHEETS)) {
+    byClub.set(club, [...ts.starters, ...ts.subs].map(entryName));
+  }
+  return byClub;
+};
+
+const loadExistingPlayers = async (): Promise<any[]> => {
+  try {
+    const url = pathToFileURL(path.resolve(file)).href;
+    const mod = await import(url);
+    return mod.default ?? [];
+  } catch {
+    return [];
+  }
+};
+
+const fetchAllPlayers = async (): Promise<any[]> => {
   let index = 0;
   let batchedPlayers;
   const players: any[] = [];
@@ -54,41 +147,7 @@ const main = async () => {
     players.push(...batchedPlayers);
     index++;
   }
-
-  console.log(players.length);
-
-  const limit = pLimit(10);
-  const playerStatsRequests = players.map((player) =>
-    limit(async () => {
-      const result = await fetch(
-        `https://lagrandemelee.midi-olympique.fr/v1/private/statsjoueur?lg=en`,
-        {
-          ...OPTIONS,
-          method: "POST",
-          body: JSON.stringify({
-            credentials: { idj: ROUND, idf: player.id, detail: true },
-          }),
-        },
-      );
-      console.log("Player stats OK", { id: player.id });
-      const stats = await result.json();
-      return {
-        ...player,
-        stats,
-      };
-    }),
-  );
-  const playerStats = await Promise.all(playerStatsRequests);
-  const code = await prettier.format(
-    `export default ${JSON.stringify(playerStats)};`,
-    {
-      singleQuote: true,
-      semi: true,
-      trailingComma: "es5",
-      parser: "babel",
-    },
-  );
-  await fs.writeFile(file, code);
+  return players;
 };
 
 main();
