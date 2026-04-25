@@ -1,6 +1,6 @@
 {
   "scripts": {
-    "update:players": "tsx --env-file=.env ./minizinc/updatePlayers.ts",
-    "update:rounds": "tsx --env-file=.env ./minizinc/updateRounds.ts"
+    "update:players": "tsx --env-file=../../.env.local --env-file=.env ./minizinc/updatePlayers.ts",
+    "update:rounds": "tsx --env-file=../../.env.local --env-file=.env ./minizinc/updateRounds.ts"
   }
 }

@@ -1,3 +1,6 @@
+import { redirect } from "next/navigation";
+import { auth } from "@/auth";
+import { getPlayers } from "@/app/lib/players";
 import Team from "./Team";
 import TeamsOfTheRound from "./TeamsOfTheRound";
 import TournamentTeam from "./TournamentTeam";
@@ -6,15 +9,21 @@ import { TEAMS } from "./bestTeams";
 import { TEAMS_NO_CLUB_LIMIT } from "./bestTeamsNoClubLimit";
 
 const Fantasy = async () => {
+  const session = await auth();
+  if (!session?.user?.id) redirect("/signin?callbackUrl=/2026/top14");
+  const players = (await getPlayers(session.user.id)) as any[];
+
   return (
     <div className="w-full">
       <TeamsOfTheRound
+        players={players}
         teams={TEAMS.map((team, i) =>
           team.teamIds ? (
             <div className="flex gap-7">
               <div>
                 <h3 className="font-bold">Full rules</h3>
                 <Team
+                  players={players}
                   teamIds={team.teamIds}
                   round={i}
                   captainId={team.captainId}
@@ -24,6 +33,7 @@ const Fantasy = async () => {
                 <div>
                   <h3 className="font-bold">No club limit</h3>
                   <Team
+                    players={players}
                     teamIds={TEAMS_NO_CLUB_LIMIT[i].teamIds}
                     round={i}
                     captainId={TEAMS_NO_CLUB_LIMIT[i].captainId}
@@ -34,6 +44,7 @@ const Fantasy = async () => {
                 <div>
                   <h3 className="font-bold">B - No club limit</h3>
                   <Team
+                    players={players}
                     teamIds={TEAMS_SECOND_NO_CLUB_LIMIT[i].teamIds}
                     round={i}
                     captainId={TEAMS_SECOND_NO_CLUB_LIMIT[i].captainId}
@@ -47,6 +58,7 @@ const Fantasy = async () => {
         )}
       ></TeamsOfTheRound>
       <Team
+        players={players}
         round={17}
         teamIds={[
           70, 174, 430, 382, 1730, 354, 509, 391, 121, 457, 498, 1298, 177, 371,
@@ -55,6 +67,7 @@ const Fantasy = async () => {
         captainId={509}
       />
       <Team
+        players={players}
         round={17}
         teamIds={[
           70, 595, 594, 382, 1730, 1032, 354, 509, 800, 457, 881, 1298, 549,
@@ -65,6 +78,7 @@ const Fantasy = async () => {
       <div>
         <h1>Team of the championship</h1>
         <TournamentTeam
+          players={players}
           teamIds={[
             160, 1284, 1283, 599, 113, 957, 1082, 866, 588, 1586, 416, 890, 919,
             1016, 633, 609, 1239, 283,
@@ -72,9 +86,11 @@ const Fantasy = async () => {
           captainId={1586}
         />
         <TeamsOfTheRound
+          players={players}
           teams={TEAMS.map((team, i) =>
             team.teamIds ? (
               <Team
+                players={players}
                 round={i}
                 teamIds={[
                   160, 1284, 1283, 599, 113, 957, 1082, 866, 588, 1586, 416,

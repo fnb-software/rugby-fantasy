@@ -12,10 +12,9 @@ import {
 import countBy from "lodash/countBy";
 import sortBy from "lodash/sortBy";
 import { TEAMS } from "./bestTeams";
-import players from "../../../2026/top14/data/players";
 import rounds from "../../../2026/top14/data/rounds";
 import getDznFromStats from "../../../2026/top14/minizinc/getDznFromStats";
-import { useEffect, useRef, useState } from "react";
+import { useEffect, useMemo, useRef, useState } from "react";
 import SelectedPlayers from "./SelectedPlayers";
 import { solve } from "./solve";
 import fantasyModel from "../../../2026/top14/minizinc/fantasy_total.mzn";
@@ -32,14 +31,6 @@ import {
 import TeamResultsEditor from "./TeamResultsEditor";
 
 const flatPlayers = TEAMS.map((team) => team.teamIds || []).flat();
-const allClubs = [
-  ...new Set(
-    flatPlayers.map((id) => {
-      const player = players.find((p) => p.id === id);
-      return player!.trgclub;
-    }),
-  ),
-].sort();
 const POSITION_ORDER = [
   "lib_arriere",
   "lib_34aile",
@@ -51,62 +42,80 @@ const POSITION_ORDER = [
   "lib_talonneur",
   "lib_pilier",
 ];
-const allPositions = [
-  ...new Set(
-    players.map((p) => {
-      return p.position;
-    }),
-  ),
-].sort(
-  (a, b) =>
-    (POSITION_ORDER.indexOf(a) + 1 || 99) -
-    (POSITION_ORDER.indexOf(b) + 1 || 99),
-);
-const allOwners = [
-  ...new Set(
-    players.map((p) => {
-      return p.proprietaire.nom;
-    }),
-  ),
-]
-  .filter((owner) => owner !== undefined)
-  .sort();
-
 const countedPlayers = countBy(flatPlayers);
-const sortedPlayers = sortBy(
-  Object.keys(countedPlayers).map((id) => {
-    const player = players.find((p) => p.id === parseInt(id));
-    return { bestTeamCount: countedPlayers[id], ...player };
-  }),
-  (player) => -player.bestTeamCount,
-);
-
-const countedClubs = countBy(
-  flatPlayers.map((id) => {
-    const player = players.find((p) => p.id === id);
-    return player!.trgclub;
-  }),
-);
-const sortedClubs = sortBy(
-  Object.keys(countedClubs).map((name) => {
-    return { bestTeamCount: countedClubs[name], name };
-  }),
-  (club) => -club.bestTeamCount,
-);
 
 Chart.register(CategoryScale, LinearScale, BarElement, Title, Tooltip, Legend);
 
-for (const [club, teamsheet] of Object.entries(TEAMSHEETS)) {
-  const clubPlayers = players.filter((p) => p.club === club);
-  for (const entry of [...teamsheet.starters, ...teamsheet.subs]) {
-    const name = entryName(entry);
-    if (!clubPlayers.some((p) => matchesName(p, name))) {
-      console.warn(`Teamsheet player not matched in stats: ${club} / ${name}`);
-    }
-  }
-}
+const Stats = ({ players }: { players: any[] }) => {
+  const allClubs = useMemo(
+    () =>
+      [
+        ...new Set(
+          flatPlayers.map((id) => {
+            const player = players.find((p) => p.id === id);
+            return player!.trgclub as string;
+          }),
+        ),
+      ].sort(),
+    [players],
+  );
+  const allPositions = useMemo(
+    () =>
+      [...new Set(players.map((p) => p.position as string))].sort(
+        (a, b) =>
+          (POSITION_ORDER.indexOf(a) + 1 || 99) -
+          (POSITION_ORDER.indexOf(b) + 1 || 99),
+      ),
+    [players],
+  );
+  const allOwners = useMemo(
+    () =>
+      [...new Set(players.map((p) => p.proprietaire.nom as string))]
+        .filter((owner) => owner !== undefined)
+        .sort(),
+    [players],
+  );
+  const sortedPlayers = useMemo(
+    () =>
+      sortBy(
+        Object.keys(countedPlayers).map((id) => {
+          const player = players.find((p) => p.id === parseInt(id));
+          return { bestTeamCount: countedPlayers[id], ...player };
+        }),
+        (p) => -p.bestTeamCount,
+      ),
+    [players],
+  );
+  const sortedClubs = useMemo(() => {
+    const counted = countBy(
+      flatPlayers.map((id) => {
+        const player = players.find((p) => p.id === id);
+        return player!.trgclub;
+      }),
+    );
+    return sortBy(
+      Object.keys(counted).map((name) => ({
+        bestTeamCount: counted[name],
+        name,
+      })),
+      (c) => -c.bestTeamCount,
+    );
+  }, [players]);
 
-const Stats = () => {
+  useEffect(() => {
+    for (const [club, teamsheet] of Object.entries(TEAMSHEETS)) {
+      const clubPlayers = players.filter((p) => p.club === club);
+      for (const entry of [...teamsheet.starters, ...teamsheet.subs]) {
+        const name = entryName(entry);
+        if (!clubPlayers.some((p) => matchesName(p, name))) {
+          console.warn(
+            `Teamsheet player not matched in stats: ${club} / ${name}`,
+          );
+        }
+      }
+    }
+  }, [players]);
+
   const [club, setClub] = useState("");
   const [position, setPosition] = useState("");
   const [owner, setOwner] = useState("");

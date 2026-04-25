@@ -1,4 +1,3 @@
-import allPlayers from "../data/players";
 import {
   getPlayerCostForRound,
   getPlayerScoreTotal,
@@ -7,15 +6,13 @@ import {
 
 const MAX_PER_TEAM = 4;
 
-const getDzn = () => {
+const getDzn = (allPlayers) => {
   const getPlayerScore = getPlayerScoreTotal();
   const getPlayerCost = getPlayerCostForRound(4);
   const getPlayerSub = getPlayerSubTotal();
   const players = allPlayers.filter(
     (p) => getPlayerScore(p) !== undefined && getPlayerScore(p) > 0,
   );
-  //const players = players1.filter((p) => p.squadId !== 14); // No scots
-  //const players = players1.filter((p) => p.cost <= 7000000); // No star
   const squadIds = Array.from(
     players.reduce((squads, p) => {
       squads.add(p.id_club);

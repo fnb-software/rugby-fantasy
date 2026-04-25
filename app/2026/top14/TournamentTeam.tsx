@@ -1,13 +1,14 @@
-import players from "../../../2026/top14/data/players";
 import {
   getPlayerScoreTotal,
   getPlayerSubTotal,
 } from "../../../2026/top14/minizinc/params";
 
 const TournamentTeam = ({
+  players,
   teamIds,
   captainId,
 }: {
+  players: any[];
   teamIds: number[];
   captainId: number;
 }) => {

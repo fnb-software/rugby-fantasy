@@ -1,0 +1,55 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <title>Top14 fantasy refresher</title>
+    <link rel="stylesheet" href="./style.css" />
+  </head>
+  <body>
+    <header>
+      <h1>Top14 refresher</h1>
+      <div class="auth-row">
+        <span class="auth-label">lg-melee</span>
+        <span id="auth-lg" class="dot dot-red"></span>
+        <span class="auth-label">app</span>
+        <span id="auth-app" class="dot dot-red"></span>
+      </div>
+    </header>
+
+    <button id="sign-in-lg" type="button" class="link-button" hidden>
+      Sign in to lagrandemelee
+    </button>
+    <button id="sign-in-app" type="button" class="link-button" hidden>
+      Sign in to the app
+    </button>
+
+    <section class="controls">
+      <label>
+        Round
+        <input id="round" type="number" min="1" max="26" value="22" />
+      </label>
+      <label class="mode">
+        <span>Mode</span>
+        <select id="mode">
+          <option value="teamsheets">Teamsheets only (fast)</option>
+          <option value="all">All players (slow)</option>
+        </select>
+      </label>
+      <button id="run" type="button" disabled>Refresh players</button>
+    </section>
+
+    <section id="status" class="status">
+      <p id="status-text" class="muted">Loading…</p>
+      <div id="bar-row" hidden>
+        <progress id="bar" value="0" max="1"></progress>
+        <span id="bar-text" class="bar-text"></span>
+      </div>
+    </section>
+
+    <footer>
+      <p id="last-refresh" class="muted"></p>
+    </footer>
+
+    <script type="module" src="./main.ts"></script>
+  </body>
+</html>

@@ -1,0 +1,23 @@
+{
+  "name": "top14-refresher-extension",
+  "private": true,
+  "version": "0.1.0",
+  "type": "module",
+  "scripts": {
+    "dev": "wxt",
+    "dev:firefox": "wxt -b firefox",
+    "build": "wxt build",
+    "build:chrome": "wxt build -b chrome",
+    "build:firefox": "wxt build -b firefox",
+    "zip": "wxt zip",
+    "zip:chrome": "wxt zip -b chrome",
+    "zip:firefox": "wxt zip -b firefox",
+    "postinstall": "wxt prepare"
+  },
+  "dependencies": {},
+  "devDependencies": {
+    "dotenv": "^16.4.5",
+    "typescript": "^5.6.0",
+    "wxt": "^0.20.0"
+  }
+}

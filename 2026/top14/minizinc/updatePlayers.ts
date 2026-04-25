@@ -1,20 +1,23 @@
-import fs from "fs/promises";
-import path from "path";
-import { pathToFileURL } from "url";
-import * as prettier from "prettier";
 import pLimit from "p-limit";
 import chalk from "chalk";
 import cliProgress from "cli-progress";
-import {
-  TEAMSHEETS,
-  entryName,
-} from "../../../app/2026/top14/teamsheets";
+import { get, put } from "@vercel/blob";
 import { matchesName } from "../../../app/2026/top14/statsUtil";
+import { buildTeamsheetIndex } from "../../../extension/shared/teamsheetsIndex";
 
 const token = process.env.TOP14_TOKEN;
 if (!token) throw new Error("TOP14_TOKEN is not set");
 
+const userId = process.env.USER_ID;
+if (!userId) throw new Error("USER_ID is not set (your Google sub)");
+
+if (!process.env.BLOB_READ_WRITE_TOKEN) {
+  throw new Error("BLOB_READ_WRITE_TOKEN is not set");
+}
+
 const ROUND = "22";
+const BLOB_PREFIX = process.env.BLOB_PREFIX ?? "";
+const BLOB_KEY = `players/${BLOB_PREFIX}${userId}.json`;
 
 const OPTIONS = {
   headers: {
@@ -37,13 +40,14 @@ const OPTIONS = {
   credentials: "include" as RequestCredentials,
 };
 
-const file = `./data/players.js`;
-
 const skipTeamsheets =
   process.argv.includes("--all") || process.argv.includes("--no-teamsheets");
 
 const main = async () => {
-  console.log(chalk.bold(`\nupdatePlayers — round ${ROUND}\n`));
+  console.log(
+    chalk.bold(`\nupdatePlayers — round ${ROUND} — user ${userId}\n`),
+  );
+  console.log(`  ${chalk.dim(`blob key: ${BLOB_KEY}`)}`);
 
   const teamsheetIndex = skipTeamsheets ? null : buildTeamsheetIndex();
   const existing = await loadExistingPlayers();
@@ -66,15 +70,15 @@ const main = async () => {
   } else {
     const reason = skipTeamsheets
       ? "Teamsheets optimization skipped (--all)"
-      : "Teamsheets empty";
+      : existing.length === 0
+        ? "No cached snapshot in Blob"
+        : "Teamsheets empty";
     console.log(
       `${chalk.cyan("●")} ${reason} — fetching full player roster`,
     );
     players = await fetchAllPlayers(existing.length || 700);
     playersToUpdate = players;
-    console.log(
-      `  ${chalk.dim(`Loaded ${players.length} players`)}`,
-    );
+    console.log(`  ${chalk.dim(`Loaded ${players.length} players`)}`);
   }
 
   console.log(
@@ -123,19 +127,15 @@ const main = async () => {
   const updatedById = new Map(updatedStats.map((p) => [p.id, p]));
   const playerStats = players.map((p) => updatedById.get(p.id) ?? p);
 
-  const code = await prettier.format(
-    `export default ${JSON.stringify(playerStats)};`,
-    {
-      singleQuote: true,
-      semi: true,
-      trailingComma: "es5",
-      parser: "babel",
-    },
-  );
-  await fs.writeFile(file, code);
+  console.log(`${chalk.cyan("●")} Uploading to Blob`);
+  await put(BLOB_KEY, JSON.stringify(playerStats), {
+    access: "private",
+    contentType: "application/json",
+    addRandomSuffix: false,
+  });
 
   console.log(
-    `${chalk.green("✓")} Wrote ${chalk.underline(file)} ${chalk.dim(
+    `${chalk.green("✓")} Wrote ${chalk.underline(BLOB_KEY)} ${chalk.dim(
       `(${players.length} players, ${updatedStats.length} refreshed)`,
     )}\n`,
   );
@@ -143,24 +143,12 @@ const main = async () => {
 
 // --- helpers ---
 
-const buildTeamsheetIndex = (): Map<string, string[]> | null => {
-  const total = Object.values(TEAMSHEETS).reduce(
-    (s, ts) => s + ts.starters.length + ts.subs.length,
-    0,
-  );
-  if (total === 0) return null;
-  const byClub = new Map<string, string[]>();
-  for (const [club, ts] of Object.entries(TEAMSHEETS)) {
-    byClub.set(club, [...ts.starters, ...ts.subs].map(entryName));
-  }
-  return byClub;
-};
-
 const loadExistingPlayers = async (): Promise<any[]> => {
   try {
-    const url = pathToFileURL(path.resolve(file)).href;
-    const mod = await import(url);
-    return mod.default ?? [];
+    const result = await get(BLOB_KEY, { access: "private" });
+    if (!result || result.statusCode !== 200) return [];
+    const text = await new Response(result.stream).text();
+    return JSON.parse(text) as any[];
   } catch {
     return [];
   }

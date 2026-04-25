@@ -1,7 +1,6 @@
-import players from "../data/players";
 import { getPlayerCostForRound, getPlayerScoreForRound } from "./params";
 
-const parseResult = ({ teamIds, captainId, supersubId, round }) => {
+const parseResult = ({ players, teamIds, captainId, supersubId, round }) => {
   const getPlayerScore = getPlayerScoreForRound(round);
   const getPlayerCost = getPlayerCostForRound(round);
   const team = teamIds.map((id) => players.find((p) => p.id === id));

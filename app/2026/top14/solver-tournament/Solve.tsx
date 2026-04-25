@@ -5,7 +5,7 @@ import getDzn from "../../../../2026/top14/minizinc/getDznTotal";
 import parseResult from "../../../../2026/top14/minizinc/parseResult";
 import { solve } from "../solve";
 
-const Solve = () => {
+const Solve = ({ players }: { players: any[] }) => {
   const [teamResult, setTeamResult] = useState<
     ReturnType<typeof parseResult> | undefined | null
   >();
@@ -14,10 +14,11 @@ const Solve = () => {
     let log = ``;
     const solveTeam = async () => {
       const { teamIds, captainId } = await solve({
-        dznString: getDzn(),
+        dznString: getDzn(players),
         fantasyModel,
       });
       const teamResult = parseResult({
+        players,
         teamIds,
         captainId,
         supersubId: teamIds[15],
@@ -28,7 +29,7 @@ const Solve = () => {
       setTeamResult(teamResult);
     };
     solveTeam();
-  }, []);
+  }, [players]);
 
   if (teamResult === undefined) {
     return "Solving....";

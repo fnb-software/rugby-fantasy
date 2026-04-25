@@ -2,7 +2,13 @@
 import { useState } from "react";
 import Stats from "./Stats";
 
-const TeamsOfTheRound = ({ teams }: { teams: any[] }) => {
+const TeamsOfTheRound = ({
+  teams,
+  players,
+}: {
+  teams: any[];
+  players: any[];
+}) => {
   const [round, setRound] = useState(1);
   const [tab, setTab] = useState("round");
 
@@ -30,7 +36,7 @@ const TeamsOfTheRound = ({ teams }: { teams: any[] }) => {
         </button>
       </div>
       {tab === "round" && teams[round - 1]}
-      {tab === "stats" && <Stats />}
+      {tab === "stats" && <Stats players={players} />}
     </div>
   );
 };

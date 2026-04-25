@@ -1,5 +1,3 @@
-import { TEAMS_NO_CLUB_LIMIT } from "@/app/2026/top14/bestTeamsNoClubLimit";
-import allPlayers from "../data/players";
 import {
   getPlayerCostForRound,
   getPlayerScoreForRound,
@@ -8,23 +6,13 @@ import {
 
 const MAX_PER_TEAM = 4;
 
-const getDzn = (round = 1) => {
+const getDzn = (allPlayers, round = 1) => {
   const getPlayerScore = getPlayerScoreForRound(round);
   const getPlayerCost = getPlayerCostForRound(round);
   const getPlayerSub = getPlayerSubForRound(round);
-  // const firstTeamPlayers = TEAMS_NO_CLUB_LIMIT[round].teamIds;
   const players = allPlayers.filter(
     (p) => getPlayerScore(p) !== undefined && getPlayerScore(p) > 0,
   );
-  //  .filter((p) => !firstTeamPlayers.find((ftp) => ftp === p.id));
-  // .filter((p) => p.proprietaire.id === "" && !p.offres_encours);
-  // .filter(
-  //   (p) =>
-  //     (p.proprietaire.id === "" || p.proprietaire.nom === "d0m3") &&
-  //     (!p.offres_encours || p.offres_encours_parmoi),
-  // );
-  //const players = players1.filter((p) => p.squadId !== 14); // No scots
-  //const players = players1.filter((p) => p.cost <= 7000000); // No star
   const squadIds = Array.from(
     players.reduce((squads, p) => {
       squads.add(p.id_club);
