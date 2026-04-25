@@ -3,6 +3,8 @@ import path from "path";
 import { pathToFileURL } from "url";
 import * as prettier from "prettier";
 import pLimit from "p-limit";
+import chalk from "chalk";
+import cliProgress from "cli-progress";
 import {
   TEAMSHEETS,
   entryName,
@@ -37,9 +39,14 @@ const OPTIONS = {
 
 const file = `./data/players.js`;
 
+const skipTeamsheets =
+  process.argv.includes("--all") || process.argv.includes("--no-teamsheets");
+
 const main = async () => {
-  const teamsheetIndex = buildTeamsheetIndex();
-  const existing = teamsheetIndex ? await loadExistingPlayers() : [];
+  console.log(chalk.bold(`\nupdatePlayers — round ${ROUND}\n`));
+
+  const teamsheetIndex = skipTeamsheets ? null : buildTeamsheetIndex();
+  const existing = await loadExistingPlayers();
 
   let players: any[];
   let playersToUpdate: any[];
@@ -50,15 +57,44 @@ const main = async () => {
       return entries?.some((name) => matchesName(p, name)) ?? false;
     });
     console.log(
-      `Teamsheets populated: skipping searchjoueurs, fetching stats for ${playersToUpdate.length}/${existing.length} players`,
+      `${chalk.cyan("●")} Teamsheets populated — reusing ${chalk.bold(
+        existing.length,
+      )} cached players, refreshing ${chalk.bold(
+        playersToUpdate.length,
+      )} from teamsheets`,
     );
   } else {
-    players = await fetchAllPlayers();
+    const reason = skipTeamsheets
+      ? "Teamsheets optimization skipped (--all)"
+      : "Teamsheets empty";
+    console.log(
+      `${chalk.cyan("●")} ${reason} — fetching full player roster`,
+    );
+    players = await fetchAllPlayers(existing.length || 700);
     playersToUpdate = players;
     console.log(
-      `Teamsheets empty: fetching stats for all ${players.length} players`,
+      `  ${chalk.dim(`Loaded ${players.length} players`)}`,
     );
   }
+
+  console.log(
+    `${chalk.cyan("●")} Fetching stats for ${chalk.bold(
+      playersToUpdate.length,
+    )} players`,
+  );
+  const bar = new cliProgress.SingleBar(
+    {
+      format: `  ${chalk.cyan("{bar}")} ${chalk.bold(
+        "{value}/{total}",
+      )} ${chalk.dim("• {duration_formatted} elapsed • ETA {eta_formatted}")}`,
+      barCompleteChar: "█",
+      barIncompleteChar: "░",
+      hideCursor: true,
+      clearOnComplete: false,
+    },
+    cliProgress.Presets.shades_classic,
+  );
+  bar.start(playersToUpdate.length, 0);
 
   const limit = pLimit(10);
   const playerStatsRequests = playersToUpdate.map((player) =>
@@ -73,8 +109,8 @@ const main = async () => {
           }),
         },
       );
-      console.log("Player stats OK", { id: player.id });
       const stats = await result.json();
+      bar.increment();
       return {
         ...player,
         stats,
@@ -82,8 +118,9 @@ const main = async () => {
     }),
   );
   const updatedStats = await Promise.all(playerStatsRequests);
-  const updatedById = new Map(updatedStats.map((p) => [p.id, p]));
+  bar.stop();
 
+  const updatedById = new Map(updatedStats.map((p) => [p.id, p]));
   const playerStats = players.map((p) => updatedById.get(p.id) ?? p);
 
   const code = await prettier.format(
@@ -96,6 +133,12 @@ const main = async () => {
     },
   );
   await fs.writeFile(file, code);
+
+  console.log(
+    `${chalk.green("✓")} Wrote ${chalk.underline(file)} ${chalk.dim(
+      `(${players.length} players, ${updatedStats.length} refreshed)`,
+    )}\n`,
+  );
 };
 
 // --- helpers ---
@@ -123,9 +166,24 @@ const loadExistingPlayers = async (): Promise<any[]> => {
   }
 };
 
-const fetchAllPlayers = async (): Promise<any[]> => {
+const fetchAllPlayers = async (estimatedTotal: number): Promise<any[]> => {
+  const bar = new cliProgress.SingleBar(
+    {
+      format: `  ${chalk.cyan("{bar}")} ${chalk.bold(
+        "{value}",
+      )} ${chalk.dim("players • {duration_formatted} elapsed")}`,
+      barCompleteChar: "█",
+      barIncompleteChar: "░",
+      hideCursor: true,
+      clearOnComplete: false,
+    },
+    cliProgress.Presets.shades_classic,
+  );
+  bar.start(estimatedTotal, 0);
+
+  const warnings: string[] = [];
   let index = 0;
-  let batchedPlayers;
+  let batchedPlayers: any[] = [];
   const players: any[] = [];
   while (index === 0 || batchedPlayers.length === 10) {
     const batch = await fetch(
@@ -137,15 +195,21 @@ const fetchAllPlayers = async (): Promise<any[]> => {
       },
     );
     const response = await batch.json();
-    response.message && console.log(response);
+    if (response.message) warnings.push(response.message);
     batchedPlayers = response.joueurs;
-    console.log({
-      index,
-      length: batchedPlayers.length,
-      ex: batchedPlayers[0]?.id,
-    });
     players.push(...batchedPlayers);
+    if (players.length > bar.getTotal() - 50) {
+      bar.setTotal(players.length + 100);
+    }
+    bar.update(players.length);
     index++;
+  }
+  bar.setTotal(players.length);
+  bar.update(players.length);
+  bar.stop();
+
+  for (const m of warnings) {
+    console.warn(chalk.yellow(`  ⚠ API message: ${m}`));
   }
   return players;
 };
