@@ -10,14 +10,17 @@ const Fantasy = async () => {
   if (!session?.user?.id)
     redirect("/signin?callbackUrl=/2026/top14/team-builder");
   const players = (await getPlayers(session.user.id)) as any[];
-  const { currentRound } = await getAdminData();
+  const admin = await getAdminData();
+  const { currentRound } = admin;
   const expected = await getExpectedResults(session.user.id);
   const initialResultsForRound = expected[String(currentRound)] ?? null;
+  const teamsheets = admin.teamsheets[String(currentRound)] ?? {};
   return (
     <TeamBuilder
       players={players}
       currentRound={currentRound}
       initialResultsForRound={initialResultsForRound}
+      teamsheets={teamsheets}
     />
   );
 };

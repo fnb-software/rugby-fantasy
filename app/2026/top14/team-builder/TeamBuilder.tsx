@@ -20,7 +20,7 @@ import { solve } from "../solve";
 import fantasyModel from "../../../../2026/top14/minizinc/fantasy_total.mzn";
 import WantedPlayers from "../WantedPlayers";
 import { assignPlayerToSlot } from "../slots";
-import { TEAMSHEETS, entryName, entryUncertain } from "../teamsheets";
+import { entryName, entryUncertain, type Teamsheet } from "../teamsheets";
 import {
   getRoundPlayerOnlyPoints,
   getTeamPoints,
@@ -49,10 +49,12 @@ const TeamBuilder = ({
   players,
   currentRound,
   initialResultsForRound,
+  teamsheets,
 }: {
   players: any[];
   currentRound: number;
   initialResultsForRound: Record<string, number> | null;
+  teamsheets: Record<string, Teamsheet>;
 }) => {
   const allClubs = useMemo(
     () =>
@@ -110,7 +112,7 @@ const TeamBuilder = ({
   }, [players]);
 
   useEffect(() => {
-    for (const [club, teamsheet] of Object.entries(TEAMSHEETS)) {
+    for (const [club, teamsheet] of Object.entries(teamsheets)) {
       const clubPlayers = players.filter((p) => p.club === club);
       for (const entry of [...teamsheet.starters, ...teamsheet.subs]) {
         const name = entryName(entry);
@@ -386,7 +388,7 @@ const TeamBuilder = ({
     const expectedSubPoints = subPlayerAverage + expectedSubTeamPoints;
     const actualTeamPoints = (expectedTeamPoints * nextRoundMinutes) / 80;
 
-    const teamsheet = TEAMSHEETS[p.club];
+    const teamsheet = teamsheets[p.club];
     const starterEntry = teamsheet?.starters.find((e) =>
       matchesName(p, entryName(e)),
     );
@@ -878,7 +880,7 @@ const TeamBuilder = ({
                 players: playersWithPointsAndTeamsheet
                   .filter((p) => !reserveIds.has(p.id))
                   .map((p) => {
-                    const teamsheet = TEAMSHEETS[p.club];
+                    const teamsheet = teamsheets[p.club];
                     const hasTeamsheet =
                       (teamsheet?.starters.length ?? 0) > 0 ||
                       (teamsheet?.subs.length ?? 0) > 0;
