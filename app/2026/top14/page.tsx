@@ -1,23 +1,25 @@
 import { redirect } from "next/navigation";
 import { auth } from "@/auth";
 import { getPlayers } from "@/app/lib/players";
+import { getAdminData } from "@/app/lib/adminData";
 import Team from "./Team";
 import TeamsOfTheRound from "./TeamsOfTheRound";
 import TournamentTeam from "./TournamentTeam";
-import { TEAMS_SECOND_NO_CLUB_LIMIT } from "./bestSecondTeamsNoClubLimits";
-import { TEAMS } from "./bestTeams";
-import { TEAMS_NO_CLUB_LIMIT } from "./bestTeamsNoClubLimit";
 
 const Fantasy = async () => {
   const session = await auth();
   if (!session?.user?.id) redirect("/signin?callbackUrl=/2026/top14");
   const players = (await getPlayers(session.user.id)) as any[];
+  const admin = await getAdminData();
+  const { teams, teamsNoClubLimit, teamsSecondNoClubLimit, currentRound } =
+    admin;
 
   return (
     <div className="w-full">
       <TeamsOfTheRound
-        teams={TEAMS.map((team, i) =>
-          team.teamIds ? (
+        defaultRound={currentRound}
+        teams={teams.map((team, i) =>
+          team?.teamIds ? (
             <div className="flex gap-7">
               <div>
                 <h3 className="font-bold">Full rules</h3>
@@ -28,25 +30,25 @@ const Fantasy = async () => {
                   captainId={team.captainId}
                 ></Team>
               </div>
-              {TEAMS_NO_CLUB_LIMIT[i] && (
+              {teamsNoClubLimit[i] && (
                 <div>
                   <h3 className="font-bold">No club limit</h3>
                   <Team
                     players={players}
-                    teamIds={TEAMS_NO_CLUB_LIMIT[i].teamIds}
+                    teamIds={teamsNoClubLimit[i]!.teamIds}
                     round={i}
-                    captainId={TEAMS_NO_CLUB_LIMIT[i].captainId}
+                    captainId={teamsNoClubLimit[i]!.captainId}
                   ></Team>
                 </div>
               )}
-              {TEAMS_SECOND_NO_CLUB_LIMIT[i] && (
+              {teamsSecondNoClubLimit[i] && (
                 <div>
                   <h3 className="font-bold">B - No club limit</h3>
                   <Team
                     players={players}
-                    teamIds={TEAMS_SECOND_NO_CLUB_LIMIT[i].teamIds}
+                    teamIds={teamsSecondNoClubLimit[i]!.teamIds}
                     round={i}
-                    captainId={TEAMS_SECOND_NO_CLUB_LIMIT[i].captainId}
+                    captainId={teamsSecondNoClubLimit[i]!.captainId}
                   ></Team>
                 </div>
               )}
@@ -85,8 +87,9 @@ const Fantasy = async () => {
           captainId={1586}
         />
         <TeamsOfTheRound
-          teams={TEAMS.map((team, i) =>
-            team.teamIds ? (
+          defaultRound={currentRound}
+          teams={teams.map((team, i) =>
+            team?.teamIds ? (
               <Team
                 players={players}
                 round={i}

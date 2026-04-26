@@ -1,6 +1,6 @@
 import "server-only";
 import { get } from "@vercel/blob";
-import { unstable_cache } from "next/cache";
+import { cache } from "react";
 
 const PREFIX = process.env.BLOB_PREFIX ?? "";
 
@@ -18,9 +18,4 @@ const fetchFromBlob = async (userId: string): Promise<unknown[]> => {
   return JSON.parse(text) as unknown[];
 };
 
-export const getPlayers = (userId: string) =>
-  unstable_cache(
-    async () => fetchFromBlob(userId),
-    ["players", userId, PREFIX],
-    { tags: [playersTag(userId)] },
-  )();
+export const getPlayers = cache(fetchFromBlob);

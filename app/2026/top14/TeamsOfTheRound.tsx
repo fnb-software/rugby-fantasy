@@ -1,8 +1,14 @@
 "use client";
 import { useState } from "react";
 
-const TeamsOfTheRound = ({ teams }: { teams: any[] }) => {
-  const [round, setRound] = useState(1);
+const TeamsOfTheRound = ({
+  teams,
+  defaultRound = 1,
+}: {
+  teams: any[];
+  defaultRound?: number;
+}) => {
+  const [round, setRound] = useState(defaultRound);
 
   return (
     <div className="w-full flex flex-col items-center gap-3">
