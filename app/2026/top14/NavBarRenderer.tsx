@@ -11,6 +11,12 @@ const NavBarRenderer = () => {
           className={`rounded-sm p-1 text-gray-700 bg-cyan-500 hover:bg-cyan-6`}
         >
           fantasy
+        </Link>{" "}
+        <Link
+          href="/2026/top14/team-builder"
+          className={`rounded-sm p-1 text-gray-700 bg-emerald-500 hover:bg-emerald-6`}
+        >
+          team builder
         </Link>
       </div>
     </nav>

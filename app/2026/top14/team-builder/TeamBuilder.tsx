@@ -11,24 +11,24 @@ import {
 } from "chart.js";
 import countBy from "lodash/countBy";
 import sortBy from "lodash/sortBy";
-import { TEAMS } from "./bestTeams";
-import rounds from "../../../2026/top14/data/rounds";
-import getDznFromStats from "../../../2026/top14/minizinc/getDznFromStats";
+import { TEAMS } from "../bestTeams";
+import rounds from "../../../../2026/top14/data/rounds";
+import getDznFromStats from "../../../../2026/top14/minizinc/getDznFromStats";
 import { useEffect, useMemo, useRef, useState } from "react";
-import SelectedPlayers from "./SelectedPlayers";
-import { solve } from "./solve";
-import fantasyModel from "../../../2026/top14/minizinc/fantasy_total.mzn";
-import WantedPlayers from "./WantedPlayers";
-import { assignPlayerToSlot } from "./slots";
-import { TEAMSHEETS, entryName, entryUncertain } from "./teamsheets";
+import SelectedPlayers from "../SelectedPlayers";
+import { solve } from "../solve";
+import fantasyModel from "../../../../2026/top14/minizinc/fantasy_total.mzn";
+import WantedPlayers from "../WantedPlayers";
+import { assignPlayerToSlot } from "../slots";
+import { TEAMSHEETS, entryName, entryUncertain } from "../teamsheets";
 import {
   getRoundPlayerOnlyPoints,
   getTeamPoints,
   matchesName,
   TEAM_RESULTS_EXPECTED,
   POSITION_LABELS,
-} from "./statsUtil";
-import TeamResultsEditor from "./TeamResultsEditor";
+} from "../statsUtil";
+import TeamResultsEditor from "../TeamResultsEditor";
 
 const flatPlayers = TEAMS.map((team) => team.teamIds || []).flat();
 const POSITION_ORDER = [
@@ -46,7 +46,7 @@ const countedPlayers = countBy(flatPlayers);
 
 Chart.register(CategoryScale, LinearScale, BarElement, Title, Tooltip, Legend);
 
-const Stats = ({ players }: { players: any[] }) => {
+const TeamBuilder = ({ players }: { players: any[] }) => {
   const allClubs = useMemo(
     () =>
       [
@@ -1074,4 +1074,4 @@ const Stats = ({ players }: { players: any[] }) => {
   );
 };
 
-export default Stats;
+export default TeamBuilder;

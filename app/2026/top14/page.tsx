@@ -16,7 +16,6 @@ const Fantasy = async () => {
   return (
     <div className="w-full">
       <TeamsOfTheRound
-        players={players}
         teams={TEAMS.map((team, i) =>
           team.teamIds ? (
             <div className="flex gap-7">
@@ -86,7 +85,6 @@ const Fantasy = async () => {
           captainId={1586}
         />
         <TeamsOfTheRound
-          players={players}
           teams={TEAMS.map((team, i) =>
             team.teamIds ? (
               <Team
