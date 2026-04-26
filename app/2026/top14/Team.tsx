@@ -1,4 +1,3 @@
-import players from "../../../2026/top14/data/players";
 import {
   getPlayerCostForRound,
   getPlayerScoreForRound,
@@ -6,10 +5,12 @@ import {
 } from "../../../2026/top14/minizinc/params";
 
 const Team = ({
+  players,
   teamIds,
   round,
   captainId,
 }: {
+  players: any[];
   teamIds: number[];
   round: number;
   captainId: number;

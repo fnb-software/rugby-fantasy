@@ -3,6 +3,11 @@
 The goal of this project is to be able to generate the best possible fantasy team for each round that has been played.  
 It's **not** a predictor.
 
+### Local development
+
+See [docs/local-dev.md](./docs/local-dev.md) for the full setup (Next.js
+app + browser extension + Vercel Blob storage).
+
 ### Rules
 
 See the [official site](https://fantasy.rugbyworldcup.com)
