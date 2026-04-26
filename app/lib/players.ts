@@ -11,9 +11,7 @@ export const playersTag = (userId: string): string => `players:${userId}`;
 
 const fetchFromBlob = async (userId: string): Promise<unknown[]> => {
   const result = await get(blobKey(userId), { access: "private" });
-  if (!result || result.statusCode !== 200) {
-    throw new Error(`Players blob not found for user`);
-  }
+  if (!result || result.statusCode !== 200) return [];
   const text = await new Response(result.stream).text();
   return JSON.parse(text) as unknown[];
 };
