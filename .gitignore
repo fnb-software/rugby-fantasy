@@ -7,3 +7,4 @@ public/minizinc*
 **/.env
 .vercel
 .env*.local
+extension/web-ext-artifacts

@@ -4,6 +4,7 @@ import { getAdminData } from "@/app/lib/adminData";
 import { getPlayers } from "@/app/lib/players";
 import rounds from "@/2026/top14/data/rounds";
 import CurrentRoundEditor from "./CurrentRoundEditor";
+import NoPlayers from "../NoPlayers";
 import TeamsheetsEditor from "./TeamsheetsEditor";
 
 const AdminPage = async () => {
@@ -34,6 +35,7 @@ const AdminPage = async () => {
   return (
     <div className="p-6 flex flex-col gap-6">
       <h1 className="text-xl font-bold">Top 14 admin</h1>
+      {players.length === 0 && <NoPlayers variant="banner" />}
       <CurrentRoundEditor initial={currentRound} />
       <p className="text-sm text-gray-600">
         Best teams are saved from the{" "}

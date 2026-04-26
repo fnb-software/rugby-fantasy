@@ -2,6 +2,7 @@ import { redirect } from "next/navigation";
 import { auth } from "@/auth";
 import { getPlayers } from "@/app/lib/players";
 import { getAdminData } from "@/app/lib/adminData";
+import NoPlayers from "./NoPlayers";
 import Team from "./Team";
 import TeamsOfTheRound from "./TeamsOfTheRound";
 import TournamentTeam from "./TournamentTeam";
@@ -10,6 +11,7 @@ const Fantasy = async () => {
   const session = await auth();
   if (!session?.user?.id) redirect("/signin?callbackUrl=/2026/top14");
   const players = (await getPlayers(session.user.id)) as any[];
+  if (players.length === 0) return <NoPlayers />;
   const admin = await getAdminData();
   const { teams, teamsNoClubLimit, teamsSecondNoClubLimit, currentRound } =
     admin;
