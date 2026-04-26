@@ -72,7 +72,7 @@ Two paths.
      --channel unlisted \
      --api-key  YOUR_KEY \
      --api-secret YOUR_SECRET \
-     --source-dir .output/firefox-mv3
+     --source-dir .output/firefox-mv2
    ```
 5. AMO returns a signed `.xpi`. Install via `about:addons` → gear icon →
    **Install Add-on From File…**. Survives restarts.
@@ -89,7 +89,7 @@ Two paths.
 3. Click the toolbar icon. The popup shows two dots:
    - **lg-melee** — green when the lagrandemelee token is captured.
    - **app** — green when you're signed into the app.
-   Both must be green to enable the **Refresh players** button.
+     Both must be green to enable the **Refresh players** button.
 4. Pick the round and the mode:
    - **Teamsheets only** — fast. Refreshes only the players in
      [`app/2026/top14/teamsheets.ts`](../app/2026/top14/teamsheets.ts) for
@@ -114,7 +114,7 @@ The popup must stay open during a refresh; closing it cancels the run.
   popup, complete Google sign-in. If the dot still doesn't go green,
   confirm `APP_URL` in your build matches the URL you signed into and
   that the manifest's `host_permissions` includes that origin (`wxt
-  build` regenerates the manifest from `wxt.config.ts`).
+build` regenerates the manifest from `wxt.config.ts`).
 - **Upload returns 401.** Same cause as above. The popup uses
   `credentials: "include"` so the app's session cookie tags along; if the
   cookie isn't sent, the cookie's `SameSite` may be too strict — switch

@@ -4,11 +4,21 @@ import { config as loadEnv } from "dotenv";
 
 loadEnv({ path: ".env" });
 
-const APP_URL =
-  process.env.APP_URL?.replace(/\/$/, "") ?? "http://localhost:3000";
-const appOriginPattern = `${APP_URL}/*`;
-
 const firefoxBinary = process.env.WEB_EXT_FIREFOX ?? "firefoxdeveloperedition";
+
+const isProduction = process.env.NODE_ENV === "production";
+const devAppUrl =
+  process.env.APP_URL?.replace(/\/$/, "") ?? "http://localhost:3000";
+const prodAppUrl = process.env.PROD_APP_URL?.replace(/\/$/, "");
+
+if (isProduction && !prodAppUrl) {
+  console.warn(
+    `[wxt.config] PROD_APP_URL not set; production build will use APP_URL (${devAppUrl})`,
+  );
+}
+
+const APP_URL = isProduction && prodAppUrl ? prodAppUrl : devAppUrl;
+const appOriginPattern = `${APP_URL}/*`;
 
 export default defineConfig({
   srcDir: ".",
