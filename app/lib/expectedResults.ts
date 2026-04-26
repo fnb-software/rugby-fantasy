@@ -11,8 +11,7 @@ export const expectedResultsBlobKey = (userId: string): string =>
 
 const fetchFromBlob = async (userId: string): Promise<ExpectedResults> => {
   const result = await get(expectedResultsBlobKey(userId), {
-    access: "private",
-    useCache: false,
+    access: "public",
   });
   if (!result || result.statusCode !== 200) return {};
   const text = await new Response(result.stream).text();

@@ -46,7 +46,7 @@ export async function POST(req: Request) {
   }
 
   const key = expectedResultsBlobKey(userId);
-  const existing = await get(key, { access: "private", useCache: false });
+  const existing = await get(key, { access: "public" });
   let merged: ExpectedResults = {};
   if (existing && existing.statusCode === 200) {
     const text = await new Response(existing.stream).text();
@@ -55,7 +55,7 @@ export async function POST(req: Request) {
   merged[String(round)] = results;
 
   await put(key, JSON.stringify(merged), {
-    access: "private",
+    access: "public",
     contentType: "application/json",
     addRandomSuffix: false,
     allowOverwrite: true,

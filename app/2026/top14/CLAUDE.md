@@ -43,7 +43,7 @@ Sibling folder [2026/top14/minizinc/](../../../2026/top14/minizinc/) holds the m
 
 - [app/lib/adminData.ts](../../lib/adminData.ts) — global admin blob (`top14-2026/admin.json`) carrying `currentRound`, three best-teams arrays, and `teamsheets: Record<roundString, Record<club, Teamsheet>>`. `getAdminData()` (cached + tag-revalidated) and `setAdminData(updater)`.
 - [app/lib/adminAuth.ts](../../lib/adminAuth.ts) — `requireAdmin()` guard returning 401/403.
-- [app/lib/players.ts](../../lib/players.ts) — per-user player snapshot at `players/{BLOB_PREFIX}{userId}.json`. `getPlayers(userId)` is React-`cache()`-deduped per request (no `unstable_cache` — the snapshot is too large for the data cache).
+- [app/lib/players.ts](../../lib/players.ts) — per-user player snapshot at `players/{BLOB_PREFIX}{userId}.json`. `getPlayers(userId)` is React-`cache()`-deduped per request (no `unstable_cache` — the snapshot is too large for the data cache). Writes go via the extension hitting `/api/players/upload-token` → `@vercel/blob/client.put` directly to Blob, which bypasses Vercel's 4.5MB function payload limit. The whole app uses a single **public** Vercel Blob store (`BLOB_READ_WRITE_TOKEN`) — required because client-direct uploads only work against public stores.
 - [app/lib/expectedResults.ts](../../lib/expectedResults.ts) — per-user blob `expected-results/{BLOB_PREFIX}{userId}.json` storing `Record<round, Record<club, margin>>`.
 - [app/lib/teamsheetsExtract.ts](../../lib/teamsheetsExtract.ts) — server-only Groq wrapper. Fetches each URL, strips HTML, sends to `llama-3.3-70b-versatile` with `response_format: json_object`, returns `{ teamsheets, fetchErrors }`. Requires `GROQ_API_KEY`.
 - API routes:
@@ -61,4 +61,5 @@ Sibling folder [2026/top14/minizinc/](../../../2026/top14/minizinc/) holds the m
 - Position keys are the raw API strings (`lib_arriere`, `lib_34aile`, …); use `POSITION_LABELS` for display.
 - New name-matching logic belongs in `matchesName`, not ad-hoc per call site.
 - Round numbers are 1-based at the storage / UI / API boundary; 0-based only inside the solver internals (`getDzn`, `parseResult`, `getPlayerScoreForRound`). Convert at the boundary, e.g. `solver/page.tsx` passes `currentRound - 1` into `Solve`.
-- Admin-edited blobs (`adminData`, `expectedResults`) read with `useCache: false` to bypass Vercel Blob's CDN cache and are written with `allowOverwrite: true`.
+- All blob ops use `access: "public"` (the store is public; the players blob in particular has to be public so the extension can client-upload).
+- Don't pass `useCache: false` on public-blob reads — the SDK rewrites the URL to `?cache=0`, which the public CDN rejects with 400. Public blobs are served via the CDN and may briefly serve stale content (~seconds) after a `put` with `allowOverwrite: true`; that's acceptable for our admin workflow.

@@ -39,10 +39,7 @@ const seed = (): AdminData => ({
 });
 
 const fetchFromBlob = async (): Promise<AdminData> => {
-  const result = await get(ADMIN_BLOB_KEY, {
-    access: "private",
-    useCache: false,
-  });
+  const result = await get(ADMIN_BLOB_KEY, { access: "public" });
   if (!result || result.statusCode !== 200) return seed();
   const text = await new Response(result.stream).text();
   const parsed = JSON.parse(text) as Partial<AdminData>;
@@ -60,7 +57,7 @@ export const setAdminData = async (
   const prev = await fetchFromBlob();
   const next = updater(prev);
   await put(ADMIN_BLOB_KEY, JSON.stringify(next), {
-    access: "private",
+    access: "public",
     contentType: "application/json",
     addRandomSuffix: false,
     allowOverwrite: true,
