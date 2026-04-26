@@ -23,7 +23,7 @@ export async function POST(req: Request) {
 
   const json = JSON.stringify(body);
   await put(blobKey(userId), json, {
-    access: "private",
+    access: "public",
     contentType: "application/json",
     addRandomSuffix: false,
     allowOverwrite: true,

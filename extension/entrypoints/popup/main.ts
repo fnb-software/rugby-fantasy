@@ -1,3 +1,4 @@
+import { put } from "@vercel/blob/client";
 import { searchPlayersPage, fetchPlayerStats, type Player } from "../../shared/api";
 import { buildTeamsheetIndex } from "../../shared/teamsheetsIndex";
 import { matchesName } from "../../../app/2026/top14/statsUtil";
@@ -126,17 +127,27 @@ const checkAppAuth = async (): Promise<boolean> => {
 };
 
 const uploadPlayersToApp = async (players: Player[]) => {
-  const res = await fetch(`${APP_URL}/api/players`, {
+  const tokenRes = await fetch(`${APP_URL}/api/players/upload-token`, {
     method: "POST",
     credentials: "include",
-    headers: { "Content-Type": "application/json" },
-    body: JSON.stringify(players),
   });
-  if (!res.ok) {
-    const body = await res.text().catch(() => "");
-    throw new Error(`Upload failed (HTTP ${res.status}): ${body}`);
+  if (!tokenRes.ok) {
+    const body = await tokenRes.text().catch(() => "");
+    throw new Error(`Token request failed (HTTP ${tokenRes.status}): ${body}`);
   }
-  return (await res.json()) as { ok: boolean; count: number };
+  const { clientToken, pathname } = (await tokenRes.json()) as {
+    clientToken: string;
+    pathname: string;
+  };
+
+  await put(pathname, JSON.stringify(players), {
+    access: "public",
+    contentType: "application/json",
+    token: clientToken,
+    multipart: true,
+  });
+
+  return { ok: true, count: players.length };
 };
 
 const run = async () => {

@@ -1,7 +1,7 @@
 {
   "name": "top14-refresher-extension",
   "private": true,
-  "version": "0.1.1",
+  "version": "0.1.2",
   "type": "module",
   "scripts": {
     "dev": "wxt",
@@ -14,7 +14,9 @@
     "zip:firefox": "wxt zip -b firefox",
     "postinstall": "wxt prepare"
   },
-  "dependencies": {},
+  "dependencies": {
+    "@vercel/blob": "^2.3.3"
+  },
   "devDependencies": {
     "dotenv": "^16.4.5",
     "typescript": "^5.6.0",

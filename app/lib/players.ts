@@ -10,7 +10,7 @@ export const blobKey = (userId: string): string =>
 export const playersTag = (userId: string): string => `players:${userId}`;
 
 const fetchFromBlob = async (userId: string): Promise<unknown[]> => {
-  const result = await get(blobKey(userId), { access: "private" });
+  const result = await get(blobKey(userId), { access: "public" });
   if (!result || result.statusCode !== 200) return [];
   const text = await new Response(result.stream).text();
   return JSON.parse(text) as unknown[];
