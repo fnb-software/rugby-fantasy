@@ -25,7 +25,6 @@ import {
   getRoundPlayerOnlyPoints,
   getTeamPoints,
   matchesName,
-  TEAM_RESULTS_EXPECTED,
   POSITION_LABELS,
 } from "../statsUtil";
 import TeamResultsEditor from "../TeamResultsEditor";
@@ -46,7 +45,15 @@ const countedPlayers = countBy(flatPlayers);
 
 Chart.register(CategoryScale, LinearScale, BarElement, Title, Tooltip, Legend);
 
-const TeamBuilder = ({ players }: { players: any[] }) => {
+const TeamBuilder = ({
+  players,
+  currentRound,
+  initialResultsForRound,
+}: {
+  players: any[];
+  currentRound: number;
+  initialResultsForRound: Record<string, number> | null;
+}) => {
   const allClubs = useMemo(
     () =>
       [
@@ -144,7 +151,34 @@ const TeamBuilder = ({ players }: { players: any[] }) => {
   const [filterByTeamsheet, setFilterByTeamsheet] = useState(true);
   const [teamResultsExpected, setTeamResultsExpected] = useState<
     Record<string, number>
-  >({ ...TEAM_RESULTS_EXPECTED });
+  >(initialResultsForRound ?? {});
+  const [resultsSaveStatus, setResultsSaveStatus] = useState<
+    "idle" | "saving" | "saved" | "error"
+  >("idle");
+  const [resultsSaveError, setResultsSaveError] = useState<string | null>(null);
+
+  const saveExpectedResults = async () => {
+    setResultsSaveStatus("saving");
+    setResultsSaveError(null);
+    try {
+      const res = await fetch("/api/expected-results", {
+        method: "POST",
+        headers: { "content-type": "application/json" },
+        body: JSON.stringify({
+          round: currentRound,
+          results: teamResultsExpected,
+        }),
+      });
+      if (!res.ok) {
+        const body = await res.json().catch(() => ({}));
+        throw new Error(body.error ?? `HTTP ${res.status}`);
+      }
+      setResultsSaveStatus("saved");
+    } catch (e) {
+      setResultsSaveStatus("error");
+      setResultsSaveError(e instanceof Error ? e.message : "save_failed");
+    }
+  };
   const [minSheetsPerPlayer, setMinSheetsPerPlayer] = useState(3);
   const [maxSheetsPerPlayer, setMaxSheetsPerPlayer] = useState<
     number | undefined
@@ -256,10 +290,12 @@ const TeamBuilder = ({ players }: { players: any[] }) => {
 
   const roundInfo = rounds.find(
     (round) =>
-      parseInt(round.journee.numero) === (maxRound || TEAMS.length) + 1,
+      parseInt(round.journee.numero) === (maxRound ? maxRound + 1 : currentRound),
   );
   if (!roundInfo) {
-    throw new Error(`Round not found ${(maxRound || TEAMS.length) + 1}`);
+    throw new Error(
+      `Round not found ${maxRound ? maxRound + 1 : currentRound}`,
+    );
   }
 
   const playersWithPoints = filteredPlayers.map((p) => {
@@ -339,7 +375,7 @@ const TeamBuilder = ({ players }: { players: any[] }) => {
       result: maxRound
         ? parseInt(isMatchHome ? match.but_dom : match.but_ext) -
           parseInt(!isMatchHome ? match.but_dom : match.but_ext)
-        : teamResultsExpected[p.club],
+        : teamResultsExpected[p.club] ?? 0,
     });
     const nextRoundMinutes = nextRound?.minutes;
     const expectedStarterTeamPoints =
@@ -571,12 +607,32 @@ const TeamBuilder = ({ players }: { players: any[] }) => {
         </label>
       </div>
       {!maxRound && (
-        <div>
+        <div className="flex flex-col gap-2">
           <TeamResultsEditor
             matches={roundInfo.journee.matchs}
             teamResultsExpected={teamResultsExpected}
-            onChange={setTeamResultsExpected}
+            onChange={(next) => {
+              setTeamResultsExpected(next);
+              setResultsSaveStatus("idle");
+            }}
           />
+          <div className="flex items-center gap-2">
+            <button
+              onClick={saveExpectedResults}
+              disabled={resultsSaveStatus === "saving"}
+              className="rounded px-3 py-1 bg-emerald-500 text-white disabled:opacity-50"
+            >
+              {resultsSaveStatus === "saving"
+                ? "Saving…"
+                : "Save expected results"}
+            </button>
+            {resultsSaveStatus === "saved" && (
+              <span className="text-emerald-700 text-sm">Saved</span>
+            )}
+            {resultsSaveStatus === "error" && (
+              <span className="text-red-700 text-sm">{resultsSaveError}</span>
+            )}
+          </div>
         </div>
       )}
       <div>

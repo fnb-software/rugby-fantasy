@@ -58,24 +58,9 @@ const Fantasy = async () => {
           ),
         )}
       ></TeamsOfTheRound>
-      <Team
-        players={players}
-        round={17}
-        teamIds={[
-          70, 174, 430, 382, 1730, 354, 509, 391, 121, 457, 498, 1298, 177, 371,
-          1505, 1032, 32, 491,
-        ]}
-        captainId={509}
-      />
-      <Team
-        players={players}
-        round={17}
-        teamIds={[
-          70, 595, 594, 382, 1730, 1032, 354, 509, 800, 457, 881, 1298, 549,
-          498, 369, 1505, 1339, 997,
-        ]}
-        captainId={509}
-      />
+      <br />
+      <br />
+      <br />
       <div>
         <h1>Team of the championship</h1>
         <TournamentTeam
