@@ -1,11 +1,16 @@
 import "server-only";
 import type { Teamsheet } from "@/app/2026/top14/teamsheets";
 
-const GROQ_URL = "https://api.groq.com/openai/v1/chat/completions";
-const GROQ_MODEL = "llama-3.3-70b-versatile";
-
 const FETCH_TIMEOUT_MS = 10_000;
 const PAGE_BYTE_CAP = 80_000;
+
+type LlmProvider = {
+  name: string;
+  url: string;
+  apiKey: string;
+  model: string;
+  extraHeaders?: Record<string, string>;
+};
 
 export type FetchError = { url: string; reason: string };
 
@@ -21,8 +26,8 @@ export const extractTeamsheets = async ({
   urls: string[];
   canonicalClubs: string[];
 }): Promise<ExtractResult> => {
-  const apiKey = process.env.GROQ_API_KEY;
-  if (!apiKey) throw new Error("missing_groq_api_key");
+  const providers = buildProviders();
+  if (providers.length === 0) throw new Error("missing_llm_api_key");
 
   const fetchErrors: FetchError[] = [];
   const pages: { url: string; text: string }[] = [];
@@ -30,6 +35,7 @@ export const extractTeamsheets = async ({
     urls.map(async (url) => {
       try {
         const text = await fetchPageText(url);
+        console.log({ text });
         pages.push({ url, text });
       } catch (e) {
         fetchErrors.push({
@@ -45,33 +51,7 @@ export const extractTeamsheets = async ({
   }
 
   const prompt = buildPrompt({ pages, canonicalClubs });
-  const response = await fetch(GROQ_URL, {
-    method: "POST",
-    headers: {
-      "content-type": "application/json",
-      authorization: `Bearer ${apiKey}`,
-    },
-    body: JSON.stringify({
-      model: GROQ_MODEL,
-      messages: [
-        {
-          role: "system",
-          content:
-            "You extract structured rugby teamsheet data from web pages and respond with a single JSON object.",
-        },
-        { role: "user", content: prompt },
-      ],
-      response_format: { type: "json_object" },
-      temperature: 0,
-    }),
-  });
-  if (!response.ok) {
-    const body = await response.text().catch(() => "");
-    throw new Error(`groq_http_${response.status}: ${body.slice(0, 300)}`);
-  }
-  const json = await response.json();
-  const raw = json?.choices?.[0]?.message?.content;
-  if (typeof raw !== "string") throw new Error("groq_no_text_part");
+  const raw = await callLlm({ providers, prompt });
   const parsed = JSON.parse(raw) as {
     teamsheets?: Array<{
       club?: string;
@@ -88,8 +68,9 @@ export const extractTeamsheets = async ({
       arr: { name?: string; uncertain?: boolean }[] | undefined,
     ) =>
       (arr ?? [])
-        .filter((e): e is { name: string; uncertain?: boolean } =>
-          typeof e?.name === "string" && e.name.trim().length > 0,
+        .filter(
+          (e): e is { name: string; uncertain?: boolean } =>
+            typeof e?.name === "string" && e.name.trim().length > 0,
         )
         .map(({ name, uncertain }) => ({ name, uncertain: !!uncertain }));
     teamsheets[item.club] = {
@@ -99,6 +80,93 @@ export const extractTeamsheets = async ({
   }
 
   return { teamsheets, fetchErrors };
+};
+
+const buildProviders = (): LlmProvider[] => {
+  const providers: LlmProvider[] = [];
+  const groqKey = process.env.GROQ_API_KEY;
+  if (groqKey) {
+    providers.push({
+      name: "groq:llama-3.3-70b-versatile",
+      url: "https://api.groq.com/openai/v1/chat/completions",
+      apiKey: groqKey,
+      model: "llama-3.3-70b-versatile",
+    });
+  }
+  const openrouterKey = process.env.OPENROUTER_API_KEY;
+  if (openrouterKey) {
+    const openrouterHeaders = {
+      "http-referer": "https://github.com/fnb-software/rugby-fantasy",
+      "x-title": "rugby-fantasy",
+    };
+    const freeModels = [
+      "meta-llama/llama-3.3-70b-instruct:free",
+      "nousresearch/hermes-3-llama-3.1-405b:free",
+      "openai/gpt-oss-120b:free",
+      "qwen/qwen3-next-80b-a3b-instruct:free",
+      "z-ai/glm-4.5-air:free",
+    ];
+    for (const model of freeModels) {
+      providers.push({
+        name: `openrouter:${model}`,
+        url: "https://openrouter.ai/api/v1/chat/completions",
+        apiKey: openrouterKey,
+        model,
+        extraHeaders: openrouterHeaders,
+      });
+    }
+  }
+  return providers;
+};
+
+const callLlm = async ({
+  providers,
+  prompt,
+}: {
+  providers: LlmProvider[];
+  prompt: string;
+}): Promise<string> => {
+  const errors: string[] = [];
+  for (const provider of providers) {
+    try {
+      const response = await fetch(provider.url, {
+        method: "POST",
+        headers: {
+          "content-type": "application/json",
+          authorization: `Bearer ${provider.apiKey}`,
+          ...(provider.extraHeaders ?? {}),
+        },
+        body: JSON.stringify({
+          model: provider.model,
+          messages: [
+            {
+              role: "system",
+              content:
+                "You extract structured rugby teamsheet data from web pages and respond with a single JSON object.",
+            },
+            { role: "user", content: prompt },
+          ],
+          response_format: { type: "json_object" },
+          temperature: 0,
+        }),
+      });
+      if (!response.ok) {
+        const body = await response.text().catch(() => "");
+        throw new Error(`http_${response.status}: ${body.slice(0, 200)}`);
+      }
+      const json = await response.json();
+      const raw = json?.choices?.[0]?.message?.content;
+      if (typeof raw !== "string" || raw.trim().length === 0) {
+        throw new Error("no_text_part");
+      }
+      return raw;
+    } catch (e) {
+      const reason = e instanceof Error ? e.message : "unknown";
+      errors.push(`${provider.name}: ${reason}`);
+      console.warn(`[teamsheetsExtract] ${provider.name} failed: ${reason}`);
+    }
+  }
+  throw new Error(`all_llm_providers_failed: ${errors.join(" | ")}`);
 };
 
 const fetchPageText = async (url: string): Promise<string> => {
