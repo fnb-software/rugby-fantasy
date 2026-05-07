@@ -84,6 +84,18 @@ export const extractTeamsheets = async ({
 
 const buildProviders = (): LlmProvider[] => {
   const providers: LlmProvider[] = [];
+  const cerebrasKey = process.env.CEREBRAS_API_KEY;
+  if (cerebrasKey) {
+    const cerebrasModels = ["qwen-3-235b-a22b-instruct-2507", "llama3.1-8b"];
+    for (const model of cerebrasModels) {
+      providers.push({
+        name: `cerebras:${model}`,
+        url: "https://api.cerebras.ai/v1/chat/completions",
+        apiKey: cerebrasKey,
+        model,
+      });
+    }
+  }
   const groqKey = process.env.GROQ_API_KEY;
   if (groqKey) {
     providers.push({
@@ -197,11 +209,11 @@ const cleanHtml = (html: string): string =>
     .replace(/<svg[\s\S]*?<\/svg>/gi, " ")
     .replace(/<!--[\s\S]*?-->/g, " ")
     .replace(/<\/(?:td|th)>/gi, " | ")
-    .replace(/<\/(?:tr|li|p|h[1-6]|div|section|article)>/gi, "\n")
-    .replace(/<br\s*\/?>/gi, "\n")
+    .replace(/<\/(?:tr|li|p|h[1-6]|div|section|article)>/gi, "")
+    .replace(/<br\s*\/?>/gi, "")
     .replace(/<[^>]+>/g, " ")
     .replace(/[ \t]+/g, " ")
-    .replace(/\n{3,}/g, "\n\n")
+    .replace(/(\s)*\n/g, "")
     .trim();
 
 const buildPrompt = ({
