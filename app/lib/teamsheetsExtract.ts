@@ -62,6 +62,7 @@ export const extractTeamsheets = async ({
 
   const prompt = buildPrompt({ pages, canonicalClubs });
   const raw = await callLlm({ providers, prompt });
+  console.log(raw);
   const parsed = JSON.parse(raw) as {
     teamsheets?: Array<{
       club?: string;
@@ -170,6 +171,7 @@ const callLlm = async ({
           ],
           response_format: { type: "json_object" },
           temperature: 0,
+          max_tokens: 8192,
         }),
       });
       if (!response.ok) {
@@ -177,9 +179,18 @@ const callLlm = async ({
         throw new Error(`http_${response.status}: ${body.slice(0, 200)}`);
       }
       const json = await response.json();
-      const raw = json?.choices?.[0]?.message?.content;
+      const choice = json?.choices?.[0];
+      const raw = choice?.message?.content;
       if (typeof raw !== "string" || raw.trim().length === 0) {
         throw new Error("no_text_part");
+      }
+      if (choice?.finish_reason === "length") {
+        throw new Error(`truncated_at_${raw.length}_chars`);
+      }
+      try {
+        JSON.parse(raw);
+      } catch {
+        throw new Error("invalid_json");
       }
       return raw;
     } catch (e) {
