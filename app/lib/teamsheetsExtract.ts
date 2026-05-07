@@ -14,6 +14,11 @@ type LlmProvider = {
 
 export type FetchError = { url: string; reason: string };
 
+export type AttemptEvent =
+  | { phase: "start"; provider: string }
+  | { phase: "fail"; provider: string; reason: string }
+  | { phase: "success"; provider: string };
+
 export type ExtractResult = {
   teamsheets: Record<string, Teamsheet>;
   fetchErrors: FetchError[];
@@ -23,10 +28,12 @@ export const extractTeamsheets = async ({
   urls,
   texts,
   canonicalClubs,
+  onAttempt,
 }: {
   urls: string[];
   texts?: string[];
   canonicalClubs: string[];
+  onAttempt?: (event: AttemptEvent) => void;
 }): Promise<ExtractResult> => {
   const providers = buildProviders();
   if (providers.length === 0) throw new Error("missing_llm_api_key");
@@ -61,7 +68,7 @@ export const extractTeamsheets = async ({
   }
 
   const prompt = buildPrompt({ pages, canonicalClubs });
-  const raw = await callLlm({ providers, prompt });
+  const raw = await callLlm({ providers, prompt, onAttempt });
   console.log(raw);
   const parsed = JSON.parse(raw) as {
     teamsheets?: Array<{
@@ -124,8 +131,6 @@ const buildProviders = (): LlmProvider[] => {
     };
     const freeModels = [
       "meta-llama/llama-3.3-70b-instruct:free",
-      "nousresearch/hermes-3-llama-3.1-405b:free",
-      "openai/gpt-oss-120b:free",
       "qwen/qwen3-next-80b-a3b-instruct:free",
       "z-ai/glm-4.5-air:free",
     ];
@@ -145,12 +150,15 @@ const buildProviders = (): LlmProvider[] => {
 const callLlm = async ({
   providers,
   prompt,
+  onAttempt,
 }: {
   providers: LlmProvider[];
   prompt: string;
+  onAttempt?: (event: AttemptEvent) => void;
 }): Promise<string> => {
   const errors: string[] = [];
   for (const provider of providers) {
+    onAttempt?.({ phase: "start", provider: provider.name });
     try {
       const response = await fetch(provider.url, {
         method: "POST",
@@ -192,10 +200,12 @@ const callLlm = async ({
       } catch {
         throw new Error("invalid_json");
       }
+      onAttempt?.({ phase: "success", provider: provider.name });
       return raw;
     } catch (e) {
       const reason = e instanceof Error ? e.message : "unknown";
       errors.push(`${provider.name}: ${reason}`);
+      onAttempt?.({ phase: "fail", provider: provider.name, reason });
       console.warn(`[teamsheetsExtract] ${provider.name} failed: ${reason}`);
     }
   }

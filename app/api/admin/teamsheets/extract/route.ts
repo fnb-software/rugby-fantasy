@@ -60,48 +60,64 @@ export async function POST(req: Request) {
   const session = await auth();
   const players = (await getPlayers(session!.user!.id)) as any[];
 
-  let extract;
-  try {
-    extract = await extractTeamsheets({
-      urls: urlList,
-      texts: textList,
-      canonicalClubs,
-    });
-  } catch (e) {
-    console.error("/api/admin/teamsheets/extract failed", {
-      urls: urlList,
-      textCount: textList.length,
-      round,
-      error: e,
-    });
-    const message = e instanceof Error ? e.message : "extract_failed";
-    const status = message === "missing_llm_api_key" ? 500 : 502;
-    return NextResponse.json({ error: message }, { status });
-  }
+  const stream = new ReadableStream({
+    async start(controller) {
+      const enc = new TextEncoder();
+      const send = (msg: object) =>
+        controller.enqueue(enc.encode(JSON.stringify(msg) + "\n"));
 
-  const enriched: Record<
-    string,
-    {
-      starters: { name: string; uncertain: boolean; matched: boolean }[];
-      subs: { name: string; uncertain: boolean; matched: boolean }[];
-    }
-  > = {};
-  for (const [club, ts] of Object.entries(extract.teamsheets)) {
-    const clubPlayers = players.filter((p: any) => p.club === club);
-    const tag = (e: any) => {
-      const name = typeof e === "string" ? e : e.name;
-      const uncertain = typeof e === "string" ? false : !!e.uncertain;
-      const matched = clubPlayers.some((p: any) => matchesName(p, name));
-      return { name, uncertain, matched };
-    };
-    enriched[club] = {
-      starters: ts.starters.map(tag),
-      subs: ts.subs.map(tag),
-    };
-  }
+      try {
+        const extract = await extractTeamsheets({
+          urls: urlList,
+          texts: textList,
+          canonicalClubs,
+          onAttempt: (event) => send({ type: "attempt", ...event }),
+        });
 
-  return NextResponse.json({
-    teamsheets: enriched,
-    fetchErrors: extract.fetchErrors,
+        const enriched: Record<
+          string,
+          {
+            starters: { name: string; uncertain: boolean; matched: boolean }[];
+            subs: { name: string; uncertain: boolean; matched: boolean }[];
+          }
+        > = {};
+        for (const [club, ts] of Object.entries(extract.teamsheets)) {
+          const clubPlayers = players.filter((p: any) => p.club === club);
+          const tag = (e: any) => {
+            const name = typeof e === "string" ? e : e.name;
+            const uncertain = typeof e === "string" ? false : !!e.uncertain;
+            const matched = clubPlayers.some((p: any) => matchesName(p, name));
+            return { name, uncertain, matched };
+          };
+          enriched[club] = {
+            starters: ts.starters.map(tag),
+            subs: ts.subs.map(tag),
+          };
+        }
+
+        send({
+          type: "done",
+          teamsheets: enriched,
+          fetchErrors: extract.fetchErrors,
+        });
+      } catch (e) {
+        console.error("/api/admin/teamsheets/extract failed", {
+          urls: urlList,
+          textCount: textList.length,
+          round,
+          error: e,
+        });
+        const message = e instanceof Error ? e.message : "extract_failed";
+        send({ type: "error", message });
+      }
+      controller.close();
+    },
+  });
+
+  return new Response(stream, {
+    headers: {
+      "content-type": "application/x-ndjson",
+      "cache-control": "no-store",
+    },
   });
 }

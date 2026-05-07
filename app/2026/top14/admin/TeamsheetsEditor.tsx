@@ -54,6 +54,9 @@ const TeamsheetsEditor = ({
     "idle" | "extracting" | "error"
   >("idle");
   const [extractError, setExtractError] = useState<string | null>(null);
+  const [attempts, setAttempts] = useState<
+    { provider: string; status: "trying" | "success" | "fail"; reason?: string }[]
+  >([]);
   const [fetchErrors, setFetchErrors] = useState<
     { url: string; reason: string }[]
   >([]);
@@ -143,40 +146,82 @@ const TeamsheetsEditor = ({
     setExtractStatus("extracting");
     setExtractError(null);
     setFetchErrors([]);
+    setAttempts([]);
     try {
       const res = await fetch("/api/admin/teamsheets/extract", {
         method: "POST",
         headers: { "content-type": "application/json" },
         body: JSON.stringify({ urls: urlList, texts: textList, round }),
       });
-      if (!res.ok) {
+      if (!res.ok || !res.body) {
         const body = await res.json().catch(() => ({}));
         throw new Error(body.error ?? `HTTP ${res.status}`);
       }
-      const body = (await res.json()) as {
-        teamsheets: Record<
-          string,
-          {
-            starters: { name: string; uncertain: boolean }[];
-            subs: { name: string; uncertain: boolean }[];
+      const reader = res.body.getReader();
+      const decoder = new TextDecoder();
+      let buffer = "";
+      let finalError: string | null = null;
+      while (true) {
+        const { value, done } = await reader.read();
+        if (done) break;
+        buffer += decoder.decode(value, { stream: true });
+        const lines = buffer.split("\n");
+        buffer = lines.pop() ?? "";
+        for (const line of lines) {
+          if (!line.trim()) continue;
+          const msg = JSON.parse(line) as
+            | { type: "attempt"; phase: "start" | "fail" | "success"; provider: string; reason?: string }
+            | {
+                type: "done";
+                teamsheets: Record<
+                  string,
+                  {
+                    starters: { name: string; uncertain: boolean }[];
+                    subs: { name: string; uncertain: boolean }[];
+                  }
+                >;
+                fetchErrors: { url: string; reason: string }[];
+              }
+            | { type: "error"; message: string };
+          if (msg.type === "attempt") {
+            setAttempts((prev) => {
+              if (msg.phase === "start") {
+                return [...prev, { provider: msg.provider, status: "trying" }];
+              }
+              const i = prev.findLastIndex((a) => a.provider === msg.provider);
+              if (i < 0) return prev;
+              const next = [...prev];
+              next[i] = {
+                provider: msg.provider,
+                status: msg.phase === "success" ? "success" : "fail",
+                reason: msg.reason,
+              };
+              return next;
+            });
+          } else if (msg.type === "done") {
+            setFetchErrors(msg.fetchErrors);
+            setData((prev) => {
+              const next = { ...prev };
+              for (const [club, ts] of Object.entries(msg.teamsheets)) {
+                next[club] = {
+                  starters: ts.starters.map(({ name, uncertain }) => ({
+                    name,
+                    uncertain,
+                  })),
+                  subs: ts.subs.map(({ name, uncertain }) => ({
+                    name,
+                    uncertain,
+                  })),
+                };
+              }
+              return next;
+            });
+          } else if (msg.type === "error") {
+            finalError = msg.message;
           }
-        >;
-        fetchErrors: { url: string; reason: string }[];
-      };
-      setFetchErrors(body.fetchErrors);
-      setData((prev) => {
-        const next = { ...prev };
-        for (const [club, ts] of Object.entries(body.teamsheets)) {
-          next[club] = {
-            starters: ts.starters.map(({ name, uncertain }) => ({
-              name,
-              uncertain,
-            })),
-            subs: ts.subs.map(({ name, uncertain }) => ({ name, uncertain })),
-          };
         }
-        return next;
-      });
+      }
+      if (finalError) throw new Error(finalError);
       setExtractStatus("idle");
       setSaveStatus("idle");
     } catch (e) {
@@ -254,6 +299,36 @@ const TeamsheetsEditor = ({
             <span className="text-red-700 text-sm">{extractError}</span>
           )}
         </div>
+        {attempts.length > 0 && (
+          <ul className="flex flex-wrap gap-1 text-xs">
+            {attempts.map((a, i) => {
+              const colors =
+                a.status === "trying"
+                  ? "bg-indigo-100 text-indigo-700 border-indigo-300"
+                  : a.status === "success"
+                  ? "bg-emerald-100 text-emerald-700 border-emerald-300"
+                  : "bg-slate-100 text-slate-500 border-slate-300";
+              const icon =
+                a.status === "trying"
+                  ? "⏳"
+                  : a.status === "success"
+                  ? "✓"
+                  : "✗";
+              return (
+                <li
+                  key={i}
+                  className={`border rounded px-2 py-0.5 font-mono ${colors}`}
+                  title={a.reason ?? a.status}
+                >
+                  {icon} {a.provider}
+                  {a.status === "fail" && a.reason
+                    ? ` — ${a.reason.slice(0, 40)}`
+                    : ""}
+                </li>
+              );
+            })}
+          </ul>
+        )}
         {fetchErrors.length > 0 && (
           <div className="text-sm text-amber-700">
             <div className="font-semibold">Could not fetch:</div>
