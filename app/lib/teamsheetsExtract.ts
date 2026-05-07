@@ -73,8 +73,8 @@ export const extractTeamsheets = async ({
   const parsed = JSON.parse(raw) as {
     teamsheets?: Array<{
       club?: string;
-      starters?: { name?: string; uncertain?: boolean }[];
-      subs?: { name?: string; uncertain?: boolean }[];
+      starters?: string[];
+      subs?: string[];
     }>;
   };
 
@@ -82,15 +82,15 @@ export const extractTeamsheets = async ({
   const teamsheets: Record<string, Teamsheet> = {};
   for (const item of parsed.teamsheets ?? []) {
     if (!item?.club || !allowed.has(item.club)) continue;
-    const sanitize = (
-      arr: { name?: string; uncertain?: boolean }[] | undefined,
-    ) =>
+    const sanitize = (arr: string[] | undefined) =>
       (arr ?? [])
-        .filter(
-          (e): e is { name: string; uncertain?: boolean } =>
-            typeof e?.name === "string" && e.name.trim().length > 0,
-        )
-        .map(({ name, uncertain }) => ({ name, uncertain: !!uncertain }));
+        .filter((e): e is string => typeof e === "string" && e.trim().length > 0)
+        .map((e) => {
+          const uncertain = e.endsWith("*");
+          const name = (uncertain ? e.slice(0, -1) : e).trim();
+          return { name, uncertain };
+        })
+        .filter((e) => e.name.length > 0);
     teamsheets[item.club] = {
       starters: sanitize(item.starters),
       subs: sanitize(item.subs),
@@ -195,10 +195,21 @@ const callLlm = async ({
       if (choice?.finish_reason === "length") {
         throw new Error(`truncated_at_${raw.length}_chars`);
       }
+      let shape: { teamsheets?: Array<{ club?: string; starters?: string[]; subs?: string[] }> };
       try {
-        JSON.parse(raw);
+        shape = JSON.parse(raw);
       } catch {
         throw new Error("invalid_json");
+      }
+      const incomplete = (shape?.teamsheets ?? []).find(
+        (t) =>
+          !Array.isArray(t?.subs) ||
+          t.subs.length === 0 ||
+          !Array.isArray(t?.starters) ||
+          t.starters.length === 0,
+      );
+      if (incomplete) {
+        throw new Error(`incomplete_teamsheet:${incomplete.club ?? "?"}`);
       }
       onAttempt?.({ phase: "success", provider: provider.name });
       return raw;
@@ -262,23 +273,25 @@ const buildPrompt = ({
 Allowed club names (use exactly these spellings — accents and capitalization included — for the "club" field):
 ${canonicalClubs.map((c) => `- ${c}`).join("\n")}
 
-Output a single JSON object with this exact shape and no other top-level keys:
+Output a single JSON object with this exact shape and no other top-level keys. Every entry in "starters"/"subs" is just a string (the player's last name). Append a literal "*" at the end of the name to mark an uncertain/alternative player — never use objects, never add an "uncertain" field:
 {
   "teamsheets": [
     {
       "club": "<one of the allowed names>",
-      "starters": [{ "name": "<last name>", "uncertain": <boolean> }, ...],
-      "subs":     [{ "name": "<last name>", "uncertain": <boolean> }, ...]
+      "starters": ["Lastname", "Lastname*", ... 15 total],
+      "subs":     ["Lastname", "Lastname*", ... up to 8 total]
     }
   ]
 }
+
+Both "starters" AND "subs" are required for every club entry — never omit "subs", and never abbreviate the array with "..." in your actual output (write every player out).
 
 Rules:
 - One array entry per club whose teamsheet appears in the sources. Skip clubs you can't confidently identify. Do NOT invent players.
 - "starters": ordered list of probable starter last names. The pages typically number them 1-15; preserve that order.
 - "subs": ordered list of probable replacements (typically 8 but may vary).
 - Preserve the first-name initial when the source shows it: emit "X. Lastname" (e.g. "R. Ntamack", "Pa. Boudehent", "J.-L. Joseph"). If the source only gives a full first name, abbreviate it to its first letter plus a period ("Romain Ntamack" → "R. Ntamack"). If neither initial nor first name is shown, output just the surname.
-- Mark "uncertain": true when the page presents the player as an alternative — typical signals: "ou X", a slash ("Smith / Jones"), parentheses, "?", "à confirmer", "incertain", or two names listed for the same shirt number. Otherwise false.
+- Append "*" to the last name ONLY when the page presents the player as an alternative — typical signals: "ou X", a slash ("Smith / Jones"), parentheses, "?", "à confirmer", "incertain", or two names listed for the same shirt number. Examples: "Ntamack" (confident), "Ntamack*" (uncertain), "R. Ntamack*" (uncertain with initial). Confident picks MUST NOT carry the "*".
 - Diacritic-preserved names ("Lévêque", "Bordeaux-Bègles", etc.). Keep accents.
 - If a source page has multiple matches, extract every recognized club from it.
 - Output ONLY the JSON object. No prose, no markdown fences.
