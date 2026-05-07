@@ -21,9 +21,11 @@ export type ExtractResult = {
 
 export const extractTeamsheets = async ({
   urls,
+  texts,
   canonicalClubs,
 }: {
   urls: string[];
+  texts?: string[];
   canonicalClubs: string[];
 }): Promise<ExtractResult> => {
   const providers = buildProviders();
@@ -45,6 +47,14 @@ export const extractTeamsheets = async ({
       }
     }),
   );
+  (texts ?? []).forEach((t, i) => {
+    const trimmed = t.trim();
+    if (trimmed.length === 0) return;
+    pages.push({
+      url: `pasted-${i + 1}`,
+      text: trimmed.slice(0, PAGE_BYTE_CAP),
+    });
+  });
 
   if (pages.length === 0) {
     return { teamsheets: {}, fetchErrors };

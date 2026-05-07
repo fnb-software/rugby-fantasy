@@ -49,7 +49,7 @@ const TeamsheetsEditor = ({
   const [data, setData] = useState<Editable>(() =>
     initialFrom(initial, clubs),
   );
-  const [urls, setUrls] = useState("");
+  const [input, setInput] = useState("");
   const [extractStatus, setExtractStatus] = useState<
     "idle" | "extracting" | "error"
   >("idle");
@@ -125,15 +125,21 @@ const TeamsheetsEditor = ({
   };
 
   const onExtract = async () => {
-    const urlList = urls
-      .split(/\s+/)
-      .map((u) => u.trim())
-      .filter(Boolean);
-    if (urlList.length === 0) {
+    const trimmed = input.trim();
+    if (!trimmed) {
       setExtractStatus("error");
-      setExtractError("Paste at least one URL");
+      setExtractError("Paste URLs or content first");
       return;
     }
+    const firstLine = trimmed.split(/\r?\n/, 1)[0]!.trim();
+    const isUrlMode = /^https?:\/\//i.test(firstLine);
+    const urlList = isUrlMode
+      ? trimmed
+          .split(/\s+/)
+          .map((u) => u.trim())
+          .filter(Boolean)
+      : [];
+    const textList = isUrlMode ? [] : [trimmed];
     setExtractStatus("extracting");
     setExtractError(null);
     setFetchErrors([]);
@@ -141,7 +147,7 @@ const TeamsheetsEditor = ({
       const res = await fetch("/api/admin/teamsheets/extract", {
         method: "POST",
         headers: { "content-type": "application/json" },
-        body: JSON.stringify({ urls: urlList, round }),
+        body: JSON.stringify({ urls: urlList, texts: textList, round }),
       });
       if (!res.ok) {
         const body = await res.json().catch(() => ({}));
@@ -226,14 +232,15 @@ const TeamsheetsEditor = ({
 
       <div className="flex flex-col gap-2 border rounded p-3 bg-slate-50">
         <label className="text-sm font-semibold">
-          Extract from URLs (one per line)
+          Paste URLs (one per line) — or paste lineup text directly if the
+          source is paywalled
         </label>
         <textarea
-          value={urls}
-          onChange={(e) => setUrls(e.target.value)}
-          rows={3}
+          value={input}
+          onChange={(e) => setInput(e.target.value)}
+          rows={6}
           className="border rounded p-2 text-sm font-mono"
-          placeholder="https://www.midi-olympique.fr/...&#10;https://www.allrugby.com/..."
+          placeholder="https://www.midi-olympique.fr/...&#10;https://www.allrugby.com/...&#10;&#10;…or paste the lineup text directly (anything that doesn&rsquo;t start with http(s):// is treated as content)."
         />
         <div className="flex items-center gap-2">
           <button

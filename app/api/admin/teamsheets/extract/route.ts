@@ -17,17 +17,24 @@ export async function POST(req: Request) {
   } catch {
     return NextResponse.json({ error: "invalid_json" }, { status: 400 });
   }
-  const { urls, round } = (body ?? {}) as {
+  const { urls, texts, round } = (body ?? {}) as {
     urls?: unknown;
+    texts?: unknown;
     round?: unknown;
   };
 
-  if (
-    !Array.isArray(urls) ||
-    urls.length === 0 ||
-    !urls.every((u) => typeof u === "string" && /^https?:\/\//.test(u))
-  ) {
-    return NextResponse.json({ error: "invalid_urls" }, { status: 400 });
+  const urlList: string[] = Array.isArray(urls)
+    ? urls.filter(
+        (u): u is string => typeof u === "string" && /^https?:\/\//.test(u),
+      )
+    : [];
+  const textList: string[] = Array.isArray(texts)
+    ? texts.filter(
+        (t): t is string => typeof t === "string" && t.trim().length > 0,
+      )
+    : [];
+  if (urlList.length === 0 && textList.length === 0) {
+    return NextResponse.json({ error: "no_input" }, { status: 400 });
   }
   if (
     typeof round !== "number" ||
@@ -56,17 +63,19 @@ export async function POST(req: Request) {
   let extract;
   try {
     extract = await extractTeamsheets({
-      urls: urls as string[],
+      urls: urlList,
+      texts: textList,
       canonicalClubs,
     });
   } catch (e) {
     console.error("/api/admin/teamsheets/extract failed", {
-      urls,
+      urls: urlList,
+      textCount: textList.length,
       round,
       error: e,
     });
     const message = e instanceof Error ? e.message : "extract_failed";
-    const status = message === "missing_groq_api_key" ? 500 : 502;
+    const status = message === "missing_llm_api_key" ? 500 : 502;
     return NextResponse.json({ error: message }, { status });
   }
 

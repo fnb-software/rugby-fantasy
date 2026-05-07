@@ -25,7 +25,7 @@ Sibling folder [2026/top14/minizinc/](../../../2026/top14/minizinc/) holds the m
 - [WantedPlayers.tsx](WantedPlayers.tsx) — list of players with active offers (`offres_encours`).
 - [TeamResultsEditor.tsx](TeamResultsEditor.tsx) — inline editor for `teamResultsExpected` per-club score margin (used to project team points when no actual round result is available). No defaults — empty entries read as 0 via `?? 0` at the call site. Persisted explicitly via the Save button (POSTs to `/api/expected-results`, scoped per user per round).
 - [admin/CurrentRoundEditor.tsx](admin/CurrentRoundEditor.tsx) — single-input form for the admin's `currentRound`; POSTs to `/api/admin/round`.
-- [admin/TeamsheetsEditor.tsx](admin/TeamsheetsEditor.tsx) — admin tool that takes a list of URLs, calls `/api/admin/teamsheets/extract` (Gemini under the hood) to parse "compositions probables", lets the admin edit/add/remove names with live `matchesName` validation against the players DB (unmatched names highlighted red), then saves via `/api/admin/teamsheets`. Per-name `uncertain` toggle for "ou X" alternatives.
+- [admin/TeamsheetsEditor.tsx](admin/TeamsheetsEditor.tsx) — admin tool with a single textarea: if the first line starts with `http(s)://` the whole content is split into URLs (one per line), otherwise the entire textarea is treated as raw pasted lineup content (useful when a source is paywalled or won't fetch). Calls `/api/admin/teamsheets/extract` to parse "compositions probables", lets the admin edit/add/remove names with live `matchesName` validation against the players DB (unmatched names highlighted red), then saves via `/api/admin/teamsheets`. Per-name `uncertain` toggle for "ou X" alternatives.
 
 ## Data files
 
@@ -45,12 +45,12 @@ Sibling folder [2026/top14/minizinc/](../../../2026/top14/minizinc/) holds the m
 - [app/lib/adminAuth.ts](../../lib/adminAuth.ts) — `requireAdmin()` guard returning 401/403.
 - [app/lib/players.ts](../../lib/players.ts) — per-user player snapshot at `players/{BLOB_PREFIX}{userId}.json`. `getPlayers(userId)` is React-`cache()`-deduped per request (no `unstable_cache` — the snapshot is too large for the data cache). Writes go via the extension hitting `/api/players/upload-token` → `@vercel/blob/client.put` directly to Blob, which bypasses Vercel's 4.5MB function payload limit. The whole app uses a single **public** Vercel Blob store (`BLOB_READ_WRITE_TOKEN`) — required because client-direct uploads only work against public stores.
 - [app/lib/expectedResults.ts](../../lib/expectedResults.ts) — per-user blob `expected-results/{BLOB_PREFIX}{userId}.json` storing `Record<round, Record<club, margin>>`.
-- [app/lib/teamsheetsExtract.ts](../../lib/teamsheetsExtract.ts) — server-only Groq wrapper. Fetches each URL, strips HTML, sends to `llama-3.3-70b-versatile` with `response_format: json_object`, returns `{ teamsheets, fetchErrors }`. Requires `GROQ_API_KEY`.
+- [app/lib/teamsheetsExtract.ts](../../lib/teamsheetsExtract.ts) — server-only LLM wrapper. Takes `urls` and/or `texts`: fetches each URL and strips HTML, appends pasted texts as additional sources, then walks a provider fallback chain (Groq Llama 3.3 70B → Cerebras Qwen-3 235B / Llama 3.1 8B → OpenRouter free models) with `response_format: json_object`. Returns `{ teamsheets, fetchErrors }`. Requires at least one of `GROQ_API_KEY`, `CEREBRAS_API_KEY`, `OPENROUTER_API_KEY` — providers with no key are skipped.
 - API routes:
   - `POST /api/admin/round` — set current round.
   - `POST /api/admin/best-team` — write one round's slot for a given variant.
   - `POST /api/admin/teamsheets` — replace one round's teamsheets map.
-  - `POST /api/admin/teamsheets/extract` — AI-extract from a list of URLs; returns enriched entries with a `matched` flag computed via `matchesName`.
+  - `POST /api/admin/teamsheets/extract` — AI-extract from a list of URLs and/or pasted text snippets (`{ urls?, texts?, round }`, at least one of `urls`/`texts` non-empty); returns enriched entries with a `matched` flag computed via `matchesName`.
   - `POST /api/expected-results` — write the signed-in user's saved expected-results for one round.
   - `POST /api/players` — replace the signed-in user's player snapshot (used by the browser extension).
 
