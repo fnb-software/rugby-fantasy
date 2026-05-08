@@ -84,7 +84,9 @@ export const extractTeamsheets = async ({
     if (!item?.club || !allowed.has(item.club)) continue;
     const sanitize = (arr: string[] | undefined) =>
       (arr ?? [])
-        .filter((e): e is string => typeof e === "string" && e.trim().length > 0)
+        .filter(
+          (e): e is string => typeof e === "string" && e.trim().length > 0,
+        )
         .map((e) => {
           const uncertain = e.endsWith("*");
           const name = (uncertain ? e.slice(0, -1) : e).trim();
@@ -103,6 +105,15 @@ export const extractTeamsheets = async ({
 const buildProviders = (): LlmProvider[] => {
   const providers: LlmProvider[] = [];
   const cerebrasKey = process.env.CEREBRAS_API_KEY;
+  const groqKey = process.env.GROQ_API_KEY;
+  if (groqKey) {
+    providers.push({
+      name: "groq:llama-3.3-70b-versatile",
+      url: "https://api.groq.com/openai/v1/chat/completions",
+      apiKey: groqKey,
+      model: "llama-3.3-70b-versatile",
+    });
+  }
   if (cerebrasKey) {
     const cerebrasModels = ["qwen-3-235b-a22b-instruct-2507", "llama3.1-8b"];
     for (const model of cerebrasModels) {
@@ -114,15 +125,7 @@ const buildProviders = (): LlmProvider[] => {
       });
     }
   }
-  const groqKey = process.env.GROQ_API_KEY;
-  if (groqKey) {
-    providers.push({
-      name: "groq:llama-3.3-70b-versatile",
-      url: "https://api.groq.com/openai/v1/chat/completions",
-      apiKey: groqKey,
-      model: "llama-3.3-70b-versatile",
-    });
-  }
+
   const openrouterKey = process.env.OPENROUTER_API_KEY;
   if (openrouterKey) {
     const openrouterHeaders = {
@@ -195,7 +198,13 @@ const callLlm = async ({
       if (choice?.finish_reason === "length") {
         throw new Error(`truncated_at_${raw.length}_chars`);
       }
-      let shape: { teamsheets?: Array<{ club?: string; starters?: string[]; subs?: string[] }> };
+      let shape: {
+        teamsheets?: Array<{
+          club?: string;
+          starters?: string[];
+          subs?: string[];
+        }>;
+      };
       try {
         shape = JSON.parse(raw);
       } catch {
