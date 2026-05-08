@@ -251,11 +251,23 @@ const cleanHtml = (html: string): string =>
     .replace(/<svg[\s\S]*?<\/svg>/gi, " ")
     .replace(/<!--[\s\S]*?-->/g, " ")
     .replace(/<\/(?:td|th)>/gi, " | ")
-    .replace(/<\/(?:tr|li|p|h[1-6]|div|section|article)>/gi, "")
+    .replace(/<\/tr>/gi, "\n")
+    .replace(/<\/(?:li|p|h[1-6]|div|section|article)>/gi, "")
     .replace(/<br\s*\/?>/gi, "")
     .replace(/<[^>]+>/g, " ")
+    .replace(/&#0?39;|&apos;/g, "'")
+    .replace(/&nbsp;/g, " ")
+    .replace(/&amp;/g, "&")
     .replace(/[ \t]+/g, " ")
-    .replace(/(\s)*\n/g, "")
+    .replace(/\|([ \t]*\|)+/g, "|")
+    .replace(/\n[ \t|]*\n+/g, "\n")
+    .normalize("NFD")
+    .replace(/[\u0300-\u036f]/g, "")
+    .replace(
+      /\b([A-Z])[a-z]{2,}(?:-([A-Z])[a-z]{2,})?(?:\s+[A-Z][a-z]+)*\s+([A-Z]{2,}(?:[-' ][A-Z]+)*)/g,
+      (_match, first: string, second: string | undefined, last: string) =>
+        second ? `${first}.-${second}. ${last}` : `${first}. ${last}`,
+    )
     .trim();
 
 const buildPrompt = ({
@@ -292,7 +304,7 @@ Rules:
 - "subs": ordered list of probable replacements (typically 8 but may vary).
 - Preserve the first-name initial when the source shows it: emit "X. Lastname" (e.g. "R. Ntamack", "Pa. Boudehent", "J.-L. Joseph"). If the source only gives a full first name, abbreviate it to its first letter plus a period ("Romain Ntamack" → "R. Ntamack"). If neither initial nor first name is shown, output just the surname.
 - Append "*" to the last name ONLY when the page presents the player as an alternative — typical signals: "ou X", a slash ("Smith / Jones"), parentheses, "?", "à confirmer", "incertain", or two names listed for the same shirt number. Examples: "Ntamack" (confident), "Ntamack*" (uncertain), "R. Ntamack*" (uncertain with initial). Confident picks MUST NOT carry the "*".
-- Diacritic-preserved names ("Lévêque", "Bordeaux-Bègles", etc.). Keep accents.
+- Player names in the source have already been pre-processed: diacritics stripped (so "Hervé" appears as "HERVE", "Lévêque" as "LEVEQUE") and "Firstname LASTNAME" patterns abbreviated to "F. LASTNAME". Pass player names through as-is — do NOT add accents back, do NOT re-expand initials. Club names in the allowed list above DO keep their accents and must be output exactly as listed.
 - If a source page has multiple matches, extract every recognized club from it.
 - Output ONLY the JSON object. No prose, no markdown fences.
 
@@ -301,7 +313,10 @@ CRITICAL — assigning each player to the correct team:
 Match pages (e.g. an "X vs Y" preview) list TWO teamsheets on a single page. Mixing players between the two clubs is the most common failure — be deliberate.
 
 - The URL is ground truth for which two clubs are in the match. URLs like \`/matchs/toulouse-clermont-...\` mean the match is Toulouse vs Clermont; do not output players for any other club from that source.
-- Some pages render the two teamsheets as a side-by-side table. After cleanup the columns are separated by " | " and rows by newlines. In that layout, the LEFT column is one team and the RIGHT column is the other — never read across rows. Identify the column header (team name) for each side, then walk that single column top-to-bottom to collect 15 starters then the subs.
+- Some pages render the two teamsheets as a side-by-side table. After cleanup, columns are separated by " | " and each table row is on its own line.
+  - "Shirt-number sandwich" layout (common on allrugby): each row reads \`| <Name A> | <NUMBER> | <Name B> |\`. The middle column is the shirt number; the LEFT name is one team's player wearing that number and the RIGHT name is the other team's. Numbers 1–15 are starters, 16+ are subs. Walk every row, sending left-column names to the team named above the left column and right-column names to the team above the right column. Never assign a name to the team whose column it does NOT sit in.
+  - Plain two-column layout: each row reads \`| <Name A> | <Name B> |\` with no middle number. Same rule — left column is one team, right column is the other; never read across.
+  - In either layout, identify the team-name header sitting above each column before assigning anyone.
 - Other pages list the two teamsheets one after the other ("Toulouse XV: 1.A 2.B ... Clermont XV: 1.X 2.Y ..."). Anchor on the team name that introduces each numbered list. Once a list ends (typically after the subs), only the next team-name header restarts attribution.
 - Ignore mentions of clubs in navigation, sidebars, schedule widgets, ads, "next round" panels, recent-result banners, or comment sections. Those are not lineups.
 - If you cannot confidently determine which club a player belongs to, OMIT that player rather than guess.

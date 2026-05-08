@@ -50,7 +50,7 @@ Sibling folder [2026/top14/minizinc/](../../../2026/top14/minizinc/) holds the m
   - `POST /api/admin/round` — set current round.
   - `POST /api/admin/best-team` — write one round's slot for a given variant.
   - `POST /api/admin/teamsheets` — replace one round's teamsheets map.
-  - `POST /api/admin/teamsheets/extract` — AI-extract from a list of URLs and/or pasted text snippets (`{ urls?, texts?, round }`, at least one of `urls`/`texts` non-empty). Streams NDJSON: `{type:"attempt", phase, provider, reason?}` events as the LLM provider chain walks each model, then a final `{type:"done", teamsheets, fetchErrors}` (entries enriched with a `matched` flag computed via `matchesName`) or `{type:"error", message}`.
+  - `POST /api/admin/teamsheets/extract` — AI-extract from a list of URLs and/or pasted text snippets (`{ urls?, texts?, round }`, at least one of `urls`/`texts` non-empty). Streams NDJSON: `{type:"attempt", phase, provider, reason?}` events as the LLM provider chain walks each model, then a final `{type:"done", teamsheets, fetchErrors}` (entries enriched with a `matched` flag computed via `matchesName`) or `{type:"error", message}`. After LLM extraction, players are re-assigned to the correct club using the user's roster (per `players[].club`): if a name doesn't match the LLM-assigned club's roster but uniquely matches another extracted club's roster, it is moved there (preserving starter/sub role and order). Fixes club-mixing on sources like allrugby that confuse the LLM about who plays for whom.
   - `POST /api/expected-results` — write the signed-in user's saved expected-results for one round.
   - `POST /api/players` — replace the signed-in user's player snapshot (used by the browser extension).
 
