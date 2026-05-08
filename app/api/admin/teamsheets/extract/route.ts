@@ -4,6 +4,7 @@ import { requireAdmin } from "@/app/lib/adminAuth";
 import { ROUNDS_PER_SEASON } from "@/app/lib/adminData";
 import { getPlayers } from "@/app/lib/players";
 import { extractTeamsheets } from "@/app/lib/teamsheetsExtract";
+import { reassignTeamsheets } from "@/app/lib/teamsheetsReassign";
 import { matchesName } from "@/app/2026/top14/statsUtil";
 import rounds from "@/2026/top14/data/rounds";
 
@@ -74,46 +75,11 @@ export async function POST(req: Request) {
           onAttempt: (event) => send({ type: "attempt", ...event }),
         });
 
-        const extractedClubs = Object.keys(extract.teamsheets);
-        const rosterByClub = new Map<string, any[]>(
-          extractedClubs.map((c) => [
-            c,
-            players.filter((p: any) => p.club === c),
-          ]),
-        );
-        const correctClub = (name: string, currentClub: string): string => {
-          const currentRoster = rosterByClub.get(currentClub) ?? [];
-          if (currentRoster.some((p: any) => matchesName(p, name))) {
-            return currentClub;
-          }
-          const otherMatches = extractedClubs.filter(
-            (c) =>
-              c !== currentClub &&
-              (rosterByClub.get(c) ?? []).some((p: any) => matchesName(p, name)),
-          );
-          return otherMatches.length === 1 ? otherMatches[0] : currentClub;
-        };
-
-        const corrected: Record<
-          string,
-          {
-            starters: { name: string; uncertain: boolean }[];
-            subs: { name: string; uncertain: boolean }[];
-          }
-        > = Object.fromEntries(
-          extractedClubs.map((c) => [c, { starters: [], subs: [] }]),
-        );
-        for (const [club, ts] of Object.entries(extract.teamsheets)) {
-          const move = (entries: typeof ts.starters, role: "starters" | "subs") => {
-            for (const e of entries) {
-              const name = typeof e === "string" ? e : e.name;
-              const uncertain = typeof e === "string" ? false : !!e.uncertain;
-              corrected[correctClub(name, club)][role].push({ name, uncertain });
-            }
-          };
-          move(ts.starters, "starters");
-          move(ts.subs, "subs");
-        }
+        const corrected = reassignTeamsheets({
+          extracted: extract.teamsheets,
+          players,
+          matches: roundInfo.journee.matchs as any[],
+        });
 
         const enriched: Record<
           string,
@@ -123,7 +89,7 @@ export async function POST(req: Request) {
           }
         > = {};
         for (const [club, ts] of Object.entries(corrected)) {
-          const clubPlayers = rosterByClub.get(club) ?? [];
+          const clubPlayers = players.filter((p: any) => p.club === club);
           const tag = (e: { name: string; uncertain: boolean }) => ({
             ...e,
             matched: clubPlayers.some((p: any) => matchesName(p, e.name)),

@@ -55,7 +55,11 @@ const TeamsheetsEditor = ({
   >("idle");
   const [extractError, setExtractError] = useState<string | null>(null);
   const [attempts, setAttempts] = useState<
-    { provider: string; status: "trying" | "success" | "fail"; reason?: string }[]
+    {
+      provider: string;
+      status: "trying" | "success" | "fail" | "skipped";
+      reason?: string;
+    }[]
   >([]);
   const [fetchErrors, setFetchErrors] = useState<
     { url: string; reason: string }[]
@@ -170,7 +174,12 @@ const TeamsheetsEditor = ({
         for (const line of lines) {
           if (!line.trim()) continue;
           const msg = JSON.parse(line) as
-            | { type: "attempt"; phase: "start" | "fail" | "success"; provider: string; reason?: string }
+            | {
+                type: "attempt";
+                phase: "start" | "fail" | "success" | "skip";
+                provider: string;
+                reason?: string;
+              }
             | {
                 type: "done";
                 teamsheets: Record<
@@ -187,6 +196,16 @@ const TeamsheetsEditor = ({
             setAttempts((prev) => {
               if (msg.phase === "start") {
                 return [...prev, { provider: msg.provider, status: "trying" }];
+              }
+              if (msg.phase === "skip") {
+                return [
+                  ...prev,
+                  {
+                    provider: msg.provider,
+                    status: "skipped",
+                    reason: msg.reason,
+                  },
+                ];
               }
               const i = prev.findLastIndex((a) => a.provider === msg.provider);
               if (i < 0) return prev;
@@ -307,12 +326,16 @@ const TeamsheetsEditor = ({
                   ? "bg-indigo-100 text-indigo-700 border-indigo-300"
                   : a.status === "success"
                   ? "bg-emerald-100 text-emerald-700 border-emerald-300"
+                  : a.status === "skipped"
+                  ? "bg-amber-50 text-amber-700 border-amber-200 italic"
                   : "bg-slate-100 text-slate-500 border-slate-300";
               const icon =
                 a.status === "trying"
                   ? "⏳"
                   : a.status === "success"
                   ? "✓"
+                  : a.status === "skipped"
+                  ? "⤳"
                   : "✗";
               return (
                 <li
@@ -321,7 +344,7 @@ const TeamsheetsEditor = ({
                   title={a.reason ?? a.status}
                 >
                   {icon} {a.provider}
-                  {a.status === "fail" && a.reason
+                  {(a.status === "fail" || a.status === "skipped") && a.reason
                     ? ` — ${a.reason.slice(0, 40)}`
                     : ""}
                 </li>

@@ -10,6 +10,10 @@ type LlmProvider = {
   apiKey: string;
   model: string;
   extraHeaders?: Record<string, string>;
+  maxTokens?: number;
+  // Skip the provider if the prompt exceeds this byte length. Used to dodge
+  // tight TPM limits (e.g. Groq free tier: 12K input+output tokens/min).
+  maxPromptBytes?: number;
 };
 
 export type FetchError = { url: string; reason: string };
@@ -17,6 +21,7 @@ export type FetchError = { url: string; reason: string };
 export type AttemptEvent =
   | { phase: "start"; provider: string }
   | { phase: "fail"; provider: string; reason: string }
+  | { phase: "skip"; provider: string; reason: string }
   | { phase: "success"; provider: string };
 
 export type ExtractResult = {
@@ -112,6 +117,10 @@ const buildProviders = (): LlmProvider[] => {
       url: "https://api.groq.com/openai/v1/chat/completions",
       apiKey: groqKey,
       model: "llama-3.3-70b-versatile",
+      // Free tier: 12K tokens/min combined input+output. Reserve ~3K for
+      // output, leaving ~9K input ≈ 32K bytes at ~3.5 chars/token.
+      maxTokens: 3000,
+      maxPromptBytes: 32_000,
     });
   }
   if (cerebrasKey) {
@@ -161,6 +170,15 @@ const callLlm = async ({
 }): Promise<string> => {
   const errors: string[] = [];
   for (const provider of providers) {
+    if (
+      provider.maxPromptBytes !== undefined &&
+      prompt.length > provider.maxPromptBytes
+    ) {
+      const reason = `prompt_too_large_${prompt.length}_over_${provider.maxPromptBytes}`;
+      errors.push(`${provider.name}: ${reason}`);
+      onAttempt?.({ phase: "skip", provider: provider.name, reason });
+      continue;
+    }
     onAttempt?.({ phase: "start", provider: provider.name });
     try {
       const response = await fetch(provider.url, {
@@ -182,7 +200,7 @@ const callLlm = async ({
           ],
           response_format: { type: "json_object" },
           temperature: 0,
-          max_tokens: 8192,
+          max_tokens: provider.maxTokens ?? 8192,
         }),
       });
       if (!response.ok) {
@@ -260,16 +278,14 @@ const cleanHtml = (html: string): string =>
     .replace(/<svg[\s\S]*?<\/svg>/gi, " ")
     .replace(/<!--[\s\S]*?-->/g, " ")
     .replace(/<\/(?:td|th)>/gi, " | ")
-    .replace(/<\/tr>/gi, "\n")
-    .replace(/<\/(?:li|p|h[1-6]|div|section|article)>/gi, "")
+    .replace(/<\/(?:tr|li|p|h[1-6]|div|section|article)>/gi, "")
     .replace(/<br\s*\/?>/gi, "")
     .replace(/<[^>]+>/g, " ")
     .replace(/&#0?39;|&apos;/g, "'")
     .replace(/&nbsp;/g, " ")
     .replace(/&amp;/g, "&")
     .replace(/[ \t]+/g, " ")
-    .replace(/\|([ \t]*\|)+/g, "|")
-    .replace(/\n[ \t|]*\n+/g, "\n")
+    .replace(/(\s)*\n/g, "")
     .normalize("NFD")
     .replace(/[\u0300-\u036f]/g, "")
     .replace(
