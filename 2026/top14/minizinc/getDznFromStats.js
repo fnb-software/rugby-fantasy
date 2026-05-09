@@ -34,11 +34,9 @@ const getDznFromStats = ({
     reserveCountByPosition[p.id_position] =
       (reserveCountByPosition[p.id_position] || 0) + 1;
   }
-  const adjustedMaxPerPosition = POSITION_IDS.map((pos) =>
-    Math.max(0, MAX_PER_POSITION[pos] - (reserveCountByPosition[pos] || 0)),
-  );
   const positionCap = (pos) =>
     Math.max(0, (MAX_PER_POSITION[pos] || 0) - (reserveCountByPosition[pos] || 0));
+  const adjustedMaxPerPosition = POSITION_IDS.map((pos) => positionCap(pos));
 
   const includedIds = new Set(players.map((p) => p.id));
   const positionCounts = {};
