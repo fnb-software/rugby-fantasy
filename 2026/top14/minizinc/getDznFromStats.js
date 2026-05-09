@@ -27,6 +27,19 @@ const getDznFromStats = ({
         (getPlayerSub(p) !== undefined && getPlayerSub(p) > 0)),
   );
 
+  const reserveCountByClub = {};
+  const reserveCountByPosition = {};
+  for (const p of reservePlayers) {
+    reserveCountByClub[p.id_club] = (reserveCountByClub[p.id_club] || 0) + 1;
+    reserveCountByPosition[p.id_position] =
+      (reserveCountByPosition[p.id_position] || 0) + 1;
+  }
+  const adjustedMaxPerPosition = POSITION_IDS.map((pos) =>
+    Math.max(0, MAX_PER_POSITION[pos] - (reserveCountByPosition[pos] || 0)),
+  );
+  const positionCap = (pos) =>
+    Math.max(0, (MAX_PER_POSITION[pos] || 0) - (reserveCountByPosition[pos] || 0));
+
   const includedIds = new Set(players.map((p) => p.id));
   const positionCounts = {};
   for (const p of players) {
@@ -63,46 +76,54 @@ const getDznFromStats = ({
             expectedStarterPoints: 0,
             expectedSubPoints: 0,
           });
+          positionCounts[posInt] = (positionCounts[posInt] || 0) + 1;
         }
       }
     }
   }
 
-  // Ensure enough players for the sub slots (no position constraint)
+  // Ensure enough players for the sub slots (no position constraint), but
+  // respect each position's cap — when the pool is exactly TEAM_SIZE the solver
+  // has to pick every candidate, so an over-capped pool is infeasible.
   const subShortfall = TEAM_SIZE - players.length;
   if (subShortfall > 0) {
     const zeroCandidates = allPlayers.filter((p) => !includedIds.has(p.id));
-    const toAdd = zeroCandidates.slice(0, subShortfall);
-    toAdd.forEach((p) => {
+    for (const p of zeroCandidates) {
+      if (players.length >= TEAM_SIZE) break;
+      if ((positionCounts[p.id_position] || 0) >= positionCap(p.id_position))
+        continue;
       players.push(p);
       includedIds.add(p.id);
-    });
-    const remaining = TEAM_SIZE - players.length;
-    if (remaining > 0) {
-      console.warn(`Not enough players for subs, adding ${remaining} filler(s)`);
-      for (let i = 0; i < remaining; i++) {
-        players.push({
-          id: fakeId--,
-          id_position: 5,
-          id_club: fakeClubId--,
-          valeur: 0,
-          expectedStarterPoints: 0,
-          expectedSubPoints: 0,
-        });
+      positionCounts[p.id_position] = (positionCounts[p.id_position] || 0) + 1;
+    }
+    while (players.length < TEAM_SIZE) {
+      let bestPos = null;
+      let bestRemaining = 0;
+      for (const pos of POSITION_IDS) {
+        const remaining = positionCap(pos) - (positionCounts[pos] || 0);
+        if (remaining > bestRemaining) {
+          bestRemaining = remaining;
+          bestPos = pos;
+        }
       }
+      if (bestPos === null) {
+        console.warn(
+          `Cannot reach ${TEAM_SIZE} players: all positions at cap (likely too many reserves)`,
+        );
+        break;
+      }
+      console.warn(`Adding sub filler at position ${bestPos}`);
+      players.push({
+        id: fakeId--,
+        id_position: bestPos,
+        id_club: fakeClubId--,
+        valeur: 0,
+        expectedStarterPoints: 0,
+        expectedSubPoints: 0,
+      });
+      positionCounts[bestPos] = (positionCounts[bestPos] || 0) + 1;
     }
   }
-
-  const reserveCountByClub = {};
-  const reserveCountByPosition = {};
-  for (const p of reservePlayers) {
-    reserveCountByClub[p.id_club] = (reserveCountByClub[p.id_club] || 0) + 1;
-    reserveCountByPosition[p.id_position] =
-      (reserveCountByPosition[p.id_position] || 0) + 1;
-  }
-  const adjustedMaxPerPosition = POSITION_IDS.map((pos) =>
-    Math.max(0, MAX_PER_POSITION[pos] - (reserveCountByPosition[pos] || 0)),
-  );
   const squadIdSet = players.reduce((squads, p) => {
     squads.add(p.id_club);
     return squads;
