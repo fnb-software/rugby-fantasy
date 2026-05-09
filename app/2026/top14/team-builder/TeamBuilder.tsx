@@ -20,6 +20,7 @@ import { solve } from "../solve";
 import fantasyModel from "../../../../2026/top14/minizinc/fantasy_total.mzn";
 import WantedPlayers from "../WantedPlayers";
 import { assignPlayerToSlot } from "../slots";
+import { getSolverPlayer } from "./getSolverPlayer";
 import { entryName, entryUncertain, type Teamsheet } from "../teamsheets";
 import {
   getRoundPlayerOnlyPoints,
@@ -884,21 +885,13 @@ const TeamBuilder = ({
                     const hasTeamsheet =
                       (teamsheet?.starters.length ?? 0) > 0 ||
                       (teamsheet?.subs.length ?? 0) > 0;
-                    return {
-                      ...p,
-                      expectedStarterPoints:
-                        excludedStarterPlayers.includes(p.id) ||
-                        (filterByTeamsheet &&
-                          hasTeamsheet &&
-                          !p.isTeamsheetStarter)
-                          ? 0
-                          : p.expectedStarterPoints,
-                      expectedSubPoints:
-                        excludedSubPlayers.includes(p.id) ||
-                        (filterByTeamsheet && hasTeamsheet && !p.isTeamsheetSub)
-                          ? 0
-                          : p.expectedSubPoints,
-                    };
+                    return getSolverPlayer({
+                      player: p,
+                      hasTeamsheet,
+                      filterByTeamsheet,
+                      excludedAsStarter: excludedStarterPlayers.includes(p.id),
+                      excludedAsSub: excludedSubPlayers.includes(p.id),
+                    });
                   }),
                 lockedPlayers: teamLockedPlayers,
                 reservePlayers,
