@@ -60,6 +60,13 @@ export async function POST(req: Request) {
 
   const session = await auth();
   const players = (await getPlayers(session!.user!.id)) as any[];
+  const playerSurnames = players
+    .map((p: any) => {
+      const full: string = typeof p?.nomcomplet === "string" ? p.nomcomplet : "";
+      const i = full.lastIndexOf(" ");
+      return (i >= 0 ? full.slice(i + 1) : full).trim();
+    })
+    .filter((s) => s.length > 0);
 
   const stream = new ReadableStream({
     async start(controller) {
@@ -72,6 +79,7 @@ export async function POST(req: Request) {
           urls: urlList,
           texts: textList,
           canonicalClubs,
+          playerSurnames,
           onAttempt: (event) => send({ type: "attempt", ...event }),
         });
 

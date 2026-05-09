@@ -1,5 +1,6 @@
 import "server-only";
 import type { Teamsheet } from "@/app/2026/top14/teamsheets";
+import { trimToPlayerNames } from "@/app/lib/teamsheetsTrim";
 
 const FETCH_TIMEOUT_MS = 10_000;
 const PAGE_BYTE_CAP = 80_000;
@@ -33,22 +34,29 @@ export const extractTeamsheets = async ({
   urls,
   texts,
   canonicalClubs,
+  playerSurnames,
   onAttempt,
 }: {
   urls: string[];
   texts?: string[];
   canonicalClubs: string[];
+  playerSurnames?: string[];
   onAttempt?: (event: AttemptEvent) => void;
 }): Promise<ExtractResult> => {
   const providers = buildProviders();
   if (providers.length === 0) throw new Error("missing_llm_api_key");
+
+  const surnames = playerSurnames ?? [];
+  const focus = (raw: string) =>
+    trimToPlayerNames(raw, surnames).slice(0, PAGE_BYTE_CAP);
 
   const fetchErrors: FetchError[] = [];
   const pages: { url: string; text: string }[] = [];
   await Promise.all(
     urls.map(async (url) => {
       try {
-        const text = await fetchPageText(url);
+        const raw = await fetchPageText(url);
+        const text = focus(raw);
         console.log({ text });
         pages.push({ url, text });
       } catch (e) {
@@ -64,7 +72,7 @@ export const extractTeamsheets = async ({
     if (trimmed.length === 0) return;
     pages.push({
       url: `pasted-${i + 1}`,
-      text: trimmed.slice(0, PAGE_BYTE_CAP),
+      text: focus(trimmed),
     });
   });
 
@@ -265,7 +273,7 @@ const fetchPageText = async (url: string): Promise<string> => {
     });
     if (!res.ok) throw new Error(`http_${res.status}`);
     const html = await res.text();
-    return cleanHtml(html).slice(0, PAGE_BYTE_CAP);
+    return cleanHtml(html);
   } finally {
     clearTimeout(timer);
   }
