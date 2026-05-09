@@ -136,6 +136,9 @@ const TeamBuilder = ({
     number[]
   >([]);
   const [excludedSubPlayers, setExcludedSubPlayers] = useState<number[]>([]);
+  // Per-player bid-winner override for wanted players. Value is "__free__" or
+  // a manager nom; absent key means the original `proprietaire` stands.
+  const [bidWinners, setBidWinners] = useState<Record<number, string>>({});
   const [selectedPlayerIds, setSelectedPlayerIds] = useState<(number | null)[]>(
     Array(21).fill(null),
   );
@@ -396,8 +399,17 @@ const TeamBuilder = ({
       return Math.round((action.total / totalMinutes) * 80 * 10) / 10;
     };
 
+    const bidWinner = bidWinners[p.id];
+    const proprietaire =
+      bidWinner === undefined
+        ? p.proprietaire
+        : bidWinner === "__free__"
+          ? { id: "", nom: undefined }
+          : { id: bidWinner, nom: bidWinner };
+
     return {
       ...p,
+      proprietaire,
       isTeamsheetStarter,
       isTeamsheetSub,
       isTeamsheetUncertain,
@@ -479,8 +491,11 @@ const TeamBuilder = ({
     (p) => -p.expectedSubPoints,
   ).slice(0, 40);
 
+  // Resolve from the unfiltered list so a player who was added (e.g. a
+  // wanted player owned by another manager) still renders even if the
+  // current owner/club/position filters would hide them.
   const selectedPlayers = selectedPlayerIds.map((id) =>
-    id == null ? null : playersWithPoints.find((p) => p.id === id) ?? null,
+    id == null ? null : allPlayersWithPoints.find((p) => p.id === id) ?? null,
   );
 
   const addPlayerToSlots = (
@@ -489,7 +504,7 @@ const TeamBuilder = ({
     slotIndex?: number,
   ): (number | null)[] => {
     const resolved = ids.map((id) =>
-      id == null ? null : playersWithPoints.find((p) => p.id === id) ?? null,
+      id == null ? null : allPlayersWithPoints.find((p) => p.id === id) ?? null,
     );
     return assignPlayerToSlot({ slots: resolved, player, slotIndex }).map(
       (p: any) => p?.id ?? null,
@@ -927,8 +942,12 @@ const TeamBuilder = ({
       <div>
         <WantedPlayers
           players={allPlayersWithPoints}
+          owners={allOwners}
           excludePlayer={(player) =>
             setExcludedStarterPlayers((players) => players.concat([player.id]))
+          }
+          setBidWinner={(playerId, winner) =>
+            setBidWinners((current) => ({ ...current, [playerId]: winner }))
           }
         />
       </div>
