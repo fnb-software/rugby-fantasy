@@ -1,0 +1,12 @@
+{
+  "categories": {
+    "firefox": ["other"],
+    "android": ["other"]
+  },
+  "summary": {
+    "en-US": "Refresh your Top14 fantasy data by calling the lagrandemelee API and uploading it to your rugby-fantasy app."
+  },
+  "version": {
+    "license": "AGPL-3.0-only"
+  }
+}

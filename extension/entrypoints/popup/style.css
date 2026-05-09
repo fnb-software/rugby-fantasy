@@ -94,6 +94,20 @@ h1 {
   gap: 8px;
 }
 
+.round-row {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  font-size: 12px;
+  color: var(--muted);
+  gap: 8px;
+}
+
+#round {
+  color: var(--fg);
+  font-variant-numeric: tabular-nums;
+}
+
 label {
   display: flex;
   align-items: center;

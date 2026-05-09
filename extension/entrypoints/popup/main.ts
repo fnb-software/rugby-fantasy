@@ -15,7 +15,7 @@ const els = {
   authApp: $<HTMLSpanElement>("auth-app"),
   signInLg: $<HTMLButtonElement>("sign-in-lg"),
   signInApp: $<HTMLButtonElement>("sign-in-app"),
-  round: $<HTMLInputElement>("round"),
+  round: $<HTMLSpanElement>("round"),
   mode: $<HTMLSelectElement>("mode"),
   run: $<HTMLButtonElement>("run"),
   statusText: $<HTMLParagraphElement>("status-text"),
@@ -31,9 +31,16 @@ const LAST_REFRESH_KEY = "last_refresh_at";
 
 let lgAuthOk = false;
 let appAuthOk = false;
+let currentRound: number | null = null;
 
 const updateRunGate = () => {
-  els.run.disabled = !(lgAuthOk && appAuthOk);
+  els.run.disabled = !(lgAuthOk && appAuthOk && currentRound != null);
+};
+
+const setCurrentRound = (round: number | null) => {
+  currentRound = round;
+  els.round.textContent = round != null ? String(round) : "—";
+  updateRunGate();
 };
 
 const setLgAuth = (ok: boolean) => {
@@ -117,12 +124,17 @@ const fetchAllPlayers = async (
   return players;
 };
 
-const checkAppAuth = async (): Promise<boolean> => {
+const checkAppAuth = async (): Promise<{
+  ok: boolean;
+  currentRound?: number;
+}> => {
   try {
     const res = await fetch(`${APP_URL}/api/me`, { credentials: "include" });
-    return res.ok;
+    if (!res.ok) return { ok: false };
+    const body = (await res.json()) as { currentRound?: number };
+    return { ok: true, currentRound: body.currentRound };
   } catch {
-    return false;
+    return { ok: false };
   }
 };
 
@@ -156,7 +168,8 @@ const run = async () => {
   hideProgress();
 
   try {
-    const round = els.round.value || "22";
+    if (currentRound == null) throw new Error("Current round not loaded.");
+    const round = String(currentRound);
     const mode = els.mode.value as "teamsheets" | "all";
     const stored = await browser.storage.local.get([TOKEN_KEY, SNAPSHOT_KEY]);
     const token = stored[TOKEN_KEY] as string | undefined;
@@ -229,7 +242,9 @@ const run = async () => {
 const init = async () => {
   const stored = await browser.storage.local.get([TOKEN_KEY, LAST_REFRESH_KEY]);
   setLgAuth(!!stored[TOKEN_KEY]);
-  setAppAuth(await checkAppAuth());
+  const appAuth = await checkAppAuth();
+  setAppAuth(appAuth.ok);
+  setCurrentRound(appAuth.currentRound ?? null);
 
   if (stored[LAST_REFRESH_KEY]) {
     els.lastRefresh.textContent = `Last refresh: ${formatTime(

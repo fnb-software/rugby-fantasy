@@ -22,6 +22,7 @@ const appOriginPattern = `${APP_URL}/*`;
 
 export default defineConfig({
   srcDir: ".",
+  manifestVersion: 3,
   manifest: {
     name: "Top14 fantasy refresher",
     description:
@@ -32,7 +33,10 @@ export default defineConfig({
       appOriginPattern,
     ],
     browser_specific_settings: {
-      gecko: { id: "top14-refresher@local" },
+      gecko: { id: "top14-refresher@fnb-software" },
+      gecko_android: {
+        strict_min_version: "120.0",
+      },
     },
   },
   dev: {

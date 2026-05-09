@@ -26,7 +26,7 @@
     "copy:mz": "cpy --flat node_modules/minizinc/dist/minizinc-worker.js node_modules/minizinc/dist/minizinc.wasm node_modules/minizinc/dist/minizinc.data public"
   },
   "author": "",
-  "license": "ISC",
+  "license": "AGPL-3.0-or-later",
   "dependencies": {
     "@types/node": "^20.8.5",
     "@types/react": "^18.2.28",
