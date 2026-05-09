@@ -111,6 +111,7 @@ The manifest already declares Android compatibility via
    npm run zip:firefox
    tar --exclude=node_modules --exclude=.output \
        --exclude=web-ext-artifacts --exclude=.wxt \
+       --exclude=.env --exclude=.gitignore --exclude=.git \
        -czf .output/firefox-source.tar.gz .
    ```
 2. The first listed version needs metadata (categories, summary,

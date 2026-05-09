@@ -5,6 +5,8 @@ import {
 } from "./params";
 
 const MAX_PER_TEAM = 4;
+// Mirrors max_per_position in fantasy_total.mzn (positions 5..13).
+const MAX_PER_POSITION = [2, 4, 4, 2, 2, 6, 4, 4, 2];
 
 const getDzn = (allPlayers) => {
   const getPlayerScore = getPlayerScoreTotal();
@@ -28,6 +30,7 @@ const getDzn = (allPlayers) => {
   squadIds = [${squadIds}];
   lbound = [${squadIds.map(() => 0)}];
   ubound = [${squadIds.map(() => MAX_PER_TEAM)}];
+  max_per_position = array1d(5..13, [${MAX_PER_POSITION}]);
   `;
   console.log(data);
   return data;

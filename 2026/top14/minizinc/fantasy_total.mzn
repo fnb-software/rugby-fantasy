@@ -50,11 +50,9 @@ constraint alldifferent (team);
 % Max number of players per country
 constraint global_cardinality([squad[p] | p in team], squadIds, lbound, ubound);
 
-% Max number of players per position (across the full 18-player team)
-array[position_identifiers] of int: max_per_position = array1d(
-    position_identifiers,
-    [2, 4, 4, 2, 2, 6, 4, 4, 2]  % positions 5, 6, 7, 8, 9, 10, 11, 12, 13
-);
+% Max number of players per position (across the full 18-player team).
+% Provided in dzn — getDznFromStats subtracts reserve players from the cap.
+array[position_identifiers] of int: max_per_position;
 constraint forall (pos in position_identifiers) (
     sum (p in team) (position[p] = pos) <= max_per_position[pos]
 );

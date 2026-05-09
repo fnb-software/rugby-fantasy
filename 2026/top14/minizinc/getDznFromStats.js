@@ -2,6 +2,9 @@ const MAX_PER_TEAM = 4;
 
 // From team_position = [5,6,7,7,6,8,9,10,10,10,11,11,12,13,12] in fantasy_total.mzn
 const REQUIRED_POSITIONS = { 5: 1, 6: 2, 7: 2, 8: 1, 9: 1, 10: 3, 11: 2, 12: 2, 13: 1 };
+// Mirrors max_per_position in fantasy_total.mzn (across the full 18-player team).
+const MAX_PER_POSITION = { 5: 2, 6: 4, 7: 4, 8: 2, 9: 2, 10: 6, 11: 4, 12: 4, 13: 2 };
+const POSITION_IDS = [5, 6, 7, 8, 9, 10, 11, 12, 13];
 // 15 starters + supersub (slot 16) + 2 subs (slots 17-18)
 const TEAM_SIZE = 18;
 
@@ -91,9 +94,15 @@ const getDznFromStats = ({
   }
 
   const reserveCountByClub = {};
+  const reserveCountByPosition = {};
   for (const p of reservePlayers) {
     reserveCountByClub[p.id_club] = (reserveCountByClub[p.id_club] || 0) + 1;
+    reserveCountByPosition[p.id_position] =
+      (reserveCountByPosition[p.id_position] || 0) + 1;
   }
+  const adjustedMaxPerPosition = POSITION_IDS.map((pos) =>
+    Math.max(0, MAX_PER_POSITION[pos] - (reserveCountByPosition[pos] || 0)),
+  );
   const squadIdSet = players.reduce((squads, p) => {
     squads.add(p.id_club);
     return squads;
@@ -115,6 +124,7 @@ const getDznFromStats = ({
   squadIds = [${squadIds}];
   lbound = [${squadIds.map(() => 0)}];
   ubound = [${squadIds.map((id) => Math.max(0, MAX_PER_TEAM - (reserveCountByClub[id] || 0)))}];
+  max_per_position = array1d(5..13, [${adjustedMaxPerPosition}]);
   max_cost = ${maxCost != null ? Math.round(maxCost * 10) : 999999};
   ${lockedPlayers.length ? `team = [${team.join(",")}];` : ``}
   `;
