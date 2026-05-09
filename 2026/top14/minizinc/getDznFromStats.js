@@ -51,7 +51,10 @@ const getDznFromStats = ({
     if (count < required) {
       // First, try to use real players with 0 score for this position
       const zeroCandidates = allPlayers.filter(
-        (p) => p.id_position === posInt && !includedIds.has(p.id),
+        (p) =>
+          p.id_position === posInt &&
+          !includedIds.has(p.id) &&
+          !reservePlayerIds.has(p.id),
       );
       const toAdd = zeroCandidates.slice(0, required - count);
       toAdd.forEach((p) => {
@@ -85,7 +88,9 @@ const getDznFromStats = ({
   // has to pick every candidate, so an over-capped pool is infeasible.
   const subShortfall = TEAM_SIZE - players.length;
   if (subShortfall > 0) {
-    const zeroCandidates = allPlayers.filter((p) => !includedIds.has(p.id));
+    const zeroCandidates = allPlayers.filter(
+      (p) => !includedIds.has(p.id) && !reservePlayerIds.has(p.id),
+    );
     for (const p of zeroCandidates) {
       if (players.length >= TEAM_SIZE) break;
       if ((positionCounts[p.id_position] || 0) >= positionCap(p.id_position))
