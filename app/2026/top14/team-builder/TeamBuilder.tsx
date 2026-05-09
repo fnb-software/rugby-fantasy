@@ -20,6 +20,7 @@ import { solve } from "../solve";
 import fantasyModel from "../../../../2026/top14/minizinc/fantasy_total.mzn";
 import WantedPlayers from "../WantedPlayers";
 import { assignPlayerToSlot } from "../slots";
+import { getEffectiveStarterPoints } from "./getEffectiveStarterPoints";
 import { getSolverPlayer } from "./getSolverPlayer";
 import { entryName, entryUncertain, type Teamsheet } from "../teamsheets";
 import {
@@ -269,28 +270,6 @@ const TeamBuilder = ({
     ? sortedPlayers.filter((player) => player.trgclub === club)
     : [...sortedPlayers];
   const playersOfTheRoundToShow = allPlayersOfTheRound.slice(0, 20);
-  const actualOwner = owner.startsWith("free__")
-    ? owner.slice("free__".length)
-    : owner;
-  const filteredOwner = owner
-    ? owner === "__free__"
-      ? players.filter((p) => p.proprietaire.id === "")
-      : owner === actualOwner
-      ? players.filter(
-          (p) => p.proprietaire.nom === owner,
-          //&&   (!p.offres_encours || p.offres_encours_parmoi),
-        )
-      : players.filter(
-          (p) => p.proprietaire.id === "" || p.proprietaire.nom === actualOwner,
-        )
-    : players;
-  const filteredClubPlayers = club
-    ? filteredOwner.filter((p) => p.trgclub === club)
-    : filteredOwner;
-  const filteredPlayers = position
-    ? filteredClubPlayers.filter((p) => p.position === position)
-    : filteredClubPlayers;
-
   const roundInfo = rounds.find(
     (round) =>
       parseInt(round.journee.numero) === (maxRound ? maxRound + 1 : currentRound),
@@ -301,7 +280,7 @@ const TeamBuilder = ({
     );
   }
 
-  const playersWithPoints = filteredPlayers.map((p) => {
+  const allPlayersWithPoints = players.map((p) => {
     const getRoundOnlyPoints = getRoundPlayerOnlyPoints(p);
     const match = roundInfo?.journee.matchs.find(
       (match) => p.club === match.clubdom || p.club === match.clubext,
@@ -433,7 +412,14 @@ const TeamBuilder = ({
       starterPlayerAverage,
       expectedTeamPoints,
       expectedStarterTeamPoints,
-      expectedStarterPoints,
+      expectedStarterPoints: getEffectiveStarterPoints({
+        filterByTeamsheet,
+        hasTeamsheet,
+        isTeamsheetStarter,
+        isTeamsheetSub,
+        expectedStarterPoints,
+        expectedSubPoints,
+      }),
       expectedSubTeamPoints,
       expectedSubPoints,
       actualTeamPoints,
@@ -446,6 +432,25 @@ const TeamBuilder = ({
       avgRedCards: getStat("Red cards"),
     };
   });
+
+  const actualOwner = owner.startsWith("free__")
+    ? owner.slice("free__".length)
+    : owner;
+  const filteredOwner = owner
+    ? owner === "__free__"
+      ? allPlayersWithPoints.filter((p) => p.proprietaire.id === "")
+      : owner === actualOwner
+      ? allPlayersWithPoints.filter((p) => p.proprietaire.nom === owner)
+      : allPlayersWithPoints.filter(
+          (p) => p.proprietaire.id === "" || p.proprietaire.nom === actualOwner,
+        )
+    : allPlayersWithPoints;
+  const filteredClubPlayers = club
+    ? filteredOwner.filter((p) => p.trgclub === club)
+    : filteredOwner;
+  const playersWithPoints = position
+    ? filteredClubPlayers.filter((p) => p.position === position)
+    : filteredClubPlayers;
 
   const playersWithPointsAndTeamsheet = filterByTeamsheet
     ? playersWithPoints.filter((p) => p.isTeamsheetStarter || p.isTeamsheetSub)
@@ -921,7 +926,7 @@ const TeamBuilder = ({
       </div>
       <div>
         <WantedPlayers
-          players={playersWithPoints}
+          players={allPlayersWithPoints}
           excludePlayer={(player) =>
             setExcludedStarterPlayers((players) => players.concat([player.id]))
           }
