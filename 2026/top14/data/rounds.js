@@ -4237,4 +4237,37 @@ export default [
     },
     idjg: '277708',
   },
+  {
+    "journee": {
+        "id": "27",
+        "idl": "1",
+        "numero": 27,
+        "nom": "Barrages",
+        "statut": "1",
+        "game": "fantasy",
+        "date_limite": "2026-06-13T19:05:00.000Z",
+        "infos": "",
+        "categorie": 0,
+        "positionjoueur": 0,
+        "fantasy": {
+            "islast": true,
+            "ispreviouslast": false,
+            "open": true,
+            "passed": false,
+            "next": false
+        },
+        "open": true,
+        "informations": {
+            "display": true,
+            "titre": "<b>R\u00e8gles sp\u00e9cifiques pendant les phases finales<\/b>",
+            "msg": "- Les prolongations seront prises en compte mais ce ne sera pas le cas des \u00e9ventuels tirs aux buts. De plus lors des demi-finales et finale de TOP 14, les deux \u00e9quipes seront consid\u00e9r\u00e9es comme \"\u00e0 l'ext\u00e9rieur\" dans le bar\u00e8me des points.<\/br><\/br>\n- Toutes les ligues mercato seront automatiquement bascul\u00e9es en mode classique.<\/br><\/br>\n- Limite de joueurs par club : Normalement la limite est \u00e0 4 joueurs provenant du m\u00eame club. Ce chiffre passera \u00e0 6 pour les barrages et demi-finales du TOP 14, puis \u00e0 10 pour la finale du TOP 14",
+            "msgvainqueurAvent": "",
+            "msgplus": "",
+            "icon": "notifications",
+            "image": "img\/sports\/sport_2\/icone_sport.png",
+            "imagecount": 3
+        }
+    },
+    "idjg": "277708"
+}
 ];
