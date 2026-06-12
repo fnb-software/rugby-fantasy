@@ -22,7 +22,7 @@ export type AdminData = {
 
 export const ADMIN_BLOB_KEY = "top14-2026/admin.json";
 export const ADMIN_TAG = "admin:top14-2026";
-export const ROUNDS_PER_SEASON = 26;
+export const ROUNDS_PER_SEASON = 29;
 
 const padRounds = (arr: ReadonlyArray<Best>): Best[] => {
   const out: Best[] = arr.slice(0, ROUNDS_PER_SEASON) as Best[];
