@@ -34,7 +34,7 @@ const CurrentRoundEditor = ({ initial }: { initial: number }) => {
       <input
         type="number"
         min={1}
-        max={26}
+        max={29}
         value={round}
         onChange={(e) => setRound(Number(e.target.value))}
         className="border rounded px-2 py-1 w-20"
