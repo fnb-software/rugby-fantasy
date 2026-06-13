@@ -31,7 +31,7 @@ import {
 } from "../statsUtil";
 import TeamResultsEditor from "../TeamResultsEditor";
 
-const flatPlayers = TEAMS.map((team) => team.teamIds || []).flat();
+const flatPlayers = [].map((team) => team.teamIds || []).flat();
 const POSITION_ORDER = [
   "lib_arriere",
   "lib_34aile",
