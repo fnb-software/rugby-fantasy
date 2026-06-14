@@ -4,7 +4,7 @@ import {
   getPlayerSubForRound,
 } from "./params";
 
-const MAX_PER_TEAM = 4;
+const MAX_PER_TEAM = 6;
 
 const getDzn = (allPlayers, round = 1) => {
   const getPlayerScore = getPlayerScoreForRound(round);
