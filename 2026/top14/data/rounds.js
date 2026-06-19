@@ -4318,7 +4318,7 @@ export default [
         "selection": []
     },
     "idjg": "277708"
-}{
+},{
     "journee": {
         "id": "28",
         "numero": "28",
