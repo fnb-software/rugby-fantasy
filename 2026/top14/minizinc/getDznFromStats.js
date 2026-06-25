@@ -1,4 +1,4 @@
-const MAX_PER_TEAM = 6;
+const MAX_PER_TEAM = 10;
 
 // From team_position = [5,6,7,7,6,8,9,10,10,10,11,11,12,13,12] in fantasy_total.mzn
 const REQUIRED_POSITIONS = { 5: 1, 6: 2, 7: 2, 8: 1, 9: 1, 10: 3, 11: 2, 12: 2, 13: 1 };
