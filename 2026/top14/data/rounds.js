@@ -4399,5 +4399,53 @@ export default [
         "selection": []
     },
     "idjg": "277708"
-              }
+              },{
+    "journee": {
+        "id": "29",
+        "numero": "29",
+        "nom": "Finale",
+        "categorie": "",
+        "infos": "",
+        "idprev": "28",
+        "idnext": "30",
+        "classement": [],
+        "matchs": [
+            {
+                "id": "187",
+                "gagnant": "",
+                "date_match": "2026-06-13T19:05:00.000Z",
+                "horaire_match": true,
+                "jour_match": "2026-06-13",
+                "clubdom": "Toulouse",
+                "clubext": "Montpellier",
+                "imagedom": "m_top14_pau_2025.png",
+                "imageext": "m_top14_rag_2025.png",
+                "but_dom": "",
+                "but_ext": "",
+                "comment": "",
+                "live": false,
+                "neutralise": false,
+                "reporte": false,
+                "next": true,
+                "statut": "A venir",
+                "formeclubdom": [
+                    "P",
+                    "G",
+                    "G",
+                    "P",
+                    "G"
+                ],
+                "formeclubext": [
+                    "G",
+                    "P",
+                    "G",
+                    "G",
+                    "G"
+                ]
+            }
+        ],
+        "selection": []
+    },
+    "idjg": "277708"
+ }
 ];
