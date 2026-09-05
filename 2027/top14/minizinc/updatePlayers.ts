@@ -127,7 +127,7 @@ const main = async () => {
 
   console.log(`${chalk.cyan('●')} Uploading to Blob`);
   await put(BLOB_KEY, JSON.stringify(playerStats), {
-    access: 'private',
+    access: 'public',
     contentType: 'application/json',
     addRandomSuffix: false,
   });

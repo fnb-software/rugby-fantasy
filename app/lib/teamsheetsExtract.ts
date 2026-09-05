@@ -1,6 +1,6 @@
-import "server-only";
-import type { Teamsheet } from "@/app/2026/top14/teamsheets";
-import { trimToPlayerNames } from "@/app/lib/teamsheetsTrim";
+import 'server-only';
+import type { Teamsheet } from '@/app/2026/top14/teamsheets';
+import { trimToPlayerNames } from '@/app/lib/teamsheetsTrim';
 
 const FETCH_TIMEOUT_MS = 10_000;
 const PAGE_BYTE_CAP = 80_000;
@@ -20,10 +20,10 @@ type LlmProvider = {
 export type FetchError = { url: string; reason: string };
 
 export type AttemptEvent =
-  | { phase: "start"; provider: string }
-  | { phase: "fail"; provider: string; reason: string }
-  | { phase: "skip"; provider: string; reason: string }
-  | { phase: "success"; provider: string };
+  | { phase: 'start'; provider: string }
+  | { phase: 'fail'; provider: string; reason: string }
+  | { phase: 'skip'; provider: string; reason: string }
+  | { phase: 'success'; provider: string };
 
 export type ExtractResult = {
   teamsheets: Record<string, Teamsheet>;
@@ -44,7 +44,7 @@ export const extractTeamsheets = async ({
   onAttempt?: (event: AttemptEvent) => void;
 }): Promise<ExtractResult> => {
   const providers = buildProviders();
-  if (providers.length === 0) throw new Error("missing_llm_api_key");
+  if (providers.length === 0) throw new Error('missing_llm_api_key');
 
   const surnames = playerSurnames ?? [];
   const focus = (raw: string) =>
@@ -62,7 +62,7 @@ export const extractTeamsheets = async ({
       } catch (e) {
         fetchErrors.push({
           url,
-          reason: e instanceof Error ? e.message : "fetch_failed",
+          reason: e instanceof Error ? e.message : 'fetch_failed',
         });
       }
     }),
@@ -98,10 +98,10 @@ export const extractTeamsheets = async ({
     const sanitize = (arr: string[] | undefined) =>
       (arr ?? [])
         .filter(
-          (e): e is string => typeof e === "string" && e.trim().length > 0,
+          (e): e is string => typeof e === 'string' && e.trim().length > 0,
         )
         .map((e) => {
-          const uncertain = e.endsWith("*");
+          const uncertain = e.endsWith('*');
           const name = (uncertain ? e.slice(0, -1) : e).trim();
           return { name, uncertain };
         })
@@ -121,10 +121,10 @@ const buildProviders = (): LlmProvider[] => {
   const groqKey = process.env.GROQ_API_KEY;
   if (groqKey) {
     providers.push({
-      name: "groq:llama-3.3-70b-versatile",
-      url: "https://api.groq.com/openai/v1/chat/completions",
+      name: 'groq:openai/gpt-oss-120b',
+      url: 'https://api.groq.com/openai/v1/chat/completions',
       apiKey: groqKey,
-      model: "llama-3.3-70b-versatile",
+      model: 'openai/gpt-oss-120b',
       // Free tier: 12K tokens/min combined input+output. Reserve ~3K for
       // output, leaving ~9K input ≈ 32K bytes at ~3.5 chars/token.
       maxTokens: 3000,
@@ -132,11 +132,11 @@ const buildProviders = (): LlmProvider[] => {
     });
   }
   if (cerebrasKey) {
-    const cerebrasModels = ["qwen-3-235b-a22b-instruct-2507", "llama3.1-8b"];
+    const cerebrasModels = ['qwen-3.8-27b', 'gpt-oss-120b'];
     for (const model of cerebrasModels) {
       providers.push({
         name: `cerebras:${model}`,
-        url: "https://api.cerebras.ai/v1/chat/completions",
+        url: 'https://api.cerebras.ai/v1/chat/completions',
         apiKey: cerebrasKey,
         model,
       });
@@ -146,18 +146,18 @@ const buildProviders = (): LlmProvider[] => {
   const openrouterKey = process.env.OPENROUTER_API_KEY;
   if (openrouterKey) {
     const openrouterHeaders = {
-      "http-referer": "https://github.com/fnb-software/rugby-fantasy",
-      "x-title": "rugby-fantasy",
+      'http-referer': 'https://github.com/fnb-software/rugby-fantasy',
+      'x-title': 'rugby-fantasy',
     };
     const freeModels = [
-      "meta-llama/llama-3.3-70b-instruct:free",
-      "qwen/qwen3-next-80b-a3b-instruct:free",
-      "z-ai/glm-4.5-air:free",
+      'thinkingmachines/inkling-small:free',
+      'google/gemma-4-26b-a4b-it:free',
+      'z-ai/glm-5.2:free',
     ];
     for (const model of freeModels) {
       providers.push({
         name: `openrouter:${model}`,
-        url: "https://openrouter.ai/api/v1/chat/completions",
+        url: 'https://openrouter.ai/api/v1/chat/completions',
         apiKey: openrouterKey,
         model,
         extraHeaders: openrouterHeaders,
@@ -184,15 +184,15 @@ const callLlm = async ({
     ) {
       const reason = `prompt_too_large_${prompt.length}_over_${provider.maxPromptBytes}`;
       errors.push(`${provider.name}: ${reason}`);
-      onAttempt?.({ phase: "skip", provider: provider.name, reason });
+      onAttempt?.({ phase: 'skip', provider: provider.name, reason });
       continue;
     }
-    onAttempt?.({ phase: "start", provider: provider.name });
+    onAttempt?.({ phase: 'start', provider: provider.name });
     try {
       const response = await fetch(provider.url, {
-        method: "POST",
+        method: 'POST',
         headers: {
-          "content-type": "application/json",
+          'content-type': 'application/json',
           authorization: `Bearer ${provider.apiKey}`,
           ...(provider.extraHeaders ?? {}),
         },
@@ -200,28 +200,28 @@ const callLlm = async ({
           model: provider.model,
           messages: [
             {
-              role: "system",
+              role: 'system',
               content:
-                "You extract structured rugby teamsheet data from web pages and respond with a single JSON object.",
+                'You extract structured rugby teamsheet data from web pages and respond with a single JSON object.',
             },
-            { role: "user", content: prompt },
+            { role: 'user', content: prompt },
           ],
-          response_format: { type: "json_object" },
+          response_format: { type: 'json_object' },
           temperature: 0,
           max_tokens: provider.maxTokens ?? 8192,
         }),
       });
       if (!response.ok) {
-        const body = await response.text().catch(() => "");
+        const body = await response.text().catch(() => '');
         throw new Error(`http_${response.status}: ${body.slice(0, 200)}`);
       }
       const json = await response.json();
       const choice = json?.choices?.[0];
       const raw = choice?.message?.content;
-      if (typeof raw !== "string" || raw.trim().length === 0) {
-        throw new Error("no_text_part");
+      if (typeof raw !== 'string' || raw.trim().length === 0) {
+        throw new Error('no_text_part');
       }
-      if (choice?.finish_reason === "length") {
+      if (choice?.finish_reason === 'length') {
         throw new Error(`truncated_at_${raw.length}_chars`);
       }
       let shape: {
@@ -234,7 +234,7 @@ const callLlm = async ({
       try {
         shape = JSON.parse(raw);
       } catch {
-        throw new Error("invalid_json");
+        throw new Error('invalid_json');
       }
       const incomplete = (shape?.teamsheets ?? []).find(
         (t) =>
@@ -244,18 +244,18 @@ const callLlm = async ({
           t.starters.length === 0,
       );
       if (incomplete) {
-        throw new Error(`incomplete_teamsheet:${incomplete.club ?? "?"}`);
+        throw new Error(`incomplete_teamsheet:${incomplete.club ?? '?'}`);
       }
-      onAttempt?.({ phase: "success", provider: provider.name });
+      onAttempt?.({ phase: 'success', provider: provider.name });
       return raw;
     } catch (e) {
-      const reason = e instanceof Error ? e.message : "unknown";
+      const reason = e instanceof Error ? e.message : 'unknown';
       errors.push(`${provider.name}: ${reason}`);
-      onAttempt?.({ phase: "fail", provider: provider.name, reason });
+      onAttempt?.({ phase: 'fail', provider: provider.name, reason });
       console.warn(`[teamsheetsExtract] ${provider.name} failed: ${reason}`);
     }
   }
-  throw new Error(`all_llm_providers_failed: ${errors.join(" | ")}`);
+  throw new Error(`all_llm_providers_failed: ${errors.join(' | ')}`);
 };
 
 const fetchPageText = async (url: string): Promise<string> => {
@@ -265,11 +265,11 @@ const fetchPageText = async (url: string): Promise<string> => {
     const res = await fetch(url, {
       signal: ac.signal,
       headers: {
-        "user-agent":
-          "Mozilla/5.0 (compatible; rugby-fantasy/1.0; +admin teamsheets extractor)",
-        accept: "text/html,application/xhtml+xml",
+        'user-agent':
+          'Mozilla/5.0 (compatible; rugby-fantasy/1.0; +admin teamsheets extractor)',
+        accept: 'text/html,application/xhtml+xml',
       },
-      redirect: "follow",
+      redirect: 'follow',
     });
     if (!res.ok) throw new Error(`http_${res.status}`);
     const html = await res.text();
@@ -281,21 +281,21 @@ const fetchPageText = async (url: string): Promise<string> => {
 
 const cleanHtml = (html: string): string =>
   html
-    .replace(/<script[\s\S]*?<\/script>/gi, " ")
-    .replace(/<style[\s\S]*?<\/style>/gi, " ")
-    .replace(/<svg[\s\S]*?<\/svg>/gi, " ")
-    .replace(/<!--[\s\S]*?-->/g, " ")
-    .replace(/<\/(?:td|th)>/gi, " | ")
-    .replace(/<\/(?:tr|li|p|h[1-6]|div|section|article)>/gi, "\n")
-    .replace(/<br\s*\/?>/gi, "\n")
-    .replace(/<[^>]+>/g, " ")
+    .replace(/<script[\s\S]*?<\/script>/gi, ' ')
+    .replace(/<style[\s\S]*?<\/style>/gi, ' ')
+    .replace(/<svg[\s\S]*?<\/svg>/gi, ' ')
+    .replace(/<!--[\s\S]*?-->/g, ' ')
+    .replace(/<\/(?:td|th)>/gi, ' | ')
+    .replace(/<\/(?:tr|li|p|h[1-6]|div|section|article)>/gi, '\n')
+    .replace(/<br\s*\/?>/gi, '\n')
+    .replace(/<[^>]+>/g, ' ')
     .replace(/&#0?39;|&apos;/g, "'")
-    .replace(/&nbsp;/g, " ")
-    .replace(/&amp;/g, "&")
-    .replace(/[ \t]+/g, " ")
-    .replace(/[ \t]*\n[ \t\n]*/g, "\n")
-    .normalize("NFD")
-    .replace(/[\u0300-\u036f]/g, "")
+    .replace(/&nbsp;/g, ' ')
+    .replace(/&amp;/g, '&')
+    .replace(/[ \t]+/g, ' ')
+    .replace(/[ \t]*\n[ \t\n]*/g, '\n')
+    .normalize('NFD')
+    .replace(/[\u0300-\u036f]/g, '')
     .replace(
       /\b([A-Z])[a-z]{2,}(?:-([A-Z])[a-z]{2,})?(?:\s+[A-Z][a-z]+)*\s+([A-Z]{2,}(?:[-' ][A-Z]+)*)/g,
       (_match, first: string, second: string | undefined, last: string) =>
@@ -312,11 +312,11 @@ const buildPrompt = ({
 }): string => {
   const sources = pages
     .map((p, i) => `--- SOURCE ${i + 1} (${p.url}) ---\n${p.text}`)
-    .join("\n\n");
+    .join('\n\n');
   return `You are extracting French Top 14 rugby probable lineups ("compositions probables") from web pages.
 
 Allowed club names (use exactly these spellings — accents and capitalization included — for the "club" field):
-${canonicalClubs.map((c) => `- ${c}`).join("\n")}
+${canonicalClubs.map((c) => `- ${c}`).join('\n')}
 
 Output a single JSON object with this exact shape and no other top-level keys. Every entry in "starters"/"subs" is just a string (the player's last name). Append a literal "*" at the end of the name to mark an uncertain/alternative player — never use objects, never add an "uncertain" field:
 {

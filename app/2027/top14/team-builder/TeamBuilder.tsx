@@ -31,7 +31,22 @@ import {
 } from '../statsUtil';
 import TeamResultsEditor from '../TeamResultsEditor';
 
-const flatPlayers = [].map((team) => team.teamIds || []).flat();
+const CLUBS = [
+  'TLS',
+  'RCH',
+  'BAY',
+  'TLN',
+  'UBB',
+  'LYO',
+  'MOR',
+  'SF',
+  'CAS',
+  'CLE',
+  'VAN',
+  'R92',
+  'PAU',
+  'PER',
+].sort();
 const POSITION_ORDER = [
   'lib_arriere',
   'lib_34aile',
@@ -43,7 +58,6 @@ const POSITION_ORDER = [
   'lib_talonneur',
   'lib_pilier',
 ];
-const countedPlayers = countBy(flatPlayers);
 
 Chart.register(CategoryScale, LinearScale, BarElement, Title, Tooltip, Legend);
 
@@ -58,18 +72,7 @@ const TeamBuilder = ({
   initialResultsForRound: Record<string, number> | null;
   teamsheets: Record<string, Teamsheet>;
 }) => {
-  const allClubs = useMemo(
-    () =>
-      [
-        ...new Set(
-          flatPlayers.map((id) => {
-            const player = players.find((p) => p.id === id);
-            return player!.trgclub as string;
-          }),
-        ),
-      ].sort(),
-    [players],
-  );
+  const allClubs = useMemo(() => CLUBS, [players]);
   const allPositions = useMemo(
     () =>
       [...new Set(players.map((p) => p.position as string))].sort(
@@ -86,32 +89,6 @@ const TeamBuilder = ({
         .sort(),
     [players],
   );
-  const sortedPlayers = useMemo(
-    () =>
-      sortBy(
-        Object.keys(countedPlayers).map((id) => {
-          const player = players.find((p) => p.id === parseInt(id));
-          return { bestTeamCount: countedPlayers[id], ...player };
-        }),
-        (p) => -p.bestTeamCount,
-      ),
-    [players],
-  );
-  const sortedClubs = useMemo(() => {
-    const counted = countBy(
-      flatPlayers.map((id) => {
-        const player = players.find((p) => p.id === id);
-        return player!.trgclub;
-      }),
-    );
-    return sortBy(
-      Object.keys(counted).map((name) => ({
-        bestTeamCount: counted[name],
-        name,
-      })),
-      (c) => -c.bestTeamCount,
-    );
-  }, [players]);
 
   useEffect(() => {
     for (const [club, teamsheet] of Object.entries(teamsheets)) {
@@ -243,17 +220,6 @@ const TeamBuilder = ({
     openPopover(event, chart, 'sub');
   };
 
-  const onClickPlayerOfTheRound = (event) => {
-    if (!chartRef.current) return;
-    const element = getElementAtEvent(chartRef.current, event);
-    console.log(element);
-    if (!element) {
-      setPlayer(undefined);
-      return;
-    }
-    setPlayer(playersOfTheRoundToShow[element[0].index]);
-  };
-
   const onClickExcludeFromChart = () => {
     const idx = popover.playerIndex;
     if (idx === undefined) return;
@@ -269,10 +235,6 @@ const TeamBuilder = ({
     setPopover((p) => ({ ...p, visible: false }));
   };
 
-  const allPlayersOfTheRound = club
-    ? sortedPlayers.filter((player) => player.trgclub === club)
-    : [...sortedPlayers];
-  const playersOfTheRoundToShow = allPlayersOfTheRound.slice(0, 20);
   const roundInfo = rounds.find(
     (round) =>
       parseInt(round.journee.numero) ===
@@ -978,56 +940,7 @@ const TeamBuilder = ({
           }
         />
       </div>
-      <div className={`w-full h-[500px]`}>
-        <Bar
-          ref={chartRef}
-          onClick={onClickPlayerOfTheRound}
-          data={{
-            labels: playersOfTheRoundToShow.map(
-              (player) =>
-                `${player.nom} - ${
-                  player.proprietaire?.id === ''
-                    ? '🟢'
-                    : player.proprietaire?.nom ?? ''
-                }`,
-            ),
-            datasets: [
-              {
-                label: 'In team of the round',
-                data: playersOfTheRoundToShow.map(
-                  (player) => player.bestTeamCount,
-                ),
-                borderWidth: 1,
-              },
-            ],
-          }}
-          options={{
-            plugins: {
-              legend: { display: false },
-              tooltip: {
-                callbacks: {
-                  title: (items) => {
-                    const p = playersOfTheRoundToShow[items[0].dataIndex];
-                    const f = (k: string) => k.padEnd(13);
-                    return [
-                      p.nom,
-                      `${f('Position')}${
-                        POSITION_LABELS[p.position] ?? p.position
-                      }`,
-                      `${f('Club')}${p.trgclub}`,
-                      `${f('Owner')}${
-                        p.proprietaire?.id === ''
-                          ? '🟢 free'
-                          : p.proprietaire?.nom ?? ''
-                      }`,
-                    ];
-                  },
-                },
-              },
-            },
-          }}
-        />
-      </div>
+
       {player && (
         <div>
           {TEAMS.map((team, index) => {
@@ -1049,27 +962,6 @@ const TeamBuilder = ({
         </div>
       )}
 
-      <div className={`w-full h-[500px]`}>
-        <Bar
-          data={{
-            labels: sortedClubs.map((club) => club.name),
-            datasets: [
-              {
-                label: 'In team of the round',
-                data: sortedClubs.map((club) => club.bestTeamCount),
-                borderWidth: 1,
-              },
-            ],
-          }}
-          options={{
-            plugins: {
-              legend: {
-                display: false,
-              },
-            },
-          }}
-        />
-      </div>
       {popover.visible && (
         <div
           className="absolute z-50 animate-in fade-in zoom-in duration-150"

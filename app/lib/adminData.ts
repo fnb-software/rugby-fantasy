@@ -1,14 +1,14 @@
-import "server-only";
-import { get, put } from "@vercel/blob";
-import { revalidateTag, unstable_cache } from "next/cache";
-import { TEAMS } from "@/app/2026/top14/bestTeams";
-import { TEAMS_NO_CLUB_LIMIT } from "@/app/2026/top14/bestTeamsNoClubLimit";
-import { TEAMS_SECOND_NO_CLUB_LIMIT } from "@/app/2026/top14/bestSecondTeamsNoClubLimits";
-import { TEAMSHEETS, type Teamsheet } from "@/app/2026/top14/teamsheets";
+import 'server-only';
+import { get, put } from '@vercel/blob';
+import { revalidateTag, unstable_cache } from 'next/cache';
+import { TEAMS } from '@/app/2026/top14/bestTeams';
+import { TEAMS_NO_CLUB_LIMIT } from '@/app/2026/top14/bestTeamsNoClubLimit';
+import { TEAMS_SECOND_NO_CLUB_LIMIT } from '@/app/2026/top14/bestSecondTeamsNoClubLimits';
+import { TEAMSHEETS, type Teamsheet } from '@/app/2026/top14/teamsheets';
 
 export type Best = { teamIds: number[]; captainId: number } | null;
 
-export type Variant = "full" | "noClubLimit" | "secondNoClubLimit";
+export type Variant = 'full' | 'noClubLimit' | 'secondNoClubLimit';
 
 export type RoundTeamsheets = Record<string, Teamsheet>;
 
@@ -20,8 +20,8 @@ export type AdminData = {
   teamsheets: Record<string, RoundTeamsheets>;
 };
 
-export const ADMIN_BLOB_KEY = "top14-2026/admin.json";
-export const ADMIN_TAG = "admin:top14-2026";
+export const ADMIN_BLOB_KEY = 'top14-2027/admin.json'; // TODO dynamic year
+export const ADMIN_TAG = 'admin:top14-2027'; // TODO dynamic year
 export const ROUNDS_PER_SEASON = 29;
 
 const padRounds = (arr: ReadonlyArray<Best>): Best[] => {
@@ -35,11 +35,11 @@ const seed = (): AdminData => ({
   teams: padRounds(TEAMS as Best[]),
   teamsNoClubLimit: padRounds(TEAMS_NO_CLUB_LIMIT as Best[]),
   teamsSecondNoClubLimit: padRounds(TEAMS_SECOND_NO_CLUB_LIMIT as Best[]),
-  teamsheets: { "1": { ...TEAMSHEETS } },
+  teamsheets: { '1': { ...TEAMSHEETS } },
 });
 
 const fetchFromBlob = async (): Promise<AdminData> => {
-  const result = await get(ADMIN_BLOB_KEY, { access: "public" });
+  const result = await get(ADMIN_BLOB_KEY, { access: 'public' });
   if (!result || result.statusCode !== 200) return seed();
   const text = await new Response(result.stream).text();
   const parsed = JSON.parse(text) as Partial<AdminData>;
@@ -47,7 +47,7 @@ const fetchFromBlob = async (): Promise<AdminData> => {
 };
 
 export const getAdminData = (): Promise<AdminData> =>
-  unstable_cache(fetchFromBlob, ["admin", ADMIN_BLOB_KEY], {
+  unstable_cache(fetchFromBlob, ['admin', ADMIN_BLOB_KEY], {
     tags: [ADMIN_TAG],
   })();
 
@@ -57,8 +57,8 @@ export const setAdminData = async (
   const prev = await fetchFromBlob();
   const next = updater(prev);
   await put(ADMIN_BLOB_KEY, JSON.stringify(next), {
-    access: "public",
-    contentType: "application/json",
+    access: 'public',
+    contentType: 'application/json',
     addRandomSuffix: false,
     allowOverwrite: true,
   });
@@ -68,13 +68,13 @@ export const setAdminData = async (
 
 export const variantKey = (
   v: Variant,
-): "teams" | "teamsNoClubLimit" | "teamsSecondNoClubLimit" => {
+): 'teams' | 'teamsNoClubLimit' | 'teamsSecondNoClubLimit' => {
   switch (v) {
-    case "full":
-      return "teams";
-    case "noClubLimit":
-      return "teamsNoClubLimit";
-    case "secondNoClubLimit":
-      return "teamsSecondNoClubLimit";
+    case 'full':
+      return 'teams';
+    case 'noClubLimit':
+      return 'teamsNoClubLimit';
+    case 'secondNoClubLimit':
+      return 'teamsSecondNoClubLimit';
   }
 };
