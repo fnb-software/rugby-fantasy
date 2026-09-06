@@ -1,5 +1,5 @@
 import 'server-only';
-import type { Teamsheet } from '@/app/2026/top14/teamsheets';
+import type { Teamsheet } from '@/app/2027/top14/teamsheets';
 import { trimToPlayerNames } from '@/app/lib/teamsheetsTrim';
 
 const FETCH_TIMEOUT_MS = 10_000;

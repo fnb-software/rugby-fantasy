@@ -162,7 +162,7 @@ The manifest already declares Android compatibility via
      Both must be green to enable the **Refresh players** button.
 4. Pick the round and the mode:
    - **Teamsheets only** — fast. Refreshes only the players in
-     [`app/2026/top14/teamsheets.ts`](../app/2026/top14/teamsheets.ts) for
+     [`app/2027/top14/teamsheets.ts`](../app/2027/top14/teamsheets.ts) for
      the upcoming round, reusing your last cached snapshot for the rest.
    - **All players** — slow. Pages through the full roster.
 5. Click **Refresh players**. The progress bar ticks; on completion the
@@ -208,7 +208,7 @@ build` regenerates the manifest from `wxt.config.ts`).
   `host_permissions` on the app origin).
 - [extension/shared/api.ts](shared/api.ts) — endpoint URLs and request
   bodies, shared between this extension and the
-  [CLI script](../2026/top14/minizinc/updatePlayers.ts).
+  [CLI script](../2027/top14/minizinc/updatePlayers.ts).
 - [extension/shared/teamsheetsIndex.ts](shared/teamsheetsIndex.ts) —
   builds the teamsheet → club → names map; same source of truth as the
   CLI's teamsheet-filter optimization.

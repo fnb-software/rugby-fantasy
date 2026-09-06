@@ -2,7 +2,7 @@
 // PUBLIC store at the same pathnames. Covers:
 //   - players/{PREFIX}{userId}.json     (per-user roster snapshot)
 //   - expected-results/{PREFIX}{userId}.json  (per-user, optional)
-//   - top14-2026/admin.json             (global admin data, optional)
+//   - top14-2027/admin.json             (global admin data, optional)
 //
 // Run: npx tsx --env-file=.env.local ./scripts/migrate-players-public.ts
 //
@@ -18,27 +18,27 @@
 //   2. Optionally remove BLOB_PUBLIC_READ_WRITE_TOKEN (no longer used).
 //   3. Redeploy.
 
-import { get, put } from "@vercel/blob";
+import { get, put } from '@vercel/blob';
 
 const main = async () => {
   const userId = process.env.USER_ID;
-  if (!userId) throw new Error("USER_ID is not set");
+  if (!userId) throw new Error('USER_ID is not set');
   const privateToken = process.env.BLOB_READ_WRITE_TOKEN;
   const publicToken = process.env.BLOB_PUBLIC_READ_WRITE_TOKEN;
-  if (!privateToken) throw new Error("BLOB_READ_WRITE_TOKEN is not set");
-  if (!publicToken) throw new Error("BLOB_PUBLIC_READ_WRITE_TOKEN is not set");
+  if (!privateToken) throw new Error('BLOB_READ_WRITE_TOKEN is not set');
+  if (!publicToken) throw new Error('BLOB_PUBLIC_READ_WRITE_TOKEN is not set');
 
-  const PREFIX = process.env.BLOB_PREFIX ?? "";
+  const PREFIX = process.env.BLOB_PREFIX ?? '';
 
   const paths = [
     { path: `players/${PREFIX}${userId}.json`, required: true },
     { path: `expected-results/${PREFIX}${userId}.json`, required: false },
-    { path: `top14-2026/admin.json`, required: false },
+    { path: `top14-2027/admin.json`, required: false },
   ];
 
   for (const { path, required } of paths) {
     const existing = await get(path, {
-      access: "private",
+      access: 'private',
       useCache: false,
       token: privateToken,
     });
@@ -50,14 +50,16 @@ const main = async () => {
     }
     const json = await new Response(existing.stream).text();
     const result = await put(path, json, {
-      access: "public",
-      contentType: "application/json",
+      access: 'public',
+      contentType: 'application/json',
       addRandomSuffix: false,
       allowOverwrite: true,
       token: publicToken,
     });
     console.log(
-      `migrated ${path} (${json.length.toLocaleString()} bytes) → ${result.url}`,
+      `migrated ${path} (${json.length.toLocaleString()} bytes) → ${
+        result.url
+      }`,
     );
   }
 };

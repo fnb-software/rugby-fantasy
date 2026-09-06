@@ -23,7 +23,7 @@ const ALLRUGBY_SLUGS: Record<string, string> = {
   Pau: 'pau',
   Bayonne: 'aviron-bayonnais',
   Perpignan: 'usap',
-  Montauban: 'usm',
+  Vannes: 'rcvannes',
 };
 
 const clubLink = (club: string) => {
@@ -41,13 +41,20 @@ const clubLink = (club: string) => {
   );
 };
 
-const TeamResultsEditor = ({ matches, teamResultsExpected, onChange }: Props) => {
+const TeamResultsEditor = ({
+  matches,
+  teamResultsExpected,
+  onChange,
+}: Props) => {
   return (
     <div className="flex flex-wrap gap-4">
       {matches.map((match) => {
         const homeResult = teamResultsExpected[match.clubdom] ?? 0;
         return (
-          <div key={match.clubdom} className="flex items-center gap-2 text-sm border border-slate-200 rounded-lg px-3 py-2">
+          <div
+            key={match.clubdom}
+            className="flex items-center gap-2 text-sm border border-slate-200 rounded-lg px-3 py-2"
+          >
             {clubLink(match.clubdom)}
             <span className="text-slate-400">vs</span>
             {clubLink(match.clubext)}

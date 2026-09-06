@@ -1,5 +1,5 @@
-"use client";
-import { Bar, getDatasetAtEvent, getElementAtEvent } from "react-chartjs-2";
+'use client';
+import { Bar, getDatasetAtEvent, getElementAtEvent } from 'react-chartjs-2';
 import {
   CategoryScale,
   Chart,
@@ -8,40 +8,40 @@ import {
   Title,
   Tooltip,
   Legend,
-} from "chart.js";
-import countBy from "lodash/countBy";
-import sortBy from "lodash/sortBy";
-import { TEAMS } from "../bestTeams";
-import rounds from "../../../../2026/top14/data/rounds";
-import getDznFromStats from "../../../../2026/top14/minizinc/getDznFromStats";
-import { useEffect, useMemo, useRef, useState } from "react";
-import SelectedPlayers from "../SelectedPlayers";
-import { solve } from "../solve";
-import fantasyModel from "../../../../2026/top14/minizinc/fantasy_total.mzn";
-import WantedPlayers from "../WantedPlayers";
-import { assignPlayerToSlot } from "../slots";
-import { getEffectiveStarterPoints } from "./getEffectiveStarterPoints";
-import { getSolverPlayer } from "./getSolverPlayer";
-import { entryName, entryUncertain, type Teamsheet } from "../teamsheets";
+} from 'chart.js';
+import countBy from 'lodash/countBy';
+import sortBy from 'lodash/sortBy';
+import { TEAMS } from '../bestTeams';
+import rounds from '../../../../2027/top14/data/rounds';
+import getDznFromStats from '../../../../2027/top14/minizinc/getDznFromStats';
+import { useEffect, useMemo, useRef, useState } from 'react';
+import SelectedPlayers from '../SelectedPlayers';
+import { solve } from '../solve';
+import fantasyModel from '../../../../2027/top14/minizinc/fantasy_total.mzn';
+import WantedPlayers from '../WantedPlayers';
+import { assignPlayerToSlot } from '../slots';
+import { getEffectiveStarterPoints } from './getEffectiveStarterPoints';
+import { getSolverPlayer } from './getSolverPlayer';
+import { entryName, entryUncertain, type Teamsheet } from '../teamsheets';
 import {
   getRoundPlayerOnlyPoints,
   getTeamPoints,
   matchesName,
   POSITION_LABELS,
-} from "../statsUtil";
-import TeamResultsEditor from "../TeamResultsEditor";
+} from '../statsUtil';
+import TeamResultsEditor from '../TeamResultsEditor';
 
 const flatPlayers = [].map((team) => team.teamIds || []).flat();
 const POSITION_ORDER = [
-  "lib_arriere",
-  "lib_34aile",
-  "lib_34centre",
-  "lib_ouverture",
-  "lib_12melee",
-  "lib_3emeligne",
-  "lib_2emeligne",
-  "lib_talonneur",
-  "lib_pilier",
+  'lib_arriere',
+  'lib_34aile',
+  'lib_34centre',
+  'lib_ouverture',
+  'lib_12melee',
+  'lib_3emeligne',
+  'lib_2emeligne',
+  'lib_talonneur',
+  'lib_pilier',
 ];
 const countedPlayers = countBy(flatPlayers);
 
@@ -127,9 +127,9 @@ const TeamBuilder = ({
     }
   }, [players]);
 
-  const [club, setClub] = useState("");
-  const [position, setPosition] = useState("");
-  const [owner, setOwner] = useState("");
+  const [club, setClub] = useState('');
+  const [position, setPosition] = useState('');
+  const [owner, setOwner] = useState('');
   const [maxRound, setMaxRound] = useState(0);
   const [player, setPlayer] = useState<any>(undefined);
   const [excludedStarterPlayers, setExcludedStarterPlayers] = useState<
@@ -148,29 +148,29 @@ const TeamBuilder = ({
     y: 0,
     data: undefined as { label: any } | undefined,
     playerIndex: undefined as number | undefined,
-    source: undefined as "starter" | "sub" | undefined,
+    source: undefined as 'starter' | 'sub' | undefined,
   });
   const [searchModal, setSearchModal] = useState<{
     visible: boolean;
     position: any;
   }>({ visible: false, position: null });
-  const [searchQuery, setSearchQuery] = useState("");
+  const [searchQuery, setSearchQuery] = useState('');
   const [filterByTeamsheet, setFilterByTeamsheet] = useState(true);
   const [teamResultsExpected, setTeamResultsExpected] = useState<
     Record<string, number>
   >(initialResultsForRound ?? {});
   const [resultsSaveStatus, setResultsSaveStatus] = useState<
-    "idle" | "saving" | "saved" | "error"
-  >("idle");
+    'idle' | 'saving' | 'saved' | 'error'
+  >('idle');
   const [resultsSaveError, setResultsSaveError] = useState<string | null>(null);
 
   const saveExpectedResults = async () => {
-    setResultsSaveStatus("saving");
+    setResultsSaveStatus('saving');
     setResultsSaveError(null);
     try {
-      const res = await fetch("/api/expected-results", {
-        method: "POST",
-        headers: { "content-type": "application/json" },
+      const res = await fetch('/api/expected-results', {
+        method: 'POST',
+        headers: { 'content-type': 'application/json' },
         body: JSON.stringify({
           round: currentRound,
           results: teamResultsExpected,
@@ -180,10 +180,10 @@ const TeamBuilder = ({
         const body = await res.json().catch(() => ({}));
         throw new Error(body.error ?? `HTTP ${res.status}`);
       }
-      setResultsSaveStatus("saved");
+      setResultsSaveStatus('saved');
     } catch (e) {
-      setResultsSaveStatus("error");
-      setResultsSaveError(e instanceof Error ? e.message : "save_failed");
+      setResultsSaveStatus('error');
+      setResultsSaveError(e instanceof Error ? e.message : 'save_failed');
     }
   };
   const [minSheetsPerPlayer, setMinSheetsPerPlayer] = useState(3);
@@ -198,18 +198,18 @@ const TeamBuilder = ({
   // Close popover if clicking outside the chart
   useEffect(() => {
     const handleClickOutside = () => setPopover({ ...popover, visible: false });
-    window.addEventListener("click", handleClickOutside);
-    return () => window.removeEventListener("click", handleClickOutside);
+    window.addEventListener('click', handleClickOutside);
+    return () => window.removeEventListener('click', handleClickOutside);
   }, [popover]);
 
   const openPopover = (
     event: React.MouseEvent,
     chart: any,
-    source: "starter" | "sub",
+    source: 'starter' | 'sub',
   ) => {
     const points = chart.getElementsAtEventForMode(
       event.nativeEvent,
-      "nearest",
+      'nearest',
       { intersect: true },
       true,
     );
@@ -234,13 +234,13 @@ const TeamBuilder = ({
   const onClickStarterPlayer = (event) => {
     const chart = starterRef.current;
     if (!chart) return;
-    openPopover(event, chart, "starter");
+    openPopover(event, chart, 'starter');
   };
 
   const onClickSubPlayer = (event) => {
     const chart = subRef.current;
     if (!chart) return;
-    openPopover(event, chart, "sub");
+    openPopover(event, chart, 'sub');
   };
 
   const onClickPlayerOfTheRound = (event) => {
@@ -257,7 +257,7 @@ const TeamBuilder = ({
   const onClickExcludeFromChart = () => {
     const idx = popover.playerIndex;
     if (idx === undefined) return;
-    if (popover.source === "sub") {
+    if (popover.source === 'sub') {
       setExcludedSubPlayers((players) =>
         players.concat([sortedSubPoints[idx].id]),
       );
@@ -275,7 +275,8 @@ const TeamBuilder = ({
   const playersOfTheRoundToShow = allPlayersOfTheRound.slice(0, 20);
   const roundInfo = rounds.find(
     (round) =>
-      parseInt(round.journee.numero) === (maxRound ? maxRound + 1 : currentRound),
+      parseInt(round.journee.numero) ===
+      (maxRound ? maxRound + 1 : currentRound),
   );
   if (!roundInfo) {
     throw new Error(
@@ -375,9 +376,7 @@ const TeamBuilder = ({
     const starterEntry = teamsheet?.starters.find((e) =>
       matchesName(p, entryName(e)),
     );
-    const subEntry = teamsheet?.subs.find((e) =>
-      matchesName(p, entryName(e)),
-    );
+    const subEntry = teamsheet?.subs.find((e) => matchesName(p, entryName(e)));
     const isTeamsheetStarter = !!starterEntry;
     const isTeamsheetSub = !!subEntry;
     const isTeamsheetUncertain =
@@ -403,9 +402,9 @@ const TeamBuilder = ({
     const proprietaire =
       bidWinner === undefined
         ? p.proprietaire
-        : bidWinner === "__free__"
-          ? { id: "", nom: undefined }
-          : { id: bidWinner, nom: bidWinner };
+        : bidWinner === '__free__'
+        ? { id: '', nom: undefined }
+        : { id: bidWinner, nom: bidWinner };
 
     return {
       ...p,
@@ -438,23 +437,23 @@ const TeamBuilder = ({
       starterNextRoundPoints,
       nextRoundMinutes,
       subNextRoundPoints,
-      avgPenalties: getStat("Conceded penalty"),
-      avgYellowCards: getStat("Yellow cards"),
-      avgOrangeCards: getStat("lib_carton_orange"),
-      avgRedCards: getStat("Red cards"),
+      avgPenalties: getStat('Conceded penalty'),
+      avgYellowCards: getStat('Yellow cards'),
+      avgOrangeCards: getStat('lib_carton_orange'),
+      avgRedCards: getStat('Red cards'),
     };
   });
 
-  const actualOwner = owner.startsWith("free__")
-    ? owner.slice("free__".length)
+  const actualOwner = owner.startsWith('free__')
+    ? owner.slice('free__'.length)
     : owner;
   const filteredOwner = owner
-    ? owner === "__free__"
-      ? allPlayersWithPoints.filter((p) => p.proprietaire.id === "")
+    ? owner === '__free__'
+      ? allPlayersWithPoints.filter((p) => p.proprietaire.id === '')
       : owner === actualOwner
       ? allPlayersWithPoints.filter((p) => p.proprietaire.nom === owner)
       : allPlayersWithPoints.filter(
-          (p) => p.proprietaire.id === "" || p.proprietaire.nom === actualOwner,
+          (p) => p.proprietaire.id === '' || p.proprietaire.nom === actualOwner,
         )
     : allPlayersWithPoints;
   const filteredClubPlayers = club
@@ -515,7 +514,7 @@ const TeamBuilder = ({
     const idx = popover.playerIndex;
     if (idx === undefined) return undefined;
     const list =
-      popover.source === "sub" ? sortedSubPoints : sortedStarterPoints;
+      popover.source === 'sub' ? sortedSubPoints : sortedStarterPoints;
     return playersWithPoints.find((p) => p.id === list[idx].id);
   };
 
@@ -551,7 +550,7 @@ const TeamBuilder = ({
         <label>
           Filter by team{` `}
           <select onChange={(e) => setClub(e.target.value)}>
-            <option label={"All"} value={""}></option>
+            <option label={'All'} value={''}></option>
             {allClubs.map((club) => (
               <option label={club} value={club}></option>
             ))}
@@ -563,7 +562,7 @@ const TeamBuilder = ({
         <label>
           Filter by position{` `}
           <select onChange={(e) => setPosition(e.target.value)}>
-            <option label={"All"} value={""}></option>
+            <option label={'All'} value={''}></option>
             {allPositions.map((position) => (
               <option
                 label={POSITION_LABELS[position] ?? position}
@@ -575,8 +574,8 @@ const TeamBuilder = ({
         <label>
           Filter by owner{` `}
           <select onChange={(e) => setOwner(e.target.value)}>
-            <option label={"All"} value={""}></option>
-            <option label={"Free"} value={"__free__"}></option>
+            <option label={'All'} value={''}></option>
+            <option label={'Free'} value={'__free__'}></option>
             {allOwners.map((owner) => (
               <option label={owner} value={owner}></option>
             ))}
@@ -598,7 +597,7 @@ const TeamBuilder = ({
         </label>
         <div className={`flex gap-4`}>
           <span>
-            {excludedStarterPlayers.length} starters excluded{" "}
+            {excludedStarterPlayers.length} starters excluded{' '}
             <button
               className="bg-blue-500 hover:bg-blue-700 text-white py-1 px-2 rounded"
               onClick={() => setExcludedStarterPlayers([])}
@@ -607,7 +606,7 @@ const TeamBuilder = ({
             </button>
           </span>
           <span>
-            {excludedSubPlayers.length} subs excluded{" "}
+            {excludedSubPlayers.length} subs excluded{' '}
             <button
               className="bg-blue-500 hover:bg-blue-700 text-white py-1 px-2 rounded"
               onClick={() => setExcludedSubPlayers([])}
@@ -622,7 +621,7 @@ const TeamBuilder = ({
         <label>
           Count stats until{` `}
           <select onChange={(e) => setMaxRound(parseInt(e.target.value))}>
-            <option label={"All"} value={undefined}></option>
+            <option label={'All'} value={undefined}></option>
             {TEAMS.map((_, i) => (
               <option label={`Round ${i + 1}`} value={i + 1}></option>
             )).toReversed()}
@@ -636,23 +635,23 @@ const TeamBuilder = ({
             teamResultsExpected={teamResultsExpected}
             onChange={(next) => {
               setTeamResultsExpected(next);
-              setResultsSaveStatus("idle");
+              setResultsSaveStatus('idle');
             }}
           />
           <div className="flex items-center gap-2">
             <button
               onClick={saveExpectedResults}
-              disabled={resultsSaveStatus === "saving"}
+              disabled={resultsSaveStatus === 'saving'}
               className="rounded px-3 py-1 bg-emerald-500 text-white disabled:opacity-50"
             >
-              {resultsSaveStatus === "saving"
-                ? "Saving…"
-                : "Save expected results"}
+              {resultsSaveStatus === 'saving'
+                ? 'Saving…'
+                : 'Save expected results'}
             </button>
-            {resultsSaveStatus === "saved" && (
+            {resultsSaveStatus === 'saved' && (
               <span className="text-emerald-700 text-sm">Saved</span>
             )}
-            {resultsSaveStatus === "error" && (
+            {resultsSaveStatus === 'error' && (
               <span className="text-red-700 text-sm">{resultsSaveError}</span>
             )}
           </div>
@@ -677,7 +676,7 @@ const TeamBuilder = ({
           <input
             type="number"
             min={0}
-            value={maxSheetsPerPlayer ?? ""}
+            value={maxSheetsPerPlayer ?? ''}
             onChange={(e) =>
               setMaxSheetsPerPlayer(
                 e.target.value ? parseInt(e.target.value) : undefined,
@@ -694,51 +693,57 @@ const TeamBuilder = ({
           data={{
             labels: sortedStarterPoints.map(
               (player) =>
-                `${player.nom}${player.hasTeamsheet && !player.isTeamsheetStarter && !player.isTeamsheetSub ? " ⚠️" : ""}${player.isTeamsheetUncertain ? " ❓" : ""} - ${
-                  player.proprietaire?.id === ""
-                    ? "🟢"
-                    : player.proprietaire?.nom ?? ""
+                `${player.nom}${
+                  player.hasTeamsheet &&
+                  !player.isTeamsheetStarter &&
+                  !player.isTeamsheetSub
+                    ? ' ⚠️'
+                    : ''
+                }${player.isTeamsheetUncertain ? ' ❓' : ''} - ${
+                  player.proprietaire?.id === ''
+                    ? '🟢'
+                    : player.proprietaire?.nom ?? ''
                 }`,
             ),
             datasets: maxRound
               ? [
                   {
-                    label: "Max round starter player points",
+                    label: 'Max round starter player points',
                     data: sortedStarterPoints.map(
                       (p) => p.starterNextRoundPoints,
                     ),
                     borderWidth: 1,
                   },
                   {
-                    label: "Actual team points",
+                    label: 'Actual team points',
                     data: sortedStarterPoints.map((p) => p.actualTeamPoints),
                     borderWidth: 1,
-                    backgroundColor: "yellow",
+                    backgroundColor: 'yellow',
                   },
                 ]
               : [
                   {
-                    label: "Starter player points",
+                    label: 'Starter player points',
                     data: sortedStarterPoints.map(
                       (p) => p.starterPlayerAverage,
                     ),
                     borderWidth: 1,
                   },
                   {
-                    label: "Expected team points",
+                    label: 'Expected team points',
                     data: sortedStarterPoints.map(
                       (p) => p.expectedStarterTeamPoints,
                     ),
                     borderWidth: 1,
-                    backgroundColor: "yellow",
+                    backgroundColor: 'yellow',
                   },
                   {
-                    label: "Starter team points",
+                    label: 'Starter team points',
                     data: sortedStarterPoints.map((p) =>
                       Math.round(p.starterAverage - p.starterPlayerAverage),
                     ),
                     borderWidth: 1,
-                    backgroundColor: "purple",
+                    backgroundColor: 'purple',
                   },
                 ],
           }}
@@ -760,21 +765,29 @@ const TeamBuilder = ({
                     const f = (k: string) => k.padEnd(13);
                     return [
                       p.nom,
-                      `${f("Position")}${
+                      `${f('Position')}${
                         POSITION_LABELS[p.position] ?? p.position
                       }`,
-                      `${f("Club")}${p.trgclub}`,
-                      `${f("Owner")}${
-                        p.proprietaire?.id === ""
-                          ? "🟢 free"
-                          : p.proprietaire?.nom ?? ""
+                      `${f('Club')}${p.trgclub}`,
+                      `${f('Owner')}${
+                        p.proprietaire?.id === ''
+                          ? '🟢 free'
+                          : p.proprietaire?.nom ?? ''
                       }`,
-                      `${f("Starts")}${p.startCount}`,
-                      `${f("Avg minutes")}${Math.round(p.starterMinutes)}`,
-                      ...(p.avgPenalties ? [`${f("Pen/80min")}${p.avgPenalties}`] : []),
-                      ...(p.avgYellowCards ? [`${f("Yellow/80min")}${p.avgYellowCards}`] : []),
-                      ...(p.avgOrangeCards ? [`${f("Orange/80min")}${p.avgOrangeCards}`] : []),
-                      ...(p.avgRedCards ? [`${f("Red/80min")}${p.avgRedCards}`] : []),
+                      `${f('Starts')}${p.startCount}`,
+                      `${f('Avg minutes')}${Math.round(p.starterMinutes)}`,
+                      ...(p.avgPenalties
+                        ? [`${f('Pen/80min')}${p.avgPenalties}`]
+                        : []),
+                      ...(p.avgYellowCards
+                        ? [`${f('Yellow/80min')}${p.avgYellowCards}`]
+                        : []),
+                      ...(p.avgOrangeCards
+                        ? [`${f('Orange/80min')}${p.avgOrangeCards}`]
+                        : []),
+                      ...(p.avgRedCards
+                        ? [`${f('Red/80min')}${p.avgRedCards}`]
+                        : []),
                     ];
                   },
                 },
@@ -790,45 +803,51 @@ const TeamBuilder = ({
           data={{
             labels: sortedSubPoints.map(
               (player) =>
-                `${player.nom}${player.hasTeamsheet && !player.isTeamsheetStarter && !player.isTeamsheetSub ? " ⚠️" : ""}${player.isTeamsheetUncertain ? " ❓" : ""} - ${
-                  player.proprietaire?.id === ""
-                    ? "🟢"
-                    : player.proprietaire?.nom ?? ""
+                `${player.nom}${
+                  player.hasTeamsheet &&
+                  !player.isTeamsheetStarter &&
+                  !player.isTeamsheetSub
+                    ? ' ⚠️'
+                    : ''
+                }${player.isTeamsheetUncertain ? ' ❓' : ''} - ${
+                  player.proprietaire?.id === ''
+                    ? '🟢'
+                    : player.proprietaire?.nom ?? ''
                 }`,
             ),
             datasets: maxRound
               ? [
                   {
-                    label: "Max round sub player points",
+                    label: 'Max round sub player points',
                     data: sortedSubPoints.map((p) => p.subNextRoundPoints),
                     borderWidth: 1,
                   },
                   {
-                    label: "Actual team points",
+                    label: 'Actual team points',
                     data: sortedSubPoints.map((p) => p.actualTeamPoints),
                     borderWidth: 1,
-                    backgroundColor: "yellow",
+                    backgroundColor: 'yellow',
                   },
                 ]
               : [
                   {
-                    label: "Sub player points",
+                    label: 'Sub player points',
                     data: sortedSubPoints.map((p) => p.subPlayerAverage),
                     borderWidth: 1,
                   },
                   {
-                    label: "Expected team points",
+                    label: 'Expected team points',
                     data: sortedSubPoints.map((p) => p.expectedSubTeamPoints),
                     borderWidth: 1,
-                    backgroundColor: "yellow",
+                    backgroundColor: 'yellow',
                   },
                   {
-                    label: "Sub team points",
+                    label: 'Sub team points',
                     data: sortedSubPoints.map((p) =>
                       Math.round(p.subAverage - p.subPlayerAverage),
                     ),
                     borderWidth: 1,
-                    backgroundColor: "purple",
+                    backgroundColor: 'purple',
                   },
                 ],
           }}
@@ -850,21 +869,29 @@ const TeamBuilder = ({
                     const f = (k: string) => k.padEnd(13);
                     return [
                       p.nom,
-                      `${f("Position")}${
+                      `${f('Position')}${
                         POSITION_LABELS[p.position] ?? p.position
                       }`,
-                      `${f("Club")}${p.trgclub}`,
-                      `${f("Owner")}${
-                        p.proprietaire?.id === ""
-                          ? "🟢 free"
-                          : p.proprietaire?.nom ?? ""
+                      `${f('Club')}${p.trgclub}`,
+                      `${f('Owner')}${
+                        p.proprietaire?.id === ''
+                          ? '🟢 free'
+                          : p.proprietaire?.nom ?? ''
                       }`,
-                      `${f("Subs")}${p.subCount}`,
-                      `${f("Avg minutes")}${Math.round(p.subMinutes)}`,
-                      ...(p.avgPenalties ? [`${f("Pen/80min")}${p.avgPenalties}`] : []),
-                      ...(p.avgYellowCards ? [`${f("Yellow/80min")}${p.avgYellowCards}`] : []),
-                      ...(p.avgOrangeCards ? [`${f("Orange/80min")}${p.avgOrangeCards}`] : []),
-                      ...(p.avgRedCards ? [`${f("Red/80min")}${p.avgRedCards}`] : []),
+                      `${f('Subs')}${p.subCount}`,
+                      `${f('Avg minutes')}${Math.round(p.subMinutes)}`,
+                      ...(p.avgPenalties
+                        ? [`${f('Pen/80min')}${p.avgPenalties}`]
+                        : []),
+                      ...(p.avgYellowCards
+                        ? [`${f('Yellow/80min')}${p.avgYellowCards}`]
+                        : []),
+                      ...(p.avgOrangeCards
+                        ? [`${f('Orange/80min')}${p.avgOrangeCards}`]
+                        : []),
+                      ...(p.avgRedCards
+                        ? [`${f('Red/80min')}${p.avgRedCards}`]
+                        : []),
                     ];
                   },
                 },
@@ -934,7 +961,7 @@ const TeamBuilder = ({
             setExcludedSubPlayers((players) => players.concat([player.id]))
           }
           onSearchPlayer={(slotIndex) => {
-            setSearchQuery("");
+            setSearchQuery('');
             setSearchModal({ visible: true, position: slotIndex });
           }}
         />
@@ -959,14 +986,14 @@ const TeamBuilder = ({
             labels: playersOfTheRoundToShow.map(
               (player) =>
                 `${player.nom} - ${
-                  player.proprietaire?.id === ""
-                    ? "🟢"
-                    : player.proprietaire?.nom ?? ""
+                  player.proprietaire?.id === ''
+                    ? '🟢'
+                    : player.proprietaire?.nom ?? ''
                 }`,
             ),
             datasets: [
               {
-                label: "In team of the round",
+                label: 'In team of the round',
                 data: playersOfTheRoundToShow.map(
                   (player) => player.bestTeamCount,
                 ),
@@ -984,14 +1011,14 @@ const TeamBuilder = ({
                     const f = (k: string) => k.padEnd(13);
                     return [
                       p.nom,
-                      `${f("Position")}${
+                      `${f('Position')}${
                         POSITION_LABELS[p.position] ?? p.position
                       }`,
-                      `${f("Club")}${p.trgclub}`,
-                      `${f("Owner")}${
-                        p.proprietaire?.id === ""
-                          ? "🟢 free"
-                          : p.proprietaire?.nom ?? ""
+                      `${f('Club')}${p.trgclub}`,
+                      `${f('Owner')}${
+                        p.proprietaire?.id === ''
+                          ? '🟢 free'
+                          : p.proprietaire?.nom ?? ''
                       }`,
                     ];
                   },
@@ -1013,8 +1040,8 @@ const TeamBuilder = ({
             .filter((round) => round.stats?.points !== undefined)
             .map((round) => {
               return (
-                <div className={round.inTeam && "font-bold"}>
-                  Round {round.round} - Score {round.stats.points} vs{" "}
+                <div className={round.inTeam && 'font-bold'}>
+                  Round {round.round} - Score {round.stats.points} vs{' '}
                   {round.stats.adversaire.trg}
                 </div>
               );
@@ -1028,7 +1055,7 @@ const TeamBuilder = ({
             labels: sortedClubs.map((club) => club.name),
             datasets: [
               {
-                label: "In team of the round",
+                label: 'In team of the round',
                 data: sortedClubs.map((club) => club.bestTeamCount),
                 borderWidth: 1,
               },
@@ -1049,7 +1076,7 @@ const TeamBuilder = ({
           style={{
             left: popover.x,
             top: popover.y,
-            transform: "translate(-50%, -120%)",
+            transform: 'translate(-50%, -120%)',
           }}
           onClick={(e) => e.stopPropagation()} // Prevent closing when clicking inside popover
         >
@@ -1116,10 +1143,11 @@ const TeamBuilder = ({
               />
             </div>
             <div className="overflow-y-auto max-h-72 flex flex-col">
-              {(typeof searchModal.position === "number" &&
+              {(typeof searchModal.position === 'number' &&
               searchModal.position >= 18
                 ? playersWithPoints
-                : playersWithPointsAndTeamsheet)
+                : playersWithPointsAndTeamsheet
+              )
                 .filter((p) =>
                   p.nom.toLowerCase().includes(searchQuery.toLowerCase()),
                 )

@@ -46,9 +46,9 @@ If you'll run the CLI (`npm run mz:update:players`), also set:
 # Find it after signing in by hitting http://localhost:3000/api/me.
 echo 'USER_ID=<your-google-sub>' >> .env.local
 
-# in 2026/top14/.env — the lagrandemelee API token.
+# in 2027/top14/.env — the lagrandemelee API token.
 # Sniff it from DevTools on lagrandemelee.midi-olympique.fr after login.
-echo 'TOP14_TOKEN=<token>' > 2026/top14/.env
+echo 'TOP14_TOKEN=<token>' > 2027/top14/.env
 ```
 
 See [.env.example](../.env.example) for the full list of variables.
@@ -71,7 +71,7 @@ npm run dev:firefox              # Firefox target → .output/firefox-mv3/
 # 3. (optional) CLI refresher — uploads a fresh snapshot to your
 #    per-user Blob key (players/dev/{USER_ID}.json) without going
 #    through the extension. Requires TOP14_TOKEN, USER_ID, and the
-#    BLOB_* envs (auto-loaded from `.env.local` + `2026/top14/.env`).
+#    BLOB_* envs (auto-loaded from `.env.local` + `2027/top14/.env`).
 npm run mz:update:players
 ```
 
@@ -168,7 +168,7 @@ ENOENT` from `npm run dev:firefox`.** WXT defaults the Firefox runner
 3. Click the extension icon. Both auth dots green → click **Refresh
    players**. The snapshot lands at
    `players/dev/<your-google-sub>.json` in the shared Blob store.
-4. Reload `http://localhost:3000/2026/top14`. Your snapshot is served
+4. Reload `http://localhost:3000/2027/top14`. Your snapshot is served
    from the dev blob.
 
 ## Storage layout & isolation
@@ -222,7 +222,7 @@ state.
 - [app/lib/players.ts](../app/lib/players.ts) — server-side `getPlayers`
   reading from `players/{prefix}{userId}.json` in Vercel Blob (cached
   via `unstable_cache` with a per-user tag).
-- [2026/top14/minizinc/updatePlayers.ts](../2026/top14/minizinc/updatePlayers.ts)
+- [2027/top14/minizinc/updatePlayers.ts](../2027/top14/minizinc/updatePlayers.ts)
   — CLI refresher; writes to the same blob key the app reads.
 - [extension/](../extension/) — the browser extension; see its
   [README](../extension/README.md).

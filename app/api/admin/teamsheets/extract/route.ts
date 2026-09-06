@@ -1,12 +1,12 @@
-import { NextResponse } from "next/server";
-import { auth } from "@/auth";
-import { requireAdmin } from "@/app/lib/adminAuth";
-import { ROUNDS_PER_SEASON } from "@/app/lib/adminData";
-import { getPlayers } from "@/app/lib/players";
-import { extractTeamsheets } from "@/app/lib/teamsheetsExtract";
-import { reassignTeamsheets } from "@/app/lib/teamsheetsReassign";
-import { matchesName } from "@/app/2026/top14/statsUtil";
-import rounds from "@/2026/top14/data/rounds";
+import { NextResponse } from 'next/server';
+import { auth } from '@/auth';
+import { requireAdmin } from '@/app/lib/adminAuth';
+import { ROUNDS_PER_SEASON } from '@/app/lib/adminData';
+import { getPlayers } from '@/app/lib/players';
+import { extractTeamsheets } from '@/app/lib/teamsheetsExtract';
+import { reassignTeamsheets } from '@/app/lib/teamsheetsReassign';
+import { matchesName } from '@/app/2027/top14/statsUtil';
+import rounds from '@/2027/top14/data/rounds';
 
 export async function POST(req: Request) {
   const denied = await requireAdmin();
@@ -16,7 +16,7 @@ export async function POST(req: Request) {
   try {
     body = await req.json();
   } catch {
-    return NextResponse.json({ error: "invalid_json" }, { status: 400 });
+    return NextResponse.json({ error: 'invalid_json' }, { status: 400 });
   }
   const { urls, texts, round } = (body ?? {}) as {
     urls?: unknown;
@@ -26,44 +26,41 @@ export async function POST(req: Request) {
 
   const urlList: string[] = Array.isArray(urls)
     ? urls.filter(
-        (u): u is string => typeof u === "string" && /^https?:\/\//.test(u),
+        (u): u is string => typeof u === 'string' && /^https?:\/\//.test(u),
       )
     : [];
   const textList: string[] = Array.isArray(texts)
     ? texts.filter(
-        (t): t is string => typeof t === "string" && t.trim().length > 0,
+        (t): t is string => typeof t === 'string' && t.trim().length > 0,
       )
     : [];
   if (urlList.length === 0 && textList.length === 0) {
-    return NextResponse.json({ error: "no_input" }, { status: 400 });
+    return NextResponse.json({ error: 'no_input' }, { status: 400 });
   }
   if (
-    typeof round !== "number" ||
+    typeof round !== 'number' ||
     !Number.isInteger(round) ||
     round < 1 ||
     round > ROUNDS_PER_SEASON
   ) {
-    return NextResponse.json({ error: "invalid_round" }, { status: 400 });
+    return NextResponse.json({ error: 'invalid_round' }, { status: 400 });
   }
 
-  const roundInfo = rounds.find(
-    (r) => parseInt(r.journee.numero) === round,
-  );
+  const roundInfo = rounds.find((r) => parseInt(r.journee.numero) === round);
   if (!roundInfo) {
-    return NextResponse.json({ error: "round_not_in_data" }, { status: 400 });
+    return NextResponse.json({ error: 'round_not_in_data' }, { status: 400 });
   }
   const canonicalClubs = Array.from(
-    new Set(
-      roundInfo.journee.matchs.flatMap((m) => [m.clubdom, m.clubext]),
-    ),
+    new Set(roundInfo.journee.matchs.flatMap((m) => [m.clubdom, m.clubext])),
   );
 
   const session = await auth();
   const players = (await getPlayers(session!.user!.id)) as any[];
   const playerSurnames = players
     .map((p: any) => {
-      const full: string = typeof p?.nomcomplet === "string" ? p.nomcomplet : "";
-      const i = full.lastIndexOf(" ");
+      const full: string =
+        typeof p?.nomcomplet === 'string' ? p.nomcomplet : '';
+      const i = full.lastIndexOf(' ');
       return (i >= 0 ? full.slice(i + 1) : full).trim();
     })
     .filter((s) => s.length > 0);
@@ -72,7 +69,7 @@ export async function POST(req: Request) {
     async start(controller) {
       const enc = new TextEncoder();
       const send = (msg: object) =>
-        controller.enqueue(enc.encode(JSON.stringify(msg) + "\n"));
+        controller.enqueue(enc.encode(JSON.stringify(msg) + '\n'));
 
       try {
         const extract = await extractTeamsheets({
@@ -80,7 +77,7 @@ export async function POST(req: Request) {
           texts: textList,
           canonicalClubs,
           playerSurnames,
-          onAttempt: (event) => send({ type: "attempt", ...event }),
+          onAttempt: (event) => send({ type: 'attempt', ...event }),
         });
 
         const corrected = reassignTeamsheets({
@@ -109,19 +106,19 @@ export async function POST(req: Request) {
         }
 
         send({
-          type: "done",
+          type: 'done',
           teamsheets: enriched,
           fetchErrors: extract.fetchErrors,
         });
       } catch (e) {
-        console.error("/api/admin/teamsheets/extract failed", {
+        console.error('/api/admin/teamsheets/extract failed', {
           urls: urlList,
           textCount: textList.length,
           round,
           error: e,
         });
-        const message = e instanceof Error ? e.message : "extract_failed";
-        send({ type: "error", message });
+        const message = e instanceof Error ? e.message : 'extract_failed';
+        send({ type: 'error', message });
       }
       controller.close();
     },
@@ -129,8 +126,8 @@ export async function POST(req: Request) {
 
   return new Response(stream, {
     headers: {
-      "content-type": "application/x-ndjson",
-      "cache-control": "no-store",
+      'content-type': 'application/x-ndjson',
+      'cache-control': 'no-store',
     },
   });
 }

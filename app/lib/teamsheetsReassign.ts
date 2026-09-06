@@ -1,5 +1,5 @@
-import { matchesName } from "../2026/top14/statsUtil";
-import type { Teamsheet } from "../2026/top14/teamsheets";
+import { matchesName } from '../2027/top14/statsUtil';
+import type { Teamsheet } from '../2027/top14/teamsheets';
 
 export type ReassignedEntry = { name: string; uncertain: boolean };
 export type ReassignedTeamsheet = {
@@ -74,12 +74,12 @@ export const reassignTeamsheets = ({
   );
   type Stray = {
     target: string;
-    role: "starters" | "subs";
+    role: 'starters' | 'subs';
     entry: ReassignedEntry;
   };
   const strays: Stray[] = [];
   for (const [club, ts] of Object.entries(working)) {
-    for (const role of ["starters", "subs"] as const) {
+    for (const role of ['starters', 'subs'] as const) {
       for (const e of ts[role]) {
         const target = correctClub(e.name, club);
         if (target === club) corrected[club][role].push(e);
@@ -108,8 +108,8 @@ export const reassignTeamsheets = ({
 const toReassignedEntry = (
   e: string | { name: string; uncertain?: boolean },
 ): ReassignedEntry => ({
-  name: typeof e === "string" ? e : e.name,
-  uncertain: typeof e === "string" ? false : !!e.uncertain,
+  name: typeof e === 'string' ? e : e.name,
+  uncertain: typeof e === 'string' ? false : !!e.uncertain,
 });
 
 const swapMisplaced = (
@@ -135,6 +135,6 @@ const swapMisplaced = (
 const dedupeKey = (name: string): string =>
   name
     .toLowerCase()
-    .normalize("NFD")
-    .replace(/[\u0300-\u036f]/g, "")
-    .replace(/['\- ]/g, "");
+    .normalize('NFD')
+    .replace(/[\u0300-\u036f]/g, '')
+    .replace(/['\- ]/g, '');

@@ -1,10 +1,10 @@
 import 'server-only';
 import { get, put } from '@vercel/blob';
 import { revalidateTag, unstable_cache } from 'next/cache';
-import { TEAMS } from '@/app/2026/top14/bestTeams';
-import { TEAMS_NO_CLUB_LIMIT } from '@/app/2026/top14/bestTeamsNoClubLimit';
-import { TEAMS_SECOND_NO_CLUB_LIMIT } from '@/app/2026/top14/bestSecondTeamsNoClubLimits';
-import { TEAMSHEETS, type Teamsheet } from '@/app/2026/top14/teamsheets';
+import { TEAMS } from '@/app/2027/top14/bestTeams';
+import { TEAMS_NO_CLUB_LIMIT } from '@/app/2027/top14/bestTeamsNoClubLimit';
+import { TEAMS_SECOND_NO_CLUB_LIMIT } from '@/app/2027/top14/bestSecondTeamsNoClubLimits';
+import { TEAMSHEETS, type Teamsheet } from '@/app/2027/top14/teamsheets';
 
 export type Best = { teamIds: number[]; captainId: number } | null;
 

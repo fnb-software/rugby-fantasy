@@ -1,16 +1,16 @@
-import { NextResponse } from "next/server";
-import { requireAdmin } from "@/app/lib/adminAuth";
-import { ROUNDS_PER_SEASON, setAdminData } from "@/app/lib/adminData";
-import type { Teamsheet, TeamsheetEntry } from "@/app/2026/top14/teamsheets";
-import rounds from "@/2026/top14/data/rounds";
+import { NextResponse } from 'next/server';
+import { requireAdmin } from '@/app/lib/adminAuth';
+import { ROUNDS_PER_SEASON, setAdminData } from '@/app/lib/adminData';
+import type { Teamsheet, TeamsheetEntry } from '@/app/2027/top14/teamsheets';
+import rounds from '@/2027/top14/data/rounds';
 
 const normalizeEntry = (e: unknown): TeamsheetEntry | null => {
-  if (typeof e === "string") {
+  if (typeof e === 'string') {
     const name = e.trim();
     return name ? name : null;
   }
-  if (e && typeof e === "object" && "name" in e) {
-    const name = String((e as { name: unknown }).name ?? "").trim();
+  if (e && typeof e === 'object' && 'name' in e) {
+    const name = String((e as { name: unknown }).name ?? '').trim();
     if (!name) return null;
     const uncertain = !!(e as { uncertain?: unknown }).uncertain;
     return { name, uncertain };
@@ -19,7 +19,7 @@ const normalizeEntry = (e: unknown): TeamsheetEntry | null => {
 };
 
 const normalizeTeamsheet = (ts: unknown): Teamsheet | null => {
-  if (!ts || typeof ts !== "object") return null;
+  if (!ts || typeof ts !== 'object') return null;
   const { starters, subs } = ts as { starters?: unknown; subs?: unknown };
   if (!Array.isArray(starters) || !Array.isArray(subs)) return null;
   return {
@@ -40,7 +40,7 @@ export async function POST(req: Request) {
   try {
     body = await req.json();
   } catch {
-    return NextResponse.json({ error: "invalid_json" }, { status: 400 });
+    return NextResponse.json({ error: 'invalid_json' }, { status: 400 });
   }
 
   const { round, teamsheets } = (body ?? {}) as {
@@ -49,22 +49,24 @@ export async function POST(req: Request) {
   };
 
   if (
-    typeof round !== "number" ||
+    typeof round !== 'number' ||
     !Number.isInteger(round) ||
     round < 1 ||
     round > ROUNDS_PER_SEASON
   ) {
-    return NextResponse.json({ error: "invalid_round" }, { status: 400 });
+    return NextResponse.json({ error: 'invalid_round' }, { status: 400 });
   }
-  if (!teamsheets || typeof teamsheets !== "object" || Array.isArray(teamsheets)) {
-    return NextResponse.json({ error: "invalid_teamsheets" }, { status: 400 });
+  if (
+    !teamsheets ||
+    typeof teamsheets !== 'object' ||
+    Array.isArray(teamsheets)
+  ) {
+    return NextResponse.json({ error: 'invalid_teamsheets' }, { status: 400 });
   }
 
-  const roundInfo = rounds.find(
-    (r) => parseInt(r.journee.numero) === round,
-  );
+  const roundInfo = rounds.find((r) => parseInt(r.journee.numero) === round);
   if (!roundInfo) {
-    return NextResponse.json({ error: "round_not_in_data" }, { status: 400 });
+    return NextResponse.json({ error: 'round_not_in_data' }, { status: 400 });
   }
   const allowed = new Set(
     roundInfo.journee.matchs.flatMap((m) => [m.clubdom, m.clubext]),

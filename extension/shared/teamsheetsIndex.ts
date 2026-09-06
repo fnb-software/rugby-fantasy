@@ -1,4 +1,4 @@
-import { TEAMSHEETS, entryName } from "../../app/2026/top14/teamsheets";
+import { TEAMSHEETS, entryName } from '../../app/2027/top14/teamsheets';
 
 export const buildTeamsheetIndex = (): Map<string, string[]> | null => {
   const total = Object.values(TEAMSHEETS).reduce(
