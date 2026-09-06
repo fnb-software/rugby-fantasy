@@ -67,7 +67,7 @@ Two paths.
    that folder.
 4. Active until you close Firefox.
 
-### Signed via AMO self-distribution (persistent, free)
+### DEPRECATED SEE BELOW - Signed via AMO self-distribution (persistent, free)
 
 Desktop only — Firefox for Android does not accept install-from-file
 XPIs. For Android, use the listed-on-AMO path below.
