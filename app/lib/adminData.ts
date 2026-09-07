@@ -40,7 +40,10 @@ const seed = (): AdminData => ({
 
 const fetchFromBlob = async (): Promise<AdminData> => {
   const result = await get(ADMIN_BLOB_KEY, { access: 'public' });
-  if (!result || result.statusCode !== 200) return seed();
+  if (!result || result.statusCode !== 200) {
+    console.error('Could not read admin blob. Defaulting to seed');
+    return seed();
+  }
   const text = await new Response(result.stream).text();
   const parsed = JSON.parse(text) as Partial<AdminData>;
   return { ...seed(), ...parsed };
