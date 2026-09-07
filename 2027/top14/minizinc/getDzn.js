@@ -6,7 +6,7 @@ import {
 
 const MAX_PER_TEAM = 6;
 
-const getDzn = (allPlayers, round = 1) => {
+const getDzn = (allPlayers, round = 1, budget) => {
   const getPlayerScore = getPlayerScoreForRound(round);
   const getPlayerCost = getPlayerCostForRound(round);
   const getPlayerSub = getPlayerSubForRound(round);
@@ -28,6 +28,7 @@ const getDzn = (allPlayers, round = 1) => {
   squadIds = [${squadIds}];
   lbound = [${squadIds.map(() => 0)}];
   ubound = [${squadIds.map(() => MAX_PER_TEAM)}];
+  budget = ${budget !== undefined ? budget * 10 : -1};
   `;
   console.log(data);
   return data;

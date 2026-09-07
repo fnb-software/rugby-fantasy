@@ -6,6 +6,7 @@ import rounds from '@/2027/top14/data/rounds';
 import CurrentRoundEditor from './CurrentRoundEditor';
 import NoPlayers from '../NoPlayers';
 import TeamsheetsEditor from './TeamsheetsEditor';
+import BudgetSolverLink from './BudgetSolverLink';
 
 const AdminPage = async () => {
   const session = await auth();
@@ -43,6 +44,7 @@ const AdminPage = async () => {
         </a>{' '}
         page after solving a round.
       </p>
+      <BudgetSolverLink />
       <TeamsheetsEditor
         round={currentRound}
         clubs={clubs}

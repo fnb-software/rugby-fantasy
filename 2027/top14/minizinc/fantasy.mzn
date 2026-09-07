@@ -22,6 +22,9 @@ array[int] of int: squadIds;
 array[int] of int: ubound; 
 array[int] of int: lbound; 
 
+% Optional budget constraint (set to -1 to disable)
+int: budget = -1; 
+
 % Position identifiers
 set of int: position_identifiers = {13, 12, 11, 10, 9, 8, 7, 6, 5};
 
@@ -41,8 +44,8 @@ var Players: sub2 = team[18];
 % Connect team and team_position
 constraint forall (i in 1..15) (position[team[i]] = team_position[i]);
 
-% Maximum cost (for low cost use 750)
-% constraint sum (p in team) (cost[p]) <= 20000;
+% Maximum cost (only applied if budget > 0)
+constraint if budget > 0 then sum (p in team) (cost[p]) <= budget else true endif;
 
 % Don't pick the same player more than once
 constraint alldifferent (team);

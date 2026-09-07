@@ -17,11 +17,13 @@ const Solve = ({
   startRound,
   endRound,
   isAdmin = false,
+  budget,
 }: {
   players: any[];
   startRound: number;
   endRound: number;
   isAdmin?: boolean;
+  budget?: number;
 }) => {
   const [teamResult, setTeamResult] = useState<
     ReturnType<typeof parseResult> | undefined | null
@@ -38,7 +40,7 @@ const Solve = ({
       ) {
         try {
           const { teamIds, captainId } = await solve({
-            dznString: getDzn(players, currentRound),
+            dznString: getDzn(players, currentRound, budget),
             fantasyModel,
           });
           const teamResult = parseResult({
@@ -64,7 +66,7 @@ const Solve = ({
       console.log(`[${log}]`);
     };
     solveAllRounds();
-  }, [players, startRound, endRound]);
+  }, [players, startRound, endRound, budget]);
 
   if (teamResult === undefined) {
     return 'Solving....';
@@ -84,6 +86,7 @@ const Solve = ({
       </div>
       <div>
         Points: {teamResult.points / 20} - Cost: {teamResult.cost}
+        {budget && <span> - Budget limit: {budget}</span>}
       </div>
       {isAdmin && solved.map((s) => <SaveBestTeam key={s.round} {...s} />)}
     </div>
