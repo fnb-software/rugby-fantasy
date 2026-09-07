@@ -5,6 +5,7 @@ import getDzn from '../../../../2027/top14/minizinc/getDzn';
 import parseResult from '../../../../2027/top14/minizinc/parseResult';
 import type { Variant } from '@/app/lib/adminData';
 import { solve } from '../solve';
+import Team from '../Team';
 
 type SolvedRound = {
   round: number;
@@ -29,6 +30,7 @@ const SolveCostProgression = ({
     ReturnType<typeof parseResult> | undefined | null
   >();
   const [solved, setSolved] = useState<SolvedRound[]>([]);
+  const [currentCaptainId, setCurrentCaptainId] = useState<number | undefined>();
 
   useEffect(() => {
     const solveAllRounds = async () => {
@@ -43,6 +45,7 @@ const SolveCostProgression = ({
             dznString: getDzn(players, currentRound, budget, 'costProgression'),
             fantasyModel: fantasyCostProgressionModel,
           });
+          setCurrentCaptainId(captainId);
           const teamResult = parseResult({
             players,
             teamIds,
@@ -78,16 +81,14 @@ const SolveCostProgression = ({
 
   return (
     <div>
-      <div>
-        <h1>Team (Cost Progression Mode)</h1>
-        {teamResult.teamOutput.map((s, i) => (
-          <div key={i}>{s}</div>
-        ))}
-      </div>
-      <div>
-        Points: {teamResult.points / 20} - Cost: {teamResult.cost}
-        {budget && <span> - Budget limit: {budget}</span>}
-      </div>
+      <h1>Team (Cost Progression Mode)</h1>
+      <Team
+        players={players}
+        teamIds={teamResult.team.map((p: any) => p.id)}
+        round={startRound}
+        captainId={currentCaptainId || teamResult.team[0]?.id}
+      />
+      {budget && <div>Budget limit: {budget}</div>}
       {isAdmin && solved.map((s) => <SaveBestTeam key={s.round} {...s} />)}
     </div>
   );
