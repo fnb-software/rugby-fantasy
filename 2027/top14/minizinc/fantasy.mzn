@@ -22,8 +22,8 @@ array[int] of int: squadIds;
 array[int] of int: ubound; 
 array[int] of int: lbound; 
 
-% Optional budget constraint (set to -1 to disable)
-int: budget = -1; 
+% Optional budget constraint
+int: budget; 
 
 % Position identifiers
 set of int: position_identifiers = {13, 12, 11, 10, 9, 8, 7, 6, 5};
