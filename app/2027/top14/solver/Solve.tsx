@@ -40,7 +40,7 @@ const Solve = ({
       ) {
         try {
           const { teamIds, captainId } = await solve({
-            dznString: getDzn(players, currentRound, budget),
+            dznString: getDzn(players, currentRound, budget, 'points'),
             fantasyModel,
           });
           const teamResult = parseResult({
