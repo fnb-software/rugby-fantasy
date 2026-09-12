@@ -1,11 +1,11 @@
-'use client';
-import { useEffect, useState } from 'react';
-import fantasyModel from '../../../../2027/top14/minizinc/fantasy.mzn';
-import getDzn from '../../../../2027/top14/minizinc/getDzn';
-import parseResult from '../../../../2027/top14/minizinc/parseResult';
-import type { Variant } from '@/app/lib/adminData';
-import { solve } from '../solve';
-import Team from '../Team';
+"use client";
+import { useEffect, useState } from "react";
+import fantasyModel from "../../../../2027/top14/minizinc/fantasy.mzn";
+import getDzn from "../../../../2027/top14/minizinc/getDzn";
+import parseResult from "../../../../2027/top14/minizinc/parseResult";
+import type { Variant } from "@/app/lib/adminData";
+import { solve } from "../solve";
+import Team from "../Team";
 
 type SolvedRound = {
   round: number;
@@ -30,7 +30,9 @@ const Solve = ({
     ReturnType<typeof parseResult> | undefined | null
   >();
   const [solved, setSolved] = useState<SolvedRound[]>([]);
-  const [currentCaptainId, setCurrentCaptainId] = useState<number | undefined>();
+  const [currentCaptainId, setCurrentCaptainId] = useState<
+    number | undefined
+  >();
 
   useEffect(() => {
     const solveAllRounds = async () => {
@@ -41,8 +43,10 @@ const Solve = ({
         currentRound++
       ) {
         try {
+          const dznString = getDzn(players, currentRound, budget, "points");
+          console.log(dznString);
           const { teamIds, captainId } = await solve({
-            dznString: getDzn(players, currentRound, budget, 'points'),
+            dznString,
             fantasyModel,
           });
           setCurrentCaptainId(captainId);
@@ -72,11 +76,11 @@ const Solve = ({
   }, [players, startRound, endRound, budget]);
 
   if (teamResult === undefined) {
-    return 'Solving....';
+    return "Solving....";
   }
 
   if (teamResult === null) {
-    return 'No solution';
+    return "No solution";
   }
 
   return (
@@ -95,29 +99,29 @@ const Solve = ({
 };
 
 const SaveBestTeam = ({ round, teamIds, captainId }: SolvedRound) => {
-  const [variant, setVariant] = useState<Variant>('full');
-  const [status, setStatus] = useState<'idle' | 'saving' | 'saved' | 'error'>(
-    'idle',
+  const [variant, setVariant] = useState<Variant>("full");
+  const [status, setStatus] = useState<"idle" | "saving" | "saved" | "error">(
+    "idle",
   );
   const [error, setError] = useState<string | null>(null);
 
   const onSave = async () => {
-    setStatus('saving');
+    setStatus("saving");
     setError(null);
     try {
-      const res = await fetch('/api/admin/best-team', {
-        method: 'POST',
-        headers: { 'content-type': 'application/json' },
+      const res = await fetch("/api/admin/best-team", {
+        method: "POST",
+        headers: { "content-type": "application/json" },
         body: JSON.stringify({ variant, round, teamIds, captainId }),
       });
       if (!res.ok) {
         const body = await res.json().catch(() => ({}));
         throw new Error(body.error ?? `HTTP ${res.status}`);
       }
-      setStatus('saved');
+      setStatus("saved");
     } catch (e) {
-      setStatus('error');
-      setError(e instanceof Error ? e.message : 'save_failed');
+      setStatus("error");
+      setError(e instanceof Error ? e.message : "save_failed");
     }
   };
 
@@ -135,13 +139,13 @@ const SaveBestTeam = ({ round, teamIds, captainId }: SolvedRound) => {
       </select>
       <button
         onClick={onSave}
-        disabled={status === 'saving'}
+        disabled={status === "saving"}
         className="rounded px-2 py-1 bg-emerald-500 text-white disabled:opacity-50"
       >
-        {status === 'saving' ? 'Saving…' : 'Save best team'}
+        {status === "saving" ? "Saving…" : "Save best team"}
       </button>
-      {status === 'saved' && <span className="text-emerald-700">Saved</span>}
-      {status === 'error' && <span className="text-red-700">{error}</span>}
+      {status === "saved" && <span className="text-emerald-700">Saved</span>}
+      {status === "error" && <span className="text-red-700">{error}</span>}
     </div>
   );
 };

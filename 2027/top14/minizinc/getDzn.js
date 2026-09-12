@@ -5,9 +5,9 @@ import {
   getPlayerSubForRound,
 } from "./params";
 
-const MAX_PER_TEAM = 6;
+const MAX_PER_TEAM = 4;
 
-const getDzn = (allPlayers, round = 1, budget, mode = 'points') => {
+const getDzn = (allPlayers, round = 1, budget, mode = "points") => {
   const getPlayerScore = getPlayerScoreForRound(round);
   const getPlayerCost = getPlayerCostForRound(round);
   const getPlayerCostNew = getPlayerCostNewForRound(round);
@@ -32,12 +32,12 @@ const getDzn = (allPlayers, round = 1, budget, mode = 'points') => {
   ubound = [${squadIds.map(() => MAX_PER_TEAM)}];
   budget = ${budget !== undefined ? budget * 10 : -1};
   `;
-  
-  if (mode === 'costProgression') {
+
+  if (mode === "costProgression") {
     data += `  costNew = [${players.map((p) => getPlayerCostNew(p) * 10 || 0)}];
   `;
   }
-  
+
   return data;
 };
 
