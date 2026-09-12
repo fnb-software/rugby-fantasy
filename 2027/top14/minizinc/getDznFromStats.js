@@ -162,6 +162,17 @@ const getDznFromStats = ({
   lockedPlayers.forEach(
     ({ player, index }) => (team[index] = `'${player.id}'`),
   );
+
+  // Calculate which positions have locked players (indices 0-14 are starters)
+  // team_position mapping from fantasy_total.mzn: [5, 6, 7, 7, 6, 8, 9, 10, 10, 10, 11, 11, 12, 13, 12]
+  const team_position = [5, 6, 7, 7, 6, 8, 9, 10, 10, 10, 11, 11, 12, 13, 12];
+  const lockedPositions = new Set();
+  lockedPlayers.forEach(({ player, index }) => {
+    if (index >= 0 && index < 15) {
+      lockedPositions.add(team_position[index]);
+    }
+  });
+
   const data = `Players = {${players.map((p) => `'${p.id}'`)}};
   cost = [${players.map((p) => getPlayerCost(p) * 10 || 0)}];
   value = [${players.map((p) => getPlayerScore(p) * 10 || 0)}];
@@ -175,6 +186,9 @@ const getDznFromStats = ({
   )}];
   max_per_position = array1d(5..13, [${adjustedMaxPerPosition}]);
   max_cost = ${maxCost != null ? Math.round(maxCost * 10) : 999999};
+  skip_increasing_for_positions = array1d(5..13, [${POSITION_IDS.map((pos) =>
+    lockedPositions.has(pos) ? 1 : 0
+  )}]);
   ${lockedPlayers.length ? `team = [${team.join(',')}];` : ``}
   `;
   console.log(data);

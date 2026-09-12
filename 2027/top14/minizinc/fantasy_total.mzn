@@ -58,8 +58,12 @@ constraint forall (pos in position_identifiers) (
 );
 
 % For each position, the players are ordered (breaking symmetry)
+% Skip positions that have locked players (provided in dzn)
+array[5..13] of int: skip_increasing_for_positions;
 constraint forall (position_type in position_identifiers) (
-    increasing([team[i] | i in 1..15 where team_position[i] = position_type])
+    if skip_increasing_for_positions[position_type] = 0 then
+        increasing([team[i] | i in 1..15 where team_position[i] = position_type])
+    else true endif
 );
 
 % break subs symmetry
