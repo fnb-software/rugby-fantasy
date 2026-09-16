@@ -12,7 +12,7 @@ import {
 const Fantasy = async ({
   searchParams,
 }: {
-  searchParams: Promise<{ budget?: string }>;
+  searchParams: Promise<{ budget?: string; emptyPlayers?: string }>;
 }) => {
   const session = await auth();
   if (!session?.user?.id) redirect("/signin?callbackUrl=/2027/top14/solver");
@@ -24,9 +24,10 @@ const Fantasy = async ({
   const budget = resolvedSearchParams.budget
     ? parseInt(resolvedSearchParams.budget, 10)
     : undefined;
-  // Add 18 empty players for optional slots only when budget is constrained
+  const emptyPlayersEnabled = resolvedSearchParams.emptyPlayers === "true";
+  // Add 18 empty players for optional slots only when budget is constrained and enabled
   let allPlayersWithEmpty = players;
-  if (budget !== undefined) {
+  if (budget !== undefined && emptyPlayersEnabled) {
     // Each empty player has the position for its corresponding slot in the team
     // team_position from fantasy.mzn: [12, 12, 13, 11, 11, 10, 10, 10, 9, 8, 6, 6, 5, 7, 7]
 

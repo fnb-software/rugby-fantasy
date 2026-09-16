@@ -6,14 +6,18 @@ type SolverMode = 'points' | 'costProgression';
 const BudgetSolverLink = () => {
   const [budget, setBudget] = useState('');
   const [mode, setMode] = useState<SolverMode>('points');
+  const [emptyPlayers, setEmptyPlayers] = useState(false);
 
   const getSolverUrl = () => {
     const params = new URLSearchParams();
     if (budget) {
       params.set('budget', budget);
     }
+    if (emptyPlayers) {
+      params.set('emptyPlayers', 'true');
+    }
     const queryString = params.toString();
-    const basePath = mode === 'costProgression' 
+    const basePath = mode === 'costProgression'
       ? '/2027/top14/solver-cost-progression'
       : '/2027/top14/solver';
     return `${basePath}${queryString ? `?${queryString}` : ''}`;
@@ -53,6 +57,18 @@ const BudgetSolverLink = () => {
         >
           Open solver
         </a>
+      </div>
+      <div className="flex items-center gap-2">
+        <input
+          id="emptyPlayers"
+          type="checkbox"
+          checked={emptyPlayers}
+          onChange={(e) => setEmptyPlayers(e.target.checked)}
+          className="border rounded"
+        />
+        <label htmlFor="emptyPlayers" className="text-sm text-gray-600">
+          Include empty players (optional slots)
+        </label>
       </div>
     </div>
   );
