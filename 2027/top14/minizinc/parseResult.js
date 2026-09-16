@@ -7,14 +7,16 @@ const parseResult = ({ players, teamIds, captainId, supersubId, round }) => {
   const captain = players.find((p) => p.id === captainId);
   const supersub = players.find((p) => p.id === supersubId);
   team.sort((p1, p2) => positionToInt(p1) - positionToInt(p2));
+
+  // Apply position swaps for display
   team.splice(2, 0, team.splice(1, 1)[0]);
   team.splice(11, 0, team.splice(14, 1)[0]);
   team.splice(11, 0, team.splice(14, 1)[0]);
 
   const teamOutput = team.map((p, i) => {
     return `${i + 1}. ${p === supersub ? "(s)" : p === captain ? "(c)" : ""} ${
-      p.nom
-    }  (${p.trgclub} - ${getPlayerCost(p) || 0}) - ${
+      p?.nom
+    }  (${p?.trgclub} - ${getPlayerCost(p) || 0}) - ${
       getPlayerScore(p) * (p == supersub ? 3 : p === captain ? 2 : 1) ?? "N/A"
     }\\`;
   });
@@ -31,7 +33,7 @@ const parseResult = ({ players, teamIds, captainId, supersubId, round }) => {
     points: teamPoints,
     cost: teamCost,
     log: `{teamIds: [${team
-      .map((p) => p.id)
+      .map((p) => p?.id)
       .join(",")}], captainId: ${captainId}}
   `,
   };
@@ -55,6 +57,8 @@ const positionToInt = (p) => {
       return 12;
     case 6:
       return 11;
+    default:
+      return 999;
   }
 };
 

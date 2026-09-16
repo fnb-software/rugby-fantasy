@@ -2,7 +2,7 @@ import {
   getPlayerCostForRound,
   getPlayerScoreForRound,
   getPlayerCostNewForRound,
-} from '../../../2027/top14/minizinc/params';
+} from "../../../2027/top14/minizinc/params";
 
 const Team = ({
   players,
@@ -53,16 +53,18 @@ const Team = ({
           {team.map((p, i) => (
             <tr key={p?.id}>
               <td className="pr-2">
-                {i > 15 ? '(s)' : i === 15 ? '(S)' : i + 1}{' '}
-                {p === captain ? '(c)' : ''}
+                {i > 15 ? "(s)" : i === 15 ? "(S)" : i + 1}{" "}
+                {p === captain ? "(c)" : ""}
               </td>
-              <td className="pr-5">{p?.nom}</td>
-              <td className="pr-5">{p?.trgclub}</td>
-              <td className="pr-2">{getPlayerCost(p)}</td>
+              <td className="pr-5">{p?.nom || "(empty)"}</td>
+              <td className="pr-5">{p?.trgclub || "-"}</td>
+              <td className="pr-2">{p ? getPlayerCost(p) : "-"}</td>
               <td className="text-right">
-                {(getPlayerScore(p) *
-                  (i > 15 ? 1 : i === 15 ? 6 : p === captain ? 4 : 2)) /
-                  40}
+                {p
+                  ? (getPlayerScore(p) *
+                      (i > 15 ? 1 : i === 15 ? 6 : p === captain ? 4 : 2)) /
+                    40
+                  : "-"}
               </td>
             </tr>
           ))}
@@ -70,7 +72,7 @@ const Team = ({
       </table>
       <br />
       <div>
-        Score: {teamPoints} - Cost: {teamCost} - Increase:{' '}
+        Score: {teamPoints} - Cost: {teamCost} - Increase:{" "}
         {(teamCostNew * 10 - teamCost * 10) / 10}
       </div>
     </div>

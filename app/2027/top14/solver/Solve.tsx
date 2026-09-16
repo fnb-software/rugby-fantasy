@@ -59,7 +59,7 @@ const Solve = ({
           });
           log += teamResult.log + `,`;
           setTeamResult(teamResult);
-          const sortedTeamIds = teamResult.team.map((p: any) => p.id);
+          const sortedTeamIds = teamResult.team.map((p: any) => p?.id);
           setSolved((prev) => [
             ...prev,
             { round: currentRound + 1, teamIds: sortedTeamIds, captainId },
@@ -88,7 +88,7 @@ const Solve = ({
       <h1>Team</h1>
       <Team
         players={players}
-        teamIds={teamResult.team.map((p: any) => p.id)}
+        teamIds={teamResult.team.map((p: any) => p?.id)}
         round={startRound}
         captainId={currentCaptainId || teamResult.team[0]?.id}
       />
