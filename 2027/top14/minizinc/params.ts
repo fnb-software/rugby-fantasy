@@ -55,3 +55,8 @@ export const getPlayerSubTotal = () => (p?: Player) => {
   }
   return score;
 };
+
+export const EMPTY_PLAYER_COUNT = 15;
+export const EMPTY_TEAM_POSITION = [
+  12, 12, 13, 11, 11, 10, 10, 10, 9, 8, 6, 6, 5, 7, 7,
+];
