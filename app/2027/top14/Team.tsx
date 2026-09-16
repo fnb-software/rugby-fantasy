@@ -56,15 +56,13 @@ const Team = ({
                 {i > 15 ? "(s)" : i === 15 ? "(S)" : i + 1}{" "}
                 {p === captain ? "(c)" : ""}
               </td>
-              <td className="pr-5">{p?.nom || "(empty)"}</td>
-              <td className="pr-5">{p?.trgclub || "-"}</td>
+              <td className="pr-5">{p?.nom || "-"}</td>
+              <td className="pr-5">{p?.trgclub || ""}</td>
               <td className="pr-2">{p ? getPlayerCost(p) : "-"}</td>
               <td className="text-right">
-                {p
-                  ? (getPlayerScore(p) *
-                      (i > 15 ? 1 : i === 15 ? 6 : p === captain ? 4 : 2)) /
-                    40
-                  : "-"}
+                {(getPlayerScore(p) *
+                  (i > 15 ? 1 : i === 15 ? 6 : p === captain ? 4 : 2)) /
+                  40 || ""}
               </td>
             </tr>
           ))}
