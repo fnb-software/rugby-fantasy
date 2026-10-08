@@ -213,7 +213,7 @@ const callLlm = async ({
       });
       if (!response.ok) {
         const body = await response.text().catch(() => "");
-        throw new Error(`http_${response.status}: ${body.slice(0, 200)}`);
+        throw new Error(`http_${response.status}: ${body.slice(0, 500)}`);
       }
       const json = await response.json();
       const choice = json?.choices?.[0];
