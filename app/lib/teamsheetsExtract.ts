@@ -4,6 +4,7 @@ import { trimToPlayerNames } from "@/app/lib/teamsheetsTrim";
 
 const FETCH_TIMEOUT_MS = 10_000;
 const PAGE_BYTE_CAP = 80_000;
+const DEFAULT_MAX_TOKENS = 8192;
 
 type LlmProvider = {
   name: string;
@@ -205,7 +206,7 @@ const callLlm = async ({
           ],
           response_format: { type: "json_object" },
           temperature: 0,
-          max_tokens: provider.maxTokens ?? 8192,
+          max_tokens: provider.maxTokens ?? DEFAULT_MAX_TOKENS,
         }),
       });
       if (!response.ok) {
@@ -335,6 +336,7 @@ Rules:
 - "subs": ordered list of probable replacements (typically 8 but may vary).
 - Preserve the first-name initial when the source shows it: emit "X. Lastname" (e.g. "R. Ntamack", "Pa. Boudehent", "J.-L. Joseph"). If the source only gives a full first name, abbreviate it to its first letter plus a period ("Romain Ntamack" → "R. Ntamack"). If neither initial nor first name is shown, output just the surname.
 - Append "*" to the last name ONLY when the page presents the player as an alternative — typical signals: "ou X", a slash ("Smith / Jones"), parentheses, "?", "à confirmer", "incertain", or two names listed for the same shirt number. Examples: "Ntamack" (confident), "Ntamack*" (uncertain), "R. Ntamack*" (uncertain with initial). Confident picks MUST NOT carry the "*".
+- Make sure you add all the uncertain players: "X ou Y", both "X*" and "Y*" should be added.
 - Player names in the source have already been pre-processed: diacritics stripped (so "Hervé" appears as "HERVE", "Lévêque" as "LEVEQUE") and "Firstname LASTNAME" patterns abbreviated to "F. LASTNAME". Pass player names through as-is — do NOT add accents back, do NOT re-expand initials. Club names in the allowed list above DO keep their accents and must be output exactly as listed.
 - If a source page has multiple matches, extract every recognized club from it.
 - Output ONLY the JSON object. No prose, no markdown fences.
