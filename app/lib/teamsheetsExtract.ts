@@ -222,6 +222,7 @@ const callLlm = async ({
         throw new Error("no_text_part");
       }
       if (choice?.finish_reason === "length") {
+        console.error(json);
         throw new Error(`truncated_at_${raw.length}_chars`);
       }
       let shape: {
