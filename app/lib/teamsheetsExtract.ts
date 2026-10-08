@@ -125,9 +125,9 @@ const buildProviders = (): LlmProvider[] => {
       url: "https://api.groq.com/openai/v1/chat/completions",
       apiKey: groqKey,
       model: "openai/gpt-oss-120b",
-      // Free tier: 12K tokens/min combined input+output. Reserve ~3K for
-      // output, leaving ~9K input ≈ 32K bytes at ~3.5 chars/token.
-      maxTokens: 3000,
+      // Free tier: 12K tokens/min combined input+output. Reserve ~6K for
+      // output, leaving ~6K input
+      maxTokens: 6000,
       maxPromptBytes: 32_000,
     });
   }
