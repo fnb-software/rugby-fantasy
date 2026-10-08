@@ -149,12 +149,10 @@ const buildProviders = (): LlmProvider[] => {
       "x-title": "rugby-fantasy",
     };
     const freeModels = [
+      "nvidia/nemotron-3-nano-omni-30b-a3b-reasoning:free",
+      "dots-studio/dots-3-note-preview:free",
       "google/gemma-4-31b-it:free",
       "google/gemma-4-26b-a4b-it:free",
-      "thinkingmachines/inkling:free",
-      "thinkingmachines/inkling-small:free",
-      "dots-studio/dots-3-note-preview:free",
-      "nvidia/nemotron-3-nano-omni-30b-a3b-reasoning:free",
     ];
     for (const model of freeModels) {
       providers.push({
