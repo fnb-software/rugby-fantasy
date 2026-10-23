@@ -31,40 +31,40 @@ export const getStatPointsMultiplier =
   ({ isForward }) =>
   (stat) => {
     switch (stat.libelle) {
-      case "Try":
+      case "lib_essai":
         return isForward ? 15 : 10;
-      case "Conversion":
+      case "lib_transformation":
         return 2;
-      case "Penalty":
-      case "Drop goal":
+      case "lib_penalite":
+      case "lib_drop":
         return 3;
-      case "Missed kick":
+      case "lib_coupdepied_manque":
         return -2;
-      case "Conceded penalty":
+      case "lib_penaliteconcedee":
         return isForward ? -3 : -5;
-      case "Yellow cards":
+      case "lib_carton_jaune":
         return -10;
       case "lib_carton_orange":
         return -13;
-      case "Red cards ":
+      case "lib_carton_rouge":
         return -15;
-      case "Tackles":
+      case "lib_placages":
         return 1;
-      case "Missed tackle":
+      case "lib_placagesmanques":
         return -2;
-      case "Line-breaks":
+      case "lib_franchissement":
         return isForward ? 8 : 4;
-      case "Tackle break":
+      case "lib_defenseursbattus":
         return isForward ? 4 : 2;
-      case "Runs with the ball":
+      case "lib_coursesballon":
         return 1;
-      case "Forward pass":
+      case "lib_enavant":
         return -1;
-      case "Turnover won":
+      case "lib_ballongratte":
         return isForward ? 3 : 5;
       case "lib_critere_interception_reussie":
         return isForward ? 5 : 3;
-      case "Offloads":
+      case "lib_critere_offloads":
         return 2;
     }
     return 0;
