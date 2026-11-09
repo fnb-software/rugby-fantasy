@@ -185,11 +185,11 @@ const getDznFromStats = ({
     Math.max(0, MAX_PER_TEAM - (reserveCountByClub[id] || 0)),
   )}];
   max_per_position = array1d(5..13, [${adjustedMaxPerPosition}]);
-  max_cost = ${maxCost != null ? Math.round(maxCost * 10) : 999999};
+  budget = ${maxCost != null ? Math.round(maxCost * 10) : 0};
   skip_increasing_for_positions = array1d(5..13, [${POSITION_IDS.map((pos) =>
-    lockedPositions.has(pos) ? 1 : 0
+    lockedPositions.has(pos) ? 1 : 0,
   )}]);
-  ${lockedPlayers.length ? `team = [${team.join(',')}];` : ``}
+  ${lockedPlayers.length ? `team = [${team.join(",")}];` : ``}
   `;
   console.log(data);
   return data;
