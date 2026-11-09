@@ -31,7 +31,7 @@ const getDzn = (allPlayers) => {
   lbound = [${squadIds.map(() => 0)}];
   ubound = [${squadIds.map(() => MAX_PER_TEAM)}];
   max_per_position = array1d(5..13, [${MAX_PER_POSITION}]);
-  budget = 0
+  budget = 0;
   skip_increasing_for_positions = array1d(5..13, [${Array.from({
     length: 9,
   }).map(() => 0)}]);
